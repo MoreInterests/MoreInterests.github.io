@@ -5,8 +5,8 @@
     
     <entry>
       <title>你若安好，便是晴天</title>
-      <link href="/blog/2020/032134362.html"/>
-      <url>/blog/2020/032134362.html</url>
+      <link href="/2020/032134362.html"/>
+      <url>/2020/032134362.html</url>
       
         <content type="html"><![CDATA[<hr><p> 晨起，窗外的阳光已是浩浩荡荡，远山苍绿如黛。夏天，就这样不慌不忙地来到身边，草木深深，风华绝代。</p><p>人生匆匆的聚散里，往事如烟，陌上花开如旧，而我们，却在凡俗的烟火里，承担岁月带给我们的浮世沧桑。青梅煮酒，一如旧时的味道，而那些走散的人，却再不会再回来。</p><p>我们都是光阴里的过客，有些人只是擦肩而过，有些人会短暂的停留，而有些人会携手白头。凡尘的烟火缭绕，我们总是在如烟的世海里丢了自己。岁月，偷换的又岂止是青春红颜，还有那些最初的情怀。</p><p>我们都只是拥挤红尘里孤独的赶路人，寂寞时，我们需要回忆相伴；迷茫时，我们需要情怀偎依取暖。</p><p>世间所有女子都曾如精灵般存在，或是柔情，或是灵动，在光阴里含笑，为一场雨动情。爱人间的莺歌燕舞，爱江南的山温水软，爱世间一切美好的东西。</p><p>世间所有女子都曾有过绝代的风华，有些人将这风华酿成一坛芬芳的酒酿，沉醉岁月；而有些，却在生活的枝头渐次苍白，一一凋落。</p><p>生活百味纷杂，尝过人情世味，看过世态炎凉，浸泡在红尘的染缸里，她们都不复当初的模样。世事如刀，所有最初的情怀、柔肠和优雅，被一点点削减。 </p><p><img src="https://tse3-mm.cn.bing.net/th/id/OIP.ZAEYva3iMiSv0250kJ3QMQHaEn?pid=Api&rs=1" alt=""> </p><p>风景生动的城里，古城温暖的阳光里，江南水乡的石桥上，总有那怀着温润洁净情怀的女子走过；寻常的巷陌里，小镇的溪水旁，乡间的田野里，总有女子在为生活而奔忙。从她们降生在人间开始，便有万千色彩的故事等着她们去演绎。有悲欢，有离合，有酸甜，有苦辣。</p><p>不知在什么时候，便喜欢上这两个字：惜缘。佛说，前世五百次的回眸，换来今生的擦肩而过。</p><p>张爱玲也说：于千万人之中遇见你所要遇见的人, 于千万年之中, 时间的无涯的荒野里, 没有早一步, 也没有晚一步, 刚巧赶上了, 没有别的话可说, 惟有轻轻地问一声: “ 噢, 你也在这里?”</p><p>可见人与人的相遇是多么难得的缘分，所以我们应该学会珍惜，任何错过和伤害都是对缘分的蹉跎。</p><p>有时，行走在摩肩接踵的人群中，心中便会涌出莫名的感动，每一个来来去去的生命，都有他们的烟火幸福，有他们完整的故事。</p><p>邂逅一个人，只需片刻，爱上一个人，往往会是一生。</p><p>徐志摩说：一生至少该有一次,为了某个人而忘了自己,不求结果,不求同行,不求曾经拥有,甚至不求你爱我.只求在我最美的年华里,遇见你！</p><p>爱上一个人，是涅槃，亦是重生。因为爱了，所以听风含情，花柳带笑；因为爱了，所以感时花溅泪，恨别鸟惊心；因为爱了！   </p><hr><pre><code>初心亦在 有缘再见</code></pre>]]></content>
       
@@ -30,8 +30,8 @@
     
     <entry>
       <title>Hexo+Github博客搭建入门</title>
-      <link href="/blog/2020/031034155.html"/>
-      <url>/blog/2020/031034155.html</url>
+      <link href="/2020/031034155.html"/>
+      <url>/2020/031034155.html</url>
       
         <content type="html"><![CDATA[<h1 id="网站搭建"><a href="#网站搭建" class="headerlink" title="网站搭建"></a>网站搭建</h1><h2 id="安装需要的编辑软件"><a href="#安装需要的编辑软件" class="headerlink" title="安装需要的编辑软件"></a>安装需要的编辑软件</h2><ul><li>Typora<br>个人建议在国内的软件上下载，不要去官网，下载慢  </li><li>vs code<br>轻量级文档编辑器  </li></ul><h2 id="1-nodejs，Git环境搭建："><a href="#1-nodejs，Git环境搭建：" class="headerlink" title="1.nodejs，Git环境搭建："></a>1.nodejs，Git环境搭建：</h2><ul><li><a href="https://blog.csdn.net/qq_43285335/article/details/90696126" target="_blank" rel="noopener">node.js搭建</a> </li><li><a href="https://www.cnblogs.com/xueweisuoyong/p/11914045.html" target="_blank" rel="noopener">git搭建</a>-<br><a href="https://www.cnblogs.com/luyuandatabase/p/12145707.html" target="_blank" rel="noopener">淘宝云配置</a> </li></ul><h2 id="2-注册github"><a href="#2-注册github" class="headerlink" title="2.注册github"></a>2.注册github</h2><ol><li>注册就不用我说了，创建仓库视频里有，然后这个也很简单，不会就百度（应该没人去百度<br>的，太简单了）</li><li>格式要求：gfyuan.github.io</li></ol><h2 id="3-快速利用hexo搭建博客："><a href="#3-快速利用hexo搭建博客：" class="headerlink" title="3.快速利用hexo搭建博客："></a>3.快速利用hexo搭建博客：</h2><p> 1.<a href="https://hexoscript.gitbook.io/hexo-script/" target="_blank" rel="noopener">脚本教程</a>  </p><p> 2.<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">主题安装及优化</a> </p><p> <a href="https://www.jianshu.com/p/1e402922ee32" target="_blank" rel="noopener">Markdown入门</a></p>]]></content>
       
@@ -57,8 +57,8 @@
     
     <entry>
       <title>博客撰写教程</title>
-      <link href="/blog/2020/022054914.html"/>
-      <url>/blog/2020/022054914.html</url>
+      <link href="/2020/022054914.html"/>
+      <url>/2020/022054914.html</url>
       
         <content type="html"><![CDATA[<h2 id="1-Markdown——入门指南"><a href="#1-Markdown——入门指南" class="headerlink" title="1.Markdown——入门指南"></a>1.Markdown——入门指南</h2><h1 id="导语："><a href="#导语：" class="headerlink" title="导语："></a>导语：</h1><p>Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑，Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的 HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。 </p><h2 id="Markdown-语法的简要规则"><a href="#Markdown-语法的简要规则" class="headerlink" title="Markdown 语法的简要规则"></a>Markdown 语法的简要规则</h2><ul><li><p>标题 </p><p>  #一级标题</p><p>  ##二级标题</p><p>  ###三级标题 </p></li><li><p>无序列表  </p></li></ul><p>*1<br>*2<br>*3</p><ul><li>有序列表   </li></ul><p>1.1<br>1.2<br>1.3  </p><ul><li>图片与链接<br>图片为：! [ ] ( )<br>链接为：[ ] ( )  </li><li>粗体  </li></ul><p><strong>中文本为斜体<br>**</strong>中为粗体  </p><ul><li>分割线<br>三个*为分割线  </li><li>代码框<br>一个``<br>例如：<br><code>if(a&lt;b)   {c=b;}</code>   </li></ul><p><a href="https://www.jianshu.com/p/1e402922ee32" target="_blank" rel="noopener">文章出处</a>  </p><hr><h2 id="2-文章-Front-matter-介绍"><a href="#2-文章-Front-matter-介绍" class="headerlink" title="2.文章 Front-matter 介绍"></a>2.文章 Front-matter 介绍</h2><p>Front-matter 选项详解<br>Front-matter 选项中的所有内容均为非必填的。但我仍然建议至少填写 title 和 date 的值。</p><p>配置选项    默认值    描述<br><strong>title</strong>    Markdown 的文件标题    文章标题，强烈建议填写此选项<br><strong>date</strong>    文件创建时的日期时间    发布时间，强烈建议填写此选项，且最好保证全局唯一<br><strong>author</strong>    根 _config.yml 中的 author    文章作者<br><strong>img</strong>    featureImages 中的某个值    文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: <a href="http://xxx.com/xxx.jpg" target="_blank" rel="noopener">http://xxx.com/xxx.jpg</a></p><p>  其余规则见<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">文章出处</a></p>]]></content>
       
@@ -82,8 +82,8 @@
     
     <entry>
       <title>Hello World</title>
-      <link href="/blog/2020/021516107.html"/>
-      <url>/blog/2020/021516107.html</url>
+      <link href="/2020/021516107.html"/>
+      <url>/2020/021516107.html</url>
       
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
       
