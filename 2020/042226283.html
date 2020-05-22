@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 
 <body>
@@ -476,7 +476,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    467
+                    468
                 </div>
                 
 
@@ -511,7 +511,7 @@
 <h1 id="2-Coding创建项目"><a href="#2-Coding创建项目" class="headerlink" title="2.Coding创建项目"></a>2.Coding创建项目</h1><h3 id="1-首先，去Coding官网注册一个账号，接着，点击“-创建项目”-创建一个新项目。"><a href="#1-首先，去Coding官网注册一个账号，接着，点击“-创建项目”-创建一个新项目。" class="headerlink" title="1.首先，去Coding官网注册一个账号，接着，点击“+ 创建项目”,创建一个新项目。"></a>1.首先，去Coding<a href="coding.net">官网注册</a>一个账号，接着，点击“+ 创建项目”,创建一个新项目。</h3><ul>
 <li>选择项目模板<br><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P052211.jpg" alt=""><ul>
 <li>创建项目<br><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P052212.jpg" alt=""> <h3 id="2-同步本地hexo到coding上"><a href="#2-同步本地hexo到coding上" class="headerlink" title="2.同步本地hexo到coding上"></a>2.同步本地hexo到coding上</h3>把获取到了ssh配置在上面的<code>_config.yml</code>文件中的deploy下，<pre><code class="bash">deploy:
-<span class="built_in">type</span>: git
+type: git
 repo: 
    github: git@github.com:你的用户名/你的仓库名.github.io.git
    coding: git@e.coding.net:你的用户名/你的仓库名.git
@@ -525,7 +525,7 @@ branch: master</code></pre>
 <p>添加后，在<code>git bash</code>命令输入：</p>
 <pre><code class="bash">ssh -T git@git.coding.net</code></pre>
 <p>如果得到下面提示就表示公钥添加成功了：</p>
-<pre><code class="bash">Coding.net Tips : [Hello ! You<span class="string">'ve conected to Coding.net by SSH successfully! ]</span></code></pre>
+<pre><code class="bash">Coding.net Tips : [Hello ! You&#39;ve conected to Coding.net by SSH successfully! ]</code></pre>
 <p>最后使用部署命令就能把博客同步到coding上面：</p>
 <pre><code class="bash">hexo g -d</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P052214.jpg" alt=""> </p>
