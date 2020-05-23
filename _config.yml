@@ -60,6 +60,7 @@ future: true
 #  hljs: false
 highlight:
   enable: false
+  
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
   theme: 'tomorrow'
