@@ -80,5 +80,5 @@ hexo g -d
   
     
         
-> <font color="ff0000">版权声明：本文为原创，欢迎转载，转载请注明出处，勿用于商业用途！</font>  
+> <font color="ff0000">版权声明：本文为个人总结，欢迎转载，转载请注明出处，勿用于商业用途！</font>  
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1443900438&auto=1&height=66"></iframe>
