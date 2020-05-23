@@ -1,5 +1,5 @@
 ---
-title: Hexo博客备份与恢复
+title: Hexo博客之备份与恢复
 top: false
 cover: false
 toc: true
@@ -14,9 +14,8 @@ abbrlink: 27743
 date: 2020-05-01 17:54:18
 img: https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg
 coverImg:
-password:
+password: 
 ---
---- 
 # 备份  
 1、在你的博客仓库创建一个分支`hexo`（这个命名随意）；
 
@@ -33,7 +32,7 @@ git clone git@github.com:Username/Username.github.io.git
 
 将之前的博客根目录文件夹中的
 `_config.yml`，`themes/`，`source`，`scffolds/`，`package.json`，`.gitignore`复制到Username.github.io文件夹；（`Username`是你自己的用户名）
-
+<!--more-->
 4、将themes/next/(是NexT主题)中的`.git/`删除，否则无法将主题文件夹`push`；( <font color="ff0000">`matery`主题中没有这个文件夹，应该就不用删除了</font>)
 
 5、在Username.github.io文件夹执行`git add .`，`git commit -m "提交文件"`，`git push origin hexo`来提交hexo网站源文件；( <font color="ff0000">命令中的`hexo`为你创建的分支的名字</font>)    
@@ -73,4 +72,3 @@ hexo g -d
 
  > <font color="ff0000">版权声明：本文为个人总结，欢迎转载，转载请注明出处，勿用于商业用途！</font>   
     
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1449991947&auto=1&height=66"></iframe>
