@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, toily的博客">
+    <meta name="keywords" content="CCS5.5——快速傅里叶变换(FFT), toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | toily的博客</title>
+    <title>CCS5.5——快速傅里叶变换(FFT) | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">CCS5.5——快速傅里叶变换(FFT)</h1>
                 </div>
             </div>
         </div>
@@ -450,12 +450,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/C%E8%AF%AD%E8%A8%80/" class="post-category">
+                                C语言
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -464,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-15
+                    2020-05-27
                 </div>
                 
 
@@ -473,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    787
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -495,16 +508,114 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <hr>
+<h1 id="1-原理"><a href="#1-原理" class="headerlink" title="1.原理"></a>1.原理</h1><p>1、离散傅里叶变换DFT的定义：将时域的采样变换成频域的周期性离散函数，频域的采样也可以变换成时域的周期性离散函数，这样的变化称为离散傅里叶变换，简称DFT。  </p>
+<p>2、FFT是DFT的一种快速算法。由于在计算DFT是一次复数乘法需用四次实数乘法和两次实数加法；一次复数加法需要两次实数加法。每运算一个X(k)需要4N次复数乘法及 实数加法。所以整个DFT运算总共需要 次实数乘法及 次实数加法。如此，计算时乘法次数和加法次数都是和 成正比的，当N很大时，运算量是客观的，因而需要改进带DFT的算法减少运算速度。  </p>
+<p>根据傅里叶变换的对称性和周期性，我们可以将DFT运算中有些项合并。假设序列长度为 ,L为整数。将 的序列x(n)(n=0,1,…,N-1),按N的奇偶分成两组，分解成两个N/2点的DFT，重新组合成一个如下式表达的N点DFT:<br><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05271.jpg" alt="">  </p>
+<p>将DFT的 步运算减少为 步，极大地提高了运算的速度；  </p>
+<p>3、    旋转因子的变化规律；  </p>
+<p>4、    碟形运算规律；  </p>
+<p>5、    基于2FFT算法。  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05272.jpg" alt=""></p>
+<h1 id="2-记录实验数据"><a href="#2-记录实验数据" class="headerlink" title="2.记录实验数据"></a>2.记录实验数据</h1><p>按照图6-2，3进行输入信号时域，频域以及输出信号时域波形的设置。<br><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05273.jpg" alt=""><br>输入信号及输出信号的波形如图6-4,5,6所示：<br><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05274.jpg" alt=""><br>代码：</p>
+<pre><code>#include&quot;math.h&quot;
+#define PI 3.1415926
+#define SAMPLENUMBER 128
 
+void InitForFFT();
+void MakeWave();
+
+int INPUT[SAMPLENUMBER],DATA[SAMPLENUMBER];
+float fWaveR[SAMPLENUMBER],fWaveI[SAMPLENUMBER],w[SAMPLENUMBER];
+float sin_tab[SAMPLENUMBER],cos_tab[SAMPLENUMBER];
+
+void FFT(float dataR[SAMPLENUMBER],float dataI[SAMPLENUMBER])
+{
+    int x0, x1, x2, x3, x4, x5, x6, xx;
+    int i, j, k, b, p, L;
+    float TR, TI, temp;
+/***************fllowing code invert sequence***************/
+    for( i = 0; i &lt; SAMPLENUMBER; i++)
+    {
+        x0=x1=x2=x3=x4=x5=x6=0;
+        x0=i&amp;0x01;x1=(i/2)&amp;0x01;x2=(i/4)&amp;0x01;x3=(i/8)&amp;0x01;x4=(i/16)&amp;0x01;x5=(i/32)&amp;0x01;x6=(i/64)&amp;0x01;
+        xx=x0*64+x1*32+x2*16+x3*8+x4*4+x5*2+x6;
+        dataI[xx]=dataR[i];
+
+    }
+    for( i = 0; i &lt; SAMPLENUMBER; i++)
+    {
+        dataR[i]=dataI[i];dataI[i]=0;
+    }
+/***********fllowing code FFT***************/
+    for( L = 1; L &lt;= 7; L++)
+    {
+        b=1;i=L-1;
+        while( i &gt; 0 ){
+            b=b*2;i--;
+        }/*b= 2^(L-1)*/
+        for( j = 0; j &lt;= b-1; j++ )
+        {
+            p=1;i=7-L;
+            while( i &gt; 0 ) /*p=pow(2,7-L)*j;*/
+            {
+                p=p*2;i--;
+            }
+            p=p*j;
+            for( k = j; k &lt; 128; k = k+2*b )
+            {
+                TR=dataR[k];TI=dataI[k];temp=dataR[k+b];
+                dataR[k]=dataR[k]+dataR[k+b]*cos_tab[p]+dataI[k+b]*sin_tab[p];
+                dataI[k]=dataI[k]-dataR[k+b]*sin_tab[p]+dataI[k+b]*cos_tab[p];
+                dataR[k+b]=TR-dataR[k+b]*cos_tab[p]-dataI[k+b]*sin_tab[p];
+                dataI[k+b]=TI+temp*sin_tab[p]-dataI[k+b]*cos_tab[p];
+            }
+        }
+    }
+    for( i = 0; i &lt; SAMPLENUMBER/2; i++)
+    {
+        w[i]=sqrt(dataR[i]*dataR[i]+dataI[i]*dataI[i]);
+    }
+}/*END FFT*/
+main()
+{
+    int i;
+
+    InitForFFT();
+    MakeWave();
+    for( i = 0; i &lt; SAMPLENUMBER; i++)
+    {
+        fWaveR[i]=INPUT[i];
+        fWaveI[i]=0.0f;
+        w[i]=0.0f;
+    }
+    FFT(fWaveR,fWaveI);
+    for(i = 0; i &lt; SAMPLENUMBER; i++)
+    {
+        DATA[i]=w[i];
+    }
+    while(1);  //break point
+}
+
+void InitForFFT()
+{
+    int i;
+    for(i = 0; i &lt; SAMPLENUMBER; i++)
+    {
+        sin_tab[i]=sin(PI*2*i/SAMPLENUMBER);
+        cos_tab[i]=cos(PI*2*i/SAMPLENUMBER);
+    }
+}
+
+void MakeWave()
+{
+    int i;
+
+    for( i=0; i&lt;SAMPLENUMBER; i++ )
+    {
+        INPUT[i]=sin(PI*2*i/SAMPLENUMBER*3)*1024;
+    }
+}  </code></pre>
             </div>
             <hr/>
 
@@ -519,7 +630,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">Xiao Xing</a>
+                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">xing xiao</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -529,7 +640,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/021516107.html">http://ww042q.coding-pages.com/2020/021516107.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/052749146.html">http://ww042q.coding-pages.com/2020/052749146.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -542,7 +653,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="http://ww042q.coding-pages.com" target="_blank">Xiao Xing</a>
+                    <a href="http://ww042q.coding-pages.com" target="_blank">xing xiao</a>
                     !
                 </span>
             </div>
@@ -566,7 +677,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -732,46 +847,50 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/022054914.html">
+                <a href="/2020/052749146.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="博客撰写教程">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="CCS5.5——快速傅里叶变换(FFT)">
                         
-                        <span class="card-title">博客撰写教程</span>
+                        <span class="card-title">CCS5.5——快速傅里叶变换(FFT)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Markdown入门与文章Front-matter介绍
+                            
+1.原理1、离散傅里叶变换DFT的定义：将时域的采样变换成频域的周期性离散函数，频域的采样也可以变换成时域的周期性离散函数，这样的变化称为离散傅里叶变换，简称DFT。  
+2、FFT是DFT的一种快速算法。由于在计算DFT是一次复数乘法需
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
-                                    教程
+                            <a href="/categories/C%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    C语言
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%96%87%E7%AB%A0/">
-                        <span class="chip bg-color">文章</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -782,37 +901,51 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/021516107.html">
+                <a href="/2020/050127743.html">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Hexo博客之备份与恢复">
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Hexo博客之备份与恢复</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            保存和备份是非常重要的，所以务必养成随手保存和存有备份的习惯了。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-01
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Xiao Xing
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" class="post-category">
+                                    网站搭建
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
