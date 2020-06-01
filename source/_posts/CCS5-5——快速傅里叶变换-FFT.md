@@ -5,8 +5,8 @@ cover: false
 toc: true
 mathjax: false
 author: xing xiao
-tags: 算法
-categories: C语言
+tags: C
+categories: 编程
 abbrlink: 49146
 date: 2020-05-27 16:46:06
 img:
