@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CCS5.5——快速傅里叶变换(FFT), toily的博客">
+    <meta name="keywords" content="Java-day03, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CCS5.5——快速傅里叶变换(FFT) | toily的博客</title>
+    <title>Java-day03 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CCS5.5——快速傅里叶变换(FFT)</h1>
+                    <h1 class="description center-align post-title">Java-day03</h1>
                 </div>
             </div>
         </div>
@@ -452,8 +452,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -477,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-27
+                    2020-06-02
                 </div>
                 
 
@@ -486,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    787
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -508,114 +508,155 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<h1 id="1-原理"><a href="#1-原理" class="headerlink" title="1.原理"></a>1.原理</h1><p>1、离散傅里叶变换DFT的定义：将时域的采样变换成频域的周期性离散函数，频域的采样也可以变换成时域的周期性离散函数，这样的变化称为离散傅里叶变换，简称DFT。  </p>
-<p>2、FFT是DFT的一种快速算法。由于在计算DFT是一次复数乘法需用四次实数乘法和两次实数加法；一次复数加法需要两次实数加法。每运算一个X(k)需要4N次复数乘法及 实数加法。所以整个DFT运算总共需要 次实数乘法及 次实数加法。如此，计算时乘法次数和加法次数都是和 成正比的，当N很大时，运算量是客观的，因而需要改进带DFT的算法减少运算速度。  </p>
-<p>根据傅里叶变换的对称性和周期性，我们可以将DFT运算中有些项合并。假设序列长度为 ,L为整数。将 的序列x(n)(n=0,1,…,N-1),按N的奇偶分成两组，分解成两个N/2点的DFT，重新组合成一个如下式表达的N点DFT:<br><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05271.jpg" alt="">  </p>
-<p>将DFT的 步运算减少为 步，极大地提高了运算的速度；  </p>
-<p>3、    旋转因子的变化规律；  </p>
-<p>4、    碟形运算规律；  </p>
-<p>5、    基于2FFT算法。  </p>
-<p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05272.jpg" alt=""></p>
-<h1 id="2-记录实验数据"><a href="#2-记录实验数据" class="headerlink" title="2.记录实验数据"></a>2.记录实验数据</h1><p>按照图6-2，3进行输入信号时域，频域以及输出信号时域波形的设置。<br><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05273.jpg" alt=""><br>输入信号及输出信号的波形如图6-4,5,6所示：<br><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05274.jpg" alt=""><br>代码：</p>
-<pre><code>#include&quot;math.h&quot;
-#define PI 3.1415926
-#define SAMPLENUMBER 128
+                <p>1:运算符(掌握)  </p>
+<pre><code>(1)算术运算符
+    A:+,-,*,/,%,++,--
+    B:+的用法
+        a:加法
+        b:正号
+        c:字符串连接符
+    C:/和%的区别
+        数据做除法操作的时候，/取得是商，%取得是余数
+    D:++和--的用法
+        a:他们的作用是自增或者自减
+        b:使用
+            **单独使用
+                放在操作数据的前面和后面效果一样。
+                a++或者++a效果一样。
+            **参与操作使用
+                放在操作数的前面：先自增或者自减，再参与操作
+                    int a = 10;
+                    int b = ++a;
+                放在操作数的后面：先参与操作，再自增或者自减
+                    int a = 10;
+                    int b = a++;
+(2)赋值运算符
+    A:=,+=,-=,*=,/=,%=等
+    B:=叫做赋值运算符，也是最基本的赋值运算符
+        int x = 10; 把10赋值给int类型的变量x。
+    C:扩展的赋值运算符的特点
+        隐含了自动强制转换。
 
-void InitForFFT();
-void MakeWave();
+        面试题：
+            short s = 1;
+            s = s + 1;
 
-int INPUT[SAMPLENUMBER],DATA[SAMPLENUMBER];
-float fWaveR[SAMPLENUMBER],fWaveI[SAMPLENUMBER],w[SAMPLENUMBER];
-float sin_tab[SAMPLENUMBER],cos_tab[SAMPLENUMBER];
+            short s = 1;
+            s += 1;
+            请问上面的代码哪个有问题?
+(3)比较运算符
+    A:==,!=,&gt;,&gt;=,&lt;,&lt;=
+    B:无论运算符两端简单还是复杂最终结果是boolean类型。
+    C:千万不要把==写成了=
+(4)逻辑运算符
+    A:&amp;,|,^,!,&amp;&amp;,||
+    B:逻辑运算符用于连接boolean类型的式子
+    C:结论
+        &amp;:有false则false
+        |:有true则true
+        ^:相同则false，不同则true。
+            情侣关系。
+        !:非true则false，非false则true
 
-void FFT(float dataR[SAMPLENUMBER],float dataI[SAMPLENUMBER])
-{
-    int x0, x1, x2, x3, x4, x5, x6, xx;
-    int i, j, k, b, p, L;
-    float TR, TI, temp;
-/***************fllowing code invert sequence***************/
-    for( i = 0; i &lt; SAMPLENUMBER; i++)
-    {
-        x0=x1=x2=x3=x4=x5=x6=0;
-        x0=i&amp;0x01;x1=(i/2)&amp;0x01;x2=(i/4)&amp;0x01;x3=(i/8)&amp;0x01;x4=(i/16)&amp;0x01;x5=(i/32)&amp;0x01;x6=(i/64)&amp;0x01;
-        xx=x0*64+x1*32+x2*16+x3*8+x4*4+x5*2+x6;
-        dataI[xx]=dataR[i];
-
-    }
-    for( i = 0; i &lt; SAMPLENUMBER; i++)
-    {
-        dataR[i]=dataI[i];dataI[i]=0;
-    }
-/***********fllowing code FFT***************/
-    for( L = 1; L &lt;= 7; L++)
-    {
-        b=1;i=L-1;
-        while( i &gt; 0 ){
-            b=b*2;i--;
-        }/*b= 2^(L-1)*/
-        for( j = 0; j &lt;= b-1; j++ )
-        {
-            p=1;i=7-L;
-            while( i &gt; 0 ) /*p=pow(2,7-L)*j;*/
-            {
-                p=p*2;i--;
-            }
-            p=p*j;
-            for( k = j; k &lt; 128; k = k+2*b )
-            {
-                TR=dataR[k];TI=dataI[k];temp=dataR[k+b];
-                dataR[k]=dataR[k]+dataR[k+b]*cos_tab[p]+dataI[k+b]*sin_tab[p];
-                dataI[k]=dataI[k]-dataR[k+b]*sin_tab[p]+dataI[k+b]*cos_tab[p];
-                dataR[k+b]=TR-dataR[k+b]*cos_tab[p]-dataI[k+b]*sin_tab[p];
-                dataI[k+b]=TI+temp*sin_tab[p]-dataI[k+b]*cos_tab[p];
-            }
+        &amp;&amp;:结果和&amp;是一样的，只不过有短路效果。左边是false，右边不执行。
+        ||:结果和|是一样的，只不过有短路效果。左边是true，右边不执行。
+(5)位运算符(了解)
+    A:^的特殊用法
+        一个数据针对另一个数据位异或两次，该数不变
+    B:面试题
+        a:请实现两个变量的交换
+            **采用第三方变量
+            **用位异或运算符
+                左边a,b,a
+                右边a^b
+        b:请用最有效率的方式计算出2乘以8的结果
+            2&lt;&lt;3
+(6)三元运算符
+    A:格式
+        比较表达式?表达式1:表达式2;
+    B:执行流程：
+        首先计算比较表达式的值，看是true还是false。
+        如果是true，表达式1就是结果。
+        如果是false，表达式2就是结果。
+    C:案例：
+        a:比较两个数据是否相等
+        b:获取两个数据中的最大值
+        c:获取三个数据中的最大值</code></pre><p>2:键盘录入(掌握)  </p>
+<pre><code>(1)实际开发中，数据是变化的，为了提高程序的灵活性，我们加入键盘录入数据。
+(2)如何实现呢?目前就记住
+    A:导包
+        import java.util.Scanner;
+        位置：在class的上边
+    B:创建对象
+        Scanner sc = new Scanner(System.in);
+    C:获取数据
+        int x = sc.nextInt();
+(3)把三元运算符的案例加入键盘录入改进。</code></pre><p>3:流程控制语句  </p>
+<pre><code>(1)顺序结构 从上往下，依次执行
+(2)选择结构    按照不同的选择，执行不同的代码
+(3)循环结构 做一些重复的代码</code></pre><p>4:if语句(掌握)  </p>
+<pre><code>(1)三种格式
+    A:格式1
+        if(比较表达式) {
+            语句体;
         }
-    }
-    for( i = 0; i &lt; SAMPLENUMBER/2; i++)
-    {
-        w[i]=sqrt(dataR[i]*dataR[i]+dataI[i]*dataI[i]);
-    }
-}/*END FFT*/
-main()
-{
-    int i;
 
-    InitForFFT();
-    MakeWave();
-    for( i = 0; i &lt; SAMPLENUMBER; i++)
-    {
-        fWaveR[i]=INPUT[i];
-        fWaveI[i]=0.0f;
-        w[i]=0.0f;
-    }
-    FFT(fWaveR,fWaveI);
-    for(i = 0; i &lt; SAMPLENUMBER; i++)
-    {
-        DATA[i]=w[i];
-    }
-    while(1);  //break point
-}
+        执行流程：
+            判断比较表达式的值，看是true还是false
+            如果是true，就执行语句体
+            如果是false，就不执行语句体
 
-void InitForFFT()
-{
-    int i;
-    for(i = 0; i &lt; SAMPLENUMBER; i++)
-    {
-        sin_tab[i]=sin(PI*2*i/SAMPLENUMBER);
-        cos_tab[i]=cos(PI*2*i/SAMPLENUMBER);
-    }
-}
+    B:格式2
+        if(比较表达式) {
+            语句体1;
+        }else {
+            语句体2;
+        }
 
-void MakeWave()
-{
-    int i;
+        执行流程：
+            判断比较表达式的值，看是true还是false
+            如果是true，就执行语句体1
+            如果是false，就执行语句体2
 
-    for( i=0; i&lt;SAMPLENUMBER; i++ )
-    {
-        INPUT[i]=sin(PI*2*i/SAMPLENUMBER*3)*1024;
-    }
-}  </code></pre>
+    C:格式3
+        if(比较表达式1) {
+            语句体1;
+        }else if(比较表达式2){
+            语句体2;
+        }
+        ...
+        else {
+            语句体n+1;
+        }
+
+        执行流程：
+            判断比较表达式1的值，看是true还是false
+            如果是true，就执行语句体1
+            如果是false，就继续判断比较表达式2的值，看是true还是false
+            如果是true，就执行语句体2
+            如果是false，就继续判断比较表达式3的值，看是true还是false
+            ...
+            如果都不满足，就执行语句体n+1
+(2)注意事项
+    A:比较表达式无论简单还是复杂，结果是boolean类型
+    B:if语句控制的语句体如果是一条语句，是可以省略大括号的；如果是多条，不能省略。
+        建议：永远不要省略。
+    C:一般来说，有左大括号，就没有分号，有分号，就没有左大括号。
+    D:else后面如果没有if，是不会出现比较表达式的。
+    E:三种if语句其实都是一个语句，只要有一个执行，其他的就不再执行。
+(3)案例：
+    A:比较两个数是否相等
+    B:获取两个数中的最大值
+    C:获取三个数中的最大值(if语句的嵌套)
+    D:根据成绩输出对应的等级
+    E:根据月份，输出对应的季节
+    F:根据x计算对应y的值并输出
+(4)三元运算符和if语句第二种格式的关系
+    所有的三元运算符能够实现的，if语句的第二种格式都能实现。
+    反之不成立。
+
+    如果if语句第二种格式控制的语句体是输出语句，就不可以。
+    因为三元运算符是一个运算符，必须要有一个结果返回，不能是一个输出语句。</code></pre>
             </div>
             <hr/>
 
@@ -640,7 +681,7 @@ void MakeWave()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/052749146.html">http://ww042q.coding-pages.com/2020/052749146.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/060211165.html">http://ww042q.coding-pages.com/2020/060211165.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -678,8 +719,8 @@ void MakeWave()
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
                         </div>
@@ -847,37 +888,38 @@ void MakeWave()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/053159932.html">
+                <a href="/2020/060211165.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Java-day01">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Java-day03">
                         
-                        <span class="card-title">Java-day01</span>
+                        <span class="card-title">Java-day03</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:计算机概述(了解)  
-(1)计算机
-(2)计算机硬件
-(3)计算机软件
-    系统软件：window,linux,mac
-    应用软件：qq,yy,飞秋
-(4)软件开发(理解)
-    软件：是由数据和指令组成的。(计算器)
- 
+                            1:运算符(掌握)  
+(1)算术运算符
+    A:+,-,*,/,%,++,--
+    B:+的用法
+        a:加法
+        b:正号
+        c:字符串连接符
+    C:/和%的区别
+        数据
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -890,6 +932,7 @@ void MakeWave()
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -908,30 +951,37 @@ void MakeWave()
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/050127743.html">
+                <a href="/2020/060160252.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Hexo博客之备份与恢复">
                         
-                        <span class="card-title">Hexo博客之备份与恢复</span>
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Java-day02">
+                        
+                        <span class="card-title">Java-day02</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            保存和备份是非常重要的，所以务必养成随手保存和存有备份的习惯了。
+                            1:关键字(掌握)  
+(1)被Java语言赋予特定含义的单词
+(2)特点：
+    全部小写。
+(3)注意事项：
+    A:goto和const作为保留字存在。
+    B:类似于Notepad++这样的高级记事本会对关键字有特殊颜色标
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    网站搭建
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
                                 </a>
                             
                             
@@ -941,12 +991,8 @@ void MakeWave()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
