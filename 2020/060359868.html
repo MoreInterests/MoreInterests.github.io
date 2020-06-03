@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo+Github博客搭建入门, toily的博客">
+    <meta name="keywords" content="Java-day04, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo+Github博客搭建入门 | toily的博客</title>
+    <title>Java-day04 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo+Github博客搭建入门</h1>
+                    <h1 class="description center-align post-title">Java-day04</h1>
                 </div>
             </div>
         </div>
@@ -452,12 +452,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
-                            </a>
-                        
-                            <a href="/tags/blog/">
-                                <span class="chip bg-color">blog</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -468,8 +464,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" class="post-category">
-                                网站搭建
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                编程
                             </a>
                         
                     </div>
@@ -481,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-10
+                    2020-06-03
                 </div>
                 
 
@@ -490,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    142
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -512,22 +508,174 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="网站搭建"><a href="#网站搭建" class="headerlink" title="网站搭建"></a>网站搭建</h1><h2 id="安装需要的编辑软件"><a href="#安装需要的编辑软件" class="headerlink" title="安装需要的编辑软件"></a>安装需要的编辑软件</h2><ul>
-<li>Typora<br>个人建议在国内的软件上下载，不要去官网，下载慢  </li>
-<li>vs code<br>轻量级文档编辑器  </li>
-</ul>
-<h2 id="1-nodejs，Git环境搭建："><a href="#1-nodejs，Git环境搭建：" class="headerlink" title="1.nodejs，Git环境搭建："></a>1.nodejs，Git环境搭建：</h2><ul>
-<li><a href="https://blog.csdn.net/qq_43285335/article/details/90696126" target="_blank" rel="noopener">node.js搭建</a> </li>
-<li><a href="https://www.cnblogs.com/xueweisuoyong/p/11914045.html" target="_blank" rel="noopener">git搭建</a>-<br><a href="https://www.cnblogs.com/luyuandatabase/p/12145707.html" target="_blank" rel="noopener">淘宝云配置</a> </li>
-</ul>
-<h2 id="2-注册github"><a href="#2-注册github" class="headerlink" title="2.注册github"></a>2.注册github</h2><ol>
-<li>注册就不用我说了，创建仓库视频里有，然后这个也很简单，不会就百度（应该没人去百度<br>的，太简单了）</li>
-<li>格式要求：gfyuan.github.io</li>
-</ol>
-<h2 id="3-快速利用hexo搭建博客："><a href="#3-快速利用hexo搭建博客：" class="headerlink" title="3.快速利用hexo搭建博客："></a>3.快速利用hexo搭建博客：</h2><p> 1.<a href="https://hexoscript.gitbook.io/hexo-script/" target="_blank" rel="noopener">脚本教程</a>  </p>
-<p> 2.<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">主题安装及优化</a> </p>
-<p> <a href="https://www.jianshu.com/p/1e402922ee32" target="_blank" rel="noopener">Markdown入门</a></p>
+                <p>1:switch语句(掌握)  </p>
+<pre><code>(1)格式：
+    switch(表达式) {
+        case 值1:
+            语句体1;
+            break;
+        case 值2:
+            语句体2;
+            break;
+        ...
+        default:
+            语句体n+1;
+            break;
+    }
 
+    格式解释说明：
+        switch:说明这是switch语句。
+        表达式:可以是byte,short,int,char
+            JDK5以后可以是枚举
+            JDK7以后可以是字符串
+        case:后面的值就是要和表达式进行比较的值
+        break:表示程序到这里中断，跳出switch语句
+        default:如果所有的情况都不匹配,就执行这里,相当于if语句中的else
+(2)面试题
+    switch语句的表达式可以是byte吗?可以是long吗?可以是String吗?
+        可以,不可以,JDK7以后可以
+(3)执行流程:
+    A:首先计算表达式的值
+    B:和每一个case进行匹配，如果有就执行对应的语句体，看到break就结束。
+    C:如果没有匹配，就执行default的语句体n+1。
+(4)注意事项:
+    A:case后面只能是常量，不能是变量，而且，多个case后面的值不能出现相同的
+    B:default可以省略吗?
+        可以省略，但是不建议，因为它的作用是对不正确的情况给出提示。
+        特殊情况：
+            case就可以把值固定。
+            A,B,C,D
+    C:break可以省略吗?
+        可以省略，但是结果可能不是我们想要的。
+        会出现一个现象：case穿透。
+        最终我们建议不要省略
+    D:default一定要在最后吗?
+        不是，可以在任意位置。但是建议在最后。
+    E:switch语句的结束条件
+        a:遇到break就结束了
+        b:执行到末尾就结束了
+(5)案例：
+    A:键盘录入一个数字(1-7),输出对应的星期几。
+    B:单项选择题
+    C:键盘录入一个字符串的问题
+        String s = sc.nextLine();
+    D:根据给定的月份,输出对应的季节
+(6)if语句和switch语句各自的场景
+    A:if
+        针对boolean类型的判断
+        针对一个范围的判断
+        针对几个常量的判断
+    B:switch
+        针对几个常量的判断</code></pre><p>2:循环语句(掌握)  </p>
+<pre><code>(1)有三种:for,while,do...while
+(2)for循环语句
+    A:格式
+        for(初始化语句;判断条件语句;控制条件语句){
+            循环体语句;
+        }
+
+        执行流程：
+            a:执行初始化语句
+            b:执行判断条件语句
+                如果这里是true，就继续
+                如果这里是false，循环就结束
+            c:执行循环体语句
+            d:执行控制条件语句
+            e:回到b
+    B:注意事项
+        a:判断条件语句无论简单还是复杂，结果是boolean类型
+        b:循环体语句如果是一条，可以省略大括号，但是不建议
+        c:有分号就没有左大括号，有左大括号就没有分号
+    C:案例
+        a:输出10次HelloWorld
+        b:输出1-10的数据
+        c:输出10-1的数据
+        d:求1-10的和
+        e:求1-100的和,求1-100的偶数和,求1-100的奇数和
+        f:求5的阶乘
+        g:在控制台打印水仙花数
+        h:统计水仙花个数
+        i:改进版的回文数
+            一个五位数
+            个位 = 万位
+            十位 = 千位
+            个位 + 十位 + 千位 + 万位 = 百位
+        j:统计1-1000之间同时满足如下条件的数据有多少个
+            x%3==2
+            x%5==3
+            x%7==2
+(3)while循环
+    A:基本格式
+        while(判断条件语句) {
+            循环体语句;
+        }
+
+        扩展格式：
+        初始化语句;
+        while(判断条件语句){
+            循环体语句;
+            控制条件语句;
+        }
+
+        通过查看这个格式，我们就知道while循环可以和for循环等价转换。
+    B:while的练习
+        把for语句的练习用while改进
+    C:for和while的区别
+        a:使用上的区别
+            for语句的那个控制条件变量,在循环结束后不能在使用了。
+            而while的可以继续使用。
+        b:理解上的区别
+            for适合于一个范围的判断
+            while适合次数不明确的
+                举例:吃葡萄
+    D:案例：
+        a:珠穆朗玛峰问题
+        b:小芳存钱问题(break以后才能做)
+(4)do...while循环
+    A:基本格式
+        do {
+            循环体语句;
+        }while(判断条件语句);
+
+        扩展格式：
+        初始化语句;
+        do {
+            循环体语句;
+            控制条件语句;
+        }while(判断条件语句);
+
+        通过查看格式，我们就可以看出其实三种循环的格式可以是统一的。
+    B:三种循环的区别
+        a:do...while循环至少执行一次循环体
+        b:for和while必须先判断条件是否是true，然后后才能决定是否执行循环体
+(5)循环使用的注意事项(死循环)
+    A:一定要注意修改控制条件,否则容易出现死循环。
+    B:最简单的死循环格式
+        a:while(true){...}
+
+        b:for(;;){}</code></pre><p>3:控制跳转语句(掌握)  </p>
+<pre><code>(1)break:中断的意思
+    A:用在循环和switch语句中，离开此应用场景无意义。
+    B:作用
+        a:跳出单层循环
+        b:跳出多层循环，需要标签语句的配合
+(2)continue:继续
+    A:用在循环中，离开此应用场景无意义。
+    B:作用
+        a:跳出单层循环的一次，可以继续下一次
+    C:填空题
+        for(int x=1; x&lt;=10; x++) {
+            if(x%3 == 0) {
+                //补齐代码
+            }
+            System.out.println(&quot;Java基础班&quot;);
+        }
+        如何让控制台输出2次：Java基础班
+        如何让控制台输出7次：Java基础班
+        如何让控制台输出13次：Java基础班
+(3)return:返回
+    A:用于结束方法的，后面还会在继续讲解和使用。
+    B:一旦遇到return,程序就不会在继续往后执行。</code></pre>
             </div>
             <hr/>
 
@@ -542,7 +690,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">xiao xing</a>
+                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">xing xiao</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -552,7 +700,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/031034155.html">http://ww042q.coding-pages.com/2020/031034155.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/060359868.html">http://ww042q.coding-pages.com/2020/060359868.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -565,7 +713,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="http://ww042q.coding-pages.com" target="_blank">xiao xing</a>
+                    <a href="http://ww042q.coding-pages.com" target="_blank">xing xiao</a>
                     !
                 </span>
             </div>
@@ -590,12 +738,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
-                                </a>
-                            
-                                <a href="/tags/blog/">
-                                    <span class="chip bg-color">blog</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
                         </div>
@@ -763,45 +907,55 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/032134362.html">
+                <a href="/2020/060359868.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/PIC5212.jpg" class="responsive-img" alt="你若安好，便是晴天">
                         
-                        <span class="card-title">你若安好，便是晴天</span>
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Java-day04">
+                        
+                        <span class="card-title">Java-day04</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Love every in the world witnout exception!
+                            1:switch语句(掌握)  
+(1)格式：
+    switch(表达式) {
+        case 值1:
+            语句体1;
+            break;
+        case 值2:
+       
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BE%8E%E6%96%87/" class="post-category">
-                                    美文
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%83%85%E6%84%9F/">
-                        <span class="chip bg-color">情感</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
@@ -815,31 +969,39 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/022054914.html">
+                <a href="/2020/060211165.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="博客撰写教程">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Java-day03">
                         
-                        <span class="card-title">博客撰写教程</span>
+                        <span class="card-title">Java-day03</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Markdown入门与文章Front-matter介绍
+                            1:运算符(掌握)  
+(1)算术运算符
+    A:+,-,*,/,%,++,--
+    B:+的用法
+        a:加法
+        b:正号
+        c:字符串连接符
+    C:/和%的区别
+        数据
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
-                                    教程
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
                                 </a>
                             
                             
@@ -849,8 +1011,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%96%87%E7%AB%A0/">
-                        <span class="chip bg-color">文章</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
