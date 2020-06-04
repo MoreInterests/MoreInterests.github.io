@@ -4,14 +4,15 @@ top: false
 cover: false
 toc: true
 mathjax: false
-date: 2020-06-03 19:42:58
 author: xing xiao
+tags: Java
+categories: 编程
+abbrlink: 59868
+date: 2020-06-03 19:42:58
 img:
 coverImg:
 password:
 summary:
-tags: Java
-categories: 编程
 ---
 1:switch语句(掌握)  
 
