@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo博客之备份与恢复, toily的博客">
+    <meta name="keywords" content="Java-day05, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo博客之备份与恢复 | toily的博客</title>
+    <title>Java-day05 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo博客之备份与恢复</h1>
+                    <h1 class="description center-align post-title">Java-day05</h1>
                 </div>
             </div>
         </div>
@@ -452,12 +452,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
-                            </a>
-                        
-                            <a href="/tags/github/">
-                                <span class="chip bg-color">github</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -468,8 +464,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" class="post-category">
-                                网站搭建
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                编程
                             </a>
                         
                     </div>
@@ -481,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-01
+                    2020-06-04
                 </div>
                 
 
@@ -490,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    657
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
 
@@ -512,30 +508,192 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h1><p>1、在你的博客仓库创建一个分支<code>hexo</code>（这个命名随意）；</p>
-<p>2、设置<code>hexo</code>为默认分支（不知道怎么设的可以百度）；<br>( <font color="ff0000">第一步和第二步都在<a href="https://github.com/" target="_blank" rel="noopener">github</a>网站中操作</font>)  </p>
-<p>3、将博客仓库<code>hexo分支</code>clone至本地，<br>在本地新建一个文件夹<code>hexo</code>，并在此文件夹中右击鼠标打开<code>git bash</code>,执行命令  </p>
-<pre><code>git clone git@github.com:Username/Username.github.io.git  </code></pre><p>(<font color="ff0000"><code>Username</code>为你自己的名字</font>)<br>克隆完之后在<code>hexo</code>文件夹中会出现新的Username.github.io文件夹，将其中的文件全部删除，只保留<code>.git\</code>文件夹。</p>
-<p>将之前的博客根目录文件夹中的<br><code>_config.yml</code>，<code>themes/</code>，<code>source</code>，<code>scffolds/</code>，<code>package.json</code>，<code>.gitignore</code>复制到Username.github.io文件夹；（<code>Username</code>是你自己的用户名）</p>
-<a id="more"></a>
-<p>4、将themes/next/(是NexT主题)中的<code>.git/</code>删除，否则无法将主题文件夹<code>push</code>；( <font color="ff0000"><code>matery</code>主题中没有这个文件夹，应该就不用删除了</font>)</p>
-<p>5、在Username.github.io文件夹执行<code>git add .</code>，<code>git commit -m &quot;提交文件&quot;</code>，<code>git push origin hexo</code>来提交hexo网站源文件；( <font color="ff0000">命令中的<code>hexo</code>为你创建的分支的名字</font>)    </p>
-<p>6、执行<code>hexo g -d</code>生成静态网页部署到github上。<br>这样，Username.github.io仓库就有master分支保存静态网页，hexo分支保存源文件。<br>到这里备份就完成了。  </p>
-<h1 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h1><h2 id="此后所有的博客操作都在Username-github-io文件夹中进行"><a href="#此后所有的博客操作都在Username-github-io文件夹中进行" class="headerlink" title="( 此后所有的博客操作都在Username.github.io文件夹中进行)"></a>( <font color="ff0000">此后所有的博客操作都在Username.github.io文件夹中进行</font>)</h2><h3 id="在本地对博客修改（包括修改主题样式、发布新文章等）后在Username-github-io文件夹中依次执行命令"><a href="#在本地对博客修改（包括修改主题样式、发布新文章等）后在Username-github-io文件夹中依次执行命令" class="headerlink" title="在本地对博客修改（包括修改主题样式、发布新文章等）后在Username.github.io文件夹中依次执行命令"></a>在本地对博客修改（包括修改主题样式、发布新文章等）后在Username.github.io文件夹中依次执行命令</h3><pre><code>git add .  
-git commit -m &quot;提交文件  
-git push origin hexo  
-hexo g -d  </code></pre><p>即在每次修改完本地博客后重复执行5、6步来完成来提交hexo网站源文件和生成静态网页部署到github上。  </p>
-<h1 id="恢复博客"><a href="#恢复博客" class="headerlink" title="恢复博客"></a>恢复博客</h1><p>换电脑想改博客：  </p>
-<p>1、安装git；  </p>
-<p>2、安装Nodejs和npm；  </p>
-<p>3、使用克隆命令<code>git clone git@github.com:Username/Username.github.io.git</code>将仓库拷贝至本地；  </p>
-<p>4、在文件夹内执行命令<code>npm install hexo-cli -g</code>、<code>npm install</code>、<code>npm install hexo-deployer-git</code>；</p>
-<h2 id="添加ssh-keys"><a href="#添加ssh-keys" class="headerlink" title="添加ssh-keys"></a>添加ssh-keys</h2><p>在终端下运行：<code>ssh-keygen -t rsa -C &quot;yourname@email.com&quot;</code>，一路回车；<br>会在.ssh目录生成<code>id_rsa</code>、<code>id_rsa.pub</code>两个文件，这就是密钥对，<code>id_rsa</code>是私钥，千万不能泄漏出去；  </p>
-<p>登录<a href="https://github.com/" target="_blank" rel="noopener">Github</a>，打开「Settings」–&gt;「SSH and GPG keys」，然后点击「new SSH key」，填上任意Title，在Key文本框里粘贴公钥<code>id_rsa.pub</code>文件的内容，注意不要粘贴成<code>id_rsa</code>，最后点击「Add SSH Key」。</p>
-<blockquote>
-<p><font color="ff0000">版权声明：本文为个人总结，欢迎转载，转载请注明出处，勿用于商业用途！</font>   </p>
-</blockquote>
+                <p>1:方法(掌握)  </p>
+<pre><code>(1)方法：就是完成特定功能的代码块。
+    注意：在很多语言里面有函数的定义，而在Java中，函数被称为方法。
+(2)格式：
+    修饰符 返回值类型 方法名(参数类型 参数名1,参数类型 参数名2...) {
+        方法体语句;
+        return 返回值;
+    }
 
+    修饰符：目前就用 public static。后面再详细讲解其他修饰符
+    返回值类型：就是功能结果的数据类型
+    方法名：就是起了一个名字，方便我们调用该方法。
+    参数类型：就是参数的数据类型
+    参数名：就是变量
+    参数分类：
+        实参：实际参与运算的数据
+        形参：方法上定义的，用于接收实际参数的变量
+    方法体语句：就是完成功能的代码块
+    return：结束方法
+    返回值：就是功能的结果，由return带给调用者。
+(3)两个明确：
+    返回值类型：结果的数据类型
+    参数列表：参数的个数及对应的数据类型
+(4)方法调用
+    A:有明确返回值的方法
+        a:单独调用，没有意义
+        b:输出调用，不是很好，因为我可能需要不结果进行进一步的操作。但是讲课一般我就用了。
+        c:赋值调用，推荐方案
+    B:void类型修饰的方法
+        a:单独调用
+(5)案例：
+    A:求和方案
+    B:获取两个数中的较大值
+    C:比较两个数据是否相同
+    D:获取三个数中的最大值
+    E:输出m行n列的星形
+    F:输出nn乘法表
+(6)方法的注意事项
+    A:方法不调用不执行
+    B:方法之间是平级关系，不能嵌套定义
+    C:方法定义的时候，参数是用，隔开的
+    D:方法在调用的时候，不用在传递数据类型
+    E:如果方法有明确的返回值类型，就必须有return语句返回。
+(7)方法重载
+    在同一个类中，方法名相同，参数列表不同。与返回值无关。
+
+    参数列表不同：
+        参数的个数不同。
+        参数的对应的数据类型不同。
+(8)方法重载案例
+    不同的类型的多个同名方法的比较。</code></pre><p>2:数组(掌握)  </p>
+<pre><code>(1)数组：存储同一种数据类型的多个元素的容器。
+(2)特点：每一个元素都有编号，从0开始，最大编号是长度-1。
+         编号的专业叫法：索引
+(3)定义格式
+    A:数据类型[] 数组名;
+    B:数据类型 数组名[];
+
+    推荐是用A方式，B方法就忘了吧。
+    但是要能看懂
+(4)数组的初始化
+    A:动态初始化
+        只给长度，系统给出默认值
+
+        举例：int[] arr = new int[3];
+    B:静态初始化
+        给出值，系统决定长度
+
+        举例：int[] arr = new int[]{1,2,3};
+        简化版：int[] arr = {1,2,3};
+(5)Java的内存分配
+    A:栈 存储局部变量
+    B:堆 存储所有new出来的
+    C:方法区(面向对象部分详细讲解)
+    D:本地方法区(系统相关)
+    E:寄存器(CPU使用)
+
+    注意：
+        a:局部变量 在方法定义中或者方法声明上定义的变量。
+        b:栈内存和堆内存的区别
+            栈：数据使用完毕，就消失。
+            堆：每一个new出来的东西都有地址
+                每一个变量都有默认值
+                    byte,short,int,long 0
+                    float,double 0.0
+                    char &#39;\u0000&#39;
+                    boolean false
+                    引用类型 null
+                数据使用完毕后，在垃圾回收器空闲的时候回收。
+(6)数组内存图
+    A:一个数组
+    B:二个数组
+    C:三个数组(两个栈变量指向同一个堆内存)
+(7)数组的常见操作
+    A:遍历
+        方式1：
+            public static void printArray(int[] arr) {
+                for(int x=0; x&lt;arr.length; x++) {
+                    System.out.println(arr[x]);
+                }
+            }
+
+        方式2：
+            public static void printArray(int[] arr) {
+                System.out.print(&quot;[&quot;);
+                for(int x=0; x&lt;arr.length; x++) {
+                    if(x == arr.length-1) {
+                        System.out.println(arr[x]+&quot;]&quot;);
+                    }else {
+                        System.out.println(arr[x]+&quot;, &quot;);
+                    }
+                }
+            }
+    B:最值
+        最大值：
+            public static int getMax(int[] arr) {
+                int max = arr[0];
+
+                for(int x=1; x&lt;arr.length; x++) {
+                    if(arr[x] &gt; max) {
+                        max = arr[x];
+                    }
+                }
+
+                return max;
+            }
+
+        最小值：
+            public static int getMin(int[] arr) {
+                int min = arr[0];
+
+                for(int x=1; x&lt;arr.length; x++) {
+                    if(arr[x] &lt; min) {
+                        min = arr[x];
+                    }
+                }
+
+                return min;
+            }
+    C:逆序
+        方式1：
+            public static void reverse(int[] arr) {
+                for(int x=0; x&lt;arr.length/2; x++) {
+                    int temp = arr[x];
+                    arr[x] = arr[arr.length-1-x];
+                    arr[arr.length-1-x] = temp;
+                }
+            }
+
+        方式2：
+            public static void reverse(int[] arr) {
+                for(int start=0,end=arr.length-1; start&lt;=end; start++,end--) {
+                    int temp = arr[start];
+                    arr[start] = arr[end];
+                    arr[end] = temp;
+                }
+            }
+    D:查表
+            public static String getString(String[] strArray,int index) {
+                return strArray[index];
+            }
+    E:基本查找
+        方式1：
+            public static int getIndex(int[] arr,int value) {
+                for(int x=0; x&lt;arr.length; x++) {
+                    if(arr[x] == value) {
+                        return x;
+                    }
+                }
+
+                return -1;
+            }
+
+        方式2：
+            public static int getIndex(int[] arr,int value) {
+                int index = -1;
+
+                for(int x=0; x&lt;arr.length; x++) {
+                    if(arr[x] == value) {
+                        index = x;
+                        break;
+                    }
+                }
+
+                return index;
+            }</code></pre>
             </div>
             <hr/>
 
@@ -550,7 +708,7 @@ hexo g -d  </code></pre><p>即在每次修改完本地博客后重复执行5、6
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">xiao xing</a>
+                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">xing xiao</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -560,7 +718,7 @@ hexo g -d  </code></pre><p>即在每次修改完本地博客后重复执行5、6
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/050127743.html">http://ww042q.coding-pages.com/2020/050127743.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/060410525.html">http://ww042q.coding-pages.com/2020/060410525.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -573,7 +731,7 @@ hexo g -d  </code></pre><p>即在每次修改完本地博客后重复执行5、6
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="http://ww042q.coding-pages.com" target="_blank">xiao xing</a>
+                    <a href="http://ww042q.coding-pages.com" target="_blank">xing xiao</a>
                     !
                 </span>
             </div>
@@ -598,12 +756,8 @@ hexo g -d  </code></pre><p>即在每次修改完本地博客后重复执行5、6
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
-                                </a>
-                            
-                                <a href="/tags/github/">
-                                    <span class="chip bg-color">github</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
                         </div>
@@ -771,31 +925,92 @@ hexo g -d  </code></pre><p>即在每次修改完本地博客后重复执行5、6
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/052749146.html">
+                <a href="/2020/060410525.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="CCS5.5——快速傅里叶变换(FFT)">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Java-day05">
                         
-                        <span class="card-title">CCS5.5——快速傅里叶变换(FFT)</span>
+                        <span class="card-title">Java-day05</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-1.原理1、离散傅里叶变换DFT的定义：将时域的采样变换成频域的周期性离散函数，频域的采样也可以变换成时域的周期性离散函数，这样的变化称为离散傅里叶变换，简称DFT。  
-2、FFT是DFT的一种快速算法。由于在计算DFT是一次复数乘法需
+                            1:方法(掌握)  
+(1)方法：就是完成特定功能的代码块。
+    注意：在很多语言里面有函数的定义，而在Java中，函数被称为方法。
+(2)格式：
+    修饰符 返回值类型 方法名(参数类型 参数名1,参数类型 参数名2...) {
+
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-27
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/060359868.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Java-day04">
+                        
+                        <span class="card-title">Java-day04</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1:switch语句(掌握)  
+(1)格式：
+    switch(表达式) {
+        case 值1:
+            语句体1;
+            break;
+        case 值2:
+       
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -811,61 +1026,8 @@ hexo g -d  </code></pre><p>即在每次修改完本地博客后重复执行5、6
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/042226283.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="博客搭建Hexo+Coding(最新教程)">
-                        
-                        <span class="card-title">博客搭建Hexo+Coding(最新教程)</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            最新的Coding部署教程，搭建静态博客，可绑定私人域名
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    网站搭建
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
-                    <a href="/tags/blog/">
-                        <span class="chip bg-color">blog</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
