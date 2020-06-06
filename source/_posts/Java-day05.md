@@ -4,14 +4,15 @@ top: false
 cover: false
 toc: true
 mathjax: false
-date: 2020-06-04 22:54:53
 author: xing xiao
+tags: Java
+categories: 编程
+abbrlink: 10525
+date: 2020-06-04 22:54:53
 img:
 coverImg:
 password:
 summary:
-tags: Java
-categories: 编程
 ---
 1:方法(掌握)  
 
