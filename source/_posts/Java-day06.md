@@ -4,14 +4,15 @@ top: false
 cover: false
 toc: true
 mathjax: false
-date: 2020-06-06 21:39:25
 author: xing xiao
+tags: Java
+categories: 编程
+abbrlink: 10333
+date: 2020-06-06 21:39:25
 img:
 coverImg:
 password:
 summary:
-tags: Java
-categories: 编程
 ---
 1:二维数组(理解)  
 
