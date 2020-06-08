@@ -4,14 +4,15 @@ top: false
 cover: false
 toc: true
 mathjax: false
-date: 2020-06-07 19:48:53
 author: xing xiao
+tags: Java
+categories: 编程
+abbrlink: 59548
+date: 2020-06-07 19:48:53
 img:
 coverImg:
 password:
 summary:
-tags: Java
-categories: 编程
 ---
 1:成员变量和局部变量的区别(理解)  
 
