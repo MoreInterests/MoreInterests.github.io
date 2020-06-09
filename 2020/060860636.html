@@ -486,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -596,7 +596,35 @@
     A:学生和老师案例
         继承前
         继承后
-    B:猫狗案例的分析和实现</code></pre>
+    B:猫狗案例的分析和实现</code></pre><p>1:代码块是什么?代码块的分类和各自特点?  </p>
+<p>用{}括起来的代码。<br>分类：<br>A：局部代码块：用于限定变量的生命周期，及早释放，提高内存利用率<br>B：构造代码块：把多个构造方法中相同的代码可以放到这里，每个构造方法执行前，首先执行构造代码块。<br>C：静态大妈快：对类的数据进行初始化，仅仅只执行一次。<br>静态代码块&gt;构造代码块&gt;局部代码块</p>
+<p>2:静态代码块,构造代码块,构造方法的执行流程?    </p>
+<p>3:继承概述  </p>
+<p>把多个类中相同的成员给提取出来定义到一个独立的类中。然后让这多个类和该独立的类产生一个关系，这多个类就具备了这些内容，这个关系叫继承。</p>
+<p>4:继承的好处  </p>
+<p>A：提高了代码的复用性<br>B：提高了代码的维护性<br>C：让类与类产生了一个关系，是多态的前提</p>
+<p>5:Java中继承的特点  </p>
+<p>A：Java中类只支持单继承<br>B：Java中可以多层继承</p>
+<p>6:Java中继承的注意事项?以及我们什么时候使用继承?  </p>
+<p>A：子类不能继承父类的私有成员<br>B：子类不能继承父类的构造方法，但是可以通过super去访问<br>C：不要为了部分功能而去继承</p>
+<p>A：继承体现的是： is a的关系<br>B：采用假设法</p>
+<p>7:继承中的成员访问特点  </p>
+<pre><code>A:成员变量
+    在子类方法中访问一个变量
+B:成员方法
+    在测试类中通过子类对象去访问一个方法</code></pre><p>8:继承中构造方法的执行流程?假如父类没有无参构造方法，子类应该怎么办?  </p>
+<p>A：子类的构造方法默认会去访问父类的无参构造方法，是为了子类访问父类数据的初始化<br>B：            子类通过super去明确调用带参构造<br>    子类通过this调用本身的其他构造，但是一定会有一个去访问了父类的构造<br>    让父类提供无参构造<br>9:面试题：  </p>
+<pre><code>方法重写和方法重载的区别?方法重载能改变返回值类型吗?
+Overload （方法重载）同一个类中，出现的方法名相同，参数列表不同的现象
+Override    （方法重写）在子类中，出现和父类中一摸一样的方法声明的现象
+
+方法重载能改变返回值类型，因为它和返回值类型无关
+
+this关键字和super关键字分别代表什么?以及他们各自的使用场景和作用。
+    this：代表当前类的对象引用
+    super：代表父类存储空间的标识。（可以理解为父类的引用，通过这个东西可以访问父类的成员）</code></pre><p>10:继承案例练习  </p>
+<p>11:猜数字小游戏练习。  </p>
+<pre><code>通过API学习并使用Math类的random()方法。        </code></pre>
             </div>
             <hr/>
 
@@ -828,34 +856,36 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/060860636.html">
+                <a href="/2020/060911293.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="Java-day08">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Java-day09">
                         
-                        <span class="card-title">Java-day08</span>
+                        <span class="card-title">Java-day09</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:如何制作帮助文档(了解)  
-(1)写一个类
-(2)加入文档注释
-(3)通过javadoc工具生成即可
-    javadoc -d 目录 -author -version ArrayTool.java2:通过JDK提供的API学习了M
+                            1:final关键字(掌握)  
+(1)是最终的意思，可以修饰类，方法，变量。
+(2)特点：
+    A:它修饰的类，不能被继承。
+    B:它修饰的方法，不能被重写。
+    C:它修饰的变量，是一个常量。
+(3)面试相关：
+    A
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-08
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -868,7 +898,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1083,7 +1112,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.7k</span>&nbsp;字
+                class="white-color">15.8k</span>&nbsp;字
             
             
             

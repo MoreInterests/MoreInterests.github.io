@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java-day02, toily的博客">
+    <meta name="keywords" content="Java-day09, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java-day02 | toily的博客</title>
+    <title>Java-day09 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java-day02</h1>
+                    <h1 class="description center-align post-title">Java-day09</h1>
                 </div>
             </div>
         </div>
@@ -477,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-01
+                    2020-06-09
                 </div>
                 
 
@@ -486,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    4 分
                 </div>
                 
 
@@ -508,180 +508,149 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1:关键字(掌握)  </p>
-<pre><code>(1)被Java语言赋予特定含义的单词
+                <p>1:final关键字(掌握)  </p>
+<pre><code>(1)是最终的意思，可以修饰类，方法，变量。
 (2)特点：
-    全部小写。
-(3)注意事项：
-    A:goto和const作为保留字存在。
-    B:类似于Notepad++这样的高级记事本会对关键字有特殊颜色标记</code></pre><p>2:标识符(掌握)  </p>
-<pre><code>(1)就是给类，接口，方法，变量等起名字的字符序列
-(2)组成规则：
-    A:英文大小写字母
-    B:数字
-    C:$和_
-(3)注意事项：
-    A:不能以数字开头
-    B:不能是java中的关键字
-    C:区分大小写
-(4)常见的命名规则(见名知意)
-    A:包    全部小写
-        单级包：小写
-            举例：liuyi,com
-        多级包：小写，并用.隔开
-            举例：cn.itcast,com.baidu                
-    B:类或者接口
-        一个单词：首字母大写
-            举例：Student,Demo
-        多个单词：每个单词首字母大写
-            举例：HelloWorld,StudentName
-    C:方法或者变量
-        一个单词：首字母小写
-            举例：name,main
-        多个单词：从第二个单词开始，每个单词首字母大写
-            举例：studentAge,showAllNames()
-    D:常量
-        全部大写
-        一个单词：大写
-            举例：PI
-        多个单词：大写，并用_隔开
-            举例：STUDENT_MAX_AGE</code></pre><p>3:注释(掌握)  </p>
-<pre><code>(1)就是对程序进行解释说明的文字
-(2)分类：
-    A:单行注释    //
-    B:多行注释    /**/
-    C:文档注释(后面讲) /** */
-(3)把HelloWorld案例写了一个带注释的版本。
-    后面我们要写一个程序的过程。
-    需求：
-    分析：
-    实现：
-    代码体现：
-(4)注释的作用
-    A:解释说明程序，提高了代码的阅读性。
-    B:可以帮助我们调试程序。
-        后面我们会讲解一个更高端的一个调试工具</code></pre><p>4:常量(掌握)  </p>
-<pre><code>(1)在程序执行的过程中，其值不发生改变的量
-(2)分类：
-    A:字面值常量
-    B:自定义常量(后面讲)
-(3)字面值常量
-    A:字符串常量 &quot;hello&quot;
-    B:整数常量    12,23
-    C:小数常量    12.345
-    D:字符常量    &#39;a&#39;,&#39;A&#39;,&#39;0&#39;
-    E:布尔常量    true,false
-    F:空常量    null(后面讲)
-(4)在Java中针对整数常量提供了四种表现形式
-    A:二进制    由0，1组成。以0b开头。
-    B:八进制    由0，1，...7组成。以0开头。
-    C:十进制    由0，1，...9组成。整数默认是十进制。
-    D:十六进制    由0，1，...9,a,b,c,d,e,f(大小写均可)组成。以0x开头。</code></pre><p>5:进制转换(了解)  </p>
-<pre><code>(1)其他进制到十进制
-    系数：就是每一个位上的数值
-    基数：x进制的基数就是x
-    权：对每一个位上的数据，从右，并且从0开始编号，对应的编号就是该数据的权。
+    A:它修饰的类，不能被继承。
+    B:它修饰的方法，不能被重写。
+    C:它修饰的变量，是一个常量。
+(3)面试相关：
+    A:局部变量
+        a:基本类型 值不能发生改变
+        b:引用类型 地址值不能发生改变，但是对象的内容是可以改变的
+    B:初始化时机
+        a:只能初始化一次。
+        b:常见的给值
+            定义的时候。(推荐)
+            构造方法中。</code></pre><p>2:多态(掌握)  </p>
+<pre><code>(1)同一个对象在不同时刻体现出来的不同状态。
+(2)多态的前提：
+    A:有继承或者实现关系。
+    B:有方法重写。
+    C:有父类或者父接口引用指向子类对象。
 
-    结果：系数*基数^权次幂之和。
-(2)十进制到其他进制
-    除基取余，直到商为0，余数反转。
-(3)进制转换的快速转换法
-    A:十进制和二进制间的转换
-        8421码。
-    B:二进制到八进制，十六进制的转换</code></pre><p>6:变量(掌握)  </p>
-<pre><code>(1)在程序的执行过程中，其值在某个范围内可以发生改变的量
-(2)变量的定义格式：
-    A:数据类型 变量名 = 初始化值;
-    B:数据类型 变量名;
-      变量名 = 初始化值;</code></pre><p>7:数据类型(掌握)  </p>
-<pre><code>(1)Java是一种强类型语言，针对每种数据都提供了对应的数据类型。
-(2)分类：
-    A:基本数据类型：4类8种
-    B:引用数据类型：类，接口，数组。
-(3)基本数据类型
-    A:整数            占用字节数
-        byte            1
-        short            2
-        int             4
-        long            8
-    B:浮点数
-        float            4
-        double            8
-    C:字符
-        char            2
-    D:布尔
-        boolean            1
+    多态的分类：
+        a:具体类多态
+            class Fu {}
+            class Zi extends Fu {}
 
-    注意：
-        整数默认是int类型，浮点数默认是double。
+            Fu f = new Zi();
+        b:抽象类多态
+            abstract class Fu {}
+            class Zi extends Fu {}
 
-        长整数要加L或者l。
-        单精度的浮点数要加F或者f。</code></pre><p>8:数据类型转换(掌握)  </p>
-<pre><code>(1)boolean类型不参与转换
-(2)默认转换
-    A:从小到大
-    B:byte,short,char -- int -- long -- float -- double
-    C:byte,short,char之间不相互转换，直接转成int类型参与运算。
-(3)强制转换
-    A:从大到小
-    B:可能会有精度的损失，一般不建议这样使用。
-    C:格式：
-        目标数据类型 变量名 = (目标数据类型) (被转换的数据);
-(4)思考题和面试题：
-    A:下面两种方式有区别吗?
-        float f1 = 12.345f;
-        float f2 = (float)12.345;
-    B:下面的程序有问题吗，如果有，在哪里呢?
-        byte b1 = 3;
-        byte b2 = 4;
-        byte b3 = b1 + b2;
-        byte b4 = 3 + 4;
-    C:下面的操作结果是什么呢?
-        byte b = (byte)130;
-    D:字符参与运算
-        是查找ASCII里面的值
-        &#39;a&#39;        97
-        &#39;A&#39;        65
-        &#39;0&#39;        48
+            Fu f = new Zi();
+        c:接口多态
+            interface Fu {}
+            class Zi implements Fu {}
 
-        System.out.println(&#39;a&#39;);
-        System.out.println(&#39;a&#39; + 1);
-    E:字符串参与运算
-        这里其实是字符串的连接
+            Fu f = new Zi();
+(3)多态中的成员访问特点
+    A:成员变量
+        编译看左边，运行看左边
+    B:构造方法
+        子类的构造都会默认访问父类构造
+    C:成员方法
+        编译看左边，运行看右边
+    D:静态方法
+        编译看左边，运行看左边
 
-        System.out.println(&quot;hello&quot;+&#39;a&#39;+1);
-        System.out.println(&#39;a&#39;+1+&quot;hello&quot;);
-        System.out.println(&quot;5+5=&quot;+5+5);
-        System.out.println(5+5+&quot;=5+5&quot;);  </code></pre><hr>
-<p>1：什么是注释?注释分为几种?注释有什么作用?  </p>
-<pre><code>就是对程序进行解释说明；分为三种，单行注释，多行注释，文档注释；解释说明，提高代码的阅读性，帮助我们调试程序。</code></pre><p>2：什么是关键字?有什么特点?  </p>
-<pre><code>被Java语言赋予特定含义的单词；全部小写；goto和const作为保留字存在。</code></pre><p>3：什么是标识符?由哪些部分组成?常见的命名规则有哪些?  </p>
-<pre><code>就是给类，接口，方法，变量名等其名字的字符序列；A:英文字母大小写B:数字C：$和_。</code></pre><p>4：什么是常量?常量的分类?字面值常量表现形式有哪些?    </p>
-<pre><code>在程序执行过程中，其值不发生改变的量；A字符串B整数C小数D字符E布尔F空常量null。</code></pre><p>5：计算出十进制46对应的二进制，八进制，十六进制的值。  </p>
-<p>至于进制的内容今天在练习一次，以后就可以不用练习了。<br>后面能听懂就OK了。不用浪费太多时间。<br>(可用计算器验证你算的是否正确)</p>
-<p>6：什么是变量?变量的定义格式?要使用变量需要注意什么?  </p>
-<pre><code>在程序执行过程中，其值在某个范围内可以发生改变的量；A数据类型 变量名 = 初始值；B 数据类型 变量名；变量名 = 初始化值；</code></pre><p>7：Java中的数据类型分几类?基本数据类型有哪些?  </p>
-<pre><code>A基本数据类型：4类8种 B引用数据类型：类，接口，数组。
-基本数据类型：
-    A整数 
-    byte short int long   1 2 4 8
-    B浮点数 float double   4 8
-    C字符 char  2
-    D布尔 boolean 1</code></pre><p>8：数据类型转换：  </p>
-<pre><code>隐式转换：A从小到大 Bbyte，short，char--int--long--float--double C:byte,short,char之间不相互转换，直接转成int类型参与运算。
-强制转换：A:从大到小
-          B:可能会有精度的损失，一般不建议这样使用。
-          C:格式：
-          目标数据类型 变量名 = (目标数据类型) (被转换的数据);</code></pre><p>面试题：  </p>
-<pre><code>    第一题：
-    byte b1=3,b2=4,b;
-    b=b1+b2;
-    b=3+4;
-    哪句是编译失败的呢？为什么呢？
+    为什么?
+        因为成员方法有重写。
+(4)多态的好处：
+    A:提高代码的维护性(继承体现)
+    B:提高代码的扩展性(多态体现)
+(5)多态的弊端：
+    父不能使用子的特有功能。
 
-    第二题：
-    byte  by = 130;有没有问题?有问题如何解决?结果是多少呢?</code></pre><p>9：练习打字(每天十分钟,即使休息的时候，也建议练习)</p>
-
+    现象：
+        子可以当作父使用，父不能当作子使用。
+(6)多态中的转型
+    A:向上转型
+        从子到父
+    B:向下转型
+        从父到子
+(7)孔子装爹的案例帮助大家理解多态
+(8)多态的练习
+    A:猫狗案例
+    B:老师和学生案例</code></pre><p>3:抽象类(掌握)  </p>
+<pre><code>(1)把多个共性的东西提取到一个类中，这是继承的做法。
+   但是呢，这多个共性的东西，在有些时候，方法声明一样，但是方法体。
+   也就是说，方法声明一样，但是每个具体的对象在具体实现的时候内容不一样。
+   所以，我们在定义这些共性的方法的时候，就不能给出具体的方法体。
+   而一个没有具体的方法体的方法是抽象的方法。
+   在一个类中如果有抽象方法，该类必须定义为抽象类。
+(2)抽象类的特点
+    A:抽象类和抽象方法必须用关键字abstract修饰
+    B:抽象类中不一定有抽象方法,但是有抽象方法的类一定是抽象类
+    C:抽象类不能实例化
+    D:抽象类的子类
+        a:是一个抽象类。
+        b:是一个具体类。这个类必须重写抽象类中的所有抽象方法。
+(3)抽象类的成员特点：
+    A:成员变量
+        有变量，有常量
+    B:构造方法
+        有构造方法
+    C:成员方法
+        有抽象，有非抽象
+(4)抽象类的练习
+    A:猫狗案例练习
+    B:老师案例练习
+    C:学生案例练习
+    D:员工案例练习
+(5)抽象类的几个小问题
+    A:抽象类有构造方法，不能实例化，那么构造方法有什么用?
+        用于子类访问父类数据的初始化
+    B:一个类如果没有抽象方法,却定义为了抽象类，有什么用?
+        为了不让创建对象
+    C:abstract不能和哪些关键字共存
+        a:final    冲突
+        b:private 冲突
+        c:static 无意义</code></pre><p>4:接口(掌握)  </p>
+<pre><code>(1)回顾猫狗案例，它们仅仅提供一些基本功能。
+   比如：猫钻火圈，狗跳高等功能，不是动物本身就具备的，
+   是在后面的培养中训练出来的，这种额外的功能，java提供了接口表示。
+(2)接口的特点：
+    A:接口用关键字interface修饰
+        interface 接口名 {}
+    B:类实现接口用implements修饰
+        class 类名 implements 接口名 {}
+    C:接口不能实例化
+    D:接口的实现类
+        a:是一个抽象类。
+        b:是一个具体类，这个类必须重写接口中的所有抽象方法。
+(3)接口的成员特点：
+    A:成员变量
+        只能是常量
+        默认修饰符：public static final
+    B:构造方法
+        没有构造方法
+    C:成员方法
+        只能是抽象的
+        默认修饰符：public abstract
+(4)类与类,类与接口,接口与接口
+    A:类与类
+        继承关系，只能单继承，可以多层继承
+    B:类与接口
+        实现关系，可以单实现，也可以多实现。
+        还可以在继承一个类的同时，实现多个接口
+    C:接口与接口
+        继承关系，可以单继承，也可以多继承
+(5)抽象类和接口的区别(自己补齐)?
+    A:成员区别
+        抽象类：
+        接口：
+    B:关系区别:
+        类与类：
+        类与接口：
+        接口与接口：
+    C:设计理念不同
+        抽象类：is a，抽象类中定义的是共性功能。
+        接口：like a，接口中定义的是扩展功能。
+(6)练习：
+    A:猫狗案例，加入跳高功能
+    B:老师和学生案例，加入抽烟功能0</code></pre>
             </div>
             <hr/>
 
@@ -706,7 +675,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/060160252.html">http://ww042q.coding-pages.com/2020/060160252.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/060911293.html">http://ww042q.coding-pages.com/2020/060911293.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -913,37 +882,37 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/060211165.html">
+                <a href="/2020/060911293.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Java-day03">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Java-day09">
                         
-                        <span class="card-title">Java-day03</span>
+                        <span class="card-title">Java-day09</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:运算符(掌握)  
-(1)算术运算符
-    A:+,-,*,/,%,++,--
-    B:+的用法
-        a:加法
-        b:正号
-        c:字符串连接符
-    C:/和%的区别
-        数据
+                            1:final关键字(掌握)  
+(1)是最终的意思，可以修饰类，方法，变量。
+(2)特点：
+    A:它修饰的类，不能被继承。
+    B:它修饰的方法，不能被重写。
+    C:它修饰的变量，是一个常量。
+(3)面试相关：
+    A
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -956,6 +925,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -974,32 +944,28 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/053159932.html">
+                <a href="/2020/060860636.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Java-day01">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="Java-day08">
                         
-                        <span class="card-title">Java-day01</span>
+                        <span class="card-title">Java-day08</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:计算机概述(了解)  
-(1)计算机
-(2)计算机硬件
-(3)计算机软件
-    系统软件：window,linux,mac
-    应用软件：qq,yy,飞秋
-(4)软件开发(理解)
-    软件：是由数据和指令组成的。(计算器)
- 
+                            1:如何制作帮助文档(了解)  
+(1)写一个类
+(2)加入文档注释
+(3)通过javadoc工具生成即可
+    javadoc -d 目录 -author -version ArrayTool.java2:通过JDK提供的API学习了M
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-08
                             </span>
                         <span class="publish-author">
                             
