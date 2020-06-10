@@ -508,9 +508,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1:switch语句(掌握)  </p>
-<pre><code>(1)格式：
-    switch(表达式) {
+                <h2 id="1-switch语句-掌握"><a href="#1-switch语句-掌握" class="headerlink" title="1:switch语句(掌握)"></a>1:switch语句(掌握)</h2><h3 id="1-格式："><a href="#1-格式：" class="headerlink" title="(1)格式："></a>(1)格式：</h3><pre><code>    switch(表达式) {
         case 值1:
             语句体1;
             break;
@@ -530,16 +528,10 @@
             JDK7以后可以是字符串
         case:后面的值就是要和表达式进行比较的值
         break:表示程序到这里中断，跳出switch语句
-        default:如果所有的情况都不匹配,就执行这里,相当于if语句中的else
-(2)面试题
-    switch语句的表达式可以是byte吗?可以是long吗?可以是String吗?
-        可以,不可以,JDK7以后可以
-(3)执行流程:
-    A:首先计算表达式的值
+        default:如果所有的情况都不匹配,就执行这里,相当于if语句中的else</code></pre><h3 id="2-面试题"><a href="#2-面试题" class="headerlink" title="(2)面试题"></a>(2)面试题</h3><pre><code>    switch语句的表达式可以是byte吗?可以是long吗?可以是String吗?
+        可以,不可以,JDK7以后可以</code></pre><h3 id="3-执行流程"><a href="#3-执行流程" class="headerlink" title="(3)执行流程:"></a>(3)执行流程:</h3><pre><code>    A:首先计算表达式的值
     B:和每一个case进行匹配，如果有就执行对应的语句体，看到break就结束。
-    C:如果没有匹配，就执行default的语句体n+1。
-(4)注意事项:
-    A:case后面只能是常量，不能是变量，而且，多个case后面的值不能出现相同的
+    C:如果没有匹配，就执行default的语句体n+1。</code></pre><h3 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="(4)注意事项:"></a>(4)注意事项:</h3><pre><code>    A:case后面只能是常量，不能是变量，而且，多个case后面的值不能出现相同的
     B:default可以省略吗?
         可以省略，但是不建议，因为它的作用是对不正确的情况给出提示。
         特殊情况：
@@ -553,23 +545,16 @@
         不是，可以在任意位置。但是建议在最后。
     E:switch语句的结束条件
         a:遇到break就结束了
-        b:执行到末尾就结束了
-(5)案例：
-    A:键盘录入一个数字(1-7),输出对应的星期几。
+        b:执行到末尾就结束了</code></pre><h3 id="5-案例："><a href="#5-案例：" class="headerlink" title="(5)案例："></a>(5)案例：</h3><pre><code>    A:键盘录入一个数字(1-7),输出对应的星期几。
     B:单项选择题
     C:键盘录入一个字符串的问题
         String s = sc.nextLine();
-    D:根据给定的月份,输出对应的季节
-(6)if语句和switch语句各自的场景
-    A:if
+    D:根据给定的月份,输出对应的季节</code></pre><h3 id="6-if语句和switch语句各自的场景"><a href="#6-if语句和switch语句各自的场景" class="headerlink" title="(6)if语句和switch语句各自的场景"></a>(6)if语句和switch语句各自的场景</h3><pre><code>    A:if
         针对boolean类型的判断
         针对一个范围的判断
         针对几个常量的判断
     B:switch
-        针对几个常量的判断</code></pre><p>2:循环语句(掌握)  </p>
-<pre><code>(1)有三种:for,while,do...while
-(2)for循环语句
-    A:格式
+        针对几个常量的判断</code></pre><h2 id="2-循环语句-掌握"><a href="#2-循环语句-掌握" class="headerlink" title="2:循环语句(掌握)"></a>2:循环语句(掌握)</h2><h3 id="1-有三种-for-while-do…while"><a href="#1-有三种-for-while-do…while" class="headerlink" title="(1)有三种:for,while,do…while"></a>(1)有三种:for,while,do…while</h3><h3 id="2-for循环语句"><a href="#2-for循环语句" class="headerlink" title="(2)for循环语句"></a>(2)for循环语句</h3><pre><code>    A:格式
         for(初始化语句;判断条件语句;控制条件语句){
             循环体语句;
         }
@@ -603,9 +588,7 @@
         j:统计1-1000之间同时满足如下条件的数据有多少个
             x%3==2
             x%5==3
-            x%7==2
-(3)while循环
-    A:基本格式
+            x%7==2</code></pre><h3 id="3-while循环"><a href="#3-while循环" class="headerlink" title="(3)while循环"></a>(3)while循环</h3><pre><code>    A:基本格式
         while(判断条件语句) {
             循环体语句;
         }
@@ -630,9 +613,7 @@
                 举例:吃葡萄
     D:案例：
         a:珠穆朗玛峰问题
-        b:小芳存钱问题(break以后才能做)
-(4)do...while循环
-    A:基本格式
+        b:小芳存钱问题(break以后才能做)</code></pre><h3 id="4-do…while循环"><a href="#4-do…while循环" class="headerlink" title="(4)do…while循环"></a>(4)do…while循环</h3><pre><code>    A:基本格式
         do {
             循环体语句;
         }while(判断条件语句);
@@ -647,20 +628,14 @@
         通过查看格式，我们就可以看出其实三种循环的格式可以是统一的。
     B:三种循环的区别
         a:do...while循环至少执行一次循环体
-        b:for和while必须先判断条件是否是true，然后后才能决定是否执行循环体
-(5)循环使用的注意事项(死循环)
-    A:一定要注意修改控制条件,否则容易出现死循环。
+        b:for和while必须先判断条件是否是true，然后后才能决定是否执行循环体</code></pre><h3 id="5-循环使用的注意事项-死循环"><a href="#5-循环使用的注意事项-死循环" class="headerlink" title="(5)循环使用的注意事项(死循环)"></a>(5)循环使用的注意事项(死循环)</h3><pre><code>    A:一定要注意修改控制条件,否则容易出现死循环。
     B:最简单的死循环格式
         a:while(true){...}
 
-        b:for(;;){}</code></pre><p>3:控制跳转语句(掌握)  </p>
-<pre><code>(1)break:中断的意思
-    A:用在循环和switch语句中，离开此应用场景无意义。
+        b:for(;;){}</code></pre><h2 id="3-控制跳转语句-掌握"><a href="#3-控制跳转语句-掌握" class="headerlink" title="3:控制跳转语句(掌握)"></a>3:控制跳转语句(掌握)</h2><h3 id="1-break-中断的意思"><a href="#1-break-中断的意思" class="headerlink" title="(1)break:中断的意思"></a>(1)break:中断的意思</h3><pre><code>    A:用在循环和switch语句中，离开此应用场景无意义。
     B:作用
         a:跳出单层循环
-        b:跳出多层循环，需要标签语句的配合
-(2)continue:继续
-    A:用在循环中，离开此应用场景无意义。
+        b:跳出多层循环，需要标签语句的配合</code></pre><h3 id="2-continue-继续"><a href="#2-continue-继续" class="headerlink" title="(2)continue:继续"></a>(2)continue:继续</h3><pre><code>    A:用在循环中，离开此应用场景无意义。
     B:作用
         a:跳出单层循环的一次，可以继续下一次
     C:填空题
@@ -672,9 +647,7 @@
         }
         如何让控制台输出2次：Java基础班
         如何让控制台输出7次：Java基础班
-        如何让控制台输出13次：Java基础班
-(3)return:返回
-    A:用于结束方法的，后面还会在继续讲解和使用。
+        如何让控制台输出13次：Java基础班</code></pre><h3 id="3-return-返回"><a href="#3-return-返回" class="headerlink" title="(3)return:返回"></a>(3)return:返回</h3><pre><code>    A:用于结束方法的，后面还会在继续讲解和使用。
     B:一旦遇到return,程序就不会在继续往后执行。</code></pre>
             </div>
             <hr/>
@@ -922,12 +895,8 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:方法(掌握)  
-(1)方法：就是完成特定功能的代码块。
-    注意：在很多语言里面有函数的定义，而在Java中，函数被称为方法。
-(2)格式：
-    修饰符 返回值类型 方法名(参数类型 参数名1,参数类型 参数名2...) {
-
+                            1:方法(掌握)(1)方法：就是完成特定功能的代码块。    注意：在很多语言里面有函数的定义，而在Java中，函数被称为方法。(2)格式：    修饰符 返回值类型 方法名(参数类型 参数名1,参数类型 参数名2...) {
+      
                         
                     </div>
                     <div class="publish-info">
@@ -975,15 +944,13 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:运算符(掌握)  
-(1)算术运算符
-    A:+,-,*,/,%,++,--
+                            1:运算符(掌握)(1)算术运算符    A:+,-,*,/,%,++,--
     B:+的用法
         a:加法
         b:正号
         c:字符串连接符
     C:/和%的区别
-        数据
+        数据做除法操
                         
                     </div>
                     <div class="publish-info">
@@ -1159,7 +1126,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">17k</span>&nbsp;字
+                class="white-color">17.9k</span>&nbsp;字
             
             
             

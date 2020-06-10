@@ -508,62 +508,31 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1:如何制作帮助文档(了解)  </p>
-<pre><code>(1)写一个类
-(2)加入文档注释
-(3)通过javadoc工具生成即可
-    javadoc -d 目录 -author -version ArrayTool.java</code></pre><p>2:通过JDK提供的API学习了Math类(掌握)  </p>
-<pre><code>(1)API(Application Programming Interface)
-    应用程序编程接口(帮助文档)
-(2)如何使用呢?
-    请参照
-        day08\code\02_如何使用JDK提供的帮助文档\如何使用帮助文档.txt
-(3)Math类
-    A:是针对数学进行操作的类
+                <h2 id="1-如何制作帮助文档-了解"><a href="#1-如何制作帮助文档-了解" class="headerlink" title="1:如何制作帮助文档(了解)"></a>1:如何制作帮助文档(了解)</h2><h3 id="1-写一个类"><a href="#1-写一个类" class="headerlink" title="(1)写一个类"></a>(1)写一个类</h3><h3 id="2-加入文档注释"><a href="#2-加入文档注释" class="headerlink" title="(2)加入文档注释"></a>(2)加入文档注释</h3><h3 id="3-通过javadoc工具生成即可"><a href="#3-通过javadoc工具生成即可" class="headerlink" title="(3)通过javadoc工具生成即可"></a>(3)通过javadoc工具生成即可</h3><pre><code>    javadoc -d 目录 -author -version ArrayTool.java</code></pre><h2 id="2-通过JDK提供的API学习了Math类-掌握"><a href="#2-通过JDK提供的API学习了Math类-掌握" class="headerlink" title="2:通过JDK提供的API学习了Math类(掌握)"></a>2:通过JDK提供的API学习了Math类(掌握)</h2><h3 id="1-API-Application-Programming-Interface"><a href="#1-API-Application-Programming-Interface" class="headerlink" title="(1)API(Application Programming Interface)"></a>(1)API(Application Programming Interface)</h3><pre><code>    应用程序编程接口(帮助文档)</code></pre><h3 id="2-如何使用呢"><a href="#2-如何使用呢" class="headerlink" title="(2)如何使用呢?"></a>(2)如何使用呢?</h3><pre><code>    请参照
+        day08\code\02_如何使用JDK提供的帮助文档\如何使用帮助文档.txt</code></pre><h3 id="3-Math类"><a href="#3-Math类" class="headerlink" title="(3)Math类"></a>(3)Math类</h3><pre><code>    A:是针对数学进行操作的类
     B:没有构造方法，因为它的成员都是静态的
     C:产生随机数
         public static double random(): [0.0,1.0)
     D:如何产生一个1-100之间的随机数
         int number = (int)(Math.random()*100)+1;
-    E:猜数字小游戏</code></pre><p>3:代码块(理解)  </p>
-<pre><code>(1)用{}括起来的代码。
-(2)分类：
-    A:局部代码块
+    E:猜数字小游戏</code></pre><h2 id="3-代码块-理解"><a href="#3-代码块-理解" class="headerlink" title="3:代码块(理解)"></a>3:代码块(理解)</h2><h3 id="1-用-括起来的代码。"><a href="#1-用-括起来的代码。" class="headerlink" title="(1)用{}括起来的代码。"></a>(1)用{}括起来的代码。</h3><h3 id="2-分类："><a href="#2-分类：" class="headerlink" title="(2)分类："></a>(2)分类：</h3><pre><code>    A:局部代码块
         用于限定变量的生命周期，及早释放，提高内存利用率。
     B:构造代码块
         把多个构造方法中相同的代码可以放到这里，每个构造方法执行前，首先执行构造代码块。
     C:静态代码块
-        对类的数据进行初始化，仅仅只执行一次。
-(3)静态代码块,构造代码块,构造方法的顺序问题?
-    静态代码块 &gt; 构造代码块 &gt; 构造方法</code></pre><p>4:继承(掌握)  </p>
-<pre><code>(1)把多个类中相同的成员给提取出来定义到一个独立的类中。然后让这多个类和该独立的类产生一个关系，
-   这多个类就具备了这些内容。这个关系叫继承。
-(2)Java中如何表示继承呢?格式是什么呢?
-    A:用关键字extends表示
+        对类的数据进行初始化，仅仅只执行一次。</code></pre><h3 id="3-静态代码块-构造代码块-构造方法的顺序问题"><a href="#3-静态代码块-构造代码块-构造方法的顺序问题" class="headerlink" title="(3)静态代码块,构造代码块,构造方法的顺序问题?"></a>(3)静态代码块,构造代码块,构造方法的顺序问题?</h3><pre><code>    静态代码块 &gt; 构造代码块 &gt; 构造方法</code></pre><h2 id="4-继承-掌握"><a href="#4-继承-掌握" class="headerlink" title="4:继承(掌握)"></a>4:继承(掌握)</h2><h3 id="1-把多个类中相同的成员给提取出来定义到一个独立的类中。然后让这多个类和该独立的类产生一个关系，"><a href="#1-把多个类中相同的成员给提取出来定义到一个独立的类中。然后让这多个类和该独立的类产生一个关系，" class="headerlink" title="(1)把多个类中相同的成员给提取出来定义到一个独立的类中。然后让这多个类和该独立的类产生一个关系，"></a>(1)把多个类中相同的成员给提取出来定义到一个独立的类中。然后让这多个类和该独立的类产生一个关系，</h3><pre><code>   这多个类就具备了这些内容。这个关系叫继承。</code></pre><h3 id="2-Java中如何表示继承呢-格式是什么呢"><a href="#2-Java中如何表示继承呢-格式是什么呢" class="headerlink" title="(2)Java中如何表示继承呢?格式是什么呢?"></a>(2)Java中如何表示继承呢?格式是什么呢?</h3><pre><code>    A:用关键字extends表示
     B:格式：
-        class 子类名 extends 父类名 {}
-(3)继承的好处：
-    A:提高了代码的复用性
+        class 子类名 extends 父类名 {}</code></pre><h3 id="3-继承的好处："><a href="#3-继承的好处：" class="headerlink" title="(3)继承的好处："></a>(3)继承的好处：</h3><pre><code>    A:提高了代码的复用性
     B:提高了代码的维护性
-    C:让类与类产生了一个关系，是多态的前提
-(4)继承的弊端：
-    A:让类的耦合性增强。这样某个类的改变，就会影响其他和该类相关的类。
+    C:让类与类产生了一个关系，是多态的前提</code></pre><h3 id="4-继承的弊端："><a href="#4-继承的弊端：" class="headerlink" title="(4)继承的弊端："></a>(4)继承的弊端：</h3><pre><code>    A:让类的耦合性增强。这样某个类的改变，就会影响其他和该类相关的类。
         原则：低耦合，高内聚。
         耦合：类与类的关系
         内聚：自己完成某件事情的能力
-    B:打破了封装性
-(5)Java中继承的特点
-    A:Java中类只支持单继承
-    B:Java中可以多层(重)继承(继承体系)
-(6)继承的注意事项：
-    A:子类不能继承父类的私有成员
+    B:打破了封装性</code></pre><h3 id="5-Java中继承的特点"><a href="#5-Java中继承的特点" class="headerlink" title="(5)Java中继承的特点"></a>(5)Java中继承的特点</h3><pre><code>    A:Java中类只支持单继承
+    B:Java中可以多层(重)继承(继承体系)</code></pre><h3 id="6-继承的注意事项："><a href="#6-继承的注意事项：" class="headerlink" title="(6)继承的注意事项："></a>(6)继承的注意事项：</h3><pre><code>    A:子类不能继承父类的私有成员
     B:子类不能继承父类的构造方法，但是可以通过super去访问
-    C:不要为了部分功能而去继承
-(7)什么时候使用继承呢?
-    A:继承体现的是：is a的关系。
-    B:采用假设法
-(8)Java继承中的成员关系
-    A:成员变量
+    C:不要为了部分功能而去继承</code></pre><h3 id="7-什么时候使用继承呢"><a href="#7-什么时候使用继承呢" class="headerlink" title="(7)什么时候使用继承呢?"></a>(7)什么时候使用继承呢?</h3><pre><code>    A:继承体现的是：is a的关系。
+    B:采用假设法</code></pre><h3 id="8-Java继承中的成员关系"><a href="#8-Java继承中的成员关系" class="headerlink" title="(8)Java继承中的成员关系"></a>(8)Java继承中的成员关系</h3><pre><code>    A:成员变量
         a:子类的成员变量名称和父类中的成员变量名称不一样，这个太简单
         b:子类的成员变量名称和父类中的成员变量名称一样，这个怎么访问呢?
             子类的方法访问变量的查找顺序：
@@ -584,16 +553,10 @@
             通过子类对象访问一个方法的查找顺序：
                 在子类中找，有就使用
                 在父类中找，有就使用
-                找不到，就报错
-(9)两个面试题：
-    A:Override和Overload的区别?Overload是否可以改变返回值类型?
-    B:this和super的区别和各自的作用?
-(10)数据初始化的面试题
-    A:一个类的初始化过程
+                找不到，就报错</code></pre><h3 id="9-两个面试题："><a href="#9-两个面试题：" class="headerlink" title="(9)两个面试题："></a>(9)两个面试题：</h3><pre><code>    A:Override和Overload的区别?Overload是否可以改变返回值类型?
+    B:this和super的区别和各自的作用?</code></pre><h3 id="10-数据初始化的面试题"><a href="#10-数据初始化的面试题" class="headerlink" title="(10)数据初始化的面试题"></a>(10)数据初始化的面试题</h3><pre><code>    A:一个类的初始化过程
     B:子父类的构造执行过程
-    C:分层初始化
-(11)案例：
-    A:学生和老师案例
+    C:分层初始化</code></pre><h3 id="11-案例："><a href="#11-案例：" class="headerlink" title="(11)案例："></a>(11)案例：</h3><pre><code>    A:学生和老师案例
         继承前
         继承后
     B:猫狗案例的分析和实现</code></pre><p>1:代码块是什么?代码块的分类和各自特点?  </p>
@@ -871,14 +834,10 @@ this关键字和super关键字分别代表什么?以及他们各自的使用场�
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:final关键字(掌握)  
-(1)是最终的意思，可以修饰类，方法，变量。
-(2)特点：
-    A:它修饰的类，不能被继承。
+                            1:final关键字(掌握)(1)是最终的意思，可以修饰类，方法，变量。(2)特点：    A:它修饰的类，不能被继承。
     B:它修饰的方法，不能被重写。
-    C:它修饰的变量，是一个常量。
-(3)面试相关：
-    A
+    C:它修饰的变量，是一个常量。(3)面试相关：    A:局部变量
+ 
                         
                     </div>
                     <div class="publish-info">
@@ -926,15 +885,9 @@ this关键字和super关键字分别代表什么?以及他们各自的使用场�
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:成员变量和局部变量的区别(理解)  
-(1)在类中的位置不同
-    成员变量：类中方法外
-    局部变量：方法定义中或者方法声明上
-(2)在内存中的位置不同
-    成员变量：在堆中
-    局部变量：在栈中
-(3)生命周期不同
- 
+                            1:成员变量和局部变量的区别(理解)(1)在类中的位置不同    成员变量：类中方法外
+    局部变量：方法定义中或者方法声明上(2)在内存中的位置不同    成员变量：在堆中
+    局部变量：在栈中(3)生命周期不同    成员变量：
                         
                     </div>
                     <div class="publish-info">
@@ -1110,7 +1063,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">17k</span>&nbsp;字
+                class="white-color">17.9k</span>&nbsp;字
             
             
             
