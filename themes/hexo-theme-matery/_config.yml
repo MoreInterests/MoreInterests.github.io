@@ -77,9 +77,10 @@ music:
     enable: true
     show: 听听音乐
   autoHide: true    # hide automaticaly
-  server: netease   #require	music platform: netease, tencent, kugou, xiami, baidu
-  type: playlist    #require song, playlist, album, search, artist
-  id: 2829883282     #require	song id / playlist id / album id / search keyword
+  server: tencent   #require music platform:netease（网易云音乐），tencent（QQ音乐），kugou（酷狗音乐），xiami（虾米音乐），baidu（百度音乐）
+  type: song    #require song（歌曲），playlist（歌单），album（专辑），search（搜索关键字），artist（歌手）
+  id: 003gUhuW1tYujy     #require	song id / playlist id / album id / search keyword
+                    #id获取示例: 浏览器打开网易云音乐，点击我喜欢的音乐歌单，地址栏有一串数字，playlist的id即为这串数字。
   fixed: false       # 开启吸底模式
   autoplay: true   # 是否自动播放
   theme: '#42b983'

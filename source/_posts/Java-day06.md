@@ -9,7 +9,7 @@ tags: Java
 categories: 编程
 abbrlink: 10333
 date: 2020-06-06 21:39:25
-img:
+img: https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg
 coverImg:
 password:
 summary:
