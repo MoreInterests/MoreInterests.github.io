@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java-day06, toily的博客">
+    <meta name="keywords" content="Java-day11, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java-day06 | toily的博客</title>
+    <title>Java-day11 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -327,7 +327,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java-day06</h1>
+                    <h1 class="description center-align post-title">Java-day11</h1>
                 </div>
             </div>
         </div>
@@ -477,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-06
+                    2020-06-11
                 </div>
                 
 
@@ -486,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    682
+                    542
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -508,58 +508,19 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-二维数组-理解"><a href="#1-二维数组-理解" class="headerlink" title="1:二维数组(理解)"></a>1:二维数组(理解)</h2><h3 id="1-元素是一维数组的数组。"><a href="#1-元素是一维数组的数组。" class="headerlink" title="(1)元素是一维数组的数组。"></a>(1)元素是一维数组的数组。</h3><h3 id="2-格式："><a href="#2-格式：" class="headerlink" title="(2)格式："></a>(2)格式：</h3><pre><code>    A:数据类型[][] 数组名 = new 数据类型[m][n];
-    B:数据类型[][] 数组名 = new 数据类型[m][];
-    C:数据类型[][] 数组名 = new 数据类型[][]{{...},{...},{...}};
-    D:数据类型[][] 数组名 = {{...},{...},{...}};</code></pre><h3 id="3-案例-掌握"><a href="#3-案例-掌握" class="headerlink" title="(3)案例(掌握):"></a>(3)案例(掌握):</h3><pre><code>    A:二维数组的遍历
-    B:二维数组的求和
-    C:杨辉三角形</code></pre><h2 id="2-两个思考题-理解"><a href="#2-两个思考题-理解" class="headerlink" title="2:两个思考题(理解)"></a>2:两个思考题(理解)</h2><h3 id="1-Java中的参数传递问题"><a href="#1-Java中的参数传递问题" class="headerlink" title="(1)Java中的参数传递问题"></a>(1)Java中的参数传递问题</h3><pre><code>    Java中只有值传递。
-
-    基本类型：形式参数的改变不影响实际参数
-    引用类型：形式参数的改变直接影响实际参数</code></pre><h3 id="2-数据加密问题"><a href="#2-数据加密问题" class="headerlink" title="(2)数据加密问题"></a>(2)数据加密问题</h3><pre><code>    综合的小案例。</code></pre><h2 id="3-面向对象-掌握"><a href="#3-面向对象-掌握" class="headerlink" title="3:面向对象(掌握)"></a>3:面向对象(掌握)</h2><h3 id="1-面向对象"><a href="#1-面向对象" class="headerlink" title="(1)面向对象"></a>(1)面向对象</h3><pre><code>    面向对象是基于面向过程的编程思想</code></pre><h3 id="2-面向对象的思想特点"><a href="#2-面向对象的思想特点" class="headerlink" title="(2)面向对象的思想特点"></a>(2)面向对象的思想特点</h3><pre><code>    A:是一种更符合我们思考习惯的思想
-    B:把复杂的事情简单化
-    C:让我们从执行者变成了指挥者
-
-    举例：
-        买电脑
-        洗衣服
-        做饭
-        ...
-        万事万物皆对象</code></pre><h3 id="3-把大象装进冰箱-理解"><a href="#3-把大象装进冰箱-理解" class="headerlink" title="(3)把大象装进冰箱(理解)"></a>(3)把大象装进冰箱(理解)</h3><pre><code>    A:面向过程实现
-    B:面向对象实现
-
-    注意：如何让我们的操作更符合面向对象思想呢?
-    A:有哪些类
-    B:每个类有哪些成员
-    C:类与类的关系</code></pre><h3 id="4-类与对象"><a href="#4-类与对象" class="headerlink" title="(4)类与对象"></a>(4)类与对象</h3><pre><code>    A:现实世界的事物
-        属性    事物的基本描述
-        行为    事物的功能
-    B:Java语言中最基本的单位是类。所以，我们要用类来体现事物
-    C:类
-        成员变量    事物属性
-        成员方法    事物行为
-    D:类：是一组相关的属性和行为的集合。是一个抽象的概念。
-      对象：是该类事物的具体存在，是一个具体的实例。(对象)
-
-      举例：
-        学生：类
-        班长：对象</code></pre><h3 id="5-类的定义及使用"><a href="#5-类的定义及使用" class="headerlink" title="(5)类的定义及使用"></a>(5)类的定义及使用</h3><pre><code>    A:类的定义
-        成员变量    定义格式和以前一样，就是位置不同，在类中，方法外。
-        成员方法    定义格式和以前一样，就是去掉了static。
-    B:使用类的内容
-        a:创建对象? 格式
-            类名 对象名 =  new 类名();
-        b:如何使用成员变量和成员方法呢
-            对象名.成员变量
-            对象名.成员方法()</code></pre><h3 id="6-案例："><a href="#6-案例：" class="headerlink" title="(6)案例："></a>(6)案例：</h3><pre><code>    A:学生类的定义和使用
-    B:手机类的定义和使用</code></pre><h3 id="7-内存图"><a href="#7-内存图" class="headerlink" title="(7)内存图"></a>(7)内存图</h3><pre><code>    A:一个对象的内存图
-    B:二个对象的内存图
-    C:三个对象的内存图</code></pre><h3 id="8-Java程序的开发，设计和特征"><a href="#8-Java程序的开发，设计和特征" class="headerlink" title="(8)Java程序的开发，设计和特征"></a>(8)Java程序的开发，设计和特征</h3><pre><code>    A:开发：就是不断的创建对象，通过对象调用功能
-    B:设计：就是管理和维护对象间的关系
-    C:特征
-        a:封装
-        b:继承
-        c:多态</code></pre>
+                <h2 id="1-Eclipse的概述使用-掌握"><a href="#1-Eclipse的概述使用-掌握" class="headerlink" title="1:Eclipse的概述使用(掌握)"></a>1:Eclipse的概述使用(掌握)</h2><pre><code>请参照ppt和课堂练习.txt</code></pre><h2 id="2-API的概述-了解"><a href="#2-API的概述-了解" class="headerlink" title="2:API的概述(了解)"></a>2:API的概述(了解)</h2><h3 id="1-应用程序编程接口。"><a href="#1-应用程序编程接口。" class="headerlink" title="(1)应用程序编程接口。"></a>(1)应用程序编程接口。</h3><h3 id="2-就是JDK提供给我们的一些提高编程效率的java类。"><a href="#2-就是JDK提供给我们的一些提高编程效率的java类。" class="headerlink" title="(2)就是JDK提供给我们的一些提高编程效率的java类。"></a>(2)就是JDK提供给我们的一些提高编程效率的java类。</h3><h2 id="3-Object类-掌握"><a href="#3-Object类-掌握" class="headerlink" title="3:Object类(掌握)"></a>3:Object类(掌握)</h2><h3 id="1-Object是类层次结构的根类，所有的类都直接或者间接的继承自Object类。"><a href="#1-Object是类层次结构的根类，所有的类都直接或者间接的继承自Object类。" class="headerlink" title="(1)Object是类层次结构的根类，所有的类都直接或者间接的继承自Object类。"></a>(1)Object是类层次结构的根类，所有的类都直接或者间接的继承自Object类。</h3><h3 id="2-Object类的构造方法有一个，并且是无参构造"><a href="#2-Object类的构造方法有一个，并且是无参构造" class="headerlink" title="(2)Object类的构造方法有一个，并且是无参构造"></a>(2)Object类的构造方法有一个，并且是无参构造</h3><pre><code>    这其实就是理解当时我们说过，子类构造方法默认访问父类的构造是无参构造</code></pre><h3 id="3-要掌握的方法："><a href="#3-要掌握的方法：" class="headerlink" title="(3)要掌握的方法："></a>(3)要掌握的方法：</h3><h4 id="A-toString"><a href="#A-toString" class="headerlink" title="A:toString()"></a>A:toString()</h4><pre><code>        返回对象的字符串表示，默认是由类的全路径+&#39;@&#39;+哈希值的十六进制表示。
+        这个表示其实是没有意义的，一般子类都会重写该方法。
+        如何重写呢?过程我也讲解过了，基本上就是要求信息简单明了。
+        但是最终还是自动生成。</code></pre><h4 id="B-equals"><a href="#B-equals" class="headerlink" title="B:equals()"></a>B:equals()</h4><pre><code>        比较两个对象是否相同。默认情况下，比较的是地址值是否相同。
+        而比较地址值是没有意义的，所以，一般子类也会重写该方法。
+        重写过程，我也详细的讲解和分析了。
+        但是最终还是自动生成。</code></pre><h3 id="4-要了解的方法："><a href="#4-要了解的方法：" class="headerlink" title="(4)要了解的方法："></a>(4)要了解的方法：</h3><h4 id="A-hashCode"><a href="#A-hashCode" class="headerlink" title="A:hashCode()"></a>A:hashCode()</h4><pre><code>        返回对象的哈希值。不是实际地址值，可以理解为地址值。</code></pre><h4 id="B-getClass"><a href="#B-getClass" class="headerlink" title="B:getClass()"></a>B:getClass()</h4><pre><code>        返回对象的字节码文件对象，反射中我们会详细讲解    </code></pre><h4 id="C-finalize"><a href="#C-finalize" class="headerlink" title="C:finalize()"></a>C:finalize()</h4><pre><code>        用于垃圾回收，在不确定的时间</code></pre><h4 id="D-clone"><a href="#D-clone" class="headerlink" title="D:clone()"></a>D:clone()</h4><pre><code>        可以实现对象的克隆，包括成员变量的数据复制，但是它和两个引用指向同一个对象是有区别的。</code></pre><h3 id="5-两个注意问题；"><a href="#5-两个注意问题；" class="headerlink" title="(5)两个注意问题；"></a>(5)两个注意问题；</h3><h4 id="A-直接输出一个对象名称，其实默认调用了该对象的toString-方法。"><a href="#A-直接输出一个对象名称，其实默认调用了该对象的toString-方法。" class="headerlink" title="A:直接输出一个对象名称，其实默认调用了该对象的toString()方法。"></a>A:直接输出一个对象名称，其实默认调用了该对象的toString()方法。</h4><h4 id="B-面试题"><a href="#B-面试题" class="headerlink" title="B:面试题"></a>B:面试题</h4><pre><code>        ==和equals()的区别?
+        A:==
+            基本类型：比较的是值是否相同
+            引用类型：比较的是地址值是否相同
+        B:equals()
+            只能比较引用类型。默认情况下，比较的是地址值是否相同。
+            但是，我们可以根据自己的需要重写该方法。</code></pre>
             </div>
             <hr/>
 
@@ -584,7 +545,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/060610333.html">http://ww042q.coding-pages.com/2020/060610333.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/061131261.html">http://ww042q.coding-pages.com/2020/061131261.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -791,30 +752,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/060759548.html">
+                <a href="/2020/061131261.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day07">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day11">
                         
-                        <span class="card-title">Java-day07</span>
+                        <span class="card-title">Java-day11</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:成员变量和局部变量的区别(理解)(1)在类中的位置不同    成员变量：类中方法外
-    局部变量：方法定义中或者方法声明上(2)在内存中的位置不同    成员变量：在堆中
-    局部变量：在栈中(3)生命周期不同    成员变量：
+                            1:Eclipse的概述使用(掌握)请参照ppt和课堂练习.txt2:API的概述(了解)(1)应用程序编程接口。(2)就是JDK提供给我们的一些提高编程效率的java类。3:Object类(掌握)(1)Object是类层次结构的根类，所有
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -827,6 +787,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -845,24 +806,26 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/060410525.html">
+                <a href="/2020/061047836.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day05">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day10">
                         
-                        <span class="card-title">Java-day05</span>
+                        <span class="card-title">Java-day10</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:方法(掌握)(1)方法：就是完成特定功能的代码块。    注意：在很多语言里面有函数的定义，而在Java中，函数被称为方法。(2)格式：    修饰符 返回值类型 方法名(参数类型 参数名1,参数类型 参数名2...) {
-      
+                            1:形式参数和返回值的问题(理解)(1)形式参数：    类名：需要该类的对象
+    抽象类名：需要该类的子类对象
+    接口名：需要该接口的实现类对象(2)返回值类型：    类名：返回的是该类的对象
+    抽象类名：返回的是该类的
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-10
                             </span>
                         <span class="publish-author">
                             
