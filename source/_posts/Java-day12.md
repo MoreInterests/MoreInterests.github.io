@@ -4,14 +4,15 @@ top: false
 cover: false
 toc: true
 mathjax: false
-date: 2020-06-12 11:56:39
 author: xing xiao
 img: 'https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg'
+tags: Java
+categories: 编程
+abbrlink: 31581
+date: 2020-06-12 11:56:39
 coverImg:
 password:
 summary:
-tags: Java
-categories: 编程
 ---
 ## 1:Scanner的使用(了解)
 ###	(1)在JDK5以后出现的用于键盘录入数据的类。
