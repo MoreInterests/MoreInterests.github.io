@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="博客撰写教程, toily的博客">
+    <meta name="keywords" content="Java-day13, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>博客撰写教程 | toily的博客</title>
+    <title>Java-day13 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">博客撰写教程</h1>
+                    <h1 class="description center-align post-title">Java-day13</h1>
                 </div>
             </div>
         </div>
@@ -452,8 +452,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%96%87%E7%AB%A0/">
-                                <span class="chip bg-color">文章</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -464,8 +464,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
-                                教程
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                编程
                             </a>
                         
                     </div>
@@ -477,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-20
+                    2020-06-13
                 </div>
                 
 
@@ -486,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    401
+                    982
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -508,38 +508,111 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-Markdown——入门指南"><a href="#1-Markdown——入门指南" class="headerlink" title="1.Markdown——入门指南"></a>1.Markdown——入门指南</h2><h1 id="导语："><a href="#导语：" class="headerlink" title="导语："></a>导语：</h1><p>Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑，Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的 HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。 </p>
-<h2 id="Markdown-语法的简要规则"><a href="#Markdown-语法的简要规则" class="headerlink" title="Markdown 语法的简要规则"></a>Markdown 语法的简要规则</h2><ul>
-<li><p>标题 </p>
-<p>  #一级标题</p>
-<p>  ##二级标题</p>
-<p>  ###三级标题 </p>
-</li>
-<li><p>无序列表  </p>
-</li>
-</ul>
-<p>*1<br>*2<br>*3</p>
-<ul>
-<li>有序列表   </li>
-</ul>
-<p>1.1<br>1.2<br>1.3  </p>
-<ul>
-<li>图片与链接<br>图片为：! [ ] ( )<br>链接为：[ ] ( )  </li>
-<li>粗体  </li>
-</ul>
-<p><strong>中文本为斜体<br>**</strong>中为粗体  </p>
-<ul>
-<li>分割线<br>三个*为分割线  </li>
-<li>代码框<br>一个``<br>例如：<br><code>if(a&lt;b)   
-{c=b;}</code>     </li>
-<li>行内代码  <pre><code>coding: git@e.coding.net:</code></pre></li>
-</ul>
-<p><a href="https://www.jianshu.com/p/1e402922ee32" target="_blank" rel="noopener">文章出处</a>  </p>
-<hr>
-<h2 id="2-文章-Front-matter-介绍"><a href="#2-文章-Front-matter-介绍" class="headerlink" title="2.文章 Front-matter 介绍"></a>2.文章 Front-matter 介绍</h2><p>Front-matter 选项详解<br>Front-matter 选项中的所有内容均为非必填的。但我仍然建议至少填写 title 和 date 的值。</p>
-<p>配置选项    默认值    描述<br><strong>title</strong>    Markdown 的文件标题    文章标题，强烈建议填写此选项<br><strong>date</strong>    文件创建时的日期时间    发布时间，强烈建议填写此选项，且最好保证全局唯一<br><strong>author</strong>    根 _config.yml 中的 author    文章作者<br><strong>img</strong>    featureImages 中的某个值    文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: <a href="http://xxx.com/xxx.jpg" target="_blank" rel="noopener">http://xxx.com/xxx.jpg</a></p>
-<p>  其余规则见<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">文章出处</a></p>
+                <h2 id="1-StringBuffer-掌握"><a href="#1-StringBuffer-掌握" class="headerlink" title="1:StringBuffer(掌握)"></a>1:StringBuffer(掌握)</h2><h3 id="1-用字符串做拼接，比较耗时并且也耗内存，而这种拼接操作又是比较常见的，为了解决这个问题，Java就提供了"><a href="#1-用字符串做拼接，比较耗时并且也耗内存，而这种拼接操作又是比较常见的，为了解决这个问题，Java就提供了" class="headerlink" title="(1)用字符串做拼接，比较耗时并且也耗内存，而这种拼接操作又是比较常见的，为了解决这个问题，Java就提供了"></a>(1)用字符串做拼接，比较耗时并且也耗内存，而这种拼接操作又是比较常见的，为了解决这个问题，Java就提供了</h3><pre><code>   一个字符串缓冲区类。StringBuffer供我们使用。</code></pre><h3 id="2-StringBuffer的构造方法"><a href="#2-StringBuffer的构造方法" class="headerlink" title="(2)StringBuffer的构造方法"></a>(2)StringBuffer的构造方法</h3><pre><code>    A:StringBuffer()
+    B:StringBuffer(int size)
+    C:StringBuffer(String str)</code></pre><h3 id="3-StringBuffer的常见功能-自己补齐方法的声明和方法的解释"><a href="#3-StringBuffer的常见功能-自己补齐方法的声明和方法的解释" class="headerlink" title="(3)StringBuffer的常见功能(自己补齐方法的声明和方法的解释)"></a>(3)StringBuffer的常见功能(自己补齐方法的声明和方法的解释)</h3><pre><code>    A:添加功能
+    B:删除功能
+    C:替换功能
+    D:反转功能
+    E:截取功能(注意这个返回值)</code></pre><h3 id="4-StringBuffer的练习-做一遍"><a href="#4-StringBuffer的练习-做一遍" class="headerlink" title="(4)StringBuffer的练习(做一遍)"></a>(4)StringBuffer的练习(做一遍)</h3><pre><code>    A:String和StringBuffer相互转换
+        String -- StringBuffer
+            构造方法
+        StringBuffer -- String
+            toString()方法
+    B:字符串的拼接
+    C:把字符串反转
+    D:判断一个字符串是否对称</code></pre><h3 id="5-面试题"><a href="#5-面试题" class="headerlink" title="(5)面试题"></a>(5)面试题</h3><pre><code>    小细节：
+        StringBuffer：同步的，数据安全，效率低。
+        StringBuilder：不同步的，数据不安全，效率高。
+    A:String,StringBuffer,StringBuilder的区别
+    B:StringBuffer和数组的区别?</code></pre><h3 id="6-注意的问题："><a href="#6-注意的问题：" class="headerlink" title="(6)注意的问题："></a>(6)注意的问题：</h3><pre><code>    String作为形式参数，StringBuffer作为形式参数。</code></pre><h2 id="2-数组高级以及Arrays-掌握"><a href="#2-数组高级以及Arrays-掌握" class="headerlink" title="2:数组高级以及Arrays(掌握)"></a>2:数组高级以及Arrays(掌握)</h2><h3 id="1-排序"><a href="#1-排序" class="headerlink" title="(1)排序"></a>(1)排序</h3><h4 id="A-冒泡排序"><a href="#A-冒泡排序" class="headerlink" title="A:冒泡排序"></a>A:冒泡排序</h4><pre><code>        相邻元素两两比较，大的往后放，第一次完毕，最大值出现在了最大索引处。同理，其他的元素就可以排好。
 
+        public static void bubbleSort(int[] arr) {
+            for(int x=0; x&lt;arr.length-1; x++) {
+                for(int y=0; y&lt;arr.length-1-x; y++) {
+                    if(arr[y] &gt; arr[y+1]) {
+                        int temp = arr[y];
+                        arr[y] = arr[y+1];
+                        arr[y+1] = temp;
+                    }
+                }
+            }
+        }</code></pre><h4 id="B-选择排序"><a href="#B-选择排序" class="headerlink" title="B:选择排序"></a>B:选择排序</h4><pre><code>        把0索引的元素，和索引1以后的元素都进行比较，第一次完毕，最小值出现在了0索引。同理，其他的元素就可以排好。
+
+        public static void selectSort(int[] arr) {
+            for(int x=0; x&lt;arr.length-1; x++) {
+                for(int y=x+1; y&lt;arr.length; y++) {
+                    if(arr[y] &lt; arr[x]) {
+                        int temp = arr[x];
+                        arr[x] = arr[y];
+                        arr[y] = temp;
+                    }
+                }
+            }
+        }</code></pre><h3 id="2-查找"><a href="#2-查找" class="headerlink" title="(2)查找"></a>(2)查找</h3><h4 id="A-基本查找"><a href="#A-基本查找" class="headerlink" title="A:基本查找"></a>A:基本查找</h4><pre><code>        针对数组无序的情况
+
+        public static int getIndex(int[] arr,int value) {
+            int index = -1;
+
+            for(int x=0; x&lt;arr.length; x++) {
+                if(arr[x] == value) {
+                    index = x;
+                    break;
+                }
+            }
+
+            return index;
+        }</code></pre><h4 id="B-二分查找-折半查找"><a href="#B-二分查找-折半查找" class="headerlink" title="B:二分查找(折半查找)"></a>B:二分查找(折半查找)</h4><pre><code>        针对数组有序的情况(千万不要先排序，在查找)
+
+        public static int binarySearch(int[] arr,int value) {
+            int min = 0;
+            int max = arr.length-1;
+            int mid = (min+max)/2;
+
+            while(arr[mid] != value) {
+                if(arr[mid] &gt; value) {
+                    max = mid - 1;
+                }else if(arr[mid] &lt; value) {
+                    min = mid + 1;
+                }
+
+                if(min &gt; max) {
+                    return -1;
+                }
+
+                mid = (min+max)/2;
+            }
+
+            return mid;
+        }</code></pre><h3 id="3-Arrays工具类"><a href="#3-Arrays工具类" class="headerlink" title="(3)Arrays工具类"></a>(3)Arrays工具类</h3><pre><code>    A:是针对数组进行操作的工具类。包括排序和查找等功能。
+    B:要掌握的方法(自己补齐方法)
+        把数组转成字符串：
+        排序：
+        二分查找：</code></pre><h3 id="4-Arrays工具类的源码解析"><a href="#4-Arrays工具类的源码解析" class="headerlink" title="(4)Arrays工具类的源码解析"></a>(4)Arrays工具类的源码解析</h3><h3 id="5-把字符串中的字符进行排序"><a href="#5-把字符串中的字符进行排序" class="headerlink" title="(5)把字符串中的字符进行排序"></a>(5)把字符串中的字符进行排序</h3><pre><code>    举例：
+        &quot;edacbgf&quot;
+        得到结果
+        &quot;abcdefg&quot;</code></pre><h2 id="3-Integer-掌握"><a href="#3-Integer-掌握" class="headerlink" title="3:Integer(掌握)"></a>3:Integer(掌握)</h2><h3 id="1-为了让基本类型的数据进行更多的操作，Java就为每种基本类型提供了对应的包装类类型"><a href="#1-为了让基本类型的数据进行更多的操作，Java就为每种基本类型提供了对应的包装类类型" class="headerlink" title="(1)为了让基本类型的数据进行更多的操作，Java就为每种基本类型提供了对应的包装类类型"></a>(1)为了让基本类型的数据进行更多的操作，Java就为每种基本类型提供了对应的包装类类型</h3><pre><code>    byte         Byte
+    short        Short
+    int            Integer
+    long        Long
+    float        Float
+    double        Double
+    char        Character
+    boolean        Boolean</code></pre><h3 id="2-Integer的构造方法"><a href="#2-Integer的构造方法" class="headerlink" title="(2)Integer的构造方法"></a>(2)Integer的构造方法</h3><pre><code>    A:Integer i = new Integer(100);
+    B:Integer i = new Integer(&quot;100&quot;);
+        注意：这里的字符串必须是由数字字符组成</code></pre><h3 id="3-String和int的相互转换"><a href="#3-String和int的相互转换" class="headerlink" title="(3)String和int的相互转换"></a>(3)String和int的相互转换</h3><pre><code>    A:String -- int
+        Integer.parseInt(&quot;100&quot;);
+    B:int -- String
+        String.valueOf(100);</code></pre><h3 id="4-其他的功能-了解"><a href="#4-其他的功能-了解" class="headerlink" title="(4)其他的功能(了解)"></a>(4)其他的功能(了解)</h3><pre><code>    进制转换</code></pre><h3 id="5-JDK5的新特性"><a href="#5-JDK5的新特性" class="headerlink" title="(5)JDK5的新特性"></a>(5)JDK5的新特性</h3><pre><code>    自动装箱    基本类型--引用类型
+    自动拆箱    引用类型--基本类型
+
+    把下面的这个代码理解即可：
+        Integer i = 100;
+        i += 200;</code></pre><h3 id="6-面试题"><a href="#6-面试题" class="headerlink" title="(6)面试题"></a>(6)面试题</h3><pre><code>    -128到127之间的数据缓冲池问题</code></pre><h2 id="4-Character-了解"><a href="#4-Character-了解" class="headerlink" title="4:Character(了解)"></a>4:Character(了解)</h2><h3 id="1-Character构造方法"><a href="#1-Character构造方法" class="headerlink" title="(1)Character构造方法"></a>(1)Character构造方法</h3><pre><code>    Character ch = new Character(&#39;a&#39;);</code></pre><h3 id="2-要掌握的方法：-自己补齐"><a href="#2-要掌握的方法：-自己补齐" class="headerlink" title="(2)要掌握的方法：(自己补齐)"></a>(2)要掌握的方法：(自己补齐)</h3><pre><code>    A:判断给定的字符是否是大写
+    B:判断给定的字符是否是小写
+    C:判断给定的字符是否是数字字符
+    D:把给定的字符转成大写
+    E:把给定的字符转成小写</code></pre><h3 id="3-案例："><a href="#3-案例：" class="headerlink" title="(3)案例："></a>(3)案例：</h3><pre><code>    统计字符串中大写，小写及数字字符出现的次数</code></pre>
             </div>
             <hr/>
 
@@ -554,7 +627,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">Xiao Xing</a>
+                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">xing xiao</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -564,7 +637,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/022054914.html">http://ww042q.coding-pages.com/2020/022054914.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/061348028.html">http://ww042q.coding-pages.com/2020/061348028.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -577,7 +650,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="http://ww042q.coding-pages.com" target="_blank">Xiao Xing</a>
+                    <a href="http://ww042q.coding-pages.com" target="_blank">xing xiao</a>
                     !
                 </span>
             </div>
@@ -602,8 +675,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%96%87%E7%AB%A0/">
-                                    <span class="chip bg-color">文章</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
                         </div>
@@ -771,50 +844,47 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/031034155.html">
+                <a href="/2020/061348028.html">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day13">
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Hexo+Github博客搭建入门">
-                        
-                        <span class="card-title">Hexo+Github博客搭建入门</span>
+                        <span class="card-title">Java-day13</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
+                            1:StringBuffer(掌握)(1)用字符串做拼接，比较耗时并且也耗内存，而这种拼接操作又是比较常见的，为了解决这个问题，Java就提供了   一个字符串缓冲区类。StringBuffer供我们使用。(2)StringBuffer的构
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    网站搭建
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
-                    <a href="/tags/blog/">
-                        <span class="chip bg-color">blog</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
@@ -828,32 +898,43 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/021516107.html">
+                <a href="/2020/061231581.html">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day12">
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Java-day12</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            1:Scanner的使用(了解)(1)在JDK5以后出现的用于键盘录入数据的类。(2)构造方法：A:讲解了System.in这个东西。        它其实是标准的输入流,对应于键盘录入B:构造方法        InputStream i
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Xiao Xing
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
                 </div>
                 
             </div>
