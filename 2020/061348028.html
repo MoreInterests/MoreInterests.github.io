@@ -486,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    982
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -510,11 +510,15 @@
             <div id="articleContent">
                 <h2 id="1-StringBuffer-掌握"><a href="#1-StringBuffer-掌握" class="headerlink" title="1:StringBuffer(掌握)"></a>1:StringBuffer(掌握)</h2><h3 id="1-用字符串做拼接，比较耗时并且也耗内存，而这种拼接操作又是比较常见的，为了解决这个问题，Java就提供了"><a href="#1-用字符串做拼接，比较耗时并且也耗内存，而这种拼接操作又是比较常见的，为了解决这个问题，Java就提供了" class="headerlink" title="(1)用字符串做拼接，比较耗时并且也耗内存，而这种拼接操作又是比较常见的，为了解决这个问题，Java就提供了"></a>(1)用字符串做拼接，比较耗时并且也耗内存，而这种拼接操作又是比较常见的，为了解决这个问题，Java就提供了</h3><pre><code>   一个字符串缓冲区类。StringBuffer供我们使用。</code></pre><h3 id="2-StringBuffer的构造方法"><a href="#2-StringBuffer的构造方法" class="headerlink" title="(2)StringBuffer的构造方法"></a>(2)StringBuffer的构造方法</h3><pre><code>    A:StringBuffer()
     B:StringBuffer(int size)
-    C:StringBuffer(String str)</code></pre><h3 id="3-StringBuffer的常见功能-自己补齐方法的声明和方法的解释"><a href="#3-StringBuffer的常见功能-自己补齐方法的声明和方法的解释" class="headerlink" title="(3)StringBuffer的常见功能(自己补齐方法的声明和方法的解释)"></a>(3)StringBuffer的常见功能(自己补齐方法的声明和方法的解释)</h3><pre><code>    A:添加功能
-    B:删除功能
-    C:替换功能
-    D:反转功能
-    E:截取功能(注意这个返回值)</code></pre><h3 id="4-StringBuffer的练习-做一遍"><a href="#4-StringBuffer的练习-做一遍" class="headerlink" title="(4)StringBuffer的练习(做一遍)"></a>(4)StringBuffer的练习(做一遍)</h3><pre><code>    A:String和StringBuffer相互转换
+    C:StringBuffer(String str)</code></pre><h3 id="3-StringBuffer的常见功能-自己补齐方法的声明和方法的解释"><a href="#3-StringBuffer的常见功能-自己补齐方法的声明和方法的解释" class="headerlink" title="(3)StringBuffer的常见功能(自己补齐方法的声明和方法的解释)"></a>(3)StringBuffer的常见功能(自己补齐方法的声明和方法的解释)</h3><h4 id="A-添加功能"><a href="#A-添加功能" class="headerlink" title="A:添加功能"></a>A:添加功能</h4><pre><code>        public StringBuffer append(String str):可以把任意类型数据添加到字符串缓冲区里面,并返回字符串缓冲区本身
+
+        public StringBuffer insert(int offset,String str):在指定位置把任意类型的数据插入到字符串缓冲区里面,并返回字符串缓冲区本身</code></pre><h4 id="B-删除功能"><a href="#B-删除功能" class="headerlink" title="B:删除功能"></a>B:删除功能</h4><pre><code>         public StringBuffer deleteCharAt(int index):删除指定位置的字符，并返回本身
+
+          public StringBuffer delete(int start,int end):删除从指定位置开始指定位置结束的内容，并返回本身</code></pre><h4 id="C-替换功能"><a href="#C-替换功能" class="headerlink" title="C:替换功能"></a>C:替换功能</h4><pre><code>        public StringBuffer replace(int start,int end,String str):从start开始到end用str替换</code></pre><h4 id="D-反转功能"><a href="#D-反转功能" class="headerlink" title="D:反转功能"></a>D:反转功能</h4><pre><code>        public StringBuffer reverse()</code></pre><h4 id="E-截取功能-注意这个返回值"><a href="#E-截取功能-注意这个返回值" class="headerlink" title="E:截取功能(注意这个返回值)"></a>E:截取功能(注意这个返回值)</h4><pre><code>        注意返回值类型不再是StringBuffer本身了
+
+          public String substring(int start)
+
+          public String substring(int start,int end)</code></pre><h3 id="4-StringBuffer的练习-做一遍"><a href="#4-StringBuffer的练习-做一遍" class="headerlink" title="(4)StringBuffer的练习(做一遍)"></a>(4)StringBuffer的练习(做一遍)</h3><pre><code>    A:String和StringBuffer相互转换
         String -- StringBuffer
             构造方法
         StringBuffer -- String
@@ -608,11 +612,7 @@
 
     把下面的这个代码理解即可：
         Integer i = 100;
-        i += 200;</code></pre><h3 id="6-面试题"><a href="#6-面试题" class="headerlink" title="(6)面试题"></a>(6)面试题</h3><pre><code>    -128到127之间的数据缓冲池问题</code></pre><h2 id="4-Character-了解"><a href="#4-Character-了解" class="headerlink" title="4:Character(了解)"></a>4:Character(了解)</h2><h3 id="1-Character构造方法"><a href="#1-Character构造方法" class="headerlink" title="(1)Character构造方法"></a>(1)Character构造方法</h3><pre><code>    Character ch = new Character(&#39;a&#39;);</code></pre><h3 id="2-要掌握的方法：-自己补齐"><a href="#2-要掌握的方法：-自己补齐" class="headerlink" title="(2)要掌握的方法：(自己补齐)"></a>(2)要掌握的方法：(自己补齐)</h3><pre><code>    A:判断给定的字符是否是大写
-    B:判断给定的字符是否是小写
-    C:判断给定的字符是否是数字字符
-    D:把给定的字符转成大写
-    E:把给定的字符转成小写</code></pre><h3 id="3-案例："><a href="#3-案例：" class="headerlink" title="(3)案例："></a>(3)案例：</h3><pre><code>    统计字符串中大写，小写及数字字符出现的次数</code></pre>
+        i += 200;</code></pre><h3 id="6-面试题"><a href="#6-面试题" class="headerlink" title="(6)面试题"></a>(6)面试题</h3><pre><code>    -128到127之间的数据缓冲池问题</code></pre><h2 id="4-Character-了解"><a href="#4-Character-了解" class="headerlink" title="4:Character(了解)"></a>4:Character(了解)</h2><h3 id="1-Character构造方法"><a href="#1-Character构造方法" class="headerlink" title="(1)Character构造方法"></a>(1)Character构造方法</h3><pre><code>    Character ch = new Character(&#39;a&#39;);</code></pre><h3 id="2-要掌握的方法：-自己补齐"><a href="#2-要掌握的方法：-自己补齐" class="headerlink" title="(2)要掌握的方法：(自己补齐)"></a>(2)要掌握的方法：(自己补齐)</h3><h4 id="A-判断给定的字符是否是大写"><a href="#A-判断给定的字符是否是大写" class="headerlink" title="A:判断给定的字符是否是大写"></a>A:判断给定的字符是否是大写</h4><pre><code>    public static boolean isUpperCase(char ch):判断给定的字符是否是大写字符</code></pre><h4 id="B-判断给定的字符是否是小写"><a href="#B-判断给定的字符是否是小写" class="headerlink" title="B:判断给定的字符是否是小写"></a>B:判断给定的字符是否是小写</h4><pre><code>    public static boolean isLowerCase(char ch):判断给定的字符是否是小写字符</code></pre><h4 id="C-判断给定的字符是否是数字字符"><a href="#C-判断给定的字符是否是数字字符" class="headerlink" title="C:判断给定的字符是否是数字字符"></a>C:判断给定的字符是否是数字字符</h4><pre><code>    public static boolean isDigit(char ch):判断给定的字符是否是数字字符</code></pre><h4 id="D-把给定的字符转成大写"><a href="#D-把给定的字符转成大写" class="headerlink" title="D:把给定的字符转成大写"></a>D:把给定的字符转成大写</h4><pre><code>    public static char toUpperCase(char ch):把给定的字符转换为大写字符</code></pre><h4 id="E-把给定的字符转成小写"><a href="#E-把给定的字符转成小写" class="headerlink" title="E:把给定的字符转成小写"></a>E:把给定的字符转成小写</h4><pre><code>    public static char toLowerCase(char ch):把给定的字符转换为小写字符</code></pre><h3 id="3-案例："><a href="#3-案例：" class="headerlink" title="(3)案例："></a>(3)案例：</h3><pre><code>    统计字符串中大写，小写及数字字符出现的次数</code></pre>
             </div>
             <hr/>
 
@@ -844,29 +844,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/061348028.html">
+                <a href="/2020/061431197.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day13">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day14">
                         
-                        <span class="card-title">Java-day13</span>
+                        <span class="card-title">Java-day14</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:StringBuffer(掌握)(1)用字符串做拼接，比较耗时并且也耗内存，而这种拼接操作又是比较常见的，为了解决这个问题，Java就提供了   一个字符串缓冲区类。StringBuffer供我们使用。(2)StringBuffer的构
+                            1:正则表达式(理解)(1)就是符合一定规则的字符串(2)常见规则A:字符        x 字符 x。举例：&#39;a&#39;表示字符a
+        \\ 反斜线字符。
+        \n 新行（换行）符 (&#39;\u000
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -879,7 +880,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1085,7 +1085,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.3k</span>&nbsp;字
+                class="white-color">22.6k</span>&nbsp;字
             
             
             
