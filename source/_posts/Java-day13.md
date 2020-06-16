@@ -4,14 +4,15 @@ top: false
 cover: false
 toc: true
 mathjax: false
-date: 2020-06-13 23:13:11
 author: xing xiao
-img: https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg
+img: 'https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg'
+tags: Java
+categories: 编程
+abbrlink: 48028
+date: 2020-06-13 23:13:11
 coverImg:
 password:
 summary:
-tags: Java
-categories: 编程
 ---
 ## 1:StringBuffer(掌握)  
 
@@ -22,11 +23,25 @@ categories: 编程
 		B:StringBuffer(int size)
 		C:StringBuffer(String str)
 ###	(3)StringBuffer的常见功能(自己补齐方法的声明和方法的解释)
-		A:添加功能
-		B:删除功能
-		C:替换功能
-		D:反转功能
-		E:截取功能(注意这个返回值)
+####		A:添加功能
+			public StringBuffer append(String str):可以把任意类型数据添加到字符串缓冲区里面,并返回字符串缓冲区本身
+
+			public StringBuffer insert(int offset,String str):在指定位置把任意类型的数据插入到字符串缓冲区里面,并返回字符串缓冲区本身
+####		B:删除功能
+			 public StringBuffer deleteCharAt(int index):删除指定位置的字符，并返回本身
+
+ 			 public StringBuffer delete(int start,int end):删除从指定位置开始指定位置结束的内容，并返回本身
+####		C:替换功能
+			public StringBuffer replace(int start,int end,String str):从start开始到end用str替换
+####		D:反转功能
+			public StringBuffer reverse()
+####		E:截取功能(注意这个返回值)
+			注意返回值类型不再是StringBuffer本身了
+
+ 			 public String substring(int start)
+
+ 			 public String substring(int start,int end)
+
 ###	(4)StringBuffer的练习(做一遍)
 		A:String和StringBuffer相互转换
 			String -- StringBuffer
@@ -164,10 +179,24 @@ categories: 编程
 ###	(1)Character构造方法	
 		Character ch = new Character('a');
 ###	(2)要掌握的方法：(自己补齐)
-		A:判断给定的字符是否是大写
-		B:判断给定的字符是否是小写
-		C:判断给定的字符是否是数字字符
-		D:把给定的字符转成大写
-		E:把给定的字符转成小写
+####		A:判断给定的字符是否是大写
+
+		public static boolean isUpperCase(char ch):判断给定的字符是否是大写字符
+
+####		B:判断给定的字符是否是小写
+
+		public static boolean isLowerCase(char ch):判断给定的字符是否是小写字符
+
+####		C:判断给定的字符是否是数字字符
+
+		public static boolean isDigit(char ch):判断给定的字符是否是数字字符
+
+####		D:把给定的字符转成大写
+
+		public static char toUpperCase(char ch):把给定的字符转换为大写字符
+
+####		E:把给定的字符转成小写
+
+		public static char toLowerCase(char ch):把给定的字符转换为小写字符
 ###	(3)案例：
 		统计字符串中大写，小写及数字字符出现的次数
