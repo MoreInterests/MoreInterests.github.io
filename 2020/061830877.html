@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java-day11, toily的博客">
+    <meta name="keywords" content="Java-day17, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java-day11 | toily的博客</title>
+    <title>Java-day17 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -327,7 +327,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java-day11</h1>
+                    <h1 class="description center-align post-title">Java-day17</h1>
                 </div>
             </div>
         </div>
@@ -477,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-11
+                    2020-06-18
                 </div>
                 
 
@@ -486,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    542
+                    770
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -508,19 +508,48 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-Eclipse的概述使用-掌握"><a href="#1-Eclipse的概述使用-掌握" class="headerlink" title="1:Eclipse的概述使用(掌握)"></a>1:Eclipse的概述使用(掌握)</h2><pre><code>请参照ppt和课堂练习.txt</code></pre><h2 id="2-API的概述-了解"><a href="#2-API的概述-了解" class="headerlink" title="2:API的概述(了解)"></a>2:API的概述(了解)</h2><h3 id="1-应用程序编程接口。"><a href="#1-应用程序编程接口。" class="headerlink" title="(1)应用程序编程接口。"></a>(1)应用程序编程接口。</h3><h3 id="2-就是JDK提供给我们的一些提高编程效率的java类。"><a href="#2-就是JDK提供给我们的一些提高编程效率的java类。" class="headerlink" title="(2)就是JDK提供给我们的一些提高编程效率的java类。"></a>(2)就是JDK提供给我们的一些提高编程效率的java类。</h3><h2 id="3-Object类-掌握"><a href="#3-Object类-掌握" class="headerlink" title="3:Object类(掌握)"></a>3:Object类(掌握)</h2><h3 id="1-Object是类层次结构的根类，所有的类都直接或者间接的继承自Object类。"><a href="#1-Object是类层次结构的根类，所有的类都直接或者间接的继承自Object类。" class="headerlink" title="(1)Object是类层次结构的根类，所有的类都直接或者间接的继承自Object类。"></a>(1)Object是类层次结构的根类，所有的类都直接或者间接的继承自Object类。</h3><h3 id="2-Object类的构造方法有一个，并且是无参构造"><a href="#2-Object类的构造方法有一个，并且是无参构造" class="headerlink" title="(2)Object类的构造方法有一个，并且是无参构造"></a>(2)Object类的构造方法有一个，并且是无参构造</h3><pre><code>    这其实就是理解当时我们说过，子类构造方法默认访问父类的构造是无参构造</code></pre><h3 id="3-要掌握的方法："><a href="#3-要掌握的方法：" class="headerlink" title="(3)要掌握的方法："></a>(3)要掌握的方法：</h3><h4 id="A-toString"><a href="#A-toString" class="headerlink" title="A:toString()"></a>A:toString()</h4><pre><code>        返回对象的字符串表示，默认是由类的全路径+&#39;@&#39;+哈希值的十六进制表示。
-        这个表示其实是没有意义的，一般子类都会重写该方法。
-        如何重写呢?过程我也讲解过了，基本上就是要求信息简单明了。
-        但是最终还是自动生成。</code></pre><h4 id="B-equals"><a href="#B-equals" class="headerlink" title="B:equals()"></a>B:equals()</h4><pre><code>        比较两个对象是否相同。默认情况下，比较的是地址值是否相同。
-        而比较地址值是没有意义的，所以，一般子类也会重写该方法。
-        重写过程，我也详细的讲解和分析了。
-        但是最终还是自动生成。</code></pre><h3 id="4-要了解的方法："><a href="#4-要了解的方法：" class="headerlink" title="(4)要了解的方法："></a>(4)要了解的方法：</h3><h4 id="A-hashCode"><a href="#A-hashCode" class="headerlink" title="A:hashCode()"></a>A:hashCode()</h4><pre><code>        返回对象的哈希值。不是实际地址值，可以理解为地址值。</code></pre><h4 id="B-getClass"><a href="#B-getClass" class="headerlink" title="B:getClass()"></a>B:getClass()</h4><pre><code>        返回对象的字节码文件对象，反射中我们会详细讲解    </code></pre><h4 id="C-finalize"><a href="#C-finalize" class="headerlink" title="C:finalize()"></a>C:finalize()</h4><pre><code>        用于垃圾回收，在不确定的时间</code></pre><h4 id="D-clone"><a href="#D-clone" class="headerlink" title="D:clone()"></a>D:clone()</h4><pre><code>        可以实现对象的克隆，包括成员变量的数据复制，但是它和两个引用指向同一个对象是有区别的。</code></pre><h3 id="5-两个注意问题；"><a href="#5-两个注意问题；" class="headerlink" title="(5)两个注意问题；"></a>(5)两个注意问题；</h3><h4 id="A-直接输出一个对象名称，其实默认调用了该对象的toString-方法。"><a href="#A-直接输出一个对象名称，其实默认调用了该对象的toString-方法。" class="headerlink" title="A:直接输出一个对象名称，其实默认调用了该对象的toString()方法。"></a>A:直接输出一个对象名称，其实默认调用了该对象的toString()方法。</h4><h4 id="B-面试题"><a href="#B-面试题" class="headerlink" title="B:面试题"></a>B:面试题</h4><pre><code>        ==和equals()的区别?
-        A:==
-            基本类型：比较的是值是否相同
-            引用类型：比较的是地址值是否相同
-        B:equals()
-            只能比较引用类型。默认情况下，比较的是地址值是否相同。
-            但是，我们可以根据自己的需要重写该方法。</code></pre>
+                <h2 id="1-登录注册案例-理解"><a href="#1-登录注册案例-理解" class="headerlink" title="1:登录注册案例(理解)"></a>1:登录注册案例(理解)</h2><h2 id="2-Set集合-理解"><a href="#2-Set集合-理解" class="headerlink" title="2:Set集合(理解)"></a>2:Set集合(理解)</h2><h3 id="1-Set集合的特点"><a href="#1-Set集合的特点" class="headerlink" title="(1)Set集合的特点"></a>(1)Set集合的特点</h3><pre><code>    无序,唯一</code></pre><h3 id="2-HashSet集合-掌握"><a href="#2-HashSet集合-掌握" class="headerlink" title="(2)HashSet集合(掌握)"></a>(2)HashSet集合(掌握)</h3><h4 id="A-底层数据结构是哈希表-是一个元素为链表的数组"><a href="#A-底层数据结构是哈希表-是一个元素为链表的数组" class="headerlink" title="A:底层数据结构是哈希表(是一个元素为链表的数组)"></a>A:底层数据结构是哈希表(是一个元素为链表的数组)</h4><h4 id="B-哈希表底层依赖两个方法：hashCode-和equals"><a href="#B-哈希表底层依赖两个方法：hashCode-和equals" class="headerlink" title="B:哈希表底层依赖两个方法：hashCode()和equals()"></a>B:哈希表底层依赖两个方法：hashCode()和equals()</h4><pre><code>      执行顺序：
+        首先比较哈希值是否相同
+            相同：继续执行equals()方法
+                返回true：元素重复了，不添加
+                返回false：直接把元素添加到集合
+            不同：就直接把元素添加到集合</code></pre><h4 id="C-如何保证元素唯一性的呢"><a href="#C-如何保证元素唯一性的呢" class="headerlink" title="C:如何保证元素唯一性的呢?"></a>C:如何保证元素唯一性的呢?</h4><pre><code>        由hashCode()和equals()保证的</code></pre><h4 id="D-开发的时候，代码非常的简单，自动生成即可。"><a href="#D-开发的时候，代码非常的简单，自动生成即可。" class="headerlink" title="D:开发的时候，代码非常的简单，自动生成即可。"></a>D:开发的时候，代码非常的简单，自动生成即可。</h4><h4 id="E-HashSet存储字符串并遍历"><a href="#E-HashSet存储字符串并遍历" class="headerlink" title="E:HashSet存储字符串并遍历"></a>E:HashSet存储字符串并遍历</h4><h4 id="F-HashSet存储自定义对象并遍历-对象的成员变量值相同即为同一个元素"><a href="#F-HashSet存储自定义对象并遍历-对象的成员变量值相同即为同一个元素" class="headerlink" title="F:HashSet存储自定义对象并遍历(对象的成员变量值相同即为同一个元素)"></a>F:HashSet存储自定义对象并遍历(对象的成员变量值相同即为同一个元素)</h4><h3 id="3-TreeSet集合"><a href="#3-TreeSet集合" class="headerlink" title="(3)TreeSet集合"></a>(3)TreeSet集合</h3><h4 id="A-底层数据结构是红黑树-是一个自平衡的二叉树"><a href="#A-底层数据结构是红黑树-是一个自平衡的二叉树" class="headerlink" title="A:底层数据结构是红黑树(是一个自平衡的二叉树)"></a>A:底层数据结构是红黑树(是一个自平衡的二叉树)</h4><h4 id="B-保证元素的排序方式"><a href="#B-保证元素的排序方式" class="headerlink" title="B:保证元素的排序方式"></a>B:保证元素的排序方式</h4><pre><code>        a:自然排序(元素具备比较性)
+            让元素所属的类实现Comparable接口
+        b:比较器排序(集合具备比较性)
+            让集合构造方法接收Comparator的实现类对象</code></pre><h4 id="C-把我们讲过的代码看一遍即可"><a href="#C-把我们讲过的代码看一遍即可" class="headerlink" title="C:把我们讲过的代码看一遍即可"></a>C:把我们讲过的代码看一遍即可</h4><h3 id="4-案例："><a href="#4-案例：" class="headerlink" title="(4)案例："></a>(4)案例：</h3><h4 id="A-获取无重复的随机数"><a href="#A-获取无重复的随机数" class="headerlink" title="A:获取无重复的随机数"></a>A:获取无重复的随机数</h4><h4 id="B-键盘录入学生按照总分从高到底输出"><a href="#B-键盘录入学生按照总分从高到底输出" class="headerlink" title="B:键盘录入学生按照总分从高到底输出"></a>B:键盘录入学生按照总分从高到底输出</h4><h2 id="3-Collection集合总结-掌握"><a href="#3-Collection集合总结-掌握" class="headerlink" title="3:Collection集合总结(掌握)"></a>3:Collection集合总结(掌握)</h2><h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><h4 id="–List-有序-可重复"><a href="#–List-有序-可重复" class="headerlink" title="|–List    有序,可重复"></a>|–List    有序,可重复</h4><h5 id="–ArrayList"><a href="#–ArrayList" class="headerlink" title="|–ArrayList"></a>|–ArrayList</h5><pre><code>            底层数据结构是数组，查询快，增删慢。
+            线程不安全，效率高</code></pre><h5 id="–Vector"><a href="#–Vector" class="headerlink" title="|–Vector"></a>|–Vector</h5><pre><code>            底层数据结构是数组，查询快，增删慢。
+            线程安全，效率低</code></pre><h5 id="–LinkedList"><a href="#–LinkedList" class="headerlink" title="|–LinkedList"></a>|–LinkedList</h5><pre><code>            底层数据结构是链表，查询慢，增删快。
+            线程不安全，效率高</code></pre><h4 id="–Set-无序-唯一"><a href="#–Set-无序-唯一" class="headerlink" title="|–Set    无序,唯一"></a>|–Set    无序,唯一</h4><h5 id="–HashSet"><a href="#–HashSet" class="headerlink" title="|–HashSet"></a>|–HashSet</h5><pre><code>            底层数据结构是哈希表。
+            如何保证元素唯一性的呢?
+                依赖两个方法：hashCode()和equals()
+                开发中自动生成这两个方法即可</code></pre><h6 id="–LinkedHashSet"><a href="#–LinkedHashSet" class="headerlink" title="|–LinkedHashSet"></a>|–LinkedHashSet</h6><pre><code>                底层数据结构是链表和哈希表
+                由链表保证元素有序
+                由哈希表保证元素唯一</code></pre><h5 id="–TreeSet"><a href="#–TreeSet" class="headerlink" title="|–TreeSet"></a>|–TreeSet</h5><pre><code>            底层数据结构是红黑树。
+            如何保证元素排序的呢?
+                自然排序
+                比较器排序
+            如何保证元素唯一性的呢?
+                根据比较的返回值是否是0来决定</code></pre><h2 id="4-针对Collection集合我们到底使用谁呢-掌握"><a href="#4-针对Collection集合我们到底使用谁呢-掌握" class="headerlink" title="4:针对Collection集合我们到底使用谁呢?(掌握)"></a>4:针对Collection集合我们到底使用谁呢?(掌握)</h2><pre><code>唯一吗?
+    是：Set
+        排序吗?
+            是：TreeSet
+            否：HashSet
+    如果你知道是Set，但是不知道是哪个Set，就用HashSet。
+
+    否：List
+        要安全吗?
+            是：Vector
+            否：ArrayList或者LinkedList
+                查询多：ArrayList
+                增删多：LinkedList
+    如果你知道是List，但是不知道是哪个List，就用ArrayList。
+
+如果你知道是Collection集合，但是不知道使用谁，就用ArrayList。
+
+如果你知道用集合，就用ArrayList。</code></pre><h2 id="5-在集合中常见的数据结构-掌握"><a href="#5-在集合中常见的数据结构-掌握" class="headerlink" title="5:在集合中常见的数据结构(掌握)"></a>5:在集合中常见的数据结构(掌握)</h2><pre><code>ArrayXxx:底层数据结构是数组，查询快，增删慢
+LinkedXxx:底层数据结构是链表，查询慢，增删快
+HashXxx:底层数据结构是哈希表。依赖两个方法：hashCode()和equals()
+TreeXxx:底层数据结构是二叉树。两种方式排序：自然排序和比较器排序</code></pre>
             </div>
             <hr/>
 
@@ -545,7 +574,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/061131261.html">http://ww042q.coding-pages.com/2020/061131261.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/061830877.html">http://ww042q.coding-pages.com/2020/061830877.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -752,28 +781,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/061231581.html">
+                <a href="/2020/061830877.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day12">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day17">
                         
-                        <span class="card-title">Java-day12</span>
+                        <span class="card-title">Java-day17</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:Scanner的使用(了解)(1)在JDK5以后出现的用于键盘录入数据的类。(2)构造方法：A:讲解了System.in这个东西。        它其实是标准的输入流,对应于键盘录入B:构造方法        InputStream i
+                            1:登录注册案例(理解)2:Set集合(理解)(1)Set集合的特点    无序,唯一(2)HashSet集合(掌握)A:底层数据结构是哈希表(是一个元素为链表的数组)B:哈希表底层依赖两个方法：hashCode()和equals()   
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -786,6 +816,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -804,26 +835,27 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/061047836.html">
+                <a href="/2020/061747196.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day10">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day16">
                         
-                        <span class="card-title">Java-day10</span>
+                        <span class="card-title">Java-day16</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:形式参数和返回值的问题(理解)(1)形式参数：    类名：需要该类的对象
-    抽象类名：需要该类的子类对象
-    接口名：需要该接口的实现类对象(2)返回值类型：    类名：返回的是该类的对象
-    抽象类名：返回的是该类的
+                            1:List的子类(掌握)(1)List的子类特点    ArrayList:
+        底层数据结构是数组，查询快，增删慢
+        线程不安全，效率高
+    Vector:
+        底层数据结构是数组，查询快，增删
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-17
                             </span>
                         <span class="publish-author">
                             

@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Java-day17</title>
+      <link href="/2020/061830877.html"/>
+      <url>/2020/061830877.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-登录注册案例-理解"><a href="#1-登录注册案例-理解" class="headerlink" title="1:登录注册案例(理解)"></a>1:登录注册案例(理解)</h2><h2 id="2-Set集合-理解"><a href="#2-Set集合-理解" class="headerlink" title="2:Set集合(理解)"></a>2:Set集合(理解)</h2><h3 id="1-Set集合的特点"><a href="#1-Set集合的特点" class="headerlink" title="(1)Set集合的特点"></a>(1)Set集合的特点</h3><pre><code>    无序,唯一</code></pre><h3 id="2-HashSet集合-掌握"><a href="#2-HashSet集合-掌握" class="headerlink" title="(2)HashSet集合(掌握)"></a>(2)HashSet集合(掌握)</h3><h4 id="A-底层数据结构是哈希表-是一个元素为链表的数组"><a href="#A-底层数据结构是哈希表-是一个元素为链表的数组" class="headerlink" title="A:底层数据结构是哈希表(是一个元素为链表的数组)"></a>A:底层数据结构是哈希表(是一个元素为链表的数组)</h4><h4 id="B-哈希表底层依赖两个方法：hashCode-和equals"><a href="#B-哈希表底层依赖两个方法：hashCode-和equals" class="headerlink" title="B:哈希表底层依赖两个方法：hashCode()和equals()"></a>B:哈希表底层依赖两个方法：hashCode()和equals()</h4><pre><code>      执行顺序：        首先比较哈希值是否相同            相同：继续执行equals()方法                返回true：元素重复了，不添加                返回false：直接把元素添加到集合            不同：就直接把元素添加到集合</code></pre><h4 id="C-如何保证元素唯一性的呢"><a href="#C-如何保证元素唯一性的呢" class="headerlink" title="C:如何保证元素唯一性的呢?"></a>C:如何保证元素唯一性的呢?</h4><pre><code>        由hashCode()和equals()保证的</code></pre><h4 id="D-开发的时候，代码非常的简单，自动生成即可。"><a href="#D-开发的时候，代码非常的简单，自动生成即可。" class="headerlink" title="D:开发的时候，代码非常的简单，自动生成即可。"></a>D:开发的时候，代码非常的简单，自动生成即可。</h4><h4 id="E-HashSet存储字符串并遍历"><a href="#E-HashSet存储字符串并遍历" class="headerlink" title="E:HashSet存储字符串并遍历"></a>E:HashSet存储字符串并遍历</h4><h4 id="F-HashSet存储自定义对象并遍历-对象的成员变量值相同即为同一个元素"><a href="#F-HashSet存储自定义对象并遍历-对象的成员变量值相同即为同一个元素" class="headerlink" title="F:HashSet存储自定义对象并遍历(对象的成员变量值相同即为同一个元素)"></a>F:HashSet存储自定义对象并遍历(对象的成员变量值相同即为同一个元素)</h4><h3 id="3-TreeSet集合"><a href="#3-TreeSet集合" class="headerlink" title="(3)TreeSet集合"></a>(3)TreeSet集合</h3><h4 id="A-底层数据结构是红黑树-是一个自平衡的二叉树"><a href="#A-底层数据结构是红黑树-是一个自平衡的二叉树" class="headerlink" title="A:底层数据结构是红黑树(是一个自平衡的二叉树)"></a>A:底层数据结构是红黑树(是一个自平衡的二叉树)</h4><h4 id="B-保证元素的排序方式"><a href="#B-保证元素的排序方式" class="headerlink" title="B:保证元素的排序方式"></a>B:保证元素的排序方式</h4><pre><code>        a:自然排序(元素具备比较性)            让元素所属的类实现Comparable接口        b:比较器排序(集合具备比较性)            让集合构造方法接收Comparator的实现类对象</code></pre><h4 id="C-把我们讲过的代码看一遍即可"><a href="#C-把我们讲过的代码看一遍即可" class="headerlink" title="C:把我们讲过的代码看一遍即可"></a>C:把我们讲过的代码看一遍即可</h4><h3 id="4-案例："><a href="#4-案例：" class="headerlink" title="(4)案例："></a>(4)案例：</h3><h4 id="A-获取无重复的随机数"><a href="#A-获取无重复的随机数" class="headerlink" title="A:获取无重复的随机数"></a>A:获取无重复的随机数</h4><h4 id="B-键盘录入学生按照总分从高到底输出"><a href="#B-键盘录入学生按照总分从高到底输出" class="headerlink" title="B:键盘录入学生按照总分从高到底输出"></a>B:键盘录入学生按照总分从高到底输出</h4><h2 id="3-Collection集合总结-掌握"><a href="#3-Collection集合总结-掌握" class="headerlink" title="3:Collection集合总结(掌握)"></a>3:Collection集合总结(掌握)</h2><h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><h4 id="–List-有序-可重复"><a href="#–List-有序-可重复" class="headerlink" title="|–List    有序,可重复"></a>|–List    有序,可重复</h4><h5 id="–ArrayList"><a href="#–ArrayList" class="headerlink" title="|–ArrayList"></a>|–ArrayList</h5><pre><code>            底层数据结构是数组，查询快，增删慢。            线程不安全，效率高</code></pre><h5 id="–Vector"><a href="#–Vector" class="headerlink" title="|–Vector"></a>|–Vector</h5><pre><code>            底层数据结构是数组，查询快，增删慢。            线程安全，效率低</code></pre><h5 id="–LinkedList"><a href="#–LinkedList" class="headerlink" title="|–LinkedList"></a>|–LinkedList</h5><pre><code>            底层数据结构是链表，查询慢，增删快。            线程不安全，效率高</code></pre><h4 id="–Set-无序-唯一"><a href="#–Set-无序-唯一" class="headerlink" title="|–Set    无序,唯一"></a>|–Set    无序,唯一</h4><h5 id="–HashSet"><a href="#–HashSet" class="headerlink" title="|–HashSet"></a>|–HashSet</h5><pre><code>            底层数据结构是哈希表。            如何保证元素唯一性的呢?                依赖两个方法：hashCode()和equals()                开发中自动生成这两个方法即可</code></pre><h6 id="–LinkedHashSet"><a href="#–LinkedHashSet" class="headerlink" title="|–LinkedHashSet"></a>|–LinkedHashSet</h6><pre><code>                底层数据结构是链表和哈希表                由链表保证元素有序                由哈希表保证元素唯一</code></pre><h5 id="–TreeSet"><a href="#–TreeSet" class="headerlink" title="|–TreeSet"></a>|–TreeSet</h5><pre><code>            底层数据结构是红黑树。            如何保证元素排序的呢?                自然排序                比较器排序            如何保证元素唯一性的呢?                根据比较的返回值是否是0来决定</code></pre><h2 id="4-针对Collection集合我们到底使用谁呢-掌握"><a href="#4-针对Collection集合我们到底使用谁呢-掌握" class="headerlink" title="4:针对Collection集合我们到底使用谁呢?(掌握)"></a>4:针对Collection集合我们到底使用谁呢?(掌握)</h2><pre><code>唯一吗?    是：Set        排序吗?            是：TreeSet            否：HashSet    如果你知道是Set，但是不知道是哪个Set，就用HashSet。    否：List        要安全吗?            是：Vector            否：ArrayList或者LinkedList                查询多：ArrayList                增删多：LinkedList    如果你知道是List，但是不知道是哪个List，就用ArrayList。如果你知道是Collection集合，但是不知道使用谁，就用ArrayList。如果你知道用集合，就用ArrayList。</code></pre><h2 id="5-在集合中常见的数据结构-掌握"><a href="#5-在集合中常见的数据结构-掌握" class="headerlink" title="5:在集合中常见的数据结构(掌握)"></a>5:在集合中常见的数据结构(掌握)</h2><pre><code>ArrayXxx:底层数据结构是数组，查询快，增删慢LinkedXxx:底层数据结构是链表，查询慢，增删快HashXxx:底层数据结构是哈希表。依赖两个方法：hashCode()和equals()TreeXxx:底层数据结构是二叉树。两种方式排序：自然排序和比较器排序</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java-day16</title>
       <link href="/2020/061747196.html"/>
       <url>/2020/061747196.html</url>
