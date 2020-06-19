@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java-day16, toily的博客">
+    <meta name="keywords" content="Java-day18, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java-day16 | toily的博客</title>
+    <title>Java-day18 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -327,7 +327,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java-day16</h1>
+                    <h1 class="description center-align post-title">Java-day18</h1>
                 </div>
             </div>
         </div>
@@ -477,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-17
+                    2020-06-19
                 </div>
                 
 
@@ -486,7 +486,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    967
+                    855
                 </div>
                 
 
@@ -508,52 +508,58 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-List的子类-掌握"><a href="#1-List的子类-掌握" class="headerlink" title="1:List的子类(掌握)"></a>1:List的子类(掌握)</h2><h3 id="1-List的子类特点"><a href="#1-List的子类特点" class="headerlink" title="(1)List的子类特点"></a>(1)List的子类特点</h3><pre><code>    ArrayList:
-        底层数据结构是数组，查询快，增删慢
-        线程不安全，效率高
-    Vector:
-        底层数据结构是数组，查询快，增删慢
-        线程安全，效率低
-    LinkedList:
-        底层数据结构是链表，查询慢，增删快
-        线程不安全，效率高</code></pre><h3 id="2-ArrayList"><a href="#2-ArrayList" class="headerlink" title="(2)ArrayList"></a>(2)ArrayList</h3><pre><code>    A:没有特有功能需要学习
-    B:案例
-        a:ArrayList存储字符串并遍历
-        b:ArrayList存储自定义对象并遍历</code></pre><h3 id="3-Vector"><a href="#3-Vector" class="headerlink" title="(3)Vector"></a>(3)Vector</h3><h4 id="A-有特有功能"><a href="#A-有特有功能" class="headerlink" title="A:有特有功能"></a>A:有特有功能</h4><pre><code>        a:添加
-            public void addElement(E obj)        --    add()
-        b:获取
-            public E elementAt(int index)        --    get()
-            public Enumeration&lt;E&gt; elements()    --  iterator()</code></pre><h4 id="B-案例"><a href="#B-案例" class="headerlink" title="B:案例"></a>B:案例</h4><pre><code>        a:Vector存储字符串并遍历
-        b:Vector存储自定义对象并遍历</code></pre><h3 id="4-LinkedList"><a href="#4-LinkedList" class="headerlink" title="(4)LinkedList"></a>(4)LinkedList</h3><h4 id="A-有特有功能-1"><a href="#A-有特有功能-1" class="headerlink" title="A:有特有功能"></a>A:有特有功能</h4><pre><code>        a:添加
-            addFirst()
-            addLast()
-        b:删除
-            removeFirst()
-            removeLast()
-        c:获取
-            getFirst()
-            getLast()</code></pre><h4 id="B-案例-1"><a href="#B-案例-1" class="headerlink" title="B:案例"></a>B:案例</h4><pre><code>        a:LinkedList存储字符串并遍历
-        b:LinkedList存储自定义对象并遍历</code></pre><h3 id="5-案例："><a href="#5-案例：" class="headerlink" title="(5)案例："></a>(5)案例：</h3><h4 id="A-去除集合中的多个字符串的重复元素"><a href="#A-去除集合中的多个字符串的重复元素" class="headerlink" title="A:去除集合中的多个字符串的重复元素"></a>A:去除集合中的多个字符串的重复元素</h4><pre><code>        如果字符串的内容相同，即为重复元素</code></pre><h4 id="B-去除集合中的多个自定义对象的重复元素"><a href="#B-去除集合中的多个自定义对象的重复元素" class="headerlink" title="B:去除集合中的多个自定义对象的重复元素"></a>B:去除集合中的多个自定义对象的重复元素</h4><pre><code>        如果自定义对象的成员变量值都相同，即为重复元素</code></pre><h4 id="C-用LinkedList模拟一个栈数据结构的集合类，并测试。"><a href="#C-用LinkedList模拟一个栈数据结构的集合类，并测试。" class="headerlink" title="C:用LinkedList模拟一个栈数据结构的集合类，并测试。"></a>C:用LinkedList模拟一个栈数据结构的集合类，并测试。</h4><pre><code>        你要定义一个集合类，只不过内部可以使用LinkedList来实现。</code></pre><h2 id="2-泛型-掌握"><a href="#2-泛型-掌握" class="headerlink" title="2:泛型(掌握)"></a>2:泛型(掌握)</h2><h3 id="1-泛型概述"><a href="#1-泛型概述" class="headerlink" title="(1)泛型概述"></a>(1)泛型概述</h3><pre><code>    是一种把明确类型的工作推迟到创建对象或者调用方法的时候才去明确的特殊的类型。</code></pre><h3 id="2-格式："><a href="#2-格式：" class="headerlink" title="(2)格式："></a>(2)格式：</h3><pre><code>    &lt;数据类型&gt;
-    注意：该数据类型只能是引用类型。</code></pre><h3 id="3-好处："><a href="#3-好处：" class="headerlink" title="(3)好处："></a>(3)好处：</h3><pre><code>    A:把运行时期的问题提前到了编译期间
-    B:避免了强制类型转换
-    C:优化了程序设计，解决了黄色警告线问题，让程序更安全</code></pre><h3 id="4-泛型的前世今生"><a href="#4-泛型的前世今生" class="headerlink" title="(4)泛型的前世今生"></a>(4)泛型的前世今生</h3><pre><code>    A:泛型的由来
-        Object类型作为任意类型的时候，在向下转型的时候，会隐含一个转型问题
-    B:泛型类
-    C:泛型方法
-    D:泛型接口
-    E:泛型高级通配符
-        ?
-        ? extends E
-        ? super E</code></pre><h3 id="5-我们在哪里使用呢"><a href="#5-我们在哪里使用呢" class="headerlink" title="(5)我们在哪里使用呢?"></a>(5)我们在哪里使用呢?</h3><pre><code>    一般是在集合中使用。</code></pre><h2 id="3-增强for循环-掌握"><a href="#3-增强for循环-掌握" class="headerlink" title="3:增强for循环(掌握)"></a>3:增强for循环(掌握)</h2><h3 id="1-是for循环的一种"><a href="#1-是for循环的一种" class="headerlink" title="(1)是for循环的一种"></a>(1)是for循环的一种</h3><h3 id="2-格式：-1"><a href="#2-格式：-1" class="headerlink" title="(2)格式："></a>(2)格式：</h3><pre><code>    for(元素的数据类型 变量名 : 数组或者Collection集合的对象) {
-        使用该变量即可，该变量其实就是数组或者集合中的元素。
-    }</code></pre><h3 id="3-好处：-1"><a href="#3-好处：-1" class="headerlink" title="(3)好处："></a>(3)好处：</h3><pre><code>    简化了数组和集合的遍历</code></pre><h3 id="4-弊端"><a href="#4-弊端" class="headerlink" title="(4)弊端"></a>(4)弊端</h3><pre><code>    增强for循环的目标不能为null。建议在使用前，先判断是否为null。</code></pre><h2 id="4-静态导入-了解"><a href="#4-静态导入-了解" class="headerlink" title="4:静态导入(了解)"></a>4:静态导入(了解)</h2><h3 id="1-可以导入到方法级别的导入"><a href="#1-可以导入到方法级别的导入" class="headerlink" title="(1)可以导入到方法级别的导入"></a>(1)可以导入到方法级别的导入</h3><h3 id="2-格式：-2"><a href="#2-格式：-2" class="headerlink" title="(2)格式："></a>(2)格式：</h3><pre><code>    import static 包名....类名.方法名;</code></pre><h3 id="3-注意事项："><a href="#3-注意事项：" class="headerlink" title="(3)注意事项："></a>(3)注意事项：</h3><pre><code>    A:方法必须是静态的
-    B:如果多个类下有同名的方法，就不好区分了，还得加上前缀。
-        所以一般我们并不使用静态导入，但是一定要能够看懂。</code></pre><h2 id="5-可变参数-掌握"><a href="#5-可变参数-掌握" class="headerlink" title="5:可变参数(掌握)"></a>5:可变参数(掌握)</h2><h3 id="1-如果我们在写方法的时候，参数个数不明确，就应该定义可变参数。"><a href="#1-如果我们在写方法的时候，参数个数不明确，就应该定义可变参数。" class="headerlink" title="(1)如果我们在写方法的时候，参数个数不明确，就应该定义可变参数。"></a>(1)如果我们在写方法的时候，参数个数不明确，就应该定义可变参数。</h3><h3 id="2-格式：-3"><a href="#2-格式：-3" class="headerlink" title="(2)格式："></a>(2)格式：</h3><pre><code>    修饰符 返回值类型 方法名(数据类型... 变量) {}
+                <h2 id="1-Map-掌握"><a href="#1-Map-掌握" class="headerlink" title="1:Map(掌握)"></a>1:Map(掌握)</h2><h3 id="1-将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。"><a href="#1-将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。" class="headerlink" title="(1)将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。"></a>(1)将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。</h3><h3 id="2-Map和Collection的区别"><a href="#2-Map和Collection的区别" class="headerlink" title="(2)Map和Collection的区别?"></a>(2)Map和Collection的区别?</h3><pre><code>    A:Map 存储的是键值对形式的元素，键唯一，值可以重复。夫妻对
+    B:Collection 存储的是单独出现的元素，子接口Set元素唯一，子接口List元素可重复。光棍</code></pre><h3 id="3-Map接口功能概述-自己补齐"><a href="#3-Map接口功能概述-自己补齐" class="headerlink" title="(3)Map接口功能概述(自己补齐)"></a>(3)Map接口功能概述(自己补齐)</h3><h4 id="A-添加功能"><a href="#A-添加功能" class="headerlink" title="A:添加功能"></a>A:添加功能</h4><pre><code>    V put(K key,V value):添加元素。这个其实还有另一个功能?先不告诉你，等会讲
+         如果键是第一次存储，就直接存储元素，返回null
+         如果键不是第一次存在，就用值把以前的值替换掉，返回以前的值</code></pre><h4 id="B-删除功能"><a href="#B-删除功能" class="headerlink" title="B:删除功能"></a>B:删除功能</h4><pre><code>     void clear():移除所有的键值对元素
+     V remove(Object key)：根据键删除键值对元素，并把值返回</code></pre><h4 id="C-判断功能"><a href="#C-判断功能" class="headerlink" title="C:判断功能"></a>C:判断功能</h4><pre><code>     boolean containsKey(Object key)：判断集合是否包含指定的键
+      boolean containsValue(Object value):判断集合是否包含指定的值
+      boolean isEmpty()：判断集合是否为空</code></pre><h4 id="D-获取功能"><a href="#D-获取功能" class="headerlink" title="D:获取功能"></a>D:获取功能</h4><pre><code>     Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet():???
+     V get(Object key):根据键获取值
+     Set&lt;K&gt; keySet():获取集合中所有键的集合
+     Collection&lt;V&gt; values():获取集合中所有值的集合</code></pre><h4 id="E-长度功能"><a href="#E-长度功能" class="headerlink" title="E:长度功能"></a>E:长度功能</h4><pre><code>    int size()：返回集合中的键值对的对数</code></pre><h3 id="4-Map集合的遍历"><a href="#4-Map集合的遍历" class="headerlink" title="(4)Map集合的遍历"></a>(4)Map集合的遍历</h3><h4 id="A-键找值"><a href="#A-键找值" class="headerlink" title="A:键找值"></a>A:键找值</h4><pre><code>        a:获取所有键的集合
+        b:遍历键的集合,得到每一个键
+        c:根据键到集合中去找值</code></pre><h4 id="B-键值对对象找键和值"><a href="#B-键值对对象找键和值" class="headerlink" title="B:键值对对象找键和值"></a>B:键值对对象找键和值</h4><pre><code>        a:获取所有的键值对对象的集合
+        b:遍历键值对对象的集合，获取每一个键值对对象
+        c:根据键值对对象去获取键和值
 
-    注意：
-        A:该变量其实是一个数组名
-        B:如果一个方法有多个参数，并且有可变参数，可变参数必须在最后</code></pre><h3 id="3-Arrays工具类的一个方法"><a href="#3-Arrays工具类的一个方法" class="headerlink" title="(3)Arrays工具类的一个方法"></a>(3)Arrays工具类的一个方法</h3><pre><code>    asList()把数组转成集合。
-    注意：这个集合的长度不能改变。</code></pre><h2 id="6-练习-掌握"><a href="#6-练习-掌握" class="headerlink" title="6:练习(掌握)"></a>6:练习(掌握)</h2><h3 id="A-集合的嵌套遍历"><a href="#A-集合的嵌套遍历" class="headerlink" title="A:集合的嵌套遍历"></a>A:集合的嵌套遍历</h3><h3 id="B-产生10个1-20之间的随机数，要求随机数不能重复"><a href="#B-产生10个1-20之间的随机数，要求随机数不能重复" class="headerlink" title="B:产生10个1-20之间的随机数，要求随机数不能重复"></a>B:产生10个1-20之间的随机数，要求随机数不能重复</h3><h3 id="C-键盘录入多个数据，以0结束，并在控制台输出最大值"><a href="#C-键盘录入多个数据，以0结束，并在控制台输出最大值" class="headerlink" title="C:键盘录入多个数据，以0结束，并在控制台输出最大值"></a>C:键盘录入多个数据，以0结束，并在控制台输出最大值</h3><h2 id="7-要掌握的代码"><a href="#7-要掌握的代码" class="headerlink" title="7:要掌握的代码"></a>7:要掌握的代码</h2><pre><code>集合存储元素，加入泛型，并可以使用增强for遍历。</code></pre>
+    代码体现：
+        Map&lt;String,String&gt; hm = new HashMap&lt;String,String&gt;();
+
+        hm.put(&quot;it002&quot;,&quot;hello&quot;);
+        hm.put(&quot;it003&quot;,&quot;world&quot;);
+        hm.put(&quot;it001&quot;,&quot;java&quot;);
+
+        //方式1 键找值
+        Set&lt;String&gt; set = hm.keySet();
+        for(String key : set) {
+            String value = hm.get(key);
+            System.out.println(key+&quot;---&quot;+value);
+        }
+
+        //方式2 键值对对象找键和值
+        Set&lt;Map.Entry&lt;String,String&gt;&gt; set2 = hm.entrySet();
+        for(Map.Entry&lt;String,String&gt; me : set2) {
+            String key = me.getKey();
+            String value = me.getValue();
+            System.out.println(key+&quot;---&quot;+value);
+        }</code></pre><h3 id="5-HashMap集合的练习"><a href="#5-HashMap集合的练习" class="headerlink" title="(5)HashMap集合的练习"></a>(5)HashMap集合的练习</h3><pre><code>    A:HashMap&lt;String,String&gt;
+    B:HashMap&lt;Integer,String&gt;
+    C:HashMap&lt;String,Student&gt;
+    D:HashMap&lt;Student,String&gt;</code></pre><h3 id="6-TreeMap集合的练习"><a href="#6-TreeMap集合的练习" class="headerlink" title="(6)TreeMap集合的练习"></a>(6)TreeMap集合的练习</h3><pre><code>    A:TreeMap&lt;String,String&gt;
+    B:TreeMap&lt;Student,String&gt;</code></pre><h3 id="7-案例"><a href="#7-案例" class="headerlink" title="(7)案例"></a>(7)案例</h3><pre><code>    A:统计一个字符串中每个字符出现的次数
+    B:集合的嵌套遍历
+        a:HashMap嵌套HashMap
+        b:HashMap嵌套ArrayList
+        c:ArrayList嵌套HashMap
+        d:多层嵌套</code></pre><h2 id="2-Collections-理解"><a href="#2-Collections-理解" class="headerlink" title="2:Collections(理解)"></a>2:Collections(理解)</h2><h3 id="1-是针对集合进行操作的工具类"><a href="#1-是针对集合进行操作的工具类" class="headerlink" title="(1)是针对集合进行操作的工具类"></a>(1)是针对集合进行操作的工具类</h3><h3 id="2-面试题：Collection和Collections的区别"><a href="#2-面试题：Collection和Collections的区别" class="headerlink" title="(2)面试题：Collection和Collections的区别"></a>(2)面试题：Collection和Collections的区别</h3><pre><code>    A:Collection 是单列集合的顶层接口，有两个子接口List和Set
+    B:Collections 是针对集合进行操作的工具类，可以对集合进行排序和查找等</code></pre><h3 id="3-常见的几个小方法："><a href="#3-常见的几个小方法：" class="headerlink" title="(3)常见的几个小方法："></a>(3)常见的几个小方法：</h3><pre><code>    A:public static &lt;T&gt; void sort(List&lt;T&gt; list)
+    B:public static &lt;T&gt; int binarySearch(List&lt;?&gt; list,T key)
+    C:public static &lt;T&gt; T max(Collection&lt;?&gt; coll)
+    D:public static void reverse(List&lt;?&gt; list)
+    E:public static void shuffle(List&lt;?&gt; list)</code></pre><h3 id="4-案例"><a href="#4-案例" class="headerlink" title="(4)案例"></a>(4)案例</h3><pre><code>    A:ArrayList集合存储自定义对象的排序
+    B:模拟斗地主洗牌和发牌
+    C:模拟斗地主洗牌和发牌并对牌进行排序</code></pre>
             </div>
             <hr/>
 
@@ -578,7 +584,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/061747196.html">http://ww042q.coding-pages.com/2020/061747196.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/061931965.html">http://ww042q.coding-pages.com/2020/061931965.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -785,28 +791,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/061830877.html">
+                <a href="/2020/061931965.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day17">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day18">
                         
-                        <span class="card-title">Java-day17</span>
+                        <span class="card-title">Java-day18</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:登录注册案例(理解)2:Set集合(理解)(1)Set集合的特点    无序,唯一(2)HashSet集合(掌握)A:底层数据结构是哈希表(是一个元素为链表的数组)B:哈希表底层依赖两个方法：hashCode()和equals()   
+                            1:Map(掌握)(1)将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。(2)Map和Collection的区别?    A:Map 存储的是键值对形式的元素，键唯一，值可以重复。夫妻对
+    B:Collect
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -819,6 +827,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -837,23 +846,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/061647388.html">
+                <a href="/2020/061830877.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day15">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day17">
                         
-                        <span class="card-title">Java-day15</span>
+                        <span class="card-title">Java-day17</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:对象数组(掌握)(1)数组既可以存储基本数据类型，也可以存储引用类型。它存储引用类型的时候的数组就叫对象数组。(2)案例：    用数组存储5个学生对象，并遍历数组。2:集合(Collection)(掌握)(1)集合的由来?    我们
+                            1:登录注册案例(理解)2:Set集合(理解)(1)Set集合的特点    无序,唯一(2)HashSet集合(掌握)A:底层数据结构是哈希表(是一个元素为链表的数组)B:哈希表底层依赖两个方法：hashCode()和equals()   
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-18
                             </span>
                         <span class="publish-author">
                             
