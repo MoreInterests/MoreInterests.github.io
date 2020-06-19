@@ -5,13 +5,14 @@ top: false
 cover: false
 toc: true
 mathjax: false
-date: 2020-06-16 19:06:52
 author: xing xiao
+tags: Java
+categories: 编程
+abbrlink: 47388
+date: 2020-06-16 19:06:52
 coverImg:
 password:
 summary:
-tags: Java
-categories: 编程
 ---
 ## 1:对象数组(掌握)  
 
@@ -47,8 +48,8 @@ categories: 编程
 				|--TreeSet
 ###	(4)Collection的功能概述(自己补齐)
 ####		A:添加功能
-* 		boolean add(Object obj):添加一个元素
-* 		boolean addAll(Collection c):添加一个集合的元素
+ *  		boolean add(Object obj):添加一个元素
+ * 		boolean addAll(Collection c):添加一个集合的元素
 ####		B:删除功能
  * 		void clear():移除所有元素
  * 		boolean remove(Object o):移除一个元素
