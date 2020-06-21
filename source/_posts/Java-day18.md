@@ -5,13 +5,14 @@ top: false
 cover: false
 toc: true
 mathjax: false
-date: 2020-06-19 20:56:17
 author: xing xiao
+tags: Java
+categories: 编程
+abbrlink: 31965
+date: 2020-06-19 20:56:17
 coverImg:
 password:
 summary:
-tags: Java  
-categories: 编程
 ---
 ## 1:Map(掌握)
 ###	(1)将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。 
