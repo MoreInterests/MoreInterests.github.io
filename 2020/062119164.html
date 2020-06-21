@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java-day03, toily的博客">
+    <meta name="keywords" content="Java-day20, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java-day03 | toily的博客</title>
+    <title>Java-day20 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -327,7 +327,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java-day03</h1>
+                    <h1 class="description center-align post-title">Java-day20</h1>
                 </div>
             </div>
         </div>
@@ -477,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-02
+                    2020-06-21
                 </div>
                 
 
@@ -486,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    547
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    2 分
                 </div>
                 
 
@@ -508,128 +508,50 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-运算符-掌握"><a href="#1-运算符-掌握" class="headerlink" title="1:运算符(掌握)"></a>1:运算符(掌握)</h2><h3 id="1-算术运算符"><a href="#1-算术运算符" class="headerlink" title="(1)算术运算符"></a>(1)算术运算符</h3><pre><code>    A:+,-,*,/,%,++,--
-    B:+的用法
-        a:加法
-        b:正号
-        c:字符串连接符
-    C:/和%的区别
-        数据做除法操作的时候，/取得是商，%取得是余数
-    D:++和--的用法
-        a:他们的作用是自增或者自减
-        b:使用
-            **单独使用
-                放在操作数据的前面和后面效果一样。
-                a++或者++a效果一样。
-            **参与操作使用
-                放在操作数的前面：先自增或者自减，再参与操作
-                    int a = 10;
-                    int b = ++a;
-                放在操作数的后面：先参与操作，再自增或者自减
-                    int a = 10;
-                    int b = a++;</code></pre><h3 id="2-赋值运算符"><a href="#2-赋值运算符" class="headerlink" title="(2)赋值运算符"></a>(2)赋值运算符</h3><pre><code>    A:=,+=,-=,*=,/=,%=等
-    B:=叫做赋值运算符，也是最基本的赋值运算符
-        int x = 10; 把10赋值给int类型的变量x。
-    C:扩展的赋值运算符的特点
-        隐含了自动强制转换。
+                <h2 id="1-递归-理解"><a href="#1-递归-理解" class="headerlink" title="1:递归(理解)"></a>1:递归(理解)</h2><h3 id="1-方法定义中调用方法本身的现象"><a href="#1-方法定义中调用方法本身的现象" class="headerlink" title="(1)方法定义中调用方法本身的现象"></a>(1)方法定义中调用方法本身的现象</h3><pre><code>    举例：老和尚给小和尚讲故事，我们学编程</code></pre><h3 id="2-递归的注意事项；"><a href="#2-递归的注意事项；" class="headerlink" title="(2)递归的注意事项；"></a>(2)递归的注意事项；</h3><h4 id="A-要有出口，否则就是死递归"><a href="#A-要有出口，否则就是死递归" class="headerlink" title="A:要有出口，否则就是死递归"></a>A:要有出口，否则就是死递归</h4><h4 id="B-次数不能过多，否则内存溢出"><a href="#B-次数不能过多，否则内存溢出" class="headerlink" title="B:次数不能过多，否则内存溢出"></a>B:次数不能过多，否则内存溢出</h4><h4 id="C-构造方法不能递归使用"><a href="#C-构造方法不能递归使用" class="headerlink" title="C:构造方法不能递归使用"></a>C:构造方法不能递归使用</h4><h3 id="3-递归的案例："><a href="#3-递归的案例：" class="headerlink" title="(3)递归的案例："></a>(3)递归的案例：</h3><h4 id="A-递归求阶乘"><a href="#A-递归求阶乘" class="headerlink" title="A:递归求阶乘"></a>A:递归求阶乘</h4><h4 id="B-兔子问题"><a href="#B-兔子问题" class="headerlink" title="B:兔子问题"></a>B:兔子问题</h4><h4 id="C-递归输出指定目录下所有指定后缀名的文件绝对路径"><a href="#C-递归输出指定目录下所有指定后缀名的文件绝对路径" class="headerlink" title="C:递归输出指定目录下所有指定后缀名的文件绝对路径"></a>C:递归输出指定目录下所有指定后缀名的文件绝对路径</h4><h4 id="D-递归删除带内容的目录-小心使用"><a href="#D-递归删除带内容的目录-小心使用" class="headerlink" title="D:递归删除带内容的目录(小心使用)"></a>D:递归删除带内容的目录(小心使用)</h4><h2 id="2-IO流-掌握"><a href="#2-IO流-掌握" class="headerlink" title="2:IO流(掌握)"></a>2:IO流(掌握)</h2><h3 id="1-IO用于在设备间进行数据传输的操作"><a href="#1-IO用于在设备间进行数据传输的操作" class="headerlink" title="(1)IO用于在设备间进行数据传输的操作"></a>(1)IO用于在设备间进行数据传输的操作</h3><h3 id="2-分类："><a href="#2-分类：" class="headerlink" title="(2)分类："></a>(2)分类：</h3><h4 id="A-流向"><a href="#A-流向" class="headerlink" title="A:流向"></a>A:流向</h4><pre><code>        输入流    读取数据
+        输出流    写出数据</code></pre><h4 id="B-数据类型"><a href="#B-数据类型" class="headerlink" title="B:数据类型"></a>B:数据类型</h4><pre><code>        字节流    
+                字节输入流
+                字节输出流
+        字符流
+                字符输入流
+                字符输出流</code></pre><h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><pre><code>        a:如果我们没有明确说明按照什么分，默认按照数据类型分。
+        b:除非文件用windows自带的记事本打开我们能够读懂，才采用字符流，否则建议使用字节流。</code></pre><h3 id="3-FileOutputStream写出数据"><a href="#3-FileOutputStream写出数据" class="headerlink" title="(3)FileOutputStream写出数据"></a>(3)FileOutputStream写出数据</h3><h4 id="A-操作步骤"><a href="#A-操作步骤" class="headerlink" title="A:操作步骤"></a>A:操作步骤</h4><pre><code>        a:创建字节输出流对象
+        b:调用write()方法
+        c:释放资源</code></pre><h4 id="B-代码体现："><a href="#B-代码体现：" class="headerlink" title="B:代码体现："></a>B:代码体现：</h4><pre><code>        FileOutputStream fos = new FileOutputStream(&quot;fos.txt&quot;);
 
-        面试题：
-            short s = 1;
-            s = s + 1;
+        fos.write(&quot;hello&quot;.getBytes());
 
-            short s = 1;
-            s += 1;
-            请问上面的代码哪个有问题?</code></pre><h3 id="3-比较运算符"><a href="#3-比较运算符" class="headerlink" title="(3)比较运算符"></a>(3)比较运算符</h3><pre><code>    A:==,!=,&gt;,&gt;=,&lt;,&lt;=
-    B:无论运算符两端简单还是复杂最终结果是boolean类型。
-    C:千万不要把==写成了=</code></pre><h3 id="4-逻辑运算符"><a href="#4-逻辑运算符" class="headerlink" title="(4)逻辑运算符"></a>(4)逻辑运算符</h3><pre><code>    A:&amp;,|,^,!,&amp;&amp;,||
-    B:逻辑运算符用于连接boolean类型的式子
-    C:结论
-        &amp;:有false则false
-        |:有true则true
-        ^:相同则false，不同则true。
-            情侣关系。
-        !:非true则false，非false则true
+        fos.close();</code></pre><h4 id="C-要注意的问题"><a href="#C-要注意的问题" class="headerlink" title="C:要注意的问题?"></a>C:要注意的问题?</h4><pre><code>        a:创建字节输出流对象做了几件事情?
+        b:为什么要close()?
+        c:如何实现数据的换行?
+        d:如何实现数据的追加写入?</code></pre><h3 id="4-FileInputStream读取数据"><a href="#4-FileInputStream读取数据" class="headerlink" title="(4)FileInputStream读取数据"></a>(4)FileInputStream读取数据</h3><h4 id="A-操作步骤-1"><a href="#A-操作步骤-1" class="headerlink" title="A:操作步骤"></a>A:操作步骤</h4><pre><code>        a:创建字节输入流对象
+        b:调用read()方法
+        c:释放资源</code></pre><h4 id="B-代码体现：-1"><a href="#B-代码体现：-1" class="headerlink" title="B:代码体现："></a>B:代码体现：</h4><pre><code>        FileInputStream fis = new FileInputStream(&quot;fos.txt&quot;);
 
-        &amp;&amp;:结果和&amp;是一样的，只不过有短路效果。左边是false，右边不执行。
-        ||:结果和|是一样的，只不过有短路效果。左边是true，右边不执行。</code></pre><h3 id="5-位运算符-了解"><a href="#5-位运算符-了解" class="headerlink" title="(5)位运算符(了解)"></a>(5)位运算符(了解)</h3><pre><code>    A:^的特殊用法
-        一个数据针对另一个数据位异或两次，该数不变
-    B:面试题
-        a:请实现两个变量的交换
-            **采用第三方变量
-            **用位异或运算符
-                左边a,b,a
-                右边a^b
-        b:请用最有效率的方式计算出2乘以8的结果
-            2&lt;&lt;3</code></pre><h3 id="6-三元运算符"><a href="#6-三元运算符" class="headerlink" title="(6)三元运算符"></a>(6)三元运算符</h3><pre><code>    A:格式
-        比较表达式?表达式1:表达式2;
-    B:执行流程：
-        首先计算比较表达式的值，看是true还是false。
-        如果是true，表达式1就是结果。
-        如果是false，表达式2就是结果。
-    C:案例：
-        a:比较两个数据是否相等
-        b:获取两个数据中的最大值
-        c:获取三个数据中的最大值</code></pre><h2 id="2-键盘录入-掌握"><a href="#2-键盘录入-掌握" class="headerlink" title="2:键盘录入(掌握)"></a>2:键盘录入(掌握)</h2><h3 id="1-实际开发中，数据是变化的，为了提高程序的灵活性，我们加入键盘录入数据。"><a href="#1-实际开发中，数据是变化的，为了提高程序的灵活性，我们加入键盘录入数据。" class="headerlink" title="(1)实际开发中，数据是变化的，为了提高程序的灵活性，我们加入键盘录入数据。"></a>(1)实际开发中，数据是变化的，为了提高程序的灵活性，我们加入键盘录入数据。</h3><h3 id="2-如何实现呢-目前就记住"><a href="#2-如何实现呢-目前就记住" class="headerlink" title="(2)如何实现呢?目前就记住"></a>(2)如何实现呢?目前就记住</h3><pre><code>    A:导包
-        import java.util.Scanner;
-        位置：在class的上边
-    B:创建对象
-        Scanner sc = new Scanner(System.in);
-    C:获取数据
-        int x = sc.nextInt();</code></pre><h3 id="3-把三元运算符的案例加入键盘录入改进。"><a href="#3-把三元运算符的案例加入键盘录入改进。" class="headerlink" title="(3)把三元运算符的案例加入键盘录入改进。"></a>(3)把三元运算符的案例加入键盘录入改进。</h3><h2 id="3-流程控制语句"><a href="#3-流程控制语句" class="headerlink" title="3:流程控制语句"></a>3:流程控制语句</h2><h3 id="1-顺序结构-从上往下，依次执行"><a href="#1-顺序结构-从上往下，依次执行" class="headerlink" title="(1)顺序结构 从上往下，依次执行"></a>(1)顺序结构 从上往下，依次执行</h3><h3 id="2-选择结构-按照不同的选择，执行不同的代码"><a href="#2-选择结构-按照不同的选择，执行不同的代码" class="headerlink" title="(2)选择结构    按照不同的选择，执行不同的代码"></a>(2)选择结构    按照不同的选择，执行不同的代码</h3><h3 id="3-循环结构-做一些重复的代码"><a href="#3-循环结构-做一些重复的代码" class="headerlink" title="(3)循环结构 做一些重复的代码"></a>(3)循环结构 做一些重复的代码</h3><h2 id="4-if语句-掌握"><a href="#4-if语句-掌握" class="headerlink" title="4:if语句(掌握)"></a>4:if语句(掌握)</h2><h3 id="1-三种格式"><a href="#1-三种格式" class="headerlink" title="(1)三种格式"></a>(1)三种格式</h3><pre><code>    A:格式1
-        if(比较表达式) {
-            语句体;
+        //方式1
+        int by = 0;
+        while((by=fis.read())!=-1) {
+            System.out.print((char)by);
         }
 
-        执行流程：
-            判断比较表达式的值，看是true还是false
-            如果是true，就执行语句体
-            如果是false，就不执行语句体
-
-    B:格式2
-        if(比较表达式) {
-            语句体1;
-        }else {
-            语句体2;
+        //方式2
+        byte[] bys = new byte[1024];
+        int len = 0;
+        while((len=fis.read(bys))!=-1) {
+            System.out.print(new String(bys,0,len));
         }
 
-        执行流程：
-            判断比较表达式的值，看是true还是false
-            如果是true，就执行语句体1
-            如果是false，就执行语句体2
-
-    C:格式3
-        if(比较表达式1) {
-            语句体1;
-        }else if(比较表达式2){
-            语句体2;
-        }
-        ...
-        else {
-            语句体n+1;
-        }
-
-        执行流程：
-            判断比较表达式1的值，看是true还是false
-            如果是true，就执行语句体1
-            如果是false，就继续判断比较表达式2的值，看是true还是false
-            如果是true，就执行语句体2
-            如果是false，就继续判断比较表达式3的值，看是true还是false
-            ...
-            如果都不满足，就执行语句体n+1</code></pre><h3 id="2-注意事项"><a href="#2-注意事项" class="headerlink" title="(2)注意事项"></a>(2)注意事项</h3><pre><code>    A:比较表达式无论简单还是复杂，结果是boolean类型
-    B:if语句控制的语句体如果是一条语句，是可以省略大括号的；如果是多条，不能省略。
-        建议：永远不要省略。
-    C:一般来说，有左大括号，就没有分号，有分号，就没有左大括号。
-    D:else后面如果没有if，是不会出现比较表达式的。
-    E:三种if语句其实都是一个语句，只要有一个执行，其他的就不再执行。</code></pre><h3 id="3-案例："><a href="#3-案例：" class="headerlink" title="(3)案例："></a>(3)案例：</h3><pre><code>    A:比较两个数是否相等
-    B:获取两个数中的最大值
-    C:获取三个数中的最大值(if语句的嵌套)
-    D:根据成绩输出对应的等级
-    E:根据月份，输出对应的季节
-    F:根据x计算对应y的值并输出</code></pre><h3 id="4-三元运算符和if语句第二种格式的关系"><a href="#4-三元运算符和if语句第二种格式的关系" class="headerlink" title="(4)三元运算符和if语句第二种格式的关系"></a>(4)三元运算符和if语句第二种格式的关系</h3><pre><code>    所有的三元运算符能够实现的，if语句的第二种格式都能实现。
-    反之不成立。
-
-    如果if语句第二种格式控制的语句体是输出语句，就不可以。
-    因为三元运算符是一个运算符，必须要有一个结果返回，不能是一个输出语句。</code></pre>
+        fis.close();</code></pre><h3 id="5-案例：2种实现"><a href="#5-案例：2种实现" class="headerlink" title="(5)案例：2种实现"></a>(5)案例：2种实现</h3><h4 id="A-复制文本文件"><a href="#A-复制文本文件" class="headerlink" title="A:复制文本文件"></a>A:复制文本文件</h4><h4 id="B-复制图片"><a href="#B-复制图片" class="headerlink" title="B:复制图片"></a>B:复制图片</h4><h4 id="C-复制视频"><a href="#C-复制视频" class="headerlink" title="C:复制视频"></a>C:复制视频</h4><h3 id="6-字节缓冲区流"><a href="#6-字节缓冲区流" class="headerlink" title="(6)字节缓冲区流"></a>(6)字节缓冲区流</h3><h4 id="A-BufferedOutputStream"><a href="#A-BufferedOutputStream" class="headerlink" title="A:BufferedOutputStream"></a>A:BufferedOutputStream</h4><h4 id="B-BufferedInputStream"><a href="#B-BufferedInputStream" class="headerlink" title="B:BufferedInputStream"></a>B:BufferedInputStream</h4><h3 id="7-案例：4种实现"><a href="#7-案例：4种实现" class="headerlink" title="(7)案例：4种实现"></a>(7)案例：4种实现</h3><h4 id="A-复制文本文件-1"><a href="#A-复制文本文件-1" class="headerlink" title="A:复制文本文件"></a>A:复制文本文件</h4><h4 id="B-复制图片-1"><a href="#B-复制图片-1" class="headerlink" title="B:复制图片"></a>B:复制图片</h4><h4 id="C-复制视频-1"><a href="#C-复制视频-1" class="headerlink" title="C:复制视频"></a>C:复制视频</h4><h2 id="3-自学字符流"><a href="#3-自学字符流" class="headerlink" title="3:自学字符流"></a>3:自学字符流</h2><h3 id="IO流分类"><a href="#IO流分类" class="headerlink" title="IO流分类"></a>IO流分类</h3><h4 id="字节流："><a href="#字节流：" class="headerlink" title="字节流："></a>字节流：</h4><pre><code>        InputStream
+            FileInputStream
+            BufferedInputStream
+        OutputStream
+            FileOutputStream
+            BufferedOutputStream</code></pre><h4 id="字符流："><a href="#字符流：" class="headerlink" title="字符流："></a>字符流：</h4><pre><code>        Reader
+            FileReader
+            BufferedReader
+        Writer
+            FileWriter
+            BufferedWriter</code></pre>
             </div>
             <hr/>
 
@@ -654,7 +576,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/060211165.html">http://ww042q.coding-pages.com/2020/060211165.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/062119164.html">http://ww042q.coding-pages.com/2020/062119164.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -861,33 +783,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/060359868.html">
+                <a href="/2020/062119164.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day04">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day20">
                         
-                        <span class="card-title">Java-day04</span>
+                        <span class="card-title">Java-day20</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:switch语句(掌握)(1)格式：    switch(表达式) {
-        case 值1:
-            语句体1;
-            break;
-        case 值2:
-           
+                            1:递归(理解)(1)方法定义中调用方法本身的现象    举例：老和尚给小和尚讲故事，我们学编程(2)递归的注意事项；A:要有出口，否则就是死递归B:次数不能过多，否则内存溢出C:构造方法不能递归使用(3)递归的案例：A:递归求阶乘B:兔子
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -900,6 +818,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -918,24 +837,26 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/060160252.html">
+                <a href="/2020/062048156.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day02">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day19">
                         
-                        <span class="card-title">Java-day02</span>
+                        <span class="card-title">Java-day19</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:关键字(掌握)(1)被Java语言赋予特定含义的单词(2)特点：    全部小写。(3)注意事项：    A:goto和const作为保留字存在。
-    B:类似于Notepad++这样的高级记事本会对关键字有特殊颜色标记2:标识符(
+                            1:异常(理解)(1)程序出现的不正常的情况。(2)异常的体系    Throwable
+        |--Error    严重问题，我们不处理。
+        |--Exception
+            |--Runtime
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-20
                             </span>
                         <span class="publish-author">
                             
