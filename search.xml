@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Java-day21</title>
+      <link href="/2020/062235357.html"/>
+      <url>/2020/062235357.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-字符流-掌握"><a href="#1-字符流-掌握" class="headerlink" title="1:字符流(掌握)"></a>1:字符流(掌握)</h2><h3 id="1-字节流操作中文数据不是特别的方便，所以就出现了转换流。"><a href="#1-字节流操作中文数据不是特别的方便，所以就出现了转换流。" class="headerlink" title="(1)字节流操作中文数据不是特别的方便，所以就出现了转换流。"></a>(1)字节流操作中文数据不是特别的方便，所以就出现了转换流。</h3><pre><code>   转换流的作用就是把字节流转换字符流来使用。</code></pre><h3 id="2-转换流其实是一个字符流"><a href="#2-转换流其实是一个字符流" class="headerlink" title="(2)转换流其实是一个字符流"></a>(2)转换流其实是一个字符流</h3><pre><code>    字符流 = 字节流 + 编码表</code></pre><h3 id="3-编码表"><a href="#3-编码表" class="headerlink" title="(3)编码表"></a>(3)编码表</h3><h4 id="A-就是由字符和对应的数值组成的一张表"><a href="#A-就是由字符和对应的数值组成的一张表" class="headerlink" title="A:就是由字符和对应的数值组成的一张表"></a>A:就是由字符和对应的数值组成的一张表</h4><h4 id="B-常见的编码表"><a href="#B-常见的编码表" class="headerlink" title="B:常见的编码表"></a>B:常见的编码表</h4><pre><code>        ASCII        ISO-8859-1        GB2312        GBK        GB18030        UTF-8</code></pre><h4 id="C-字符串中的编码问题"><a href="#C-字符串中的编码问题" class="headerlink" title="C:字符串中的编码问题"></a>C:字符串中的编码问题</h4><pre><code>        编码            String -- byte[]        解码            byte[] -- String</code></pre><h3 id="4-IO流中的编码问题"><a href="#4-IO流中的编码问题" class="headerlink" title="(4)IO流中的编码问题"></a>(4)IO流中的编码问题</h3><h4 id="A-OutputStreamWriter"><a href="#A-OutputStreamWriter" class="headerlink" title="A:OutputStreamWriter"></a>A:OutputStreamWriter</h4><pre><code>        OutputStreamWriter(OutputStream os):默认编码，GBK        OutputStreamWriter(OutputStream os,String charsetName):指定编码。</code></pre><h4 id="B-InputStreamReader"><a href="#B-InputStreamReader" class="headerlink" title="B:InputStreamReader"></a>B:InputStreamReader</h4><pre><code>        InputStreamReader(InputStream is):默认编码，GBK        InputStreamReader(InputStream is,String charsetName):指定编码</code></pre><h4 id="C-编码问题其实很简单"><a href="#C-编码问题其实很简单" class="headerlink" title="C:编码问题其实很简单"></a>C:编码问题其实很简单</h4><pre><code>        编码只要一致即可</code></pre><h3 id="5-字符流"><a href="#5-字符流" class="headerlink" title="(5)字符流"></a>(5)字符流</h3><h4 id="Reader"><a href="#Reader" class="headerlink" title="Reader"></a>Reader</h4><pre><code>        |--InputStreamReader            |--FileReader        |--BufferedReader</code></pre><h4 id="Writer"><a href="#Writer" class="headerlink" title="Writer"></a>Writer</h4><pre><code>        |--OutputStreamWriter            |--FileWriter        |--BufferedWriter</code></pre><h3 id="6-复制文本文件-5种方式"><a href="#6-复制文本文件-5种方式" class="headerlink" title="(6)复制文本文件(5种方式)"></a>(6)复制文本文件(5种方式)</h3><h2 id="2-IO流小结-掌握"><a href="#2-IO流小结-掌握" class="headerlink" title="2:IO流小结(掌握)"></a>2:IO流小结(掌握)</h2><h3 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h3><h4 id="–字节流"><a href="#–字节流" class="headerlink" title="|–字节流"></a>|–字节流</h4><pre><code>        |--字节输入流            InputStream                int read():一次读取一个字节                int read(byte[] bys):一次读取一个字节数组                |--FileInputStream                |--BufferedInputStream        |--字节输出流            OutputStream                void write(int by):一次写一个字节                void write(byte[] bys,int index,int len):一次写一个字节数组的一部分                |--FileOutputStream                |--BufferedOutputStream</code></pre><h4 id="–字符流"><a href="#–字符流" class="headerlink" title="|–字符流"></a>|–字符流</h4><pre><code>        |--字符输入流            Reader                int read():一次读取一个字符                int read(char[] chs):一次读取一个字符数组                |--InputStreamReader                    |--FileReader                |--BufferedReader                    String readLine():一次读取一个字符串        |--字符输出流            Writer                void write(int ch):一次写一个字符                void write(char[] chs,int index,int len):一次写一个字符数组的一部分                |--OutputStreamWriter                    |--FileWriter                |--BufferedWriter                    void newLine():写一个换行符                    void write(String line):一次写一个字符串</code></pre><h2 id="3-案例-理解-练习一遍"><a href="#3-案例-理解-练习一遍" class="headerlink" title="3:案例(理解 练习一遍)"></a>3:案例(理解 练习一遍)</h2><pre><code>A:复制文本文件 5种方式(掌握)B:复制图片(二进制流数据) 4种方式(掌握)C:把集合中的数据存储到文本文件D:把文本文件中的数据读取到集合并遍历集合E:复制单级文件夹F:复制单级文件夹中指定的文件并修改名称    回顾一下批量修改名称G:复制多级文件夹H:键盘录入学生信息按照总分从高到低存储到文本文件I:把某个文件中的字符串排序后输出到另一个文本文件中J:用Reader模拟BufferedReader的特有功能K:模拟LineNumberReader的特有功能</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java-day20</title>
       <link href="/2020/062119164.html"/>
       <url>/2020/062119164.html</url>
@@ -572,9 +597,9 @@
       
         <tags>
             
-            <tag> blog </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> blog </tag>
             
         </tags>
       
@@ -624,9 +649,9 @@
       
         <tags>
             
-            <tag> blog </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> blog </tag>
             
         </tags>
       
