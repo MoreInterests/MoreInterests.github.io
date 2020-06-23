@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java-day19, toily的博客">
+    <meta name="keywords" content="Java-day22, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java-day19 | toily的博客</title>
+    <title>Java-day22 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -327,7 +327,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java-day19</h1>
+                    <h1 class="description center-align post-title">Java-day22</h1>
                 </div>
             </div>
         </div>
@@ -477,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-20
+                    2020-06-23
                 </div>
                 
 
@@ -486,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    958
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -508,64 +508,50 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-异常-理解"><a href="#1-异常-理解" class="headerlink" title="1:异常(理解)"></a>1:异常(理解)</h2><h3 id="1-程序出现的不正常的情况。"><a href="#1-程序出现的不正常的情况。" class="headerlink" title="(1)程序出现的不正常的情况。"></a>(1)程序出现的不正常的情况。</h3><h3 id="2-异常的体系"><a href="#2-异常的体系" class="headerlink" title="(2)异常的体系"></a>(2)异常的体系</h3><pre><code>    Throwable
-        |--Error    严重问题，我们不处理。
-        |--Exception
-            |--RuntimeException    运行期异常，我们需要修正代码
-            |--非RuntimeException 编译期异常，必须处理的，否则程序编译不通过</code></pre><h3 id="3-异常的处理："><a href="#3-异常的处理：" class="headerlink" title="(3)异常的处理："></a>(3)异常的处理：</h3><h4 id="A-JVM的默认处理"><a href="#A-JVM的默认处理" class="headerlink" title="A:JVM的默认处理"></a>A:JVM的默认处理</h4><pre><code>        把异常的名称,原因,位置等信息输出在控制台，但是呢程序不能继续执行了。</code></pre><h4 id="B-自己处理"><a href="#B-自己处理" class="headerlink" title="B:自己处理"></a>B:自己处理</h4><pre><code>        a:try...catch...finally
-            自己编写处理代码,后面的程序可以继续执行
-        b:throws
-            把自己处理不了的，在方法上声明，告诉调用者，这里有问题</code></pre><h3 id="4-面试题"><a href="#4-面试题" class="headerlink" title="(4)面试题"></a>(4)面试题</h3><h4 id="A-编译期异常和运行期异常的区别"><a href="#A-编译期异常和运行期异常的区别" class="headerlink" title="A:编译期异常和运行期异常的区别?"></a>A:编译期异常和运行期异常的区别?</h4><pre><code>        编译期异常 必须要处理的，否则编译不通过
-        运行期异常 可以不处理，也可以处理</code></pre><h4 id="B-throw和throws是的区别"><a href="#B-throw和throws是的区别" class="headerlink" title="B:throw和throws是的区别"></a>B:throw和throws是的区别</h4><pre><code>        throw:
-            在方法体中,后面跟的是异常对象名,并且只能是一个
-            throw抛出的是一个异常对象，说明这里肯定有一个异常产生了
-        throws:
-            在方法声明上,后面跟的是异常的类名,可以是多个
-            throws是声明方法有异常，是一种可能性，这个异常并不一定会产生</code></pre><h3 id="5-finally关键字及其面试题"><a href="#5-finally关键字及其面试题" class="headerlink" title="(5)finally关键字及其面试题"></a>(5)finally关键字及其面试题</h3><h4 id="A-finally用于释放资源，它的代码永远会执行。特殊情况：在执行到finally之前jvm退出了"><a href="#A-finally用于释放资源，它的代码永远会执行。特殊情况：在执行到finally之前jvm退出了" class="headerlink" title="A:finally用于释放资源，它的代码永远会执行。特殊情况：在执行到finally之前jvm退出了"></a>A:finally用于释放资源，它的代码永远会执行。特殊情况：在执行到finally之前jvm退出了</h4><h4 id="B-面试题"><a href="#B-面试题" class="headerlink" title="B:面试题"></a>B:面试题</h4><pre><code>        a:final,finally,finalize的区别?
-        b:如果在catch里面有return,请问finally还执行吗?如果执行,在return前还是后
-            会，前。
+                <h2 id="1-登录注册IO版本案例-掌握"><a href="#1-登录注册IO版本案例-掌握" class="headerlink" title="1:登录注册IO版本案例(掌握)"></a>1:登录注册IO版本案例(掌握)</h2><pre><code>要求，对着写一遍。
 
-            实际上在中间。这个上课我们讲过</code></pre><h4 id="C-异常处理的变形"><a href="#C-异常处理的变形" class="headerlink" title="C:异常处理的变形"></a>C:异常处理的变形</h4><pre><code>        try...catch...finally
-        try...catch...
-        try...catch...catch...
-        try...catch...catch...fianlly
-        try...finally</code></pre><h3 id="6-自定义异常"><a href="#6-自定义异常" class="headerlink" title="(6)自定义异常"></a>(6)自定义异常</h3><pre><code>    继承自Exception或者RuntimeException,只需要提供无参构造和一个带参构造即可</code></pre><h3 id="7-异常的注意实现"><a href="#7-异常的注意实现" class="headerlink" title="(7)异常的注意实现"></a>(7)异常的注意实现</h3><pre><code>    A:父的方法有异常抛出,子的重写方法在抛出异常的时候必须要小于等于父的异常 
-    B:父的方法没有异常抛出,子的重写方法不能有异常抛出
-    C:父的方法抛出多个异常,子的重写方法必须比父少或者小</code></pre><h2 id="2-File-掌握"><a href="#2-File-掌握" class="headerlink" title="2:File(掌握)"></a>2:File(掌握)</h2><h3 id="1-IO流操作中大部分都是对文件的操作，所以Java就提供了File类供我们来操作文件"><a href="#1-IO流操作中大部分都是对文件的操作，所以Java就提供了File类供我们来操作文件" class="headerlink" title="(1)IO流操作中大部分都是对文件的操作，所以Java就提供了File类供我们来操作文件"></a>(1)IO流操作中大部分都是对文件的操作，所以Java就提供了File类供我们来操作文件</h3><h3 id="2-构造方法"><a href="#2-构造方法" class="headerlink" title="(2)构造方法"></a>(2)构造方法</h3><pre><code>    A:File file = new File(&quot;e:\\demo\\a.txt&quot;);
-    B:File file = new File(&quot;e:\\demo&quot;,&quot;a.txt&quot;);
-    C:File file = new File(&quot;e:\\demo&quot;);
-      File file2 = new File(file,&quot;a.txt&quot;);</code></pre><h3 id="3-File类的功能-自己补齐"><a href="#3-File类的功能-自己补齐" class="headerlink" title="(3)File类的功能(自己补齐)"></a>(3)File类的功能(自己补齐)</h3><h4 id="A-创建功能"><a href="#A-创建功能" class="headerlink" title="A:创建功能"></a>A:创建功能</h4><pre><code>    public boolean createNewFile():创建文件 如果存在这样的文件，就不创建了
-    public boolean mkdir():创建文件夹 如果存在这样的文件夹，就不创建了
-    public boolean mkdirs():创建文件夹,如果父文件夹不存在，会帮你创建出来</code></pre><ul>
-<li><p>骑白马的不一定是王子，可能是班长。  </p>
-</li>
-<li><p>注意：你到底要创建文件还是文件夹，你最清楚，方法不要调错了。</p>
-<h4 id="B-删除功能"><a href="#B-删除功能" class="headerlink" title="B:删除功能"></a>B:删除功能</h4><pre><code> public boolean delete()</code></pre></li>
-<li></li>
-<li><p>注意：</p>
-</li>
-<li><p>A:如果你创建文件或者文件夹忘了写盘符路径，那么，默认在项目路径下。</p>
-</li>
-<li><p>B:Java中的删除不走回收站。</p>
-</li>
-<li><p>C:要删除一个文件夹，请注意该文件夹内不能包含文件或者文件夹</p>
-</li>
-</ul>
-<h4 id="C-重命名功能"><a href="#C-重命名功能" class="headerlink" title="C:重命名功能"></a>C:重命名功能</h4><pre><code>    public boolean renameTo(File dest)</code></pre><ul>
-<li>如果路径名相同，就是改名。</li>
-<li>如果路径名不同，就是改名并剪切。</li>
-<li></li>
-<li>路径以盘符开始：绝对路径    c:\a.txt</li>
-<li>路径不以盘符开始：相对路径    a.txt</li>
-</ul>
-<h4 id="D-判断功能"><a href="#D-判断功能" class="headerlink" title="D:判断功能"></a>D:判断功能</h4><pre><code>public boolean isDirectory():判断是否是目录
-public boolean isFile():判断是否是文件
-public boolean exists():判断是否存在
-public boolean canRead():判断是否可读
-public boolean canWrite():判断是否可写
-public boolean isHidden():判断是否隐藏</code></pre><h4 id="E-获取功能"><a href="#E-获取功能" class="headerlink" title="E:获取功能"></a>E:获取功能</h4><pre><code>public String[] list():获取指定目录下的所有文件或者文件夹的名称数组
-public File[] listFiles():获取指定目录下的所有文件或者文件夹的File数组</code></pre><h4 id="F-高级获取功能"><a href="#F-高级获取功能" class="headerlink" title="F:高级获取功能"></a>F:高级获取功能</h4><h4 id="G-过滤器功能"><a href="#G-过滤器功能" class="headerlink" title="G:过滤器功能"></a>G:过滤器功能</h4><h3 id="4-案例："><a href="#4-案例：" class="headerlink" title="(4)案例："></a>(4)案例：</h3><h4 id="A-输出指定目录下指定后缀名的文件名称"><a href="#A-输出指定目录下指定后缀名的文件名称" class="headerlink" title="A:输出指定目录下指定后缀名的文件名称"></a>A:输出指定目录下指定后缀名的文件名称</h4><pre><code>        a:先获取所有的，在遍历的时候判断，再输出
-        b:先判断，再获取，最后直接遍历输出即可</code></pre><h4 id="B-批量修改文件名称"><a href="#B-批量修改文件名称" class="headerlink" title="B:批量修改文件名称"></a>B:批量修改文件名称</h4>
+cn.itcast.pojo User
+cn.itcast.dao UserDao
+cn.itcast.dao.impl UserDaoImpl(实现我不管)
+cn.itcast.game GuessNumber
+cn.itcast.test    UserTest</code></pre><h2 id="2-数据操作流-操作基本类型数据的流-理解"><a href="#2-数据操作流-操作基本类型数据的流-理解" class="headerlink" title="2:数据操作流(操作基本类型数据的流)(理解)"></a>2:数据操作流(操作基本类型数据的流)(理解)</h2><h3 id="1-可以操作基本类型的数据"><a href="#1-可以操作基本类型的数据" class="headerlink" title="(1)可以操作基本类型的数据"></a>(1)可以操作基本类型的数据</h3><p>333    (2)流对象名称<br>        DataInputStream<br>        DataOutputStream</p>
+<h2 id="3-内存操作流-理解"><a href="#3-内存操作流-理解" class="headerlink" title="3:内存操作流(理解)"></a>3:内存操作流(理解)</h2><h3 id="1-有些时候我们操作完毕后，未必需要产生一个文件，就可以使用内存操作流。"><a href="#1-有些时候我们操作完毕后，未必需要产生一个文件，就可以使用内存操作流。" class="headerlink" title="(1)有些时候我们操作完毕后，未必需要产生一个文件，就可以使用内存操作流。"></a>(1)有些时候我们操作完毕后，未必需要产生一个文件，就可以使用内存操作流。</h3><h3 id="2-三种"><a href="#2-三种" class="headerlink" title="(2)三种"></a>(2)三种</h3><pre><code>    A:ByteArrayInputStream,ByteArrayOutputStream
+    B:CharArrayReader,CharArrayWriter
+    C:StringReader,StringWriter</code></pre><h2 id="4-打印流-掌握"><a href="#4-打印流-掌握" class="headerlink" title="4:打印流(掌握)"></a>4:打印流(掌握)</h2><h3 id="1-字节打印流，字符打印流"><a href="#1-字节打印流，字符打印流" class="headerlink" title="(1)字节打印流，字符打印流"></a>(1)字节打印流，字符打印流</h3><h3 id="2-特点："><a href="#2-特点：" class="headerlink" title="(2)特点："></a>(2)特点：</h3><h4 id="A-只操作目的地-不操作数据源"><a href="#A-只操作目的地-不操作数据源" class="headerlink" title="A:只操作目的地,不操作数据源"></a>A:只操作目的地,不操作数据源</h4><h4 id="B-可以操作任意类型的数据"><a href="#B-可以操作任意类型的数据" class="headerlink" title="B:可以操作任意类型的数据"></a>B:可以操作任意类型的数据</h4><h4 id="C-如果启用了自动刷新，在调用println-方法的时候，能够换行并刷新"><a href="#C-如果启用了自动刷新，在调用println-方法的时候，能够换行并刷新" class="headerlink" title="C:如果启用了自动刷新，在调用println()方法的时候，能够换行并刷新"></a>C:如果启用了自动刷新，在调用println()方法的时候，能够换行并刷新</h4><h4 id="D-可以直接操作文件"><a href="#D-可以直接操作文件" class="headerlink" title="D:可以直接操作文件"></a>D:可以直接操作文件</h4><pre><code>        问题：哪些流可以直接操作文件呢?
+        看API，如果其构造方法能够同时接收File和String类型的参数，一般都是可以直接操作文件的</code></pre><h3 id="3-复制文本文件"><a href="#3-复制文本文件" class="headerlink" title="(3)复制文本文件"></a>(3)复制文本文件</h3><pre><code>    BufferedReader br = new BufferedReader(new FileReader(&quot;a.txt&quot;));
+    PrintWriter pw = new PrintWriter(new FileWriter(&quot;b.txt&quot;),true);
+
+    String line = null;
+    while((line=br.readLine())!=null) {
+        pw.println(line);
+    }
+
+    pw.close();
+    br.close();</code></pre><h2 id="5-标准输入输出流-理解"><a href="#5-标准输入输出流-理解" class="headerlink" title="5:标准输入输出流(理解)"></a>5:标准输入输出流(理解)</h2><h3 id="1-System类下面有这样的两个字段"><a href="#1-System类下面有这样的两个字段" class="headerlink" title="(1)System类下面有这样的两个字段"></a>(1)System类下面有这样的两个字段</h3><pre><code>    in 标准输入流
+    out 标准输出流</code></pre><h3 id="2-三种键盘录入方式"><a href="#2-三种键盘录入方式" class="headerlink" title="(2)三种键盘录入方式"></a>(2)三种键盘录入方式</h3><h4 id="A-main方法的args接收参数"><a href="#A-main方法的args接收参数" class="headerlink" title="A:main方法的args接收参数"></a>A:main方法的args接收参数</h4><h4 id="B-System-in通过BufferedReader进行包装"><a href="#B-System-in通过BufferedReader进行包装" class="headerlink" title="B:System.in通过BufferedReader进行包装"></a>B:System.in通过BufferedReader进行包装</h4><pre><code>        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));</code></pre><h4 id="C-Scanner"><a href="#C-Scanner" class="headerlink" title="C:Scanner"></a>C:Scanner</h4><pre><code>        Scanner sc = new Scanner(System.in);</code></pre><h3 id="3-输出语句的原理和如何使用字符流输出数据"><a href="#3-输出语句的原理和如何使用字符流输出数据" class="headerlink" title="(3)输出语句的原理和如何使用字符流输出数据"></a>(3)输出语句的原理和如何使用字符流输出数据</h3><h4 id="A-原理"><a href="#A-原理" class="headerlink" title="A:原理"></a>A:原理</h4><pre><code>        System.out.println(&quot;helloworld&quot;);
+
+        PrintStream ps = System.out;
+        ps.println(&quot;helloworld&quot;);</code></pre><h4 id="B-把System-out用字符缓冲流包装一下使用"><a href="#B-把System-out用字符缓冲流包装一下使用" class="headerlink" title="B:把System.out用字符缓冲流包装一下使用"></a>B:把System.out用字符缓冲流包装一下使用</h4><pre><code>        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));</code></pre><h2 id="6-随机访问流-理解"><a href="#6-随机访问流-理解" class="headerlink" title="6:随机访问流(理解)"></a>6:随机访问流(理解)</h2><h3 id="1-可以按照文件指针的位置写数据和读数据。"><a href="#1-可以按照文件指针的位置写数据和读数据。" class="headerlink" title="(1)可以按照文件指针的位置写数据和读数据。"></a>(1)可以按照文件指针的位置写数据和读数据。</h3><h3 id="2-案例："><a href="#2-案例：" class="headerlink" title="(2)案例："></a>(2)案例：</h3><h4 id="A-写数据"><a href="#A-写数据" class="headerlink" title="A:写数据"></a>A:写数据</h4><h4 id="B-读数据"><a href="#B-读数据" class="headerlink" title="B:读数据"></a>B:读数据</h4><h4 id="C-获取和改变文件指针的位置"><a href="#C-获取和改变文件指针的位置" class="headerlink" title="C:获取和改变文件指针的位置"></a>C:获取和改变文件指针的位置</h4><h2 id="7-合并流-理解"><a href="#7-合并流-理解" class="headerlink" title="7:合并流(理解)"></a>7:合并流(理解)</h2><h3 id="1-把多个输入流的数据写到一个输出流中。"><a href="#1-把多个输入流的数据写到一个输出流中。" class="headerlink" title="(1)把多个输入流的数据写到一个输出流中。"></a>(1)把多个输入流的数据写到一个输出流中。</h3><h3 id="2-构造方法："><a href="#2-构造方法：" class="headerlink" title="(2)构造方法："></a>(2)构造方法：</h3><pre><code>    A:SequenceInputStream(InputStream s1, InputStream s2) 
+    B:SequenceInputStream(Enumeration&lt;? extends InputStream&gt; e) </code></pre><h2 id="8-序列化流-理解"><a href="#8-序列化流-理解" class="headerlink" title="8:序列化流(理解)"></a>8:序列化流(理解)</h2><h3 id="1-可以把对象写入文本文件或者在网络中传输"><a href="#1-可以把对象写入文本文件或者在网络中传输" class="headerlink" title="(1)可以把对象写入文本文件或者在网络中传输"></a>(1)可以把对象写入文本文件或者在网络中传输</h3><h3 id="2-如何实现序列化呢"><a href="#2-如何实现序列化呢" class="headerlink" title="(2)如何实现序列化呢?"></a>(2)如何实现序列化呢?</h3><pre><code>    让被序列化的对象所属类实现序列化接口。
+    该接口是一个标记接口。没有功能需要实现。</code></pre><h3 id="3-注意问题："><a href="#3-注意问题：" class="headerlink" title="(3)注意问题："></a>(3)注意问题：</h3><pre><code>    把数据写到文件后，在去修改类会产生一个问题。
+    如何解决该问题呢?
+        在类文件中，给出一个固定的序列化id值。
+        而且，这样也可以解决黄色警告线问题</code></pre><h3 id="4-面试题："><a href="#4-面试题：" class="headerlink" title="(4)面试题："></a>(4)面试题：</h3><pre><code>    什么时候序列化?
+    如何实现序列化?
+    什么是反序列化?</code></pre><h2 id="9-Properties-理解"><a href="#9-Properties-理解" class="headerlink" title="9:Properties(理解)"></a>9:Properties(理解)</h2><h3 id="1-是一个集合类，Hashtable的子类"><a href="#1-是一个集合类，Hashtable的子类" class="headerlink" title="(1)是一个集合类，Hashtable的子类"></a>(1)是一个集合类，Hashtable的子类</h3><h3 id="2-特有功能"><a href="#2-特有功能" class="headerlink" title="(2)特有功能"></a>(2)特有功能</h3><pre><code>    A:public Object setProperty(String key,String value)
+    B:public String getProperty(String key)
+    C:public Set&lt;String&gt; stringPropertyNames()</code></pre><h3 id="3-和IO流结合的方法"><a href="#3-和IO流结合的方法" class="headerlink" title="(3)和IO流结合的方法"></a>(3)和IO流结合的方法</h3><pre><code>    把键值对形式的文本文件内容加载到集合中
+    public void load(Reader reader)
+    public void load(InputStream inStream)
+
+    把集合中的数据存储到文本文件中
+    public void store(Writer writer,String comments)
+    public void store(OutputStream out,String comments)</code></pre><h3 id="4-案例："><a href="#4-案例：" class="headerlink" title="(4)案例："></a>(4)案例：</h3><pre><code>    A:根据给定的文件判断是否有键为&quot;lisi&quot;的，如果有就修改其值为100
+    B:写一个程序实现控制猜数字小游戏程序不能玩超过5次</code></pre><h2 id="10-NIO-了解"><a href="#10-NIO-了解" class="headerlink" title="10:NIO(了解)"></a>10:NIO(了解)</h2><h3 id="1-JDK4出现的NIO，对以前的IO操作进行了优化，提供了效率。但是大部分我们看到的还是以前的IO"><a href="#1-JDK4出现的NIO，对以前的IO操作进行了优化，提供了效率。但是大部分我们看到的还是以前的IO" class="headerlink" title="(1)JDK4出现的NIO，对以前的IO操作进行了优化，提供了效率。但是大部分我们看到的还是以前的IO"></a>(1)JDK4出现的NIO，对以前的IO操作进行了优化，提供了效率。但是大部分我们看到的还是以前的IO</h3><h3 id="2-JDK7的NIO的使用"><a href="#2-JDK7的NIO的使用" class="headerlink" title="(2)JDK7的NIO的使用"></a>(2)JDK7的NIO的使用</h3><pre><code>    Path:路径
+    Paths:通过静态方法返回一个路径
+    Files:提供了常见的功能
+        复制文本文件
+        把集合中的数据写到文本文件</code></pre>
             </div>
             <hr/>
 
@@ -590,7 +576,7 @@ public File[] listFiles():获取指定目录下的所有文件或者文件夹的
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/062048156.html">http://ww042q.coding-pages.com/2020/062048156.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/062335677.html">http://ww042q.coding-pages.com/2020/062335677.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -797,28 +783,34 @@ public File[] listFiles():获取指定目录下的所有文件或者文件夹的
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/062119164.html">
+                <a href="/2020/062335677.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day20">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day22">
                         
-                        <span class="card-title">Java-day20</span>
+                        <span class="card-title">Java-day22</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:递归(理解)(1)方法定义中调用方法本身的现象    举例：老和尚给小和尚讲故事，我们学编程(2)递归的注意事项；A:要有出口，否则就是死递归B:次数不能过多，否则内存溢出C:构造方法不能递归使用(3)递归的案例：A:递归求阶乘B:兔子
+                            1:登录注册IO版本案例(掌握)要求，对着写一遍。
+
+cn.itcast.pojo User
+cn.itcast.dao UserDao
+cn.itcast.dao.impl UserDaoImpl(实现我不管)
+cn.itcast.gam
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -831,6 +823,7 @@ public File[] listFiles():获取指定目录下的所有文件或者文件夹的
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -849,24 +842,23 @@ public File[] listFiles():获取指定目录下的所有文件或者文件夹的
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/061931965.html">
+                <a href="/2020/062235357.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day18">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day21">
                         
-                        <span class="card-title">Java-day18</span>
+                        <span class="card-title">Java-day21</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:Map(掌握)(1)将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。(2)Map和Collection的区别?    A:Map 存储的是键值对形式的元素，键唯一，值可以重复。夫妻对
-    B:Collect
+                            1:字符流(掌握)(1)字节流操作中文数据不是特别的方便，所以就出现了转换流。   转换流的作用就是把字节流转换字符流来使用。(2)转换流其实是一个字符流    字符流 = 字节流 + 编码表(3)编码表A:就是由字符和对应的数值组成的一张
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-22
                             </span>
                         <span class="publish-author">
                             
