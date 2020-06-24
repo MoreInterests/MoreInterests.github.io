@@ -5,13 +5,14 @@ top: false
 cover: false
 toc: true
 mathjax: false
-date: 2020-06-21 20:46:49
 author: xing xiao
+tags: Java
+categories: 编程
+abbrlink: 19164
+date: 2020-06-21 20:46:49
 coverImg:
 password:
 summary:
-tags: Java
-categories: 编程
 ---
 ## 1:递归(理解)  
 
