@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java-day03, toily的博客">
+    <meta name="keywords" content="Java-day23, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java-day03 | toily的博客</title>
+    <title>Java-day23 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -327,7 +327,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java-day03</h1>
+                    <h1 class="description center-align post-title">Java-day23</h1>
                 </div>
             </div>
         </div>
@@ -477,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-02
+                    2020-06-24
                 </div>
                 
 
@@ -486,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    637
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    2 分
                 </div>
                 
 
@@ -508,128 +508,31 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-运算符-掌握"><a href="#1-运算符-掌握" class="headerlink" title="1:运算符(掌握)"></a>1:运算符(掌握)</h2><h3 id="1-算术运算符"><a href="#1-算术运算符" class="headerlink" title="(1)算术运算符"></a>(1)算术运算符</h3><pre><code>    A:+,-,*,/,%,++,--
-    B:+的用法
-        a:加法
-        b:正号
-        c:字符串连接符
-    C:/和%的区别
-        数据做除法操作的时候，/取得是商，%取得是余数
-    D:++和--的用法
-        a:他们的作用是自增或者自减
-        b:使用
-            **单独使用
-                放在操作数据的前面和后面效果一样。
-                a++或者++a效果一样。
-            **参与操作使用
-                放在操作数的前面：先自增或者自减，再参与操作
-                    int a = 10;
-                    int b = ++a;
-                放在操作数的后面：先参与操作，再自增或者自减
-                    int a = 10;
-                    int b = a++;</code></pre><h3 id="2-赋值运算符"><a href="#2-赋值运算符" class="headerlink" title="(2)赋值运算符"></a>(2)赋值运算符</h3><pre><code>    A:=,+=,-=,*=,/=,%=等
-    B:=叫做赋值运算符，也是最基本的赋值运算符
-        int x = 10; 把10赋值给int类型的变量x。
-    C:扩展的赋值运算符的特点
-        隐含了自动强制转换。
+                <h2 id="1-多线程-理解"><a href="#1-多线程-理解" class="headerlink" title="1:多线程(理解)"></a>1:多线程(理解)</h2><h3 id="1-多线程：一个应用程序有多条执行路径"><a href="#1-多线程：一个应用程序有多条执行路径" class="headerlink" title="(1)多线程：一个应用程序有多条执行路径"></a>(1)多线程：一个应用程序有多条执行路径</h3><pre><code>    进程：正在执行的应用程序
+    线程：进程的执行单元，执行路径
+    单线程：一个应用程序只有一条执行路径
+    多线程：一个应用程序有多条执行路径
 
-        面试题：
-            short s = 1;
-            s = s + 1;
-
-            short s = 1;
-            s += 1;
-            请问上面的代码哪个有问题?</code></pre><h3 id="3-比较运算符"><a href="#3-比较运算符" class="headerlink" title="(3)比较运算符"></a>(3)比较运算符</h3><pre><code>    A:==,!=,&gt;,&gt;=,&lt;,&lt;=
-    B:无论运算符两端简单还是复杂最终结果是boolean类型。
-    C:千万不要把==写成了=</code></pre><h3 id="4-逻辑运算符"><a href="#4-逻辑运算符" class="headerlink" title="(4)逻辑运算符"></a>(4)逻辑运算符</h3><pre><code>    A:&amp;,|,^,!,&amp;&amp;,||
-    B:逻辑运算符用于连接boolean类型的式子
-    C:结论
-        &amp;:有false则false
-        |:有true则true
-        ^:相同则false，不同则true。
-            情侣关系。
-        !:非true则false，非false则true
-
-        &amp;&amp;:结果和&amp;是一样的，只不过有短路效果。左边是false，右边不执行。
-        ||:结果和|是一样的，只不过有短路效果。左边是true，右边不执行。</code></pre><h3 id="5-位运算符-了解"><a href="#5-位运算符-了解" class="headerlink" title="(5)位运算符(了解)"></a>(5)位运算符(了解)</h3><pre><code>    A:^的特殊用法
-        一个数据针对另一个数据位异或两次，该数不变
-    B:面试题
-        a:请实现两个变量的交换
-            **采用第三方变量
-            **用位异或运算符
-                左边a,b,a
-                右边a^b
-        b:请用最有效率的方式计算出2乘以8的结果
-            2&lt;&lt;3</code></pre><h3 id="6-三元运算符"><a href="#6-三元运算符" class="headerlink" title="(6)三元运算符"></a>(6)三元运算符</h3><pre><code>    A:格式
-        比较表达式?表达式1:表达式2;
-    B:执行流程：
-        首先计算比较表达式的值，看是true还是false。
-        如果是true，表达式1就是结果。
-        如果是false，表达式2就是结果。
-    C:案例：
-        a:比较两个数据是否相等
-        b:获取两个数据中的最大值
-        c:获取三个数据中的最大值</code></pre><h2 id="2-键盘录入-掌握"><a href="#2-键盘录入-掌握" class="headerlink" title="2:键盘录入(掌握)"></a>2:键盘录入(掌握)</h2><h3 id="1-实际开发中，数据是变化的，为了提高程序的灵活性，我们加入键盘录入数据。"><a href="#1-实际开发中，数据是变化的，为了提高程序的灵活性，我们加入键盘录入数据。" class="headerlink" title="(1)实际开发中，数据是变化的，为了提高程序的灵活性，我们加入键盘录入数据。"></a>(1)实际开发中，数据是变化的，为了提高程序的灵活性，我们加入键盘录入数据。</h3><h3 id="2-如何实现呢-目前就记住"><a href="#2-如何实现呢-目前就记住" class="headerlink" title="(2)如何实现呢?目前就记住"></a>(2)如何实现呢?目前就记住</h3><pre><code>    A:导包
-        import java.util.Scanner;
-        位置：在class的上边
-    B:创建对象
-        Scanner sc = new Scanner(System.in);
-    C:获取数据
-        int x = sc.nextInt();</code></pre><h3 id="3-把三元运算符的案例加入键盘录入改进。"><a href="#3-把三元运算符的案例加入键盘录入改进。" class="headerlink" title="(3)把三元运算符的案例加入键盘录入改进。"></a>(3)把三元运算符的案例加入键盘录入改进。</h3><h2 id="3-流程控制语句"><a href="#3-流程控制语句" class="headerlink" title="3:流程控制语句"></a>3:流程控制语句</h2><h3 id="1-顺序结构-从上往下，依次执行"><a href="#1-顺序结构-从上往下，依次执行" class="headerlink" title="(1)顺序结构 从上往下，依次执行"></a>(1)顺序结构 从上往下，依次执行</h3><h3 id="2-选择结构-按照不同的选择，执行不同的代码"><a href="#2-选择结构-按照不同的选择，执行不同的代码" class="headerlink" title="(2)选择结构    按照不同的选择，执行不同的代码"></a>(2)选择结构    按照不同的选择，执行不同的代码</h3><h3 id="3-循环结构-做一些重复的代码"><a href="#3-循环结构-做一些重复的代码" class="headerlink" title="(3)循环结构 做一些重复的代码"></a>(3)循环结构 做一些重复的代码</h3><h2 id="4-if语句-掌握"><a href="#4-if语句-掌握" class="headerlink" title="4:if语句(掌握)"></a>4:if语句(掌握)</h2><h3 id="1-三种格式"><a href="#1-三种格式" class="headerlink" title="(1)三种格式"></a>(1)三种格式</h3><pre><code>    A:格式1
-        if(比较表达式) {
-            语句体;
+    多进程的意义?
+        提高CPU的使用率
+    多线程的意义?
+        提高应用程序的使用率</code></pre><h3 id="2-Java程序的运行原理及JVM的启动是多线程的吗"><a href="#2-Java程序的运行原理及JVM的启动是多线程的吗" class="headerlink" title="(2)Java程序的运行原理及JVM的启动是多线程的吗?"></a>(2)Java程序的运行原理及JVM的启动是多线程的吗?</h3><pre><code>    A:Java命令去启动JVM，JVM会启动一个进程，该进程会启动一个主线程。
+    B:JVM的启动是多线程的，因为它最低有两个线程启动了，主线程和垃圾回收线程。</code></pre><h3 id="3-多线程的实现方案-自己补齐步骤及代码-掌握"><a href="#3-多线程的实现方案-自己补齐步骤及代码-掌握" class="headerlink" title="(3)多线程的实现方案(自己补齐步骤及代码    掌握)"></a>(3)多线程的实现方案(自己补齐步骤及代码    掌握)</h3><h4 id="A-继承Thread类"><a href="#A-继承Thread类" class="headerlink" title="A:继承Thread类"></a>A:继承Thread类</h4><h4 id="B-实现Runnable接口"><a href="#B-实现Runnable接口" class="headerlink" title="B:实现Runnable接口"></a>B:实现Runnable接口</h4><p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%AF%94%E8%BE%83%E5%8F%8A%E5%8C%BA%E5%88%AB.bmp" alt=""></p>
+<h3 id="4-线程的调度和优先级问题"><a href="#4-线程的调度和优先级问题" class="headerlink" title="(4)线程的调度和优先级问题"></a>(4)线程的调度和优先级问题</h3><h4 id="A-线程的调度"><a href="#A-线程的调度" class="headerlink" title="A:线程的调度"></a>A:线程的调度</h4><pre><code>        a:分时调度
+        b:抢占式调度 (Java采用的是该调度方式)</code></pre><h4 id="B-获取和设置线程优先级"><a href="#B-获取和设置线程优先级" class="headerlink" title="B:获取和设置线程优先级"></a>B:获取和设置线程优先级</h4><pre><code>        a:默认是5
+        b:范围是1-10</code></pre><h3 id="5-线程的控制-常见方法"><a href="#5-线程的控制-常见方法" class="headerlink" title="(5)线程的控制(常见方法)"></a>(5)线程的控制(常见方法)</h3><h4 id="A-休眠线程"><a href="#A-休眠线程" class="headerlink" title="A:休眠线程"></a>A:休眠线程</h4><h4 id="B-加入线程"><a href="#B-加入线程" class="headerlink" title="B:加入线程"></a>B:加入线程</h4><h4 id="C-礼让线程"><a href="#C-礼让线程" class="headerlink" title="C:礼让线程"></a>C:礼让线程</h4><h4 id="D-后台线程"><a href="#D-后台线程" class="headerlink" title="D:后台线程"></a>D:后台线程</h4><h4 id="E-终止线程-掌握"><a href="#E-终止线程-掌握" class="headerlink" title="E:终止线程(掌握)"></a>E:终止线程(掌握)</h4><h3 id="6-线程的生命周期-参照-线程生命周期图解-bmp"><a href="#6-线程的生命周期-参照-线程生命周期图解-bmp" class="headerlink" title="(6)线程的生命周期(参照    线程生命周期图解.bmp)"></a>(6)线程的生命周期(参照    线程生命周期图解.bmp)</h3><h4 id="A-新建"><a href="#A-新建" class="headerlink" title="A:新建"></a>A:新建</h4><h4 id="B-就绪"><a href="#B-就绪" class="headerlink" title="B:就绪"></a>B:就绪</h4><h4 id="C-运行"><a href="#C-运行" class="headerlink" title="C:运行"></a>C:运行</h4><h4 id="D-阻塞"><a href="#D-阻塞" class="headerlink" title="D:阻塞"></a>D:阻塞</h4><h4 id="E-死亡"><a href="#E-死亡" class="headerlink" title="E:死亡"></a>E:死亡</h4><p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E8%A7%A3.bmp" alt=""></p>
+<h3 id="7-电影院卖票程序的实现"><a href="#7-电影院卖票程序的实现" class="headerlink" title="(7)电影院卖票程序的实现"></a>(7)电影院卖票程序的实现</h3><h4 id="A-继承Thread类-1"><a href="#A-继承Thread类-1" class="headerlink" title="A:继承Thread类"></a>A:继承Thread类</h4><h4 id="B-实现Runnable接口-1"><a href="#B-实现Runnable接口-1" class="headerlink" title="B:实现Runnable接口"></a>B:实现Runnable接口</h4><h3 id="8-电影院卖票程序出问题"><a href="#8-电影院卖票程序出问题" class="headerlink" title="(8)电影院卖票程序出问题"></a>(8)电影院卖票程序出问题</h3><pre><code>    A:为了更符合真实的场景，加入了休眠100毫秒。
+    B:卖票问题
+        a:同票多次
+        b:负数票</code></pre><h3 id="9-多线程安全问题的原因-也是我们以后判断一个程序是否有线程安全问题的依据"><a href="#9-多线程安全问题的原因-也是我们以后判断一个程序是否有线程安全问题的依据" class="headerlink" title="(9)多线程安全问题的原因(也是我们以后判断一个程序是否有线程安全问题的依据)"></a>(9)多线程安全问题的原因(也是我们以后判断一个程序是否有线程安全问题的依据)</h3><h4 id="A-是否有多线程环境"><a href="#A-是否有多线程环境" class="headerlink" title="A:是否有多线程环境"></a>A:是否有多线程环境</h4><h4 id="B-是否有共享数据"><a href="#B-是否有共享数据" class="headerlink" title="B:是否有共享数据"></a>B:是否有共享数据</h4><h4 id="C-是否有多条语句操作共享数据"><a href="#C-是否有多条语句操作共享数据" class="headerlink" title="C:是否有多条语句操作共享数据"></a>C:是否有多条语句操作共享数据</h4><h3 id="10-同步解决线程安全问题"><a href="#10-同步解决线程安全问题" class="headerlink" title="(10)同步解决线程安全问题"></a>(10)同步解决线程安全问题</h3><h4 id="A-同步代码块"><a href="#A-同步代码块" class="headerlink" title="A:同步代码块"></a>A:同步代码块</h4><pre><code>        synchronized(对象) {
+            需要被同步的代码;
         }
 
-        执行流程：
-            判断比较表达式的值，看是true还是false
-            如果是true，就执行语句体
-            如果是false，就不执行语句体
+        这里的锁对象可以是任意对象。</code></pre><h4 id="B-同步方法"><a href="#B-同步方法" class="headerlink" title="B:同步方法"></a>B:同步方法</h4><pre><code>        把同步加在方法上。
 
-    B:格式2
-        if(比较表达式) {
-            语句体1;
-        }else {
-            语句体2;
-        }
+        这里的锁对象是this</code></pre><h4 id="C-静态同步方法"><a href="#C-静态同步方法" class="headerlink" title="C:静态同步方法"></a>C:静态同步方法</h4><pre><code>        把同步加在方法上。
 
-        执行流程：
-            判断比较表达式的值，看是true还是false
-            如果是true，就执行语句体1
-            如果是false，就执行语句体2
-
-    C:格式3
-        if(比较表达式1) {
-            语句体1;
-        }else if(比较表达式2){
-            语句体2;
-        }
-        ...
-        else {
-            语句体n+1;
-        }
-
-        执行流程：
-            判断比较表达式1的值，看是true还是false
-            如果是true，就执行语句体1
-            如果是false，就继续判断比较表达式2的值，看是true还是false
-            如果是true，就执行语句体2
-            如果是false，就继续判断比较表达式3的值，看是true还是false
-            ...
-            如果都不满足，就执行语句体n+1</code></pre><h3 id="2-注意事项"><a href="#2-注意事项" class="headerlink" title="(2)注意事项"></a>(2)注意事项</h3><pre><code>    A:比较表达式无论简单还是复杂，结果是boolean类型
-    B:if语句控制的语句体如果是一条语句，是可以省略大括号的；如果是多条，不能省略。
-        建议：永远不要省略。
-    C:一般来说，有左大括号，就没有分号，有分号，就没有左大括号。
-    D:else后面如果没有if，是不会出现比较表达式的。
-    E:三种if语句其实都是一个语句，只要有一个执行，其他的就不再执行。</code></pre><h3 id="3-案例："><a href="#3-案例：" class="headerlink" title="(3)案例："></a>(3)案例：</h3><pre><code>    A:比较两个数是否相等
-    B:获取两个数中的最大值
-    C:获取三个数中的最大值(if语句的嵌套)
-    D:根据成绩输出对应的等级
-    E:根据月份，输出对应的季节
-    F:根据x计算对应y的值并输出</code></pre><h3 id="4-三元运算符和if语句第二种格式的关系"><a href="#4-三元运算符和if语句第二种格式的关系" class="headerlink" title="(4)三元运算符和if语句第二种格式的关系"></a>(4)三元运算符和if语句第二种格式的关系</h3><pre><code>    所有的三元运算符能够实现的，if语句的第二种格式都能实现。
-    反之不成立。
-
-    如果if语句第二种格式控制的语句体是输出语句，就不可以。
-    因为三元运算符是一个运算符，必须要有一个结果返回，不能是一个输出语句。</code></pre>
+        这里的锁对象是当前类的字节码文件对象(反射再讲字节码文件对象)</code></pre><h3 id="11-回顾以前的线程安全的类"><a href="#11-回顾以前的线程安全的类" class="headerlink" title="(11)回顾以前的线程安全的类"></a>(11)回顾以前的线程安全的类</h3><h4 id="A-StringBuffer"><a href="#A-StringBuffer" class="headerlink" title="A:StringBuffer"></a>A:StringBuffer</h4><h4 id="B-Vector"><a href="#B-Vector" class="headerlink" title="B:Vector"></a>B:Vector</h4><h4 id="C-Hashtable"><a href="#C-Hashtable" class="headerlink" title="C:Hashtable"></a>C:Hashtable</h4><h4 id="D-如何把一个线程不安全的集合类变成一个线程安全的集合类"><a href="#D-如何把一个线程不安全的集合类变成一个线程安全的集合类" class="headerlink" title="D:如何把一个线程不安全的集合类变成一个线程安全的集合类"></a>D:如何把一个线程不安全的集合类变成一个线程安全的集合类</h4><pre><code>        用Collections工具类的方法即可。</code></pre>
             </div>
             <hr/>
 
@@ -654,7 +557,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/060211165.html">http://ww042q.coding-pages.com/2020/060211165.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/062419356.html">http://ww042q.coding-pages.com/2020/062419356.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -861,33 +764,34 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/060359868.html">
+                <a href="/2020/062419356.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day04">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day23">
                         
-                        <span class="card-title">Java-day04</span>
+                        <span class="card-title">Java-day23</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:switch语句(掌握)(1)格式：    switch(表达式) {
-        case 值1:
-            语句体1;
-            break;
-        case 值2:
-           
+                            1:多线程(理解)(1)多线程：一个应用程序有多条执行路径    进程：正在执行的应用程序
+    线程：进程的执行单元，执行路径
+    单线程：一个应用程序只有一条执行路径
+    多线程：一个应用程序有多条执行路径
+
+    多进程的
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -900,6 +804,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -918,24 +823,28 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/060160252.html">
+                <a href="/2020/062335677.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day02">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day22">
                         
-                        <span class="card-title">Java-day02</span>
+                        <span class="card-title">Java-day22</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:关键字(掌握)(1)被Java语言赋予特定含义的单词(2)特点：    全部小写。(3)注意事项：    A:goto和const作为保留字存在。
-    B:类似于Notepad++这样的高级记事本会对关键字有特殊颜色标记2:标识符(
+                            1:登录注册IO版本案例(掌握)要求，对着写一遍。
+
+cn.itcast.pojo User
+cn.itcast.dao UserDao
+cn.itcast.dao.impl UserDaoImpl(实现我不管)
+cn.itcast.gam
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-23
                             </span>
                         <span class="publish-author">
                             

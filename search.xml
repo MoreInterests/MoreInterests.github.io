@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Java-day23</title>
+      <link href="/2020/062419356.html"/>
+      <url>/2020/062419356.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-多线程-理解"><a href="#1-多线程-理解" class="headerlink" title="1:多线程(理解)"></a>1:多线程(理解)</h2><h3 id="1-多线程：一个应用程序有多条执行路径"><a href="#1-多线程：一个应用程序有多条执行路径" class="headerlink" title="(1)多线程：一个应用程序有多条执行路径"></a>(1)多线程：一个应用程序有多条执行路径</h3><pre><code>    进程：正在执行的应用程序    线程：进程的执行单元，执行路径    单线程：一个应用程序只有一条执行路径    多线程：一个应用程序有多条执行路径    多进程的意义?        提高CPU的使用率    多线程的意义?        提高应用程序的使用率</code></pre><h3 id="2-Java程序的运行原理及JVM的启动是多线程的吗"><a href="#2-Java程序的运行原理及JVM的启动是多线程的吗" class="headerlink" title="(2)Java程序的运行原理及JVM的启动是多线程的吗?"></a>(2)Java程序的运行原理及JVM的启动是多线程的吗?</h3><pre><code>    A:Java命令去启动JVM，JVM会启动一个进程，该进程会启动一个主线程。    B:JVM的启动是多线程的，因为它最低有两个线程启动了，主线程和垃圾回收线程。</code></pre><h3 id="3-多线程的实现方案-自己补齐步骤及代码-掌握"><a href="#3-多线程的实现方案-自己补齐步骤及代码-掌握" class="headerlink" title="(3)多线程的实现方案(自己补齐步骤及代码    掌握)"></a>(3)多线程的实现方案(自己补齐步骤及代码    掌握)</h3><h4 id="A-继承Thread类"><a href="#A-继承Thread类" class="headerlink" title="A:继承Thread类"></a>A:继承Thread类</h4><h4 id="B-实现Runnable接口"><a href="#B-实现Runnable接口" class="headerlink" title="B:实现Runnable接口"></a>B:实现Runnable接口</h4><p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%AF%94%E8%BE%83%E5%8F%8A%E5%8C%BA%E5%88%AB.bmp" alt=""></p><h3 id="4-线程的调度和优先级问题"><a href="#4-线程的调度和优先级问题" class="headerlink" title="(4)线程的调度和优先级问题"></a>(4)线程的调度和优先级问题</h3><h4 id="A-线程的调度"><a href="#A-线程的调度" class="headerlink" title="A:线程的调度"></a>A:线程的调度</h4><pre><code>        a:分时调度        b:抢占式调度 (Java采用的是该调度方式)</code></pre><h4 id="B-获取和设置线程优先级"><a href="#B-获取和设置线程优先级" class="headerlink" title="B:获取和设置线程优先级"></a>B:获取和设置线程优先级</h4><pre><code>        a:默认是5        b:范围是1-10</code></pre><h3 id="5-线程的控制-常见方法"><a href="#5-线程的控制-常见方法" class="headerlink" title="(5)线程的控制(常见方法)"></a>(5)线程的控制(常见方法)</h3><h4 id="A-休眠线程"><a href="#A-休眠线程" class="headerlink" title="A:休眠线程"></a>A:休眠线程</h4><h4 id="B-加入线程"><a href="#B-加入线程" class="headerlink" title="B:加入线程"></a>B:加入线程</h4><h4 id="C-礼让线程"><a href="#C-礼让线程" class="headerlink" title="C:礼让线程"></a>C:礼让线程</h4><h4 id="D-后台线程"><a href="#D-后台线程" class="headerlink" title="D:后台线程"></a>D:后台线程</h4><h4 id="E-终止线程-掌握"><a href="#E-终止线程-掌握" class="headerlink" title="E:终止线程(掌握)"></a>E:终止线程(掌握)</h4><h3 id="6-线程的生命周期-参照-线程生命周期图解-bmp"><a href="#6-线程的生命周期-参照-线程生命周期图解-bmp" class="headerlink" title="(6)线程的生命周期(参照    线程生命周期图解.bmp)"></a>(6)线程的生命周期(参照    线程生命周期图解.bmp)</h3><h4 id="A-新建"><a href="#A-新建" class="headerlink" title="A:新建"></a>A:新建</h4><h4 id="B-就绪"><a href="#B-就绪" class="headerlink" title="B:就绪"></a>B:就绪</h4><h4 id="C-运行"><a href="#C-运行" class="headerlink" title="C:运行"></a>C:运行</h4><h4 id="D-阻塞"><a href="#D-阻塞" class="headerlink" title="D:阻塞"></a>D:阻塞</h4><h4 id="E-死亡"><a href="#E-死亡" class="headerlink" title="E:死亡"></a>E:死亡</h4><p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E8%A7%A3.bmp" alt=""></p><h3 id="7-电影院卖票程序的实现"><a href="#7-电影院卖票程序的实现" class="headerlink" title="(7)电影院卖票程序的实现"></a>(7)电影院卖票程序的实现</h3><h4 id="A-继承Thread类-1"><a href="#A-继承Thread类-1" class="headerlink" title="A:继承Thread类"></a>A:继承Thread类</h4><h4 id="B-实现Runnable接口-1"><a href="#B-实现Runnable接口-1" class="headerlink" title="B:实现Runnable接口"></a>B:实现Runnable接口</h4><h3 id="8-电影院卖票程序出问题"><a href="#8-电影院卖票程序出问题" class="headerlink" title="(8)电影院卖票程序出问题"></a>(8)电影院卖票程序出问题</h3><pre><code>    A:为了更符合真实的场景，加入了休眠100毫秒。    B:卖票问题        a:同票多次        b:负数票</code></pre><h3 id="9-多线程安全问题的原因-也是我们以后判断一个程序是否有线程安全问题的依据"><a href="#9-多线程安全问题的原因-也是我们以后判断一个程序是否有线程安全问题的依据" class="headerlink" title="(9)多线程安全问题的原因(也是我们以后判断一个程序是否有线程安全问题的依据)"></a>(9)多线程安全问题的原因(也是我们以后判断一个程序是否有线程安全问题的依据)</h3><h4 id="A-是否有多线程环境"><a href="#A-是否有多线程环境" class="headerlink" title="A:是否有多线程环境"></a>A:是否有多线程环境</h4><h4 id="B-是否有共享数据"><a href="#B-是否有共享数据" class="headerlink" title="B:是否有共享数据"></a>B:是否有共享数据</h4><h4 id="C-是否有多条语句操作共享数据"><a href="#C-是否有多条语句操作共享数据" class="headerlink" title="C:是否有多条语句操作共享数据"></a>C:是否有多条语句操作共享数据</h4><h3 id="10-同步解决线程安全问题"><a href="#10-同步解决线程安全问题" class="headerlink" title="(10)同步解决线程安全问题"></a>(10)同步解决线程安全问题</h3><h4 id="A-同步代码块"><a href="#A-同步代码块" class="headerlink" title="A:同步代码块"></a>A:同步代码块</h4><pre><code>        synchronized(对象) {            需要被同步的代码;        }        这里的锁对象可以是任意对象。</code></pre><h4 id="B-同步方法"><a href="#B-同步方法" class="headerlink" title="B:同步方法"></a>B:同步方法</h4><pre><code>        把同步加在方法上。        这里的锁对象是this</code></pre><h4 id="C-静态同步方法"><a href="#C-静态同步方法" class="headerlink" title="C:静态同步方法"></a>C:静态同步方法</h4><pre><code>        把同步加在方法上。        这里的锁对象是当前类的字节码文件对象(反射再讲字节码文件对象)</code></pre><h3 id="11-回顾以前的线程安全的类"><a href="#11-回顾以前的线程安全的类" class="headerlink" title="(11)回顾以前的线程安全的类"></a>(11)回顾以前的线程安全的类</h3><h4 id="A-StringBuffer"><a href="#A-StringBuffer" class="headerlink" title="A:StringBuffer"></a>A:StringBuffer</h4><h4 id="B-Vector"><a href="#B-Vector" class="headerlink" title="B:Vector"></a>B:Vector</h4><h4 id="C-Hashtable"><a href="#C-Hashtable" class="headerlink" title="C:Hashtable"></a>C:Hashtable</h4><h4 id="D-如何把一个线程不安全的集合类变成一个线程安全的集合类"><a href="#D-如何把一个线程不安全的集合类变成一个线程安全的集合类" class="headerlink" title="D:如何把一个线程不安全的集合类变成一个线程安全的集合类"></a>D:如何把一个线程不安全的集合类变成一个线程安全的集合类</h4><pre><code>        用Collections工具类的方法即可。</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java-day22</title>
       <link href="/2020/062335677.html"/>
       <url>/2020/062335677.html</url>
