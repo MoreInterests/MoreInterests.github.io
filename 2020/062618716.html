@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java-day18, toily的博客">
+    <meta name="keywords" content="Java-day25, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java-day18 | toily的博客</title>
+    <title>Java-day25 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -327,7 +327,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java-day18</h1>
+                    <h1 class="description center-align post-title">Java-day25</h1>
                 </div>
             </div>
         </div>
@@ -477,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-19
+                    2020-06-26
                 </div>
                 
 
@@ -486,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    855
+                    338
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -508,58 +508,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-Map-掌握"><a href="#1-Map-掌握" class="headerlink" title="1:Map(掌握)"></a>1:Map(掌握)</h2><h3 id="1-将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。"><a href="#1-将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。" class="headerlink" title="(1)将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。"></a>(1)将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。</h3><h3 id="2-Map和Collection的区别"><a href="#2-Map和Collection的区别" class="headerlink" title="(2)Map和Collection的区别?"></a>(2)Map和Collection的区别?</h3><pre><code>    A:Map 存储的是键值对形式的元素，键唯一，值可以重复。夫妻对
-    B:Collection 存储的是单独出现的元素，子接口Set元素唯一，子接口List元素可重复。光棍</code></pre><h3 id="3-Map接口功能概述-自己补齐"><a href="#3-Map接口功能概述-自己补齐" class="headerlink" title="(3)Map接口功能概述(自己补齐)"></a>(3)Map接口功能概述(自己补齐)</h3><h4 id="A-添加功能"><a href="#A-添加功能" class="headerlink" title="A:添加功能"></a>A:添加功能</h4><pre><code>    V put(K key,V value):添加元素。这个其实还有另一个功能?先不告诉你，等会讲
-         如果键是第一次存储，就直接存储元素，返回null
-         如果键不是第一次存在，就用值把以前的值替换掉，返回以前的值</code></pre><h4 id="B-删除功能"><a href="#B-删除功能" class="headerlink" title="B:删除功能"></a>B:删除功能</h4><pre><code>     void clear():移除所有的键值对元素
-     V remove(Object key)：根据键删除键值对元素，并把值返回</code></pre><h4 id="C-判断功能"><a href="#C-判断功能" class="headerlink" title="C:判断功能"></a>C:判断功能</h4><pre><code>     boolean containsKey(Object key)：判断集合是否包含指定的键
-      boolean containsValue(Object value):判断集合是否包含指定的值
-      boolean isEmpty()：判断集合是否为空</code></pre><h4 id="D-获取功能"><a href="#D-获取功能" class="headerlink" title="D:获取功能"></a>D:获取功能</h4><pre><code>     Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet():???
-     V get(Object key):根据键获取值
-     Set&lt;K&gt; keySet():获取集合中所有键的集合
-     Collection&lt;V&gt; values():获取集合中所有值的集合</code></pre><h4 id="E-长度功能"><a href="#E-长度功能" class="headerlink" title="E:长度功能"></a>E:长度功能</h4><pre><code>    int size()：返回集合中的键值对的对数</code></pre><h3 id="4-Map集合的遍历"><a href="#4-Map集合的遍历" class="headerlink" title="(4)Map集合的遍历"></a>(4)Map集合的遍历</h3><h4 id="A-键找值"><a href="#A-键找值" class="headerlink" title="A:键找值"></a>A:键找值</h4><pre><code>        a:获取所有键的集合
-        b:遍历键的集合,得到每一个键
-        c:根据键到集合中去找值</code></pre><h4 id="B-键值对对象找键和值"><a href="#B-键值对对象找键和值" class="headerlink" title="B:键值对对象找键和值"></a>B:键值对对象找键和值</h4><pre><code>        a:获取所有的键值对对象的集合
-        b:遍历键值对对象的集合，获取每一个键值对对象
-        c:根据键值对对象去获取键和值
-
-    代码体现：
-        Map&lt;String,String&gt; hm = new HashMap&lt;String,String&gt;();
-
-        hm.put(&quot;it002&quot;,&quot;hello&quot;);
-        hm.put(&quot;it003&quot;,&quot;world&quot;);
-        hm.put(&quot;it001&quot;,&quot;java&quot;);
-
-        //方式1 键找值
-        Set&lt;String&gt; set = hm.keySet();
-        for(String key : set) {
-            String value = hm.get(key);
-            System.out.println(key+&quot;---&quot;+value);
-        }
-
-        //方式2 键值对对象找键和值
-        Set&lt;Map.Entry&lt;String,String&gt;&gt; set2 = hm.entrySet();
-        for(Map.Entry&lt;String,String&gt; me : set2) {
-            String key = me.getKey();
-            String value = me.getValue();
-            System.out.println(key+&quot;---&quot;+value);
-        }</code></pre><h3 id="5-HashMap集合的练习"><a href="#5-HashMap集合的练习" class="headerlink" title="(5)HashMap集合的练习"></a>(5)HashMap集合的练习</h3><pre><code>    A:HashMap&lt;String,String&gt;
-    B:HashMap&lt;Integer,String&gt;
-    C:HashMap&lt;String,Student&gt;
-    D:HashMap&lt;Student,String&gt;</code></pre><h3 id="6-TreeMap集合的练习"><a href="#6-TreeMap集合的练习" class="headerlink" title="(6)TreeMap集合的练习"></a>(6)TreeMap集合的练习</h3><pre><code>    A:TreeMap&lt;String,String&gt;
-    B:TreeMap&lt;Student,String&gt;</code></pre><h3 id="7-案例"><a href="#7-案例" class="headerlink" title="(7)案例"></a>(7)案例</h3><pre><code>    A:统计一个字符串中每个字符出现的次数
-    B:集合的嵌套遍历
-        a:HashMap嵌套HashMap
-        b:HashMap嵌套ArrayList
-        c:ArrayList嵌套HashMap
-        d:多层嵌套</code></pre><h2 id="2-Collections-理解"><a href="#2-Collections-理解" class="headerlink" title="2:Collections(理解)"></a>2:Collections(理解)</h2><h3 id="1-是针对集合进行操作的工具类"><a href="#1-是针对集合进行操作的工具类" class="headerlink" title="(1)是针对集合进行操作的工具类"></a>(1)是针对集合进行操作的工具类</h3><h3 id="2-面试题：Collection和Collections的区别"><a href="#2-面试题：Collection和Collections的区别" class="headerlink" title="(2)面试题：Collection和Collections的区别"></a>(2)面试题：Collection和Collections的区别</h3><pre><code>    A:Collection 是单列集合的顶层接口，有两个子接口List和Set
-    B:Collections 是针对集合进行操作的工具类，可以对集合进行排序和查找等</code></pre><h3 id="3-常见的几个小方法："><a href="#3-常见的几个小方法：" class="headerlink" title="(3)常见的几个小方法："></a>(3)常见的几个小方法：</h3><pre><code>    A:public static &lt;T&gt; void sort(List&lt;T&gt; list)
-    B:public static &lt;T&gt; int binarySearch(List&lt;?&gt; list,T key)
-    C:public static &lt;T&gt; T max(Collection&lt;?&gt; coll)
-    D:public static void reverse(List&lt;?&gt; list)
-    E:public static void shuffle(List&lt;?&gt; list)</code></pre><h3 id="4-案例"><a href="#4-案例" class="headerlink" title="(4)案例"></a>(4)案例</h3><pre><code>    A:ArrayList集合存储自定义对象的排序
-    B:模拟斗地主洗牌和发牌
-    C:模拟斗地主洗牌和发牌并对牌进行排序</code></pre>
+                <h2 id="1-如何让Netbeans的东西Eclipse能访问。"><a href="#1-如何让Netbeans的东西Eclipse能访问。" class="headerlink" title="1:如何让Netbeans的东西Eclipse能访问。"></a>1:如何让Netbeans的东西Eclipse能访问。</h2><pre><code>在Eclipse中创建项目，把Netbeans项目的src下的东西给拿过来即可。
+注意：修改项目编码为UTF-8</code></pre><h2 id="2-GUI-了解"><a href="#2-GUI-了解" class="headerlink" title="2:GUI(了解)"></a>2:GUI(了解)</h2><h3 id="1-用户图形界面"><a href="#1-用户图形界面" class="headerlink" title="(1)用户图形界面"></a>(1)用户图形界面</h3><pre><code>    GUI:方便直观
+    CLI:需要记忆一下命令，麻烦</code></pre><h3 id="2-两个包："><a href="#2-两个包：" class="headerlink" title="(2)两个包："></a>(2)两个包：</h3><pre><code>    java.awt:和系统关联较强
+    javax.swing:纯Java编写</code></pre><h3 id="3-GUI的继承体系"><a href="#3-GUI的继承体系" class="headerlink" title="(3)GUI的继承体系"></a>(3)GUI的继承体系</h3><pre><code>    组件：组件就是对象
+        容器组件：是可以存储基本组件和容器组件的组件。
+        基本组件：是可以使用的组件，但是必须依赖容器。</code></pre><h3 id="4-事件监听机制-理解"><a href="#4-事件监听机制-理解" class="headerlink" title="(4)事件监听机制(理解)"></a>(4)事件监听机制(理解)</h3><h4 id="A-事件源"><a href="#A-事件源" class="headerlink" title="A:事件源"></a>A:事件源</h4><h4 id="B-事件"><a href="#B-事件" class="headerlink" title="B:事件"></a>B:事件</h4><h4 id="C-事件处理"><a href="#C-事件处理" class="headerlink" title="C:事件处理"></a>C:事件处理</h4><h4 id="D-事件监听"><a href="#D-事件监听" class="headerlink" title="D:事件监听"></a>D:事件监听</h4><h3 id="5-适配器模式-理解"><a href="#5-适配器模式-理解" class="headerlink" title="(5)适配器模式(理解)"></a>(5)适配器模式(理解)</h3><h4 id="A-接口"><a href="#A-接口" class="headerlink" title="A:接口"></a>A:接口</h4><h4 id="B-抽象适配器类"><a href="#B-抽象适配器类" class="headerlink" title="B:抽象适配器类"></a>B:抽象适配器类</h4><h4 id="C-实现类"><a href="#C-实现类" class="headerlink" title="C:实现类"></a>C:实现类</h4><h3 id="6-案例："><a href="#6-案例：" class="headerlink" title="(6)案例："></a>(6)案例：</h3><h4 id="A-创建窗体案例"><a href="#A-创建窗体案例" class="headerlink" title="A:创建窗体案例"></a>A:创建窗体案例</h4><h4 id="B-窗体关闭案例"><a href="#B-窗体关闭案例" class="headerlink" title="B:窗体关闭案例"></a>B:窗体关闭案例</h4><h4 id="C-窗体添加按钮并对按钮添加事件案例。"><a href="#C-窗体添加按钮并对按钮添加事件案例。" class="headerlink" title="C:窗体添加按钮并对按钮添加事件案例。"></a>C:窗体添加按钮并对按钮添加事件案例。</h4><pre><code>        界面中的组件布局。</code></pre><h4 id="D-把文本框里面的数据转移到文本域"><a href="#D-把文本框里面的数据转移到文本域" class="headerlink" title="D:把文本框里面的数据转移到文本域"></a>D:把文本框里面的数据转移到文本域</h4><h4 id="E-更改背景色"><a href="#E-更改背景色" class="headerlink" title="E:更改背景色"></a>E:更改背景色</h4><h4 id="F-设置文本框里面不能输入非数字字符"><a href="#F-设置文本框里面不能输入非数字字符" class="headerlink" title="F:设置文本框里面不能输入非数字字符"></a>F:设置文本框里面不能输入非数字字符</h4><h4 id="G-一级菜单"><a href="#G-一级菜单" class="headerlink" title="G:一级菜单"></a>G:一级菜单</h4><h4 id="H-多级菜单"><a href="#H-多级菜单" class="headerlink" title="H:多级菜单"></a>H:多级菜单</h4><h3 id="7-Netbeans的概述和使用"><a href="#7-Netbeans的概述和使用" class="headerlink" title="(7)Netbeans的概述和使用"></a>(7)Netbeans的概述和使用</h3><h4 id="A-是可以做Java开发的另一个IDE工具。"><a href="#A-是可以做Java开发的另一个IDE工具。" class="headerlink" title="A:是可以做Java开发的另一个IDE工具。"></a>A:是可以做Java开发的另一个IDE工具。</h4><h4 id="B-使用"><a href="#B-使用" class="headerlink" title="B:使用"></a>B:使用</h4><pre><code>        A:四则运算
+            a:修改图标
+            b:设置皮肤
+            c:设置居中
+            d:数据校验</code></pre><h4 id="B-登录注册"><a href="#B-登录注册" class="headerlink" title="B:登录注册"></a>B:登录注册</h4>
             </div>
             <hr/>
 
@@ -584,7 +542,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/061931965.html">http://ww042q.coding-pages.com/2020/061931965.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/062618716.html">http://ww042q.coding-pages.com/2020/062618716.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -795,26 +753,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/062048156.html">
+                <a href="/2020/062718524.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day19">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day26">
                         
-                        <span class="card-title">Java-day19</span>
+                        <span class="card-title">Java-day26</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:异常(理解)(1)程序出现的不正常的情况。(2)异常的体系    Throwable
-        |--Error    严重问题，我们不处理。
-        |--Exception
-            |--Runtime
+                            1:网络编程(理解)(1)网络编程：用Java语言实现计算机间数据的信息传递和资源共享(2)网络编程模型(3)网络编程的三要素A:IP地址        a:点分十进制
+        b:IP地址的组成
+        c:IP地址的分类
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-27
                         </span>
                         <span class="publish-author">
                             
@@ -846,23 +803,26 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/061830877.html">
+                <a href="/2020/062535293.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day17">
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day24">
                         
-                        <span class="card-title">Java-day17</span>
+                        <span class="card-title">Java-day24</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:登录注册案例(理解)2:Set集合(理解)(1)Set集合的特点    无序,唯一(2)HashSet集合(掌握)A:底层数据结构是哈希表(是一个元素为链表的数组)B:哈希表底层依赖两个方法：hashCode()和equals()   
+                            1:多线程(理解)(1)JDK5以后的针对线程的锁定操作和释放操作    Lock锁(2)死锁问题的描述和代码体现(3)生产者和消费者多线程体现(线程间通信问题)    以学生作为资源来实现的
+
+    资源类：Student
+    设置
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-25
                             </span>
                         <span class="publish-author">
                             
