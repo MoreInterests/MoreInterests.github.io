@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="博客撰写教程, toily的博客">
+    <meta name="keywords" content="Java-异常处理, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>博客撰写教程 | toily的博客</title>
+    <title>Java-异常处理 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">博客撰写教程</h1>
+                    <h1 class="description center-align post-title">Java-异常处理</h1>
                 </div>
             </div>
         </div>
@@ -452,23 +452,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%96%87%E7%AB%A0/">
-                                <span class="chip bg-color">文章</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
-                                教程
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -477,7 +468,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-20
+                    2020-06-28
                 </div>
                 
 
@@ -486,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    401
+                    430
                 </div>
                 
 
@@ -508,37 +499,21 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-Markdown——入门指南"><a href="#1-Markdown——入门指南" class="headerlink" title="1.Markdown——入门指南"></a>1.Markdown——入门指南</h2><h1 id="导语："><a href="#导语：" class="headerlink" title="导语："></a>导语：</h1><p>Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑，Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的 HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。 </p>
-<h2 id="Markdown-语法的简要规则"><a href="#Markdown-语法的简要规则" class="headerlink" title="Markdown 语法的简要规则"></a>Markdown 语法的简要规则</h2><ul>
-<li><p>标题 </p>
-<p>  #一级标题</p>
-<p>  ##二级标题</p>
-<p>  ###三级标题 </p>
-</li>
-<li><p>无序列表  </p>
-</li>
-</ul>
-<p>*1<br>*2<br>*3</p>
-<ul>
-<li>有序列表   </li>
-</ul>
-<p>1.1<br>1.2<br>1.3  </p>
-<ul>
-<li>图片与链接<br>图片为：! [ ] ( )<br>链接为：[ ] ( )  </li>
-<li>粗体  </li>
-</ul>
-<p><strong>中文本为斜体<br>**</strong>中为粗体  </p>
-<ul>
-<li>分割线<br>三个*为分割线  </li>
-<li>代码框<br>一个``<br>例如：<br><code>if(a&lt;b)   
-{c=b;}</code>     </li>
-<li>行内代码  <pre><code>coding: git@e.coding.net:</code></pre></li>
-</ul>
-<p><a href="https://www.jianshu.com/p/1e402922ee32" target="_blank" rel="noopener">文章出处</a>  </p>
+                <h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><p>很多事件并非总是按照人们自己设计意愿顺利发展<br>的， 而是有能够出现这样那样的异常情况。 例如：<br>你计划周末郊游， 你的计划会安排满满的， 你计划<br>可能是这样的： 从家里出发→到达目的→游泳→烧<br>烤→回家。 但天有不测风云， 当前你准备烧烤时候<br>天降大雨， 你只能终止郊游提前回家。 “天降大<br>雨”是一种异常情况， 你的计划应该考虑到这样情<br>况， 并且应该有处理这种异常的预案。<br>为增强程序的健壮性， 计算机程序的编写也需要考<br>虑处理这些异常情况， Java语言提供了异常处理功<br>能， 本章介绍Java异常处理机制。   </p>
+<h2 id="从一个问题开始"><a href="#从一个问题开始" class="headerlink" title="从一个问题开始"></a>从一个问题开始</h2><p>为了学习Java异常处理机制， 首先看看下面程序。</p>
+<pre><code>//HelloWorld.java文件
+package com.a51work6;
+public class HelloWorld {
+    public static void main(String[] args) {
+    int a = 0;
+    System.out.println(5 / a);
+    }
+} </code></pre><p>这个程序没有编译错误， 但会发生如下的运行时错误：</p>
+<pre><code>Exception in thread &quot;main&quot; java.lang.ArithmeticException: / by ze
+at com.a51work6.HelloWorld.main(HelloWorld.java:9)</code></pre><p>在数学上除数不能为0， 所以程序运行时表达式（5 / a） 会抛出ArithmeticException异常，ArithmeticException是数学计算异常， 凡是发生数<br>学计算错误都会抛出该异常。程序运行过程中难免会发生异常， 发生异常并不可<br>怕， 程序员应该考虑到有可能发生这些异常， 编程<br>时应该捕获并进行处理异常， 不能让程序发生终<br>止， 这就是健壮的程序。    </p>
 <hr>
-<h2 id="2-文章-Front-matter-介绍"><a href="#2-文章-Front-matter-介绍" class="headerlink" title="2.文章 Front-matter 介绍"></a>2.文章 Front-matter 介绍</h2><p>Front-matter 选项详解<br>Front-matter 选项中的所有内容均为非必填的。但我仍然建议至少填写 title 和 date 的值。</p>
-<p>配置选项    默认值    描述<br><strong>title</strong>    Markdown 的文件标题    文章标题，强烈建议填写此选项<br><strong>date</strong>    文件创建时的日期时间    发布时间，强烈建议填写此选项，且最好保证全局唯一<br><strong>author</strong>    根 _config.yml 中的 author    文章作者<br><strong>img</strong>    featureImages 中的某个值    文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: <a href="http://xxx.com/xxx.jpg" target="_blank" rel="noopener">http://xxx.com/xxx.jpg</a></p>
-<p>  其余规则见<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">文章出处</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P%E5%BC%82%E5%B8%B8%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%B1%82%E6%AC%A1.jpg" alt="异常类继承层次">    </p>
+<p>（Java从小白到大牛 509）</p>
 
             </div>
             <hr/>
@@ -554,7 +529,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">Xiao Xing</a>
+                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">xing xiao</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -564,7 +539,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/022054914.html">http://ww042q.coding-pages.com/2020/022054914.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/062858003.html">http://ww042q.coding-pages.com/2020/062858003.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -577,7 +552,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="http://ww042q.coding-pages.com" target="_blank">Xiao Xing</a>
+                    <a href="http://ww042q.coding-pages.com" target="_blank">xing xiao</a>
                     !
                 </span>
             </div>
@@ -602,8 +577,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%96%87%E7%AB%A0/">
-                                    <span class="chip bg-color">文章</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
                         </div>
@@ -775,31 +750,32 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/031034155.html">
+                <a href="/2020/062834973.html">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day27">
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Hexo+Github博客搭建入门">
-                        
-                        <span class="card-title">Hexo+Github博客搭建入门</span>
+                        <span class="card-title">Java-day27</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
+                            1:反射(理解)(1)类的加载及类加载器(2)反射：    通过字节码文件对象，去使用成员变量，构造方法，成员方法(3)反射的使用    A:通过反射获取构造方法并使用
+    B:通过反射获取成员变量并使用
+    C:通过反射获取成员方
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-28
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    网站搭建
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
                                 </a>
                             
                             
@@ -809,12 +785,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/blog/">
-                        <span class="chip bg-color">blog</span>
-                    </a>
-                    
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
@@ -828,32 +800,45 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/021516107.html">
+                <a href="/2020/062718524.html">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day26">
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Java-day26</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            1:网络编程(理解)(1)网络编程：用Java语言实现计算机间数据的信息传递和资源共享(2)网络编程模型(3)网络编程的三要素A:IP地址        a:点分十进制
+        b:IP地址的组成
+        c:IP地址的分类
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-27
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Xiao Xing
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
                 </div>
                 
             </div>

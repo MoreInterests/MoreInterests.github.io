@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title>Java-day27</title>
+      <link href="/2020/062834973.html"/>
+      <url>/2020/062834973.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-反射-理解"><a href="#1-反射-理解" class="headerlink" title="1:反射(理解)"></a>1:反射(理解)</h2><h3 id="1-类的加载及类加载器"><a href="#1-类的加载及类加载器" class="headerlink" title="(1)类的加载及类加载器"></a>(1)类的加载及类加载器</h3><h3 id="2-反射："><a href="#2-反射：" class="headerlink" title="(2)反射："></a>(2)反射：</h3><pre><code>    通过字节码文件对象，去使用成员变量，构造方法，成员方法</code></pre><h3 id="3-反射的使用"><a href="#3-反射的使用" class="headerlink" title="(3)反射的使用"></a>(3)反射的使用</h3><pre><code>    A:通过反射获取构造方法并使用    B:通过反射获取成员变量并使用    C:通过反射获取成员方法并使用</code></pre><h3 id="4-反射案例"><a href="#4-反射案例" class="headerlink" title="(4)反射案例"></a>(4)反射案例</h3><pre><code>    A:通过反射运行配置文件的内容    B:通过反射越过泛型检查    C:通过反射给任意的一个对象的任意的属性赋值为指定的值</code></pre><h3 id="5-动态代理"><a href="#5-动态代理" class="headerlink" title="(5)动态代理"></a>(5)动态代理</h3><h2 id="2-设计模式"><a href="#2-设计模式" class="headerlink" title="2:设计模式"></a>2:设计模式</h2><h3 id="1-装饰设计模式"><a href="#1-装饰设计模式" class="headerlink" title="(1)装饰设计模式"></a>(1)装饰设计模式</h3><pre><code>    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));    Scanner sc = new Scanner(System.in);</code></pre><h3 id="2-模版设计模式"><a href="#2-模版设计模式" class="headerlink" title="(2)模版设计模式"></a>(2)模版设计模式</h3><h2 id="3-JDK新特性"><a href="#3-JDK新特性" class="headerlink" title="3:JDK新特性"></a>3:JDK新特性</h2><h3 id="1-JDK5-掌握"><a href="#1-JDK5-掌握" class="headerlink" title="(1)JDK5(掌握)"></a>(1)JDK5(掌握)</h3><pre><code>    装箱和拆箱    泛型    增强for    静态导入    可变参数    枚举</code></pre><h3 id="2-JDK6-了解"><a href="#2-JDK6-了解" class="headerlink" title="(2)JDK6(了解)"></a>(2)JDK6(了解)</h3><h3 id="3-JDK7-理解"><a href="#3-JDK7-理解" class="headerlink" title="(3)JDK7(理解)"></a>(3)JDK7(理解)</h3><pre><code>    二进制的表现形式    用_分隔数据    switch语句可是用字符串    泛型推断(菱形泛型)    多catch的使用    自动释放资源的用法</code></pre><h3 id="4-JDK8-了解"><a href="#4-JDK8-了解" class="headerlink" title="(4)JDK8(了解)"></a>(4)JDK8(了解)</h3><pre><code>    可以去网上了解资料</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java-异常处理</title>
+      <link href="/2020/062858003.html"/>
+      <url>/2020/062858003.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><p>很多事件并非总是按照人们自己设计意愿顺利发展<br>的， 而是有能够出现这样那样的异常情况。 例如：<br>你计划周末郊游， 你的计划会安排满满的， 你计划<br>可能是这样的： 从家里出发→到达目的→游泳→烧<br>烤→回家。 但天有不测风云， 当前你准备烧烤时候<br>天降大雨， 你只能终止郊游提前回家。 “天降大<br>雨”是一种异常情况， 你的计划应该考虑到这样情<br>况， 并且应该有处理这种异常的预案。<br>为增强程序的健壮性， 计算机程序的编写也需要考<br>虑处理这些异常情况， Java语言提供了异常处理功<br>能， 本章介绍Java异常处理机制。   </p><h2 id="从一个问题开始"><a href="#从一个问题开始" class="headerlink" title="从一个问题开始"></a>从一个问题开始</h2><p>为了学习Java异常处理机制， 首先看看下面程序。</p><pre><code>//HelloWorld.java文件package com.a51work6;public class HelloWorld {    public static void main(String[] args) {    int a = 0;    System.out.println(5 / a);    }} </code></pre><p>这个程序没有编译错误， 但会发生如下的运行时错误：</p><pre><code>Exception in thread &quot;main&quot; java.lang.ArithmeticException: / by zeat com.a51work6.HelloWorld.main(HelloWorld.java:9)</code></pre><p>在数学上除数不能为0， 所以程序运行时表达式（5 / a） 会抛出ArithmeticException异常，ArithmeticException是数学计算异常， 凡是发生数<br>学计算错误都会抛出该异常。程序运行过程中难免会发生异常， 发生异常并不可<br>怕， 程序员应该考虑到有可能发生这些异常， 编程<br>时应该捕获并进行处理异常， 不能让程序发生终<br>止， 这就是健壮的程序。    </p><hr><p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P%E5%BC%82%E5%B8%B8%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%B1%82%E6%AC%A1.jpg" alt="异常类继承层次">    </p><p>（Java从小白到大牛 509）</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java-day26</title>
       <link href="/2020/062718524.html"/>
       <url>/2020/062718524.html</url>
