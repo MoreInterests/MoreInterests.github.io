@@ -5,13 +5,14 @@ top: false
 cover: false
 toc: true
 mathjax: false
-date: 2020-06-24 21:33:40
 author: xing xiao
+tags: Java
+categories: 编程
+abbrlink: 19356
+date: 2020-06-24 21:33:40
 coverImg:
 password:
 summary:
-tags: Java
-categories: 编程
 ---
 ## 1:多线程(理解)
 ###	(1)多线程：一个应用程序有多条执行路径
