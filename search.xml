@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>Java-大厂面试</title>
+      <link href="/2020/063047634.html"/>
+      <url>/2020/063047634.html</url>
+      
+        <content type="html"><![CDATA[<hr><h2 id="0625"><a href="#0625" class="headerlink" title="0625"></a>0625</h2><h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P0625.jpg" alt=""></h2><h2 id="0626"><a href="#0626" class="headerlink" title="0626"></a>0626</h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P0626.jpg" alt=""></h2><h2 id="0627"><a href="#0627" class="headerlink" title="0627"></a>0627</h2><h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P0627.jpg" alt=""></h2><h2 id="0628"><a href="#0628" class="headerlink" title="0628"></a>0628</h2><h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P0628.jpg" alt=""></h2><h2 id="0629"><a href="#0629" class="headerlink" title="0629"></a>0629</h2><h2 id="-4"><a href="#-4" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P0629.jpg" alt=""></h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java-踩雷</title>
+      <link href="/2020/062964318.html"/>
+      <url>/2020/062964318.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="下面程序执行的结果是？（-C）"><a href="#下面程序执行的结果是？（-C）" class="headerlink" title="下面程序执行的结果是？（ C）"></a>下面程序执行的结果是？（ C）</h2><pre><code>        boolean b=true;        if(b=false)  //雷区        {            System.out.println(&quot;a&quot;);        }        else if(b)        {            System.out.println(b);            }        else if(!b)        {            System.out.println(&quot;c&quot;);        }        else            System.out.println(&quot;d&quot;); </code></pre><p>A.    a<br>B.true<br>C.    c<br>D.d</p><h3 id="注：’b-false’不是逻辑判断，而是把false赋值给b"><a href="#注：’b-false’不是逻辑判断，而是把false赋值给b" class="headerlink" title="注：’b=false’不是逻辑判断，而是把false赋值给b"></a>注：’b=false’不是逻辑判断，而是把false赋值给b</h3><h2 id="下面程序执行的结果是？（D）"><a href="#下面程序执行的结果是？（D）" class="headerlink" title="下面程序执行的结果是？（D）"></a>下面程序执行的结果是？（D）</h2><pre><code>    int x=2,y=3;    switch(x)    {        default:        y++;        case 3:        y++;        case 4:        y++;    }    System.out.println(&quot;y=&quot;+y);</code></pre><p>A.  3  </p><p>B.  4  </p><p>C.  5  </p><p>D.  6</p><h3 id="注：没有break，顺序执行"><a href="#注：没有break，顺序执行" class="headerlink" title="注：没有break，顺序执行"></a>注：没有break，顺序执行</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java-day27</title>
       <link href="/2020/062834973.html"/>
       <url>/2020/062834973.html</url>
@@ -766,9 +816,9 @@
       
         <tags>
             
-            <tag> blog </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> blog </tag>
             
         </tags>
       
@@ -818,9 +868,9 @@
       
         <tags>
             
-            <tag> blog </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> blog </tag>
             
         </tags>
       
