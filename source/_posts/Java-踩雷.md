@@ -1,17 +1,18 @@
 ---
 title: Java-踩雷
-img: 
 top: false
 cover: false
 toc: true
 mathjax: false
-date: 2020-06-29 20:20:19
 author: xing xiao
+tags: Java
+categories: 面试
+abbrlink: 64318
+date: 2020-06-29 20:20:19
+img:
 coverImg:
 password:
 summary:
-tags: Java
-categories: 面试
 ---
 ##  下面程序执行的结果是？（ C）  
 ``` 		
