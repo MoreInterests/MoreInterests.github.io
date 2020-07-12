@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java-day23, toily的博客">
+    <meta name="keywords" content="Linux-c  指针, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java-day23 | toily的博客</title>
+    <title>Linux-c  指针 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java-day23</h1>
+                    <h1 class="description center-align post-title">Linux-c  指针</h1>
                 </div>
             </div>
         </div>
@@ -452,8 +452,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C</span>
                             </a>
                         
                     </div>
@@ -477,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-24
+                    2020-07-12
                 </div>
                 
 
@@ -486,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    637
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
 
@@ -508,31 +508,119 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-多线程-理解"><a href="#1-多线程-理解" class="headerlink" title="1:多线程(理解)"></a>1:多线程(理解)</h2><h3 id="1-多线程：一个应用程序有多条执行路径"><a href="#1-多线程：一个应用程序有多条执行路径" class="headerlink" title="(1)多线程：一个应用程序有多条执行路径"></a>(1)多线程：一个应用程序有多条执行路径</h3><pre><code>    进程：正在执行的应用程序
-    线程：进程的执行单元，执行路径
-    单线程：一个应用程序只有一条执行路径
-    多线程：一个应用程序有多条执行路径
+                <h2 id="地址和变量"><a href="#地址和变量" class="headerlink" title="地址和变量"></a>地址和变量</h2><ul>
+<li>在计算机内存中，每一个字节单元，都有一个编号，称为地址</li>
+</ul>
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><ul>
+<li>在C语言中，内存单元的地址称为指针，专门用来存放地址的变量，称为指针变量在不影响理解的情况中，有时对地址、指针和指针变量不区分，通称指针。</li>
+<li>指针指向的内存区域中的数据称为指针的目标</li>
+<li>如果它指向的区域是程序中的一个变量的内存空间，则这个变量称为指针的目标变量。简称为指针的目标。</li>
+</ul>
+<h3 id="2-指针变量的说明"><a href="#2-指针变量的说明" class="headerlink" title="2.指针变量的说明"></a>2.指针变量的说明</h3><p>  一般形式如下：</p>
+<p>&lt;存储类型&gt;&lt;数据类型&gt;*&lt;指针变量名&gt;；*</p>
+<p>例如，</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">char</span> <span class="token operator">*</span>  pName；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>指针的存储类型是指针变量本身的存储类型。</li>
+<li>指针说明时指定的数据类型不是指针变量本身的数据类型，而是指针目标的数据类型。简称为指针的数据类型。</li>
+</ul>
+<h3 id="3-引入指针"><a href="#3-引入指针" class="headerlink" title="3.引入指针"></a>3.引入指针</h3><p>引入指针要注意程序中的px、*px和&amp;px三种表示方法的不同意义。设px为一个指针，则：</p>
+<ul>
+<li>px-指针变量，它的内容是地址量</li>
+<li>*px一指针所指向的对象，它的内容是数据 int</li>
+<li>&amp;px-指针变量占用的存储区域的地址，是个常量</li>
+</ul>
+<h3 id="4-指针赋值运算"><a href="#4-指针赋值运算" class="headerlink" title="4.指针赋值运算"></a>4.指针赋值运算</h3><ul>
+<li><p>指针的赋值运算指的是通过赋值运算符向指针变量送一个地址值</p>
+</li>
+<li><p>向一个指针变量赋值时，送的值必须是地址常量或指针变量，不能是普通的整数（除了赋零以外）</p>
+<h4 id="指针赋值运算常见的有以下几种形式："><a href="#指针赋值运算常见的有以下几种形式：" class="headerlink" title="指针赋值运算常见的有以下几种形式："></a>指针赋值运算常见的有以下几种形式：</h4></li>
+</ul>
+<p>把一个普通变量的地址赋给一个具有相同数据类型的指针</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">double</span> x<span class="token operator">=</span><span class="token number">15</span>，<span class="token operator">*</span>px；
 
-    多进程的意义?
-        提高CPU的使用率
-    多线程的意义?
-        提高应用程序的使用率</code></pre><h3 id="2-Java程序的运行原理及JVM的启动是多线程的吗"><a href="#2-Java程序的运行原理及JVM的启动是多线程的吗" class="headerlink" title="(2)Java程序的运行原理及JVM的启动是多线程的吗?"></a>(2)Java程序的运行原理及JVM的启动是多线程的吗?</h3><pre><code>    A:Java命令去启动JVM，JVM会启动一个进程，该进程会启动一个主线程。
-    B:JVM的启动是多线程的，因为它最低有两个线程启动了，主线程和垃圾回收线程。</code></pre><h3 id="3-多线程的实现方案-自己补齐步骤及代码-掌握"><a href="#3-多线程的实现方案-自己补齐步骤及代码-掌握" class="headerlink" title="(3)多线程的实现方案(自己补齐步骤及代码    掌握)"></a>(3)多线程的实现方案(自己补齐步骤及代码    掌握)</h3><h4 id="A-继承Thread类"><a href="#A-继承Thread类" class="headerlink" title="A:继承Thread类"></a>A:继承Thread类</h4><h4 id="B-实现Runnable接口"><a href="#B-实现Runnable接口" class="headerlink" title="B:实现Runnable接口"></a>B:实现Runnable接口</h4><p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%AF%94%E8%BE%83%E5%8F%8A%E5%8C%BA%E5%88%AB.bmp" alt=""></p>
-<h3 id="4-线程的调度和优先级问题"><a href="#4-线程的调度和优先级问题" class="headerlink" title="(4)线程的调度和优先级问题"></a>(4)线程的调度和优先级问题</h3><h4 id="A-线程的调度"><a href="#A-线程的调度" class="headerlink" title="A:线程的调度"></a>A:线程的调度</h4><pre><code>        a:分时调度
-        b:抢占式调度 (Java采用的是该调度方式)</code></pre><h4 id="B-获取和设置线程优先级"><a href="#B-获取和设置线程优先级" class="headerlink" title="B:获取和设置线程优先级"></a>B:获取和设置线程优先级</h4><pre><code>        a:默认是5
-        b:范围是1-10</code></pre><h3 id="5-线程的控制-常见方法"><a href="#5-线程的控制-常见方法" class="headerlink" title="(5)线程的控制(常见方法)"></a>(5)线程的控制(常见方法)</h3><h4 id="A-休眠线程"><a href="#A-休眠线程" class="headerlink" title="A:休眠线程"></a>A:休眠线程</h4><h4 id="B-加入线程"><a href="#B-加入线程" class="headerlink" title="B:加入线程"></a>B:加入线程</h4><h4 id="C-礼让线程"><a href="#C-礼让线程" class="headerlink" title="C:礼让线程"></a>C:礼让线程</h4><h4 id="D-后台线程"><a href="#D-后台线程" class="headerlink" title="D:后台线程"></a>D:后台线程</h4><h4 id="E-终止线程-掌握"><a href="#E-终止线程-掌握" class="headerlink" title="E:终止线程(掌握)"></a>E:终止线程(掌握)</h4><h3 id="6-线程的生命周期-参照-线程生命周期图解-bmp"><a href="#6-线程的生命周期-参照-线程生命周期图解-bmp" class="headerlink" title="(6)线程的生命周期(参照    线程生命周期图解.bmp)"></a>(6)线程的生命周期(参照    线程生命周期图解.bmp)</h3><h4 id="A-新建"><a href="#A-新建" class="headerlink" title="A:新建"></a>A:新建</h4><h4 id="B-就绪"><a href="#B-就绪" class="headerlink" title="B:就绪"></a>B:就绪</h4><h4 id="C-运行"><a href="#C-运行" class="headerlink" title="C:运行"></a>C:运行</h4><h4 id="D-阻塞"><a href="#D-阻塞" class="headerlink" title="D:阻塞"></a>D:阻塞</h4><h4 id="E-死亡"><a href="#E-死亡" class="headerlink" title="E:死亡"></a>E:死亡</h4><p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E8%A7%A3.bmp" alt=""></p>
-<h3 id="7-电影院卖票程序的实现"><a href="#7-电影院卖票程序的实现" class="headerlink" title="(7)电影院卖票程序的实现"></a>(7)电影院卖票程序的实现</h3><h4 id="A-继承Thread类-1"><a href="#A-继承Thread类-1" class="headerlink" title="A:继承Thread类"></a>A:继承Thread类</h4><h4 id="B-实现Runnable接口-1"><a href="#B-实现Runnable接口-1" class="headerlink" title="B:实现Runnable接口"></a>B:实现Runnable接口</h4><h3 id="8-电影院卖票程序出问题"><a href="#8-电影院卖票程序出问题" class="headerlink" title="(8)电影院卖票程序出问题"></a>(8)电影院卖票程序出问题</h3><pre><code>    A:为了更符合真实的场景，加入了休眠100毫秒。
-    B:卖票问题
-        a:同票多次
-        b:负数票</code></pre><h3 id="9-多线程安全问题的原因-也是我们以后判断一个程序是否有线程安全问题的依据"><a href="#9-多线程安全问题的原因-也是我们以后判断一个程序是否有线程安全问题的依据" class="headerlink" title="(9)多线程安全问题的原因(也是我们以后判断一个程序是否有线程安全问题的依据)"></a>(9)多线程安全问题的原因(也是我们以后判断一个程序是否有线程安全问题的依据)</h3><h4 id="A-是否有多线程环境"><a href="#A-是否有多线程环境" class="headerlink" title="A:是否有多线程环境"></a>A:是否有多线程环境</h4><h4 id="B-是否有共享数据"><a href="#B-是否有共享数据" class="headerlink" title="B:是否有共享数据"></a>B:是否有共享数据</h4><h4 id="C-是否有多条语句操作共享数据"><a href="#C-是否有多条语句操作共享数据" class="headerlink" title="C:是否有多条语句操作共享数据"></a>C:是否有多条语句操作共享数据</h4><h3 id="10-同步解决线程安全问题"><a href="#10-同步解决线程安全问题" class="headerlink" title="(10)同步解决线程安全问题"></a>(10)同步解决线程安全问题</h3><h4 id="A-同步代码块"><a href="#A-同步代码块" class="headerlink" title="A:同步代码块"></a>A:同步代码块</h4><pre><code>        synchronized(对象) {
-            需要被同步的代码;
-        }
+px<span class="token operator">=</span><span class="token operator">&amp;</span>x<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>把一个已有地址值的指针变量赋给具有相同数据类型的另一个指针变量例如：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">float</span> a，<span class="token operator">*</span> px，<span class="token operator">*</span> py；
 
-        这里的锁对象可以是任意对象。</code></pre><h4 id="B-同步方法"><a href="#B-同步方法" class="headerlink" title="B:同步方法"></a>B:同步方法</h4><pre><code>        把同步加在方法上。
+px<span class="token operator">=</span><span class="token operator">&amp;</span>a；
 
-        这里的锁对象是this</code></pre><h4 id="C-静态同步方法"><a href="#C-静态同步方法" class="headerlink" title="C:静态同步方法"></a>C:静态同步方法</h4><pre><code>        把同步加在方法上。
+py<span class="token operator">=</span>px；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>把一个数组的地址赋给具有相同数据类型的指针。例如：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span>，<span class="token operator">*</span>pa；pa<span class="token operator">=</span>a；<span class="token operator">/</span>等价pa<span class="token operator">=</span><span class="token operator">&amp;</span>a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="4-指针运算"><a href="#4-指针运算" class="headerlink" title="4.指针运算"></a>4.指针运算</h3><ul>
+<li>指针运算是以指针变量所存放的地址量作为运算量而进行的运算</li>
+<li>指针运算的实质就是地址的计算</li>
+<li>指针运算的种类是有限的，它只能进行赋值运算、算术运算和关系运算</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P0712.png" alt=""></p>
+<h3 id="5-指针与数组"><a href="#5-指针与数组" class="headerlink" title="5.指针与数组"></a>5.指针与数组</h3><ul>
+<li><p>在C语言中，数组的指针是指数组在内存中的起始地址，数组元素的地址是指数组元素在内存中的起始地址</p>
+</li>
+<li><p>一维数组的数组名为一维数组的指针（起始地址）例如</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">double</span> ×<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<p>  因此，x为x数组的起始地址</p>
+<ul>
+<li><p>设指针变量px的地址值等于数组指针x（即指针变量px指向数组的首元数），则：</p>
+<pre class="line-numbers language-c"><code class="language-c">x<span class="token punctuation">[</span>i<span class="token punctuation">]</span>、 <span class="token operator">*</span> （px<span class="token operator">+</span>i）、<span class="token operator">*</span>（x<span class="token operator">+</span>i）和 px<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>具有完全相同的功能：访问数组第i+1个数组元素。</p>
+</li>
+</ul>
+<h4 id="p-i-lt-gt-p-i"><a href="#p-i-lt-gt-p-i" class="headerlink" title="p[ i ] &lt;=&gt; *(p + i)"></a>p[ i ] &lt;=&gt; *(p + i)</h4><h3 id="6-指针与二维数组"><a href="#6-指针与二维数组" class="headerlink" title="6.指针与二维数组"></a>6.指针与二维数组</h3><ul>
+<li>多维数组就是具有两个或两个以上下标的数组</li>
+<li>在C语言中，二维数组的元素连续存储，按行优先存</li>
+</ul>
+<h4 id="行指针（数组指针）"><a href="#行指针（数组指针）" class="headerlink" title="行指针（数组指针）"></a>行指针（数组指针）</h4><ul>
+<li>存储行地址的指针变量，叫做行指针变量。形式如下：·<ul>
+<li>&lt;存储类型&gt;&lt;数据类型&gt;（ * &lt;指针变量名&gt;）[表达式]；<br>·例如，int a [ 2 ] [ 3 ]；int（*p）[ 3 ]；</li>
+</ul>
+</li>
+<li>方括号中的常量表达式表示指针加1，移动几个数据。</li>
+<li>当用行指针操作二维数组时，表达式一般写成1行的元素个数，即列数。</li>
+</ul>
+<h3 id="7-字符指针与字符串"><a href="#7-字符指针与字符串" class="headerlink" title="7.字符指针与字符串"></a>7.字符指针与字符串</h3><ul>
+<li>C语言通过使用字符数组来处理字符串</li>
+<li>通常，我们把char数据类型的指针变量称为字符指针变量。字符指针变量与字符数组有着密切关系，它也被用来处理拿符串。</li>
+</ul>
+<h3 id="8-指针数组"><a href="#8-指针数组" class="headerlink" title="8.指针数组"></a>8.指针数组</h3><p>所谓指针数组是指由若干个具有相同存储类型和数据类型的指针变量构成的集合</p>
+<p>指针数组的一般说明形式：</p>
+<ul>
+<li>&lt;存储类型&gt;&lt;数据类型&gt;*&lt;指针数组名&gt;[&lt;大小&gt;]；</li>
+<li>指针数组名表示该指针数组的起始地址</li>
+</ul>
+<h3 id="9-多级指针"><a href="#9-多级指针" class="headerlink" title="9.多级指针"></a>9.多级指针</h3><ul>
+<li>多级指针和指针数组</li>
+<li>指针数组也可以用另外一个指针来处理。例如：有一个一维字符指针数组ps[5]，char*ps[5]={“Beijing city”，<br>“London city”}；</li>
+</ul>
+<h3 id="10-void指针"><a href="#10-void指针" class="headerlink" title="10.void指针"></a>10.void指针</h3><ul>
+<li><p>void指针是一种不确定数据类型的指针变量，它可以通过强制类型转换让该变量指向任何数据类型的变量一般形式为：</p>
+<p>void*&lt;指针变量名称&gt;；</p>
+</li>
+<li><p>对于void指针，在没有强制类型转换之前，不能进行任何指针的算术运算</p>
+</li>
+</ul>
+<h3 id="11-const修饰指针"><a href="#11-const修饰指针" class="headerlink" title="11.const修饰指针"></a>11.const修饰指针</h3><ul>
+<li><p>常量化指针目标表达式<br>一般说明形式如下：</p>
+<p>const&lt;数据类型&gt;*&lt;指针变量名称&gt;[=&lt;指针运算表达式&gt;]；</p>
+</li>
+<li><p>常量化指针目标是限制通过指针改变其目标的数值，但&lt;指针变量&gt;存储的地址值可以修改</p>
+</li>
+</ul>
+<ul>
+<li><p>常量化指针变量<br>一般说明形式如下：</p>
+<p>&lt;数据类型&gt;*const&lt;指针变量名称&gt;[=&lt;指针运算表达式&gt;];</p>
+</li>
+</ul>
+<ul>
+<li><p>常量化指针变量及其目标表达式<br>一般说明形式如下：</p>
+</li>
+<li><p>const&lt;数据类型&gt; * const&lt;指针变量名&gt;=&lt;指针运算表达式&gt;；</p>
+<p>常量化指针变量及其目标表达式，使得既不可以修改&lt;指针变量&gt;的地址，也不可以通过*&lt;指针变量名称&gt;修改指针所指向变量的值</p>
+</li>
+</ul>
 
-        这里的锁对象是当前类的字节码文件对象(反射再讲字节码文件对象)</code></pre><h3 id="11-回顾以前的线程安全的类"><a href="#11-回顾以前的线程安全的类" class="headerlink" title="(11)回顾以前的线程安全的类"></a>(11)回顾以前的线程安全的类</h3><h4 id="A-StringBuffer"><a href="#A-StringBuffer" class="headerlink" title="A:StringBuffer"></a>A:StringBuffer</h4><h4 id="B-Vector"><a href="#B-Vector" class="headerlink" title="B:Vector"></a>B:Vector</h4><h4 id="C-Hashtable"><a href="#C-Hashtable" class="headerlink" title="C:Hashtable"></a>C:Hashtable</h4><h4 id="D-如何把一个线程不安全的集合类变成一个线程安全的集合类"><a href="#D-如何把一个线程不安全的集合类变成一个线程安全的集合类" class="headerlink" title="D:如何把一个线程不安全的集合类变成一个线程安全的集合类"></a>D:如何把一个线程不安全的集合类变成一个线程安全的集合类</h4><pre><code>        用Collections工具类的方法即可。</code></pre>
             </div>
             <hr/>
 
@@ -557,7 +645,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/062419356.html">http://ww042q.coding-pages.com/2020/062419356.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/071234787.html">http://ww042q.coding-pages.com/2020/071234787.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -595,8 +683,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C</span>
                                 </a>
                             
                         </div>
@@ -764,83 +852,34 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/062535293.html">
+                <a href="/2020/071234787.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day24">
                         
-                        <span class="card-title">Java-day24</span>
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Linux-c  指针">
+                        
+                        <span class="card-title">Linux-c  指针</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:多线程(理解)(1)JDK5以后的针对线程的锁定操作和释放操作    Lock锁(2)死锁问题的描述和代码体现(3)生产者和消费者多线程体现(线程间通信问题)    以学生作为资源来实现的
+                            地址和变量
+在计算机内存中，每一个字节单元，都有一个编号，称为地址
 
-    资源类：Student
-    设置
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-25
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/062335677.html">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day22">
-                        
-                        <span class="card-title">Java-day22</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            1:登录注册IO版本案例(掌握)要求，对着写一遍。
-
-cn.itcast.pojo User
-cn.itcast.dao UserDao
-cn.itcast.dao.impl UserDaoImpl(实现我不管)
-cn.itcast.gam
+指针1.定义
+在C语言中，内存单元的地址称为指针，专门用来存放地址的变量，称为指针变量在不影响理解的情况中，有时对地址、指针和指针变量不区分，通称指针。
+指针指向的内存区
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
                             </span>
                         <span class="publish-author">
                             
@@ -854,11 +893,66 @@ cn.itcast.gam
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/070253724.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Git-实战">
+                        
+                        <span class="card-title">Git-实战</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Git实战安装使用普通用户登录到虚拟机
+sudo apt install git
+配置Git在使用之前需要配置用户名和电子邮箱地址，否则不能提交代码。
+# 配置用户名
+git config --global user.name "刘煜"
+#
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BB%93%E5%BA%93/" class="post-category">
+                                    仓库
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
                     </a>
                     
                 </div>
