@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Linux-c 函数</title>
+      <link href="/2020/071333839.html"/>
+      <url>/2020/071333839.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="指针函数"><a href="#指针函数" class="headerlink" title="指针函数"></a>指针函数</h2><p>指针函数是指一个函数的返回值为地址量的函数指针函数的定义的一般形式如下</p><pre class="line-numbers language-c"><code class="language-c"><span class="token operator">&lt;</span>数据类型<span class="token operator">></span> <span class="token operator">*</span> <span class="token operator">&lt;</span>函数名称<span class="token operator">></span> （<span class="token operator">&lt;</span>参数说明<span class="token operator">></span>）<span class="token punctuation">{</span>    语句序列；<span class="token punctuation">}</span>返回值：全局变量的地址<span class="token operator">/</span><span class="token keyword">static</span>变量的地址<span class="token operator">/</span>字符串常量的地址<span class="token operator">/</span>堆的地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>下面程序是否有问题，若有问题，如何修改？</li></ul><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">char</span><span class="token operator">*</span>mystring（）<span class="token punctuation">{</span>    <span class="token keyword">char</span> str<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//mystring函数执行完，内存释放  </span>    <span class="token comment" spellcheck="true">//static char str[20];</span>    strcpy（str<span class="token punctuation">,</span><span class="token string">"Hello"</span>）<span class="token punctuation">;</span>    <span class="token keyword">return</span> str<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">int</span> main（<span class="token keyword">void</span>）<span class="token punctuation">{</span>    printf（<span class="token string">"%s\n"</span><span class="token punctuation">,</span>mystring0）    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">//这个程序内存有问题，执行结果是不确定的</span><span class="token comment" spellcheck="true">//解决方法 A：全局变量，静态变量，字符串常量是放在静态工作区</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h2><ul><li>递归函数是指一个函数的函数体中直接或间接调用了该函数自身</li><li>递归函数调用的执行过程分为两个阶段：<ul><li>递推阶段：从原问题出发，按递归公式递推，从未知到已知，最终达到递归终止条件；</li><li>回归阶段：按递归终止条件求出结果，逆向逐步代入递归公式，回归到门题求解。</li></ul></li></ul><h2 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h2><ul><li><p>函数指我用来存放函数的地址，这个地址是一个函数的入口地址</p></li><li><p>函数名代表了函数的入口地址</p></li><li><p>函数指针变量说明的一般形式如下</p><pre class="line-numbers language-c"><code class="language-c"><span class="token operator">&lt;</span>数据类型<span class="token operator">></span>（<span class="token operator">*</span><span class="token operator">&lt;</span>函数指针名称<span class="token operator">></span>）（<span class="token operator">&lt;</span>参数说明列表<span class="token operator">></span>）；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li>&lt;数据类型&gt;是函数指针所指向的函数的返回值类型</li><li>&lt;参数说明列表&gt;应该与函数指针所指向的函数的形参说明保持一致</li><li>( * &lt;函数指针名称&gt;）中，*说明为指针()不可缺省，表明为函数的指针</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux-c  指针</title>
       <link href="/2020/071234787.html"/>
       <url>/2020/071234787.html</url>
@@ -13,7 +38,7 @@
       
       <categories>
           
-          <category> 编程 </category>
+          <category> Linux </category>
           
       </categories>
       
@@ -866,9 +891,9 @@
       
         <tags>
             
-            <tag> blog </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> blog </tag>
             
         </tags>
       
@@ -918,9 +943,9 @@
       
         <tags>
             
-            <tag> blog </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> blog </tag>
             
         </tags>
       

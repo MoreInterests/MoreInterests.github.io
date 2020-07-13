@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java-异常处理, toily的博客">
+    <meta name="keywords" content="Linux-c 函数, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java-异常处理 | toily的博客</title>
+    <title>Linux-c 函数 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java-异常处理</h1>
+                    <h1 class="description center-align post-title">Linux-c 函数</h1>
                 </div>
             </div>
         </div>
@@ -452,14 +452,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -468,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-28
+                    2020-07-13
                 </div>
                 
 
@@ -477,7 +486,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    430
+                    455
                 </div>
                 
 
@@ -499,21 +508,54 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><p>很多事件并非总是按照人们自己设计意愿顺利发展<br>的， 而是有能够出现这样那样的异常情况。 例如：<br>你计划周末郊游， 你的计划会安排满满的， 你计划<br>可能是这样的： 从家里出发→到达目的→游泳→烧<br>烤→回家。 但天有不测风云， 当前你准备烧烤时候<br>天降大雨， 你只能终止郊游提前回家。 “天降大<br>雨”是一种异常情况， 你的计划应该考虑到这样情<br>况， 并且应该有处理这种异常的预案。<br>为增强程序的健壮性， 计算机程序的编写也需要考<br>虑处理这些异常情况， Java语言提供了异常处理功<br>能， 本章介绍Java异常处理机制。   </p>
-<h2 id="从一个问题开始"><a href="#从一个问题开始" class="headerlink" title="从一个问题开始"></a>从一个问题开始</h2><p>为了学习Java异常处理机制， 首先看看下面程序。</p>
-<pre><code>//HelloWorld.java文件
-package com.a51work6;
-public class HelloWorld {
-    public static void main(String[] args) {
-    int a = 0;
-    System.out.println(5 / a);
-    }
-} </code></pre><p>这个程序没有编译错误， 但会发生如下的运行时错误：</p>
-<pre><code>Exception in thread &quot;main&quot; java.lang.ArithmeticException: / by ze
-at com.a51work6.HelloWorld.main(HelloWorld.java:9)</code></pre><p>在数学上除数不能为0， 所以程序运行时表达式（5 / a） 会抛出ArithmeticException异常，ArithmeticException是数学计算异常， 凡是发生数<br>学计算错误都会抛出该异常。程序运行过程中难免会发生异常， 发生异常并不可<br>怕， 程序员应该考虑到有可能发生这些异常， 编程<br>时应该捕获并进行处理异常， 不能让程序发生终<br>止， 这就是健壮的程序。    </p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P%E5%BC%82%E5%B8%B8%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%B1%82%E6%AC%A1.jpg" alt="异常类继承层次">    </p>
-<p>（Java从小白到大牛 509）</p>
+                <h2 id="指针函数"><a href="#指针函数" class="headerlink" title="指针函数"></a>指针函数</h2><p>指针函数是指一个函数的返回值为地址量的函数指针函数的定义的一般形式如下</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token operator">&lt;</span>数据类型<span class="token operator">></span> <span class="token operator">*</span> <span class="token operator">&lt;</span>函数名称<span class="token operator">></span> （<span class="token operator">&lt;</span>参数说明<span class="token operator">></span>）<span class="token punctuation">{</span>
+
+    语句序列；<span class="token punctuation">}</span>
+
+返回值：全局变量的地址<span class="token operator">/</span><span class="token keyword">static</span>变量的地址<span class="token operator">/</span>字符串常量的地址<span class="token operator">/</span>堆的地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>下面程序是否有问题，若有问题，如何修改？</li>
+</ul>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">char</span><span class="token operator">*</span>mystring（）<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> str<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//mystring函数执行完，内存释放  </span>
+    <span class="token comment" spellcheck="true">//static char str[20];</span>
+    strcpy（str<span class="token punctuation">,</span><span class="token string">"Hello"</span>）<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> str<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> main（<span class="token keyword">void</span>）
+<span class="token punctuation">{</span>
+    printf（<span class="token string">"%s\n"</span><span class="token punctuation">,</span>mystring0）
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//这个程序内存有问题，执行结果是不确定的</span>
+
+<span class="token comment" spellcheck="true">//解决方法 A：全局变量，静态变量，字符串常量是放在静态工作区</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h2><ul>
+<li>递归函数是指一个函数的函数体中直接或间接调用了该函数自身</li>
+<li>递归函数调用的执行过程分为两个阶段：<ul>
+<li>递推阶段：从原问题出发，按递归公式递推，从未知到已知，最终达到递归终止条件；</li>
+<li>回归阶段：按递归终止条件求出结果，逆向逐步代入递归公式，回归到门题求解。</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h2><ul>
+<li><p>函数指我用来存放函数的地址，这个地址是一个函数的入口地址</p>
+</li>
+<li><p>函数名代表了函数的入口地址</p>
+</li>
+<li><p>函数指针变量说明的一般形式如下</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token operator">&lt;</span>数据类型<span class="token operator">></span>（<span class="token operator">*</span><span class="token operator">&lt;</span>函数指针名称<span class="token operator">></span>）（<span class="token operator">&lt;</span>参数说明列表<span class="token operator">></span>）；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>&lt;数据类型&gt;是函数指针所指向的函数的返回值类型</li>
+<li>&lt;参数说明列表&gt;应该与函数指针所指向的函数的形参说明保持一致</li>
+<li>( * &lt;函数指针名称&gt;）中，*说明为指针()不可缺省，表明为函数的指针</li>
+</ul>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -539,7 +581,7 @@ at com.a51work6.HelloWorld.main(HelloWorld.java:9)</code></pre><p>在数学上�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/062858003.html">http://ww042q.coding-pages.com/2020/062858003.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/071333839.html">http://ww042q.coding-pages.com/2020/071333839.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -577,8 +619,8 @@ at com.a51work6.HelloWorld.main(HelloWorld.java:9)</code></pre><p>在数学上�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C</span>
                                 </a>
                             
                         </div>
@@ -746,47 +788,53 @@ at com.a51work6.HelloWorld.main(HelloWorld.java:9)</code></pre><p>在数学上�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/062834973.html">
+                <a href="/2020/071333839.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day27">
                         
-                        <span class="card-title">Java-day27</span>
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Linux-c 函数">
+                        
+                        <span class="card-title">Linux-c 函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:反射(理解)(1)类的加载及类加载器(2)反射：    通过字节码文件对象，去使用成员变量，构造方法，成员方法(3)反射的使用    A:通过反射获取构造方法并使用
-    B:通过反射获取成员变量并使用
-    C:通过反射获取成员方
+                            指针函数指针函数是指一个函数的返回值为地址量的函数指针函数的定义的一般形式如下
+&lt;数据类型> * &lt;函数名称> （&lt;参数说明>）{
+
+    语句序列；}
+
+返回值：全局变量的地址/static变量的地址/字符串常量的地址
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C</span>
                     </a>
                     
                 </div>
@@ -800,32 +848,36 @@ at com.a51work6.HelloWorld.main(HelloWorld.java:9)</code></pre><p>在数学上�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/062718524.html">
+                <a href="/2020/071234787.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day26">
                         
-                        <span class="card-title">Java-day26</span>
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Linux-c  指针">
+                        
+                        <span class="card-title">Linux-c  指针</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:网络编程(理解)(1)网络编程：用Java语言实现计算机间数据的信息传递和资源共享(2)网络编程模型(3)网络编程的三要素A:IP地址        a:点分十进制
-        b:IP地址的组成
-        c:IP地址的分类
+                            地址和变量
+在计算机内存中，每一个字节单元，都有一个编号，称为地址
+
+指针1.定义
+在C语言中，内存单元的地址称为指针，专门用来存放地址的变量，称为指针变量在不影响理解的情况中，有时对地址、指针和指针变量不区分，通称指针。
+指针指向的内存区
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
@@ -835,8 +887,8 @@ at com.a51work6.HelloWorld.main(HelloWorld.java:9)</code></pre><p>在数学上�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C</span>
                     </a>
                     
                 </div>
