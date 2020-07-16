@@ -1,0 +1,1609 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Linux-命令, toily的博客">
+    <meta name="description" content="Love everything in the world without exception.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Linux-命令 | toily的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">toily的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">toily的博客</div>
+        <div class="logo-desc">
+            
+            Love everything in the world without exception.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Linux-命令</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%91%BD%E4%BB%A4/">
+                                <span class="chip bg-color">命令</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-14
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="软件包命令"><a href="#软件包命令" class="headerlink" title="软件包命令"></a>软件包命令</h2><ul>
+<li>/etc/apt/sources.list——软件配置文件</li>
+<li>/var/lib/apt/list/*——服务器资源列表存放位置</li>
+<li>/var/cache/apt/archives——本地软件缓存目录</li>
+</ul>
+<ul>
+<li>安装软件</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> xxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>中途安装失败，重新安装</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> xxx --reinstall<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>不完全卸载</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> remove xxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>完全卸载</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> --purge remove xxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>清理软件包缓冲区(var/cache/apt/archives)</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> clean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>保留最新版本软件包，多于版本全部清除</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> autoclean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>获取软件包详细信息</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">apt-cache show xxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>获取软件包的安装状态</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">apt-cache policy xxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>获取某个软件包依赖于哪些软件包</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">apt-cache depends xxx
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>获取某个软件包被哪些软件包所依赖</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">apt-cache rdepends xxx
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h2><h3 id="1-shell是一个命令行解释器"><a href="#1-shell是一个命令行解释器" class="headerlink" title="1.shell是一个命令行解释器"></a>1.shell是一个命令行解释器</h3><ul>
+<li>Bourne Shell（简称sh）：它是Unix的第一个shell程序，早已成为工业标准。目前几乎所有的Linux系统都支持它。不过Bourne Shell的作业控制功能薄弱，且不支持别名与历史记录等功能。</li>
+<li>CShell（简称csh）</li>
+<li>Korn Shell（简称ksh）</li>
+<li>Bourne Again Shell：能够提供环境变量以配置用户Shell环境，支持历史记录，内置算术功能，支持通配符表达式，将常用命令内置简化。</li>
+</ul>
+<h3 id="2-补齐命令与文件名"><a href="#2-补齐命令与文件名" class="headerlink" title="2.补齐命令与文件名"></a>2.补齐命令与文件名</h3><ul>
+<li>在使用Shell命令时，很多用户会经常遇到命令或文件名没有记全的情况。Bash Shell的命令和文件名补齐功能会帮助用户。在输入命令或文件名的前几个字符后，按TAB键或ESC键自动补齐剩余没有输入的字符串。</li>
+<li>如果存在多个命令或文件有相同前缀，shell将列出所有相同前缀的命令或文件。shell给出的提示信息，帮助用户回忆和完成输入。之后等待用户输入足够的字符。</li>
+<li>需要说明的是，连续按两下TAB键或ESC键，用于命令补齐；按下一次TAB键，用于文件名补齐。</li>
+</ul>
+<h3 id="3-查询命令历史"><a href="#3-查询命令历史" class="headerlink" title="3.查询命令历史"></a>3.查询命令历史</h3><ul>
+<li><p>用户在Shell下的操作是有很太连续性的，曾经输入的命令可能需要多次使用。当用户在操作中发现问题，需要查看曾经执行过的操作。Bash将用户曾经键入的命令序列保存在一个命令历史表中。按“个”键和“！”键，便可查询命令历史。</p>
+</li>
+<li><p>Bash Shell还提供了history命令。该命令将命令历史表按列表形式，从记录号1开始，一次性全部显示出来。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">history</span> <span class="token punctuation">[</span>numberine<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>​        </p>
+</li>
+<li><p>显然history只能记录有限条的历史命令，默认保留500条命令。</p>
+</li>
+<li><p>Bash Shell将历史命令容量保存在环境变量HISTSIZE中。</p>
+<ul>
+<li><p>使用“echo_SHISTSIZE”查看当前历史命令容量；</p>
+</li>
+<li><p>通过直接赋值的方法，修改这个环境变量。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">linux@ubuntu:-S <span class="token keyword">echo</span> SHISTSIZE<span class="token comment" spellcheck="true">#显示历史命令容量500</span>
+linux@ubuntu:-S HISTSIZE<span class="token operator">=</span>1000<span class="token comment" spellcheck="true">#修改历史命令容量</span>
+
+linux@ubuntu：～S <span class="token keyword">echo</span> SHISTSIZE
+1000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-通配符"><a href="#4-通配符" class="headerlink" title="4.通配符"></a>4.通配符</h3><ul>
+<li><p>当需要用命令处理一组文件，例如filel.txt、file2.txt、file3.txt…，用户不必一一输入文件名，可以使用she11通配符。</p>
+<p><img src="C:%5CUsers%5C15476%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1594716534544.png" alt="1594716534544"></p>
+</li>
+</ul>
+<h3 id="5-管道"><a href="#5-管道" class="headerlink" title="5.管道"></a>5.管道</h3><ul>
+<li><p>管道可以把一系列命令连接起来，意味着第一个命令的输出将作为第二个命令的输入，通过管道传递给第二个命令，第二个命令的输出又将作为第三个命令的输入，以此类推。就像通过使用“|”符连成了一个管道。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">linux@ubuntu：~$ ls/usr/bin <span class="token operator">|</span> <span class="token function">wc</span> -w
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>以上操作中，借助管道“|”，将ls的输出直接作为wc命令的输入。使用管道可以巧妙的将一些命令联合使用，得到单个命令所无法实现的效果。例如使用以上的命令组合，得到的是/usr/bin目录下文件的个数。</p>
+</li>
+</ul>
+<h3 id="6-输入-输出重定向"><a href="#6-输入-输出重定向" class="headerlink" title="6.输入/输出重定向"></a>6.输入/输出重定向</h3><ul>
+<li>输入/输出重定向是改变shell命令或程序默认的标准输入/输出目标，重新定向到新的目标。</li>
+<li>Linux中默认的标准输入定义为键盘，标准输出定义为终端窗口。</li>
+<li>用户可以为当前操作改变输入或输出，迫使某个特定命令的输入或输出来源为外部文件。</li>
+</ul>
+<p><img src="C:%5CUsers%5C15476%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1594717254263.png" alt="1594717254263"></p>
+<h3 id="7-命令置换"><a href="#7-命令置换" class="headerlink" title="7.命令置换"></a>7.命令置换</h3><p>命令替换是将一个命令的输出作为另一个命令的参数。命令格式如下所示。</p>
+<ul>
+<li><p>其中，命令command2的输出将作为命令command1的参数。需要注意，命令置换的单引号为ESC键下方的“ ` ”键</p>
+<pre class="line-numbers language-bash"><code class="language-bash">command1 <span class="token variable"><span class="token variable">`</span>command2<span class="token variable">`</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<ul>
+<li><p>pwd命令用于显示当前目录的绝对路径。在上面的命令行中，使用命令置换符，将pwd的运行结果作为ls命令的参数。最终，命令执行结果是显示当前目录的文件内容。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">linux@ubuntu：~$ <span class="token function">ls</span> <span class="token variable"><span class="token variable">`</span><span class="token function">pwd</span><span class="token variable">`</span></span>
+Desktop Examples historycommandlist mywork
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h3 id="8-获取联机帮助"><a href="#8-获取联机帮助" class="headerlink" title="8.获取联机帮助"></a>8.获取联机帮助</h3><ul>
+<li><p>man</p>
+<ul>
+<li><p>使用man命令可以找到特定的联机帮助页，并提供简短的命令说明。一般语法格式</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">man</span> commandname
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>联机帮助页提供了指定命令commandname的相关信息，包括：名称、函数、语法以及可选参数描述等。无论帮助有多长，都遵循这个格式显示。在页面很多的情况下使用PageUp和PageDown键翻页。最后，使用“：q”退出帮助页面。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="9-基本系统维护命令"><a href="#9-基本系统维护命令" class="headerlink" title="9.基本系统维护命令"></a>9.基本系统维护命令</h3><ul>
+<li><p>passwd</p>
+<ul>
+<li>出于系统安全考虑，Linux系统中的每一个帐号都必须同时具备用户名和密码。</li>
+<li>可以使用passwd命令，为已有账户重新修改用户口令。</li>
+<li>需要说明的是，超级用户root可以修改所有其他用户的口令，而普通用户只能修改自己的用户口令，如果确要修改超级用户或其他用户口令的话，需要具有超级用户的权限。</li>
+<li>passwd命令的一般语法格式为：</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">passwd</span> username
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<ul>
+<li><p>su</p>
+<ul>
+<li>su命令用于临时改变用户身份，具有其他用户的权限。普通用户可以使用su命令临时具有超级用户的权限；超级用户也可以使用普通用户身份完成一些操作。当需要放弃当前用户身份，可以使用exit命令切换回来。su命令的一般语法格式为：</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">su<span class="token punctuation">[</span>-c<span class="token operator">|</span>-m-<span class="token punctuation">]</span>username
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>选项“-c”表示执行一个命令后就结束；-m表示仍保留环境变量不变；-表示转换用户身份时，同时使用该用户的环境。</li>
+</ul>
+</li>
+<li><p>echo</p>
+<ul>
+<li>echo命令用于在标准输出一—显示器上显示一段文字，一般起到提示作用。echo命令的一般语法格式为：</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token punctuation">[</span>-n<span class="token punctuation">]</span> information
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>选项-n表示输出文字后不换行。提示信息字符串可以加引号，也可以不加。</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">linux@ubuntu:-Secho<span class="token string">"Hello everyone."</span>#输入信息字符串使用引号Hello everyone.
+linux@ubuntur-S <span class="token keyword">echo</span> Hello everyone.<span class="token comment" spellcheck="true">#输入信息字符串不使用引号，字符串之间用一个空格隔Hello everyone.</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<ul>
+<li><p>date</p>
+<ul>
+<li>date命令用于显示和设置系统日期和时间。date命令的一般语法格式为：</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">date</span> <span class="token punctuation">[</span>-d<span class="token operator">|</span>-s-u<span class="token punctuation">]</span> datestr
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>选项-s表示按照datestr日期显示格式设置日期；单独使用date命令，用于显示系统时钟中当前日期。时间的格式为：“hh:mm:ss”，日期格式为：“mm/dd/yy”。</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">linux@ubuntu:-$ <span class="token function">date</span><span class="token comment" spellcheck="true">#查看当前时间2007年09月16日星期日18：44：45 CST linux@ubuntu:-S sudo date-s 1：19：18#设置新时间，需要系统管理员权限Password：katag</span>
+2007年09月16日星期日01：19：18CST
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<ul>
+<li><p>clear</p>
+<ul>
+<li>clear命令用于清除屏幕上的信息。清屏后，se11命令提示符移动到屏幕左上角。</li>
+<li>clear命令的一般语法格式为：</li>
+</ul>
+<pre class="line-numbers language-bah"><code class="language-bah">clear                ctrl+l
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>由于shell命令是逐行执行，执行结果也将随即显示。因此，用户在使用命令终端窗口时，终端窗口会很快就会被字符占满。clear可以帮助清理一下窗口中杂乱的字符显示。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>df</p>
+<ul>
+<li>df命令用于查看磁盘空间的使用情况。查看磁盘空间是用户应当经常做的事情，因为谁也不希望看到根或/var分区在不经意间填满，以便及时清理。df命令的一般格式为：</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">df<span class="token punctuation">[</span>-al-T<span class="token operator">|</span>-h<span class="token operator">|</span>-k<span class="token punctuation">]</span>Filesystem
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><p>其中，参数Filesystem表示物理文件系统。各选项的含义如表所示。</p>
+<p><img src="C:%5CUsers%5C15476%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1594728937481.png" alt="1594728937481"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h3 id="1-etc-passwd文件"><a href="#1-etc-passwd文件" class="headerlink" title="1./etc/passwd文件"></a>1./etc/passwd文件</h3><p>/etc/passwd文件是系统能够识别的用户清单。用户登陆时，系统查询这个文件，确定用户的UID并验证用户口令</p>
+<ul>
+<li>登陆名</li>
+<li>经过加密的口令</li>
+<li>UID</li>
+<li>默认的GID</li>
+<li>个人信息</li>
+<li>主目录</li>
+<li>登陆shell</li>
+</ul>
+<h3 id="2-etc-group文件"><a href="#2-etc-group文件" class="headerlink" title="2./etc/group文件"></a>2./etc/group文件</h3><ul>
+<li>包含了UNIX组的名称和每个组中成员列表</li>
+<li>每一行代表一个组，包括4个字段：<ul>
+<li>组名</li>
+<li>加密的口令</li>
+<li>GID号</li>
+<li>成员列表，彼此用逗号隔开</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-添加用户"><a href="#3-添加用户" class="headerlink" title="3.添加用户"></a>3.添加用户</h3><ul>
+<li><p>adduser<br>语法：adduser  <username><br>实例：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#adduser newuser</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>添加用户名为newuser的新用户</p>
+</li>
+</ul>
+<h3 id="4-添加新用户的过程"><a href="#4-添加新用户的过程" class="headerlink" title="4.添加新用户的过程"></a>4.添加新用户的过程</h3><ul>
+<li>系统<ul>
+<li>编辑passwd和shadow文件，定义用户帐号</li>
+<li>设置一个初始口令</li>
+<li>创建用户主目录，用chown和chmod命令改变主目录的属主和属性</li>
+</ul>
+</li>
+<li>为用户所进行的步骤<ul>
+<li>将默认的启动文件复制到用户主目录中</li>
+<li>设置用户的邮件主目录并建立邮件别名</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-修改用户属性"><a href="#5-修改用户属性" class="headerlink" title="5.修改用户属性"></a>5.修改用户属性</h3><ul>
+<li><p>usermod</p>
+</li>
+<li><p>语法：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">usermod</span> <span class="token punctuation">[</span>-u uid <span class="token punctuation">[</span>-o<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-g group<span class="token punctuation">]</span><span class="token punctuation">[</span>-G gropup,…<span class="token punctuation">]</span>
+d home <span class="token punctuation">[</span>-m<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-s shel1<span class="token punctuation">]</span><span class="token punctuation">[</span>-c comment<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>-1 new name<span class="token punctuation">]</span><span class="token punctuation">[</span>-f inactive<span class="token punctuation">]</span><span class="token punctuation">[</span>-e expirer
+<span class="token punctuation">[</span>-p passwd<span class="token punctuation">]</span><span class="token punctuation">[</span>-LI-U<span class="token punctuation">]</span> name
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<ul>
+<li><p>举例用户oldname改名为newname，注意要同时更改家目录：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">usermod</span> -d/home/newname-m -1 newname oldname
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<h3 id="6-删除用户"><a href="#6-删除用户" class="headerlink" title="6.删除用户"></a>6.删除用户</h3><ul>
+<li><p>deluser<br>语法：deluser&lt;username〉<br>使用方法：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">deluser--remove-home userl
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>删除用户user1的同时删除用户的工作目录</p>
+</li>
+</ul>
+<h3 id="7-添加用户组"><a href="#7-添加用户组" class="headerlink" title="7.添加用户组"></a>7.添加用户组</h3><ul>
+<li><p>addgroup<br>语法：addgroup groupname.<br>使用方法：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">addgroup groupname
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><h3 id="1-编译程序上的两个进程"><a href="#1-编译程序上的两个进程" class="headerlink" title="1.编译程序上的两个进程"></a>1.编译程序上的两个进程</h3><p>​        程序的一次执行就是一个进程</p>
+<p>​    <img src="C:%5CUsers%5C15476%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1594730495721.png" alt="1594730495721"></p>
+<h3 id="2-ps命令"><a href="#2-ps命令" class="headerlink" title="2.ps命令"></a>2.ps命令</h3><ul>
+<li>显示进程（process）的动态</li>
+<li>语法：<pre><code>ps[options]</code></pre></li>
+<li>常见的参数：<ul>
+<li>-A列出所有的进程</li>
+<li>-w显示加宽可以显示较多的资讯</li>
+<li>-au显示较详细的资讯</li>
+<li>-aux显示所有包含其他使用者的进程</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-进程的状态标志"><a href="#3-进程的状态标志" class="headerlink" title="3.进程的状态标志"></a>3.进程的状态标志</h3><ul>
+<li>R：正在执行中</li>
+<li>S：塞状态</li>
+<li>T：暂停我行</li>
+<li>Z：不存在但暂时无法消除</li>
+<li>D：不可中断的静止</li>
+<li>〈：高优先级的进程</li>
+<li>N：低优先级的进程</li>
+<li>L：有内存分页分配并锁在内存中</li>
+</ul>
+<h3 id="4-top命令"><a href="#4-top命令" class="headerlink" title="4.top命令"></a>4.top命令</h3><ul>
+<li>监视进程</li>
+<li>通常会全屏显示，而且会随着进程状态的变化不断更新</li>
+<li>整个系统的信息也会显示，为查找问题提供了便利</li>
+<li>可以显示系统总共有多少CPU和内存资源以及负载平衡等信息。</li>
+</ul>
+<h3 id="5-pstree命令"><a href="#5-pstree命令" class="headerlink" title="5.pstree命令"></a>5.pstree命令</h3><ul>
+<li>将所有行程以树状图显示，树状图将会以pid（如果有指定）或是以init这个基本进程为根，如果有指定使用者id，则树状图会只显示该使用者所拥有的进程。</li>
+</ul>
+<h3 id="6-终止进程"><a href="#6-终止进程" class="headerlink" title="6.终止进程"></a>6.终止进程</h3><ul>
+<li>使用kill命令终止进程<ul>
+<li>kill[-signal]PID </li>
+<li>signal是信号，PID是进程号<br>kill命令向指定的进程发出一个信号signal，在默认的情况下，kill命令向指定进程发出信号15，正常情况下，将杀死那些不捕捉或不忽略这个信号的进程</li>
+</ul>
+</li>
+</ul>
+<h2 id="Linux文件系统"><a href="#Linux文件系统" class="headerlink" title="Linux文件系统"></a>Linux文件系统</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><ul>
+<li>在任何一个操作系统中，文件系统无疑是其最重要的组件，用于组织和管理计算机存储设备上的大量文件，并提供用户交互接口。Linux同样具备完善的文件系统。用户既可以使用界面友好的Nautilus图形文件管理器，也可以使用功能强大的shell文件系统管理工具。</li>
+</ul>
+<h3 id="2-文件系统类型"><a href="#2-文件系统类型" class="headerlink" title="2.文件系统类型"></a>2.文件系统类型</h3><ul>
+<li>linux是一种兼容性很高的操作系统，支持的文件系统格式很多，大体可分以下几类：<ul>
+<li>磁盘文件系统：指本地主机中实际可以访问到的文件系统，包括硬盘、CD-ROM、DVD、USB存储器、磁盘阵列等。常见文件系统格式有：autofs、coda、Ext（Extended File sytem，扩展文件系统）、Ext3、Ext4、VFAT、IS09660（通常是CD-ROM）、UFS（Unix File System，Unix文件系统）、FAT、FAT16、FAT32、NTFS等；</li>
+<li>网络文件系统：是可以远程访问的文件系统，这种文件系统在服务器端仍是本地的磁盘文件系统，客户机通过网络远程访问数据。常见文件系统格式有：NFS、Samba等；</li>
+<li>专有/虚拟文件系统：不驻留在磁盘上的文件系统。常见格式有：TMPFS（临时文件系统）、PROCFS（Process File System，进程文件系统）和LOOPBACKFS（Loopback File System，回送文件系统）。</li>
+</ul>
+</li>
+<li>目前Ext4是Linux系统广泛使用的一种文件格式。在Ext3基础上，对有效性保护、数据完整性、数据访问速度、向下兼容性等方面做了改进。</li>
+<li>最大特点是日志文件系统：可将整个磁盘的写入动作完整地记录在磁盘的某个区域上，以便在必要时回溯追踪。。</li>
+</ul>
+<h3 id="3-SCSI与IDE设备命名"><a href="#3-SCSI与IDE设备命名" class="headerlink" title="3.SCSI与IDE设备命名"></a>3.SCSI与IDE设备命名</h3><ul>
+<li>sata硬盘的设备名称是“/dev/sda”<ul>
+<li>/dev/sdal含义？-/dev/sdb3含义？</li>
+<li>IDE硬盘的设备名称是“/dev/hda”</li>
+<li>/dev/hdc2含义？</li>
+</ul>
+</li>
+<li>如果很在意系统的高性能和稳定性，应该使用SCSI硬盘<ul>
+<li>cat/proc/partitions</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-Linux分区的命名方式"><a href="#4-Linux分区的命名方式" class="headerlink" title="4.Linux分区的命名方式"></a>4.Linux分区的命名方式</h3><ul>
+<li>字母和数字相结合</li>
+<li>前两个字母表示设备类型<ul>
+<li>“hd”代表IDE硬盘</li>
+<li>“sd”表示SCSI或SATA硬盘</li>
+</ul>
+</li>
+<li>第三个字母说明具体的设备<ul>
+<li>“/dev/hda”表示第一个IDE硬盘</li>
+<li>“/dev/hdb”表示第二个IDE硬盘</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-SCSI与IDE设备命名"><a href="#5-SCSI与IDE设备命名" class="headerlink" title="5.SCSI与IDE设备命名"></a>5.SCSI与IDE设备命名</h3><ul>
+<li>sata硬盘的设备名称是“/dev/sda”<ul>
+<li>/dev/sdal含义？.</li>
+<li>/dev/sdb3含义？</li>
+</ul>
+</li>
+<li>IDE硬盘的设备名称是“/dev/hda”<ul>
+<li>/dev/hdc2含义？</li>
+</ul>
+</li>
+<li>如果很在意系统的高性能和稳定性，应该使用SCSI硬盘<ul>
+<li>cat/proc/partitions</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-交换分区"><a href="#6-交换分区" class="headerlink" title="6.交换分区"></a>6.交换分区</h3><ul>
+<li>将内存中的内容写入硬盘或从硬盘中读出，称为内存交换（swapping）</li>
+<li>交换分区最小必须等于计算机的内存</li>
+<li>可以创建多于一个的交换分区</li>
+<li>尽量把交换分区放在硬盘驱动器的起始位置</li>
+</ul>
+<h3 id="7-文件系统逻辑结构"><a href="#7-文件系统逻辑结构" class="headerlink" title="7.文件系统逻辑结构"></a>7.文件系统逻辑结构</h3><ul>
+<li>某所大学的学生可能在一两万人左右，通常将学生分配在以学院-系-班为单位的分层组织机构中。若需要查找一名学生时，最笨的办法是依次问询大学中的每一个学生，直到找到为止。如果按照从学院、到系、再到班的层次查询下去，必然可以找到该学生，且查询效率高。这种树形的分层结构就提供了一种自顶向下的查询方法。</li>
+<li>如果把学生看作文件，院-系-班的组织结构看作是Linux文件目录结构，那么就同样可以有效地管理数量庞大的文件。</li>
+<li>一直使用微软Windows操作系统的用户似乎已经习惯了将硬盘上的几个分区，并用A:、B:、C:、D：等符号标识。存取文件时一定要清楚存放在哪个磁盘的哪个目录下。</li>
+<li>Linux的文件组织模式犹如一颗倒置的树，这与Windows文件系统有很大差别。所有存储设备作为这颗树的一个子目录。存取文件时只需确定目录就可以了，无需考虑物理存储位置。</li>
+</ul>
+<h3 id="8-文件系统结构"><a href="#8-文件系统结构" class="headerlink" title="8.文件系统结构"></a>8.文件系统结构</h3><ul>
+<li>分区与目录的关系：<ul>
+<li>在Windows下，目录结构属于分区；在Linux下，分区属于目录结构。</li>
+</ul>
+</li>
+<li>如何知道文件存储的具体硬件位置呢？<ul>
+<li>在Linux中，将所有硬件都视为文件来处理，包括硬盘分区、CD-ROM、软驱以及其他USB移动设备等。为了能够按照统一的方式和方法访问文件资源，Linux中提供了对每种硬件设备相应的设备文件。一旦Linux系统可以访问到硬件，就将其上的文件系统挂载到目录树中的一个子目录中。</li>
+<li>例如，用户插入USB移动存储器，Ubuntu Linux自动识别后，将其挂载到<br>“/media/disk”目录下。而不象Windows系统将USB存储器作为新驱动器，表示为<br>“F:”盘。</li>
+</ul>
+</li>
+</ul>
+<h3 id="9-file命令"><a href="#9-file命令" class="headerlink" title="9.file命令"></a>9.file命令</h3><ul>
+<li><p>在Linux文件系统中，文件扩展名不总是被使用或被一致地使用。如果一个文件没有扩展名，或者文件与其扩展名不时怎么办呢？file命令功能用于判定一个文件的类型。<br>file命令一般语法格式为：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">file<span class="token punctuation">[</span>filename<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<ul>
+<li><p>其中filename是文件名。命令的输出将显示该文件是二进制文件、文本文件、目录文件、设备文件，还是Linux中其他类型的文件。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">linux@ubuntu:-S file/usr/games/banner banner:ELF 32-bit LSB executable，Intel 80386，version 1（SYSV），for GNU/Linux 2.6.0，dymamically linked（uses shared libs），stripped 
+linux@ubuntu：～S <span class="token function">file</span> Textfile.txt Textfile.txt:UTF-8 Unicode text
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h3 id="10-mkdir命令"><a href="#10-mkdir命令" class="headerlink" title="10.mkdir命令"></a>10.mkdir命令</h3><ul>
+<li><p>用于创建一个目录。mkdir命令一般语法格式为：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">mkdir<span class="token punctuation">[</span>-p<span class="token punctuation">]</span>directory_name
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>其中，directory_name为要创建的目录名，并且不能是已有的目录，通常不允许嵌套创建子目录。</p>
+</li>
+<li><p>使用选项“-p”表示可以嵌套创建子目录，即多层目录。</p>
+</li>
+<li><p>需要说明的是，创建目录的用户在工作目录应具有写入权限。假设要创建下面这样结构的目录。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">dir1
+dir1/dir2
+dir1/dir2/dir3
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h3 id="11-创建链接文件"><a href="#11-创建链接文件" class="headerlink" title="11.创建链接文件"></a>11.创建链接文件</h3><ul>
+<li><p>Linux中有两种类型的链接：</p>
+<ul>
+<li>硬链接是利用Linux中为每个文件分配的物理编号——inode建立链接。因此，硬链接不能跨越文件系统。</li>
+<li>软链接（符号链接）是利用文件的路径名建立链接。通常建立软链接使用绝对路径而不是相对路径，以最大限度增加可移植性。</li>
+</ul>
+</li>
+<li><p>ln命令</p>
+<ul>
+<li><p>命令可以用于创建文件的链接文件。1n命令一般语法格式为：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">ln<span class="token punctuation">[</span>-s<span class="token punctuation">]</span>target link_name
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>其中，选项“-s”表示为创建软链接。在缺省情况下，创建硬链接。参数target为目标文件，1ink name为链接文件名。如果链接文件名已经存在但不是目录，将不做链接。目标文件可以是任何一个文件名，也可以是一个目录。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">linux@ubuntu:-S In-s/proc/cpuinfo mycpuinfo linux@ubuntu:-S Is-1 mycpuinfo wxrwxrwx 1 wdl wdl 13 2007-09-22 00：43mycpuinfo-<span class="token operator">></span>/proc/cpuinfo
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<h3 id="12-文件压缩和归档"><a href="#12-文件压缩和归档" class="headerlink" title="12.文件压缩和归档"></a>12.文件压缩和归档</h3><ul>
+<li><p>用户在进行数据备份时，需要把若干文件整合为一个文件以便保存。尽管整合为一个文件进行管理，但文件大小仍然没变。若需要网络传输文件时，就希望将其压缩成较小的文件，以节省在网络传输的时间。因此本节介绍文件的归档与压缩。</p>
+</li>
+<li><p>归档文件是将一组文件或目录保存在一个文件中。</p>
+</li>
+<li><p>压缩文件也是将一组文件或目录保存一个文件中，并按照某种存储格式保存在磁盘上，所占磁盘空间比其中所有文件总和要少。</p>
+<ul>
+<li>归档文件仍是没有经过压缩的，它所使用的磁盘空间仍等于其所有文件的总和。因而，用户可以将归档文件再进行压缩，使其容量更小。</li>
+<li>gzip是Linux中最流行的压缩工具，具有很好的移植性，可在很多不同架构的系统中使用。bzip2在性能上优于gzip，提供了最大限度的压缩比率。如果用户需要经常在Linux和微软</li>
+</ul>
+</li>
+<li><p>gzip与gunzip命令</p>
+<ul>
+<li><p>与zip明显区别在于只能压缩一个文件，无法将多个文件压缩为一个文件。<br>gzip命令符号模式的一般语法格式为：</p>
+</li>
+<li><p>其中，filename表示要压缩的文件名，gzip会自动在这个文件名后添加扩展名为.gz，作为压缩文件的文件名。</p>
+<pre class="line-numbers language-BASH"><code class="language-BASH">gzip[-l|-d|-num]filename
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="C:%5CUsers%5C15476%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1594783220660.png" alt="1594783220660"></p>
+</li>
+<li><p>gunzip命令符号模式的一般语法格式为：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">gunzip <span class="token punctuation">[</span>-f<span class="token punctuation">]</span>file.gz
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">xing xiao</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://ww042q.coding-pages.com/2020/07145118.html">http://ww042q.coding-pages.com/2020/07145118.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://ww042q.coding-pages.com" target="_blank">xing xiao</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%91%BD%E4%BB%A4/">
+                                    <span class="chip bg-color">命令</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/071647127.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Linux-shell脚本">
+                        
+                        <span class="card-title">Linux-shell脚本</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            shell脚本1.shell脚本的本质
+编译型语言C
+解释型语言
+she11脚本语言是解释型语言
+she11脚本的本质
+she11命令的有序集合
+
+
+
+
+
+2.shell编程的基本过程
+基本过程分为三步：
+step1.建立she11文件包含
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/shell/">
+                        <span class="chip bg-color">shell</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/071333839.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Linux-c 函数">
+                        
+                        <span class="card-title">Linux-c 函数</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            指针函数指针函数是指一个函数的返回值为地址量的函数指针函数的定义的一般形式如下
+&lt;数据类型> * &lt;函数名称> （&lt;参数说明>）{
+
+    语句序列；}
+
+返回值：全局变量的地址/static变量的地址/字符串常量的地址
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://ww042q.coding-pages.com" target="_blank">Xiao Xing</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">43.5k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/MoreInterests" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1547678825@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1547678825" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1547678825" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
