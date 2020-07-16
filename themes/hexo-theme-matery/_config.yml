@@ -126,13 +126,13 @@ indexbtn:
   enable: true
   name: Github
   icon: fab fa-github-alt
-  url: https://github.com/blinkfox/hexo-theme-matery
+  url: https://github.com/MoreInterests
 
 # The configurations of the second line of home banner
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
-  github:  https://github.com/blinkfox
+  github:  https://github.com/MoreInterests
   email: 1547678825@qq.com
   facebook: # https://www.facebook.com/xxx
   twitter: # https://twitter.com/xxx
