@@ -1,17 +1,18 @@
 ---
 title: Linux-shell脚本
-img: 
 top: false
 cover: false
 toc: true
 mathjax: false
-date: 2020-07-16 17:17:48
 author: xing xiao
+tags: shell
+categories: Linux
+abbrlink: 47127
+date: 2020-07-16 17:17:48
+img:
 coverImg:
 password:
 summary:
-tags: shell
-categories: Linux
 ---
 
 ## shell脚本
@@ -219,10 +220,10 @@ categories: Linux
   ​					模式2|模式3）
 
   ​										命令表2
-  ​										；；
-  ​          			..……
+  ​										；；  
 
-   				   模式n）
+  ​          		  	……  
+ 				      模式n）
 
   ​										命令表n
    										；；

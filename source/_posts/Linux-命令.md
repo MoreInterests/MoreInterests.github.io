@@ -1,17 +1,18 @@
 ---
 title: Linux-命令
-img: 
 top: false
 cover: false
 toc: true
 mathjax: false
-date: 2020-07-14 17:19:27
 author: xing xiao
+tags: 命令
+categories: Linux
+abbrlink: 5118
+date: 2020-07-14 17:19:27
+img:
 coverImg:
 password:
 summary:
-tags: 命令
-categories: Linux
 ---
 ## 软件包命令
 
@@ -136,7 +137,7 @@ apt-cache rdepends xxx
 
 - 当需要用命令处理一组文件，例如filel.txt、file2.txt、file3.txt…，用户不必一一输入文件名，可以使用she11通配符。
 
-  ![1594716534544](C:\Users\15476\AppData\Roaming\Typora\typora-user-images\1594716534544.png)
+  ![](https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P1594716534544.png)
 
 ### 5.管道
 
@@ -157,7 +158,7 @@ apt-cache rdepends xxx
 - Linux中默认的标准输入定义为键盘，标准输出定义为终端窗口。
 - 用户可以为当前操作改变输入或输出，迫使某个特定命令的输入或输出来源为外部文件。
 
-![1594717254263](C:\Users\15476\AppData\Roaming\Typora\typora-user-images\1594717254263.png)
+![](https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P1594717254263.png)
 
 
 
@@ -287,7 +288,7 @@ apt-cache rdepends xxx
 
   - 其中，参数Filesystem表示物理文件系统。各选项的含义如表所示。
 
-    ![1594728937481](C:\Users\15476\AppData\Roaming\Typora\typora-user-images\1594728937481.png)
+   ![](https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P1594728937481.png)
 
 ## 用户管理
 
@@ -394,7 +395,7 @@ apt-cache rdepends xxx
 
 ​		程序的一次执行就是一个进程
 
-​	![1594730495721](C:\Users\15476\AppData\Roaming\Typora\typora-user-images\1594730495721.png)
+​	![](https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P1594730495721.png)
 
 
 
@@ -618,8 +619,7 @@ apt-cache rdepends xxx
     
     ```
 
-    ![1594783220660](C:\Users\15476\AppData\Roaming\Typora\typora-user-images\1594783220660.png)
-
+    ![](https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P1594783220660.png)
   - gunzip命令符号模式的一般语法格式为：
 
     ```bash
