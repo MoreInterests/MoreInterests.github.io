@@ -1,0 +1,1367 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="GCC、GDB与Make工程管理器, toily的博客">
+    <meta name="description" content="Love everything in the world without exception.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>GCC、GDB与Make工程管理器 | toily的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">toily的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">toily的博客</div>
+        <div class="logo-desc">
+            
+            Love everything in the world without exception.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">GCC、GDB与Make工程管理器</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Makefile/">
+                                <span class="chip bg-color">Makefile</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-18
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    21 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="一、GNU与GNU工具简介"><a href="#一、GNU与GNU工具简介" class="headerlink" title="一、GNU与GNU工具简介"></a>一、GNU与GNU工具简介</h1><ul>
+<li>GNU的英文全称是”GNU is Not Unix”，又称革奴计划，是由Richard Stallman在1983年9月27日公开发起的。它的目标是创建一套完全自由的操作系统。由于GNU在英文中原意为非洲牛羚，因此GNU计划的图标就是一个牛羚。</li>
+<li>GNU提供各种程序开发工具给编程人员使用。其中包括（但不限于）：<ul>
+<li>编译工具：将源代码翻译成目标代码的工具。例如GCC、G++等</li>
+<li>调试工具：对执行的程序进行断点、单步、单次等调试。例如GDB等</li>
+<li>软件管理工具：协助开发人员管理大型程序项目内的源码、资源、文档等工具，例如Make、CVS、Subvision等</li>
+<li>其他工具：例如链接生成可执行文件的链接器、文字格式转换的转换工具等。</li>
+</ul>
+</li>
+<li>在GNU提供的众多工具内，常用的有GCC、GDB、Make工程管理器这三种。这三种工具也是我们经常使用的在Linux系统内管理C语言程序的工具。<pre><code>/*************一些GNU资源网站*****************/
+http://www.gnu.org/
+http://gcc.gnu.org/
+http://www.kernel.org/
+http://www.linux.org/
+http://www.linuxdevices.com/
+http://sourceforge.net/index.php
+/*************一些GNU资源网站end**************/</code></pre><h1 id="二、GCC"><a href="#二、GCC" class="headerlink" title="二、GCC"></a>二、GCC</h1><h2 id="1、GCC简介"><a href="#1、GCC简介" class="headerlink" title="1、GCC简介"></a>1、GCC简介</h2></li>
+<li>GCC全程GNU C Compiler，是GNU提供的一款开源免费的C语言编译器，支持编译C、C++、Objective-C、Fortran、Pascal等多种语言。</li>
+<li>GCC可以在多种平台上编译源代码（不过不同平台需要的GCC版本不同），而且GCC具有强大的代码优化能力，其编译效率比其他编译器快20%以上，因此是嵌入式开发领域最受人喜爱的编译器，有些程序开发者甚至称其为“最好用的C语言编译器”。</li>
+<li>GCC主要由分析器、汇编器、链接器、标准C库等组件构成。<h2 id="2、GCC支持的文件格式"><a href="#2、GCC支持的文件格式" class="headerlink" title="2、GCC支持的文件格式"></a>2、GCC支持的文件格式</h2></li>
+<li>使用GCC编译器需要特殊的文件名后缀，若文件名无后缀或后缀非法则GCC编译器无法识别。GCC支持的文件类型和后缀常见的有：<ul>
+<li>.c：C语言源代码</li>
+<li>.cc：C++语言源代码</li>
+<li>.m：Objective-C语言源代码</li>
+<li>.i：预处理过的C语言程序</li>
+<li>.ii：预处理过的C++语言程序</li>
+<li>.s：汇编语言程序</li>
+<li>.h：预处理文件（头文件）</li>
+<li>.o：目标文件</li>
+<li>.a/.so：编译后的库文件<h2 id="3、GCC编译C语言文件的过程"><a href="#3、GCC编译C语言文件的过程" class="headerlink" title="3、GCC编译C语言文件的过程"></a>3、GCC编译C语言文件的过程</h2></li>
+</ul>
+</li>
+<li>GCC将C语言代码编译成最终的可执行程序需要四个步骤：预处理、编译、汇编、链接。<h3 id="1-预处理（Pre-Processing）："><a href="#1-预处理（Pre-Processing）：" class="headerlink" title="1.预处理（Pre-Processing）："></a>1.预处理（Pre-Processing）：</h3></li>
+<li>主要执行删除程序内注释，加载头文件，替换宏，条件编译等工作</li>
+<li>需要文件：.c文件</li>
+<li>生成产物：预处理文件（以.i结尾）</li>
+<li>使用方法：gcc hello.c -E -o hello.i<h3 id="2-编译（Compiling）："><a href="#2-编译（Compiling）：" class="headerlink" title="2.编译（Compiling）："></a>2.编译（Compiling）：</h3></li>
+<li>使用编译器进行C语言的语法检查，如果有语法错误，报错，并结束编译过程;如果没有语法错误，把C的源程序转变为汇编代码</li>
+<li>需要文件：.i文件</li>
+<li>生成产物：汇编文件（以.s结尾）</li>
+<li>使用方法：gcc hello.i -S -o hello.s</li>
+<li>3.汇编（Assembling）：</li>
+<li>把汇编源文件通过汇编器生成目标文件（二进制机器语言）</li>
+<li>需要文件：.s文件</li>
+<li>生成产物：机器码（或称为“目标代码”，以.o结尾）</li>
+<li>使用方法：gcc hello.s -c -o hello.o</li>
+<li>4.链接（Linking）：</li>
+<li>把目标文件执行所依赖的所有二进制的其他目标文件及C的库文件都整合成一个可执行文件的过程</li>
+<li>需要文件：.o文件及各种动态库或静态库</li>
+<li>生成产物：可执行程序</li>
+<li>使用方法：gcc hello.o -o hello    <h3 id="4、代码优化"><a href="#4、代码优化" class="headerlink" title="4、代码优化"></a>4、代码优化</h3></li>
+<li>代码优化指的是编译器通过分析代码找出其中不是最优的部分，然后对代码重新组合从而改善程序的执行性能。GCC的代码优化功能十分强大。GCC提供的代码优化有4个等级，分别是：<ul>
+<li>-O0：无优化（默认）</li>
+<li>-O1：1级优化。使用该选项能减少目标文件大小及执行时间并且不会让编译时间明显增加。在编译较大型的程序时常用。</li>
+<li>-O2：2级优化。包含1级优化功能并进一步优化生成的目标代码（例如使用更优化的指令调度等），不过会让编译时间增加。<br>//2级优化是大多数程序员最常用的代码优化等级，因为它在编译时间与优化长度上取得了一个平衡点。</li>
+<li>-O3：3级优化。包含2级优化功能并进一步优化生成的目标代码（例如使用特殊的处理器等），不过会让编译时间大幅度增加。</li>
+</ul>
+</li>
+<li>虽然代码优化选项可以加快生成的可执行程序的运行速度，不过对于需要调试的代码而言是一个巨大的挑战。因为经过优化的代码与原始代码很可能有诸多不同，使用调试工具时非常有可能跳转到意外的地方从而使调试崩溃。而且，使用越高等级的代码优化，编译时间也会越长。因此代码优化功能要适度使用，也要认清并非所有代码都需要代码优化功能。</li>
+<li>示例：以下程序在循环部分有明显的不合理运算会拖慢程序的执行速度，分别使用无优化和2级优化编译该代码并查看执行时间的不同<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">double</span> counter<span class="token punctuation">;</span>
+  <span class="token keyword">double</span> result<span class="token punctuation">;</span>
+  <span class="token keyword">double</span> temp<span class="token punctuation">;</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span>counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> counter <span class="token operator">&lt;</span> <span class="token number">2000.0</span><span class="token operator">*</span><span class="token number">2000.0</span><span class="token operator">*</span><span class="token number">2000.0</span><span class="token operator">/</span><span class="token number">20.0</span><span class="token operator">+</span><span class="token number">2020</span><span class="token punctuation">;</span> counter <span class="token operator">+</span><span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">5</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//注意for()的表达式2和表达式3</span>
+  <span class="token punctuation">{</span>
+      temp <span class="token operator">=</span> counter <span class="token operator">/</span> <span class="token number">1979</span><span class="token punctuation">;</span>
+      result <span class="token operator">=</span> counter<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>   
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Result is %lf\n"</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>关闭优化：gcc test.c -O0 -o test1</li>
+<li>使用2级优化：gcc test.c -O2 -o test2</li>
+<li>在执行可执行程序的时候，使用系统的time命令可以查看该程序的运行时间</li>
+<li>time ./test1</li>
+<li>time ./test2</li>
+<li>可以发现test2的执行时间明显快于test1。</li>
+</ul>
+<h1 id="三、GDB"><a href="#三、GDB" class="headerlink" title="三、GDB"></a>三、GDB</h1><h2 id="1、GDB简介"><a href="#1、GDB简介" class="headerlink" title="1、GDB简介"></a>1、GDB简介</h2><ul>
+<li>GDB（GNU symbolic debugger）是GNU的一款代码调试工具，它可以实现查看代码内部结构、打印变量值、设置断点、单步调试等功能。熟练使用GDB工具能够提高我们编程除错的水平。</li>
+<li>注意：若使用gdb调试代码，则在编译阶段需要添加-g选项。gdb只能调试生成的可执行程序，而不能调试.c源代码文件</li>
+<li>GDB有众多的命令，包含显示代码、设置断点、控制执行、查看栈区、输出变量等功能。<br>//GDB相关命令参数见附表<h2 id="2、GDB使用流程"><a href="#2、GDB使用流程" class="headerlink" title="2、GDB使用流程"></a>2、GDB使用流程</h2></li>
+<li>示例代码：<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+  <span class="token keyword">int</span> sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+      sum<span class="token operator">+</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"The sum is %d\n"</span><span class="token punctuation">,</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h3 id="1）编译"><a href="#1）编译" class="headerlink" title="1）编译"></a>1）编译</h3><ul>
+<li>在编译阶段，一定要加上可选项-g（表示开启调试），否则无法使用GDB调试代码</li>
+<li>gcc test.c -g -o test</li>
+<li>然后就可以启动GDB调试代码了。注意GDB只能调试可执行程序，不能调试C语言源代码文件</li>
+<li>gdb test<h3 id="2）查看GDB调试的文件"><a href="#2）查看GDB调试的文件" class="headerlink" title="2）查看GDB调试的文件"></a>2）查看GDB调试的文件</h3></li>
+<li>我们可以使用list命令查看载入的文件。默认情况下list显示10行，可以使用set listsize来设置显示行数<h3 id="3）设置断点"><a href="#3）设置断点" class="headerlink" title="3）设置断点"></a>3）设置断点</h3></li>
+<li>我们可以使用break命令设置断点。当程序运行至断点处会停下。设置断点的方式有：<ul>
+<li>break function：在指定函数定义处设置断点</li>
+<li>break linenum：在指定行处设置断点<h3 id="4）查看断点"><a href="#4）查看断点" class="headerlink" title="4）查看断点"></a>4）查看断点</h3></li>
+</ul>
+</li>
+<li>设置断点后可以使用info breakpoints命令查看断点信息<h3 id="5）运行"><a href="#5）运行" class="headerlink" title="5）运行"></a>5）运行</h3></li>
+<li>使用run命令让代码从头运行，当代码运行至断点处时会停下</li>
+<li>使用continue命令让代码继续运行至下一个断点处<h3 id="6）查看变量值"><a href="#6）查看变量值" class="headerlink" title="6）查看变量值"></a>6）查看变量值</h3></li>
+<li>我们可以使用p+变量名来打印变量信息<h3 id="7）恢复运行"><a href="#7）恢复运行" class="headerlink" title="7）恢复运行"></a>7）恢复运行</h3></li>
+<li>可以使用finish命令让程序运行完成</li>
+<li>可以使用clear命令清除所有断点，也可以用clear+断点号清除指定断点</li>
+</ul>
+<h1 id="四、Make工程管理器"><a href="#四、Make工程管理器" class="headerlink" title="四、Make工程管理器"></a>四、Make工程管理器</h1><ul>
+<li>Make工程管理器是一个用来管理多文件的文件转化管理工具。它可以通过依赖关系将某种文件转化为目标文件target。大多数情况下，Make工程管理器用于调用GCC编译器将源代码编译成目标代码，再将目标代码整合生成可执行程序。使用Make工程管理器的时候一定要掌握两个概念：目标（target）和依赖关系（dependency）。目标就是要生成的文件，依赖关系就是生成目标文件需要的文件。</li>
+<li>Make工程管理器使用名为”makefile”的脚本文件来确定依赖关系并生成目标文件。因此我们必须熟练掌握makefile的写法才能正确使用Make工程管理器。</li>
+<li>Make工程管理器对参与编译的代码的管理原则是“若未改动则不参与”，若makefile发现这次参与编译的某些文件在上次编译后一直未被修改，则本次编译会自动忽略这些文件，从而减少编译时间。</li>
+<li>也就是说，Make工程管理器是通过文件的时间戳来识别文件是否应该参与编译的。<h2 id="1、makefile基本规则"><a href="#1、makefile基本规则" class="headerlink" title="1、makefile基本规则"></a>1、makefile基本规则</h2></li>
+<li>虽然makefile不是一门专门的编程语言，但是我们也需要使用特定的格式来编写makefile文件。<pre><code>示例1：使用makefile输出helloworld
+首先使用vim创建一个文本文件，命名为makefile。内容为：
+all:
+  echo &quot;hello world&quot;
+注意：在makefile内，每个命令行前面必须以&quot;Tab键&quot;开头，否则会出现使用错误：missing separator</code></pre></li>
+<li>在这个简单的makefile中，”all”就是我们的生成目标（target），每个生成目标都需要放在冒号之前。”all:”下面的命令代表生成目标需要的命令，我们也称之为“规则”，在这个示例内我们生成目标只有一个规则，实际上可以有多条规则。在这个简单的makefile中，我们规定了生成的目标为”all”，而生成该目标需要一个echo命令。</li>
+<li>若我们想运行这个makefile查看运行效果，我们无需像Shell脚本一样给该makefile添加执行权限，而是使用make命令调用Make工程管理器，Make工程管理器会自动按照makefile的内容来执行。</li>
+<li>使用该makefile：make 或 make all</li>
+<li>在调用makefile的时候，终端会先输出一遍生成目标的规则，然后输出生成的目标。若我们不想看到输出的规则，则我们可以在规则前面加上‘@’：<pre><code>all:
+  @echo &quot;hello world&quot;
+这样就不会输出规则了。</code></pre></li>
+<li>当然，一个makefile不仅仅只能生成一个目标，一个makefile是可以支持生成多个目标的，只不过我们需要调用相应的make命令来告诉Make工程管理器需要生成哪个目标。<pre><code>示例2：在示例1的基础上添加一个新的目标
+all:
+  @echo &quot;hello world&quot;
+test:
+  @echo &quot;nihao farsight&quot;
+在示例1的基础上添加了一个新的目标&quot;test&quot;，此时我们可以的makefile文件就可以生成两个目标了。
+生成目标all：make 或 make all
+生成目标test：make test</code></pre></li>
+<li>我们在运行示例2的makefile时会发现，若我们执行make，则只会输出目标all。这是由makefile的逻辑决定的，在未指定make目标的情况下（即缺省目标的情况下），makefile默认只生成第一个目标。</li>
+<li>那么能不能在make的时候也生成test目标呢？当然可以，我们可以这样修改makefile：<pre><code>示例3：修改示例2，使得make也可以生成test目标
+all:test
+  @echo &quot;hello world&quot;
+test:
+  @echo &quot;nihao farsight&quot;</code></pre></li>
+<li>在示例3中，我们在”all:”后面添加了一个新的字段”test”，这个字段就是“依赖关系”。”all:test”这个字段的意思就是：生成目标all需要依赖目标test。这样makefile在生成all之前会先去生成目标test，在生成目标test后才会去生成目标all。一个目标可以有多个依赖关系，若一个目标有多个依赖关系，则所有的依赖关系都写在冒号之后，用空格分隔。</li>
+<li>因此编写一个makefile最重要的就是要弄懂需要生成的目标，以及生成这些目标需要的依赖关系。“目标”与“依赖”是使用makefile的重点，我们需要重点关注。</li>
+</ul>
+<h2 id="2、使用makefile编译C语言文件"><a href="#2、使用makefile编译C语言文件" class="headerlink" title="2、使用makefile编译C语言文件"></a>2、使用makefile编译C语言文件</h2><ul>
+<li>有了以上对makefile的基本认识，我们来试图编写一个用于编译C语言文件的makefile。</li>
+<li>首先需要准备代码，注意头文件hello.h的格式：<pre><code>//文件hello.h
+#ifndef __MY_H_INCLUDE__
+#define __MY_H_INCLUDE__
+#include&lt;stdio.h&gt;
+</code></pre></li>
+</ul>
+<p>#endif</p>
+<p>//文件hello.c<br>#include”hello.h”<br>int main()<br>{<br>    printf(“hello world”);<br>}</p>
+<pre><code>- 然后编写一个makefile：</code></pre><p>示例4：编译hello.c的makefile文件<br>all:hello.h hello.c<br>    gcc hello.c -o hello</p>
+<pre><code>- 此时我们运行命令make，就可以编译文件hello.c和hello.h生成文件hello。
+- 但是，几个简单的文件使用makefile实在是太浪费了。现在我们准备多个C语言源文件，然后使用makefile对这几个C语言源文件进行编译：</code></pre><p>//文件my.h<br>#ifndef <strong>MY_H_INCLUDE</strong><br>#define <strong>MY_H_INCLUDE</strong><br>#include&lt;stdio.h&gt;<br>int foo();<br>int simple();<br>int hello();</p>
+<p>#endif<br>//文件foo.c<br>#include”my.h”<br>int foo()<br>{<br>    printf(“this is foo\n”);<br>}<br>//文件simple.c<br>#include”my.h”<br>int simple()<br>{<br>    printf(“this is simple\n”);<br>}<br>//文件hello.c<br>#include”my.h”<br>int hello()<br>{<br>    printf(“this is hello\n”);<br>}<br>//文件main.c，主函数所在文件，程序入口<br>#include”my.h”<br>int main()<br>{<br>    printf(“Hello world”);<br>    foo();<br>    simple();<br>    hello();//分别调用三个文件内的函数<br>    return 0;<br>}</p>
+<pre><code>- 此时我们再编写一个编译多个文件的makefile：</code></pre><p>示例5：将多个.c文件编译生成最终的可执行程序<br>all:main.o foo.o simple.o hello.o<br>    gcc main.o foo.o simple.o hello.o -o hello<br>main.o:main.c<br>    gcc main.c -c -o main.o<br>foo.o:foo.c<br>    gcc foo.c -c -o foo.o<br>simple.o:simple.c<br>    gcc simple.c -c -o simple.o<br>hello.o:hello.c<br>    gcc hello.c -c -o hello.o<br>clean:<br>    rm *.o</p>
+<pre><code>- 示例5的makefile与常规的管理大型程序的makefile已经十分接近了。这里注意makefile的最后，我们添加了一个clean目标，用于清除生成的.o文件。
+- 通过示例5的makefile我们可以看到，在编写makefile的时候，最重要的是需要将目标以及该目标的依赖关系弄清楚。若没有弄清楚目标和依赖关系，则编写的makfile也会有各种问题。
+- 若我们已经执行make编译生成了可执行文件hello，此时又修改代码，会有什么现象呢？
+    - 例如，我们此时修改main.c而其他.c文件不动：</code></pre><p>//文件main.c，修改后的main.c<br>#include”my.h”<br>int main()<br>{<br>    printf(“Hello world”);<br>    foo();<br>    simple();<br>    hello();//分别调用三个文件内的函数<br>    hello();//又调用一次hello()函数<br>    return 0;<br>}</p>
+<pre><code>- 修改main.c后再执行make。我们会发现makefile只会针对main.c和main.o重新编译。
+- 这是因为makefile为了节省编译时间，只会重新编译被修改过的文件。也就是说，若文件未被修改（时间戳没变）则不会重新编译，若文件被修改（时间戳改变）则重新编译。
+
+## 3、makefile假目标
+- 在示例5中我们在makefile最后添加了一个clean目标用于清除生成的.o文件。但是添加了clean目标后会造成一个问题：若我们的C语言源文件内恰好有一个clean.c文件，则我们执行make clean的时候，makefile不会执行清除文件命令，而是会编译clean.c生成clean文件。
+- 在实际的程序开发中也难免出现所定义的目标与已存在的文件重名的情况。针对于这种情况，makefile提供了“假目标（phony target）”这个用法。
+- 假目标使用.PHONY关键字定义，注意.PHONY关键字都是大写。</code></pre><p>示例6：给示例5添加假目标<br>.PHONY:clean<br>all:main.o foo.o simple.o hello.o<br>    gcc main.o foo.o simple.o hello.o -o hello<br>main.o:main.c<br>    gcc main.c -c -o main.o<br>foo.o:foo.c<br>    gcc foo.c -c -o foo.o<br>simple.o:simple.c<br>    gcc simple.c -c -o simple.o<br>hello.o:hello.c<br>    gcc hello.c -c -o hello.o<br>clean:<br>    rm *.o</p>
+<pre><code>- 采用.PHONY关键字定义clean了之后，make不会将clean作为一个文件处理而是当做一个目标去处理。
+
+## 4、makefile变量
+### 1）使用makefile变量
+- 只要是程序开发人员对变量肯定都十分熟悉。为了方便程序开发人员使用，makefile内也有变量，其变量的用法类似于Shell编程的变量用法。使用makefile变量可以让makefile变得更加简洁、方便维护。
+- makefile的变量定义十分简单，格式为：
+    - 变量名 = 变量值
+- 其中变量值可以有多个。类似于Shell编程中的变量定义，不过赋值号左右无需考虑空格的问题。
+- 若要引用定义过的变量，则可以：
+    - $(变量名) 或 ${变量名}
+即可。</code></pre><p>示例7：将示例6内部分字段替换为变量形式：<br>.PHONY:clean<br>OBJS = main.o foo.o simple.o hello.o<br>OBJ = hello<br>CC = gcc<br>RM = rm</p>
+<p>$(OBJ):$(OBJS)<br>    $(CC) $(OBJS) -o $(OBJ)<br>main.o:main.c<br>    $(CC) main.c -c -o main.o<br>foo.o:foo.c<br>    $(CC) foo.c -c -o foo.o<br>simple.o:simple.c<br>    $(CC) simple.c -c -o simple.o<br>hello.o:hello.c<br>    $(CC) hello.c -c -o hello.o<br>clean:<br>    $(RM) $(OBJS) $(OBJ)</p>
+<pre><code>- 在这个makefile中，我们引入了4个变量：
+    - OBJS：表示生成最终可执行程序所依赖的目标文件
+    - OBJ：表示最终生成的可执行文件名
+    - CC：表示编译器使用GCC
+    - RM：用于指示删除文件命令
+- 采用变量来书写makefile是十分方便的。若我们需要修改makefile的内容，则只需修改变量定义处即可，而无需修改makefile内的内容。
+- 需要注意的是，$符号对makefile有特殊含义。若我们想在makefile内使用echo命令打印$符号则需要连续两个$$才可以。
+- makefile内预定义了一些变量，这些变量为：
+    - AR：库文件维护程序的名称，默认为ar
+    - AS：汇编程序的名称，默认为as
+    - CC：C编译器的名称，默认为gcc
+    - CPP：C预处理器的名称，默认为gcc -E
+    - CXX：C++编译器的名称，默认为g++
+    - FC：Fortran编译器的名称，默认为f77
+    - RM：文件删除命令的名称，默认为rm -f
+    - ARFLAGS：库文件选项，无默认值
+    - ASFLAGS：汇编程序选项，无默认值
+    - CFLAGS：C编译器选项，无默认值
+    - CPPFLAGS：C预处理器选项，无默认值
+    - CXXFLAGS：C++编译器选项，无默认值
+    - FFLAGS：Fortran编译器选项，无默认值
+
+### 2）makefile的自动推断
+- 使用变量后确实方便了makefile的编写，但这不是makefile的最终形态。若目标文件OBJS过多，则每次在写规则的时候都会十分麻烦。而且我们发现，使用了变量后，大多数的规则内容都显得重复。若我们可以自动让makefile寻找OBJS内容然后生成目标，则会大大简化makefile的书写工作。
+- 这时，我们可以使用makefile提供的自动变量。当我们的编译目标有多个的时候，使用自动变量会大大简化makefile的编写工作。自动变量有：
+    - $@：表示一个规则中的目标
+    - $^：表示规则的所有依赖的文件名。注意一般情况下$^只会在makefile内出现一次
+    - $&lt;：表示规则的第一个依赖的文件名。若为自动推导，则为该规则添加第一个依赖文件名</code></pre><p>示例8：将示例7使用自动变量改写<br>.PHONY:clean<br>OBJS = main.o foo.o simple.o hello.o<br>OBJ = hello<br>CC = gcc<br>RM = rm</p>
+<p>$(OBJ):$(OBJS)<br>    $(CC) $^ -o $@<br>main.o:main.c<br>    $(CC) $&lt; -c -o $@<br>foo.o:foo.c<br>    $(CC) $&lt; -c -o $@<br>simple.o:simple.c<br>    $(CC) $&lt; -c -o $@<br>hello.o:hello.c<br>    $(CC) $&lt; -c -o $@<br>clean:<br>    $(RM) $(OBJS) $(OBJ)</p>
+<pre><code>- makefile的功能很强大，它可以自动推导文件以及文件依赖关系以及后面的命令。例如：</code></pre><p>main.o:main.c<br>    $(CC) $&lt; -c -o $@</p>
+<pre><code>- 当makefile执行该命令的时候，它会首先查看$@的内容，makefile会自动推断出此处$@应是main.o。然后查看$&lt;的内容，makefile会根据指定的依赖关系自动推断出生成main.o需要main.c文件。这样我们所有的规则都可以使用自动变量的形式来书写了。
+- 既然所有的规则都已经使用$(CC) $^ -c -o $@改写了，那所有的目标和依赖关系可不可以也被某些写法替代呢？也就是说，能不能将所有的</code></pre><p>which.c:which.o<br>    $(CC) $&lt; -c -o $@</p>
+<pre><code>- 都合并到一起呢？当然可以！</code></pre><p>示例9：更加简化的makefile，将所有的which.o:which.c都合并<br>.PHONY:clean<br>OBJS = main.o foo.o simple.o hello.o<br>OBJ = hello<br>SRC = main.c foo.c simple.c hello.c<br>CC = gcc<br>RM = rm</p>
+<p>$(OBJ):$(OBJS)<br>    $(CC) $^ -o $@<br>%.o:%.c<br>    $(CC) $&lt; -c -o $@</p>
+<p>clean:<br>    $(RM) $(OBJS) $(OBJ)</p>
+<p>```</p>
+<ul>
+<li>在示例9的makefile内，’%’表示的是makefile的通配符（类似于Shell编程内的*）。示例9的makefile的运行流程如下：<ul>
+<li>1.makefile要生成$(OBJ)（即hello），需要依赖$(OBJS)（即所有.o文件）。但是此时目录内没有.o文件</li>
+<li>2.继续向下，发现%.o:%.c字段，使用通配符匹配，发现此时%.o的%应为main，即%.o=main.o</li>
+<li>3.匹配成功，那么后面的%.c自动推断为main.c</li>
+<li>4.执行规则$(CC) $&lt; -c -o $@，将main.c填入$&lt;的位置，将main.o填入$@的位置。</li>
+<li>5.返回$(OBJ):$(OBJS)处，试图生成hello，发现还缺少其他的.o文件</li>
+<li>6.重复步骤2、3、4，直至所有$(OBJS)都被生成</li>
+<li>7.返回$(OBJ):$(OBJS)处，生成hello</li>
+</ul>
+</li>
+<li>我们的makefile功能更强大了！</li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">xing xiao</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://ww042q.coding-pages.com/2020/071822717.html">http://ww042q.coding-pages.com/2020/071822717.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://ww042q.coding-pages.com" target="_blank">xing xiao</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Makefile/">
+                                    <span class="chip bg-color">Makefile</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/071822717.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="GCC、GDB与Make工程管理器">
+                        
+                        <span class="card-title">GCC、GDB与Make工程管理器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、GNU与GNU工具简介
+GNU的英文全称是”GNU is Not Unix”，又称革奴计划，是由Richard Stallman在1983年9月27日公开发起的。它的目标是创建一套完全自由的操作系统。由于GNU在英文中原意为非洲牛羚，因
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Makefile/">
+                        <span class="chip bg-color">Makefile</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/071616391.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Linux-高级c">
+                        
+                        <span class="card-title">Linux-高级c</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            GCC
+全称为GNUCC，GNU项目中符合ANSIC标准的编译系统编译如C、C++、Object C、Java、Fortran、Pascal、Modula-3和Ada等多种语言
+GCC是可以在多种硬体平台上编译出可执行程序的超级编译器，其执
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://ww042q.coding-pages.com" target="_blank">Xiao Xing</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">53.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/MoreInterests" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1547678825@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1547678825" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1547678825" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

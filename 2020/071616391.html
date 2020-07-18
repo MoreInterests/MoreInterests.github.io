@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux-c  指针, toily的博客">
+    <meta name="keywords" content="Linux-高级c, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Linux-c  指针 | toily的博客</title>
+    <title>Linux-高级c | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Linux-c  指针</h1>
+                    <h1 class="description center-align post-title">Linux-高级c</h1>
                 </div>
             </div>
         </div>
@@ -477,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-12
+                    2020-07-16
                 </div>
                 
 
@@ -486,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    4.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    15 分
                 </div>
                 
 
@@ -508,116 +508,346 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="地址和变量"><a href="#地址和变量" class="headerlink" title="地址和变量"></a>地址和变量</h2><ul>
-<li>在计算机内存中，每一个字节单元，都有一个编号，称为地址</li>
+                <h2 id="GCC"><a href="#GCC" class="headerlink" title="GCC"></a>GCC</h2><ul>
+<li>全称为GNUCC，GNU项目中符合ANSIC标准的编译系统编译如C、C++、Object C、Java、Fortran、Pascal、Modula-3和Ada等多种语言</li>
+<li>GCC是可以在多种硬体平台上编译出可执行程序的超级编译器，其执行效率与一般的编译器相比平均效率要高20%~30%</li>
+<li>一个交叉平台编译器，适合在嵌入式领域的开发编译</li>
 </ul>
-<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><ul>
-<li>在C语言中，内存单元的地址称为指针，专门用来存放地址的变量，称为指针变量在不影响理解的情况中，有时对地址、指针和指针变量不区分，通称指针。</li>
-<li>指针指向的内存区域中的数据称为指针的目标</li>
-<li>如果它指向的区域是程序中的一个变量的内存空间，则这个变量称为指针的目标变量。简称为指针的目标。</li>
+<h3 id="1-GCC简介"><a href="#1-GCC简介" class="headerlink" title="1.GCC简介"></a>1.GCC简介</h3><ul>
+<li>gcc所支持后缀名解释<ul>
+<li>.c                            C原始程序</li>
+<li>-.C/.cc/.cxx                C++原始程序</li>
+<li>.m                           Objective-C原始程序</li>
+<li>.i                                已经过预处理的C原始程序</li>
+<li>.ii                            已经过预处理的C++原始程序</li>
+<li>.s/.S                          汇编语言原始程序</li>
+<li>.h                              预处理文件（头文件）</li>
+<li>.a/.so                        编译后的库文件</li>
 </ul>
-<h3 id="2-指针变量的说明"><a href="#2-指针变量的说明" class="headerlink" title="2.指针变量的说明"></a>2.指针变量的说明</h3><p>  一般形式如下：</p>
-<p>&lt;存储类型&gt;&lt;数据类型&gt;*&lt;指针变量名&gt;；*</p>
-<p>例如，</p>
-<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">char</span> <span class="token operator">*</span>  pName；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>指针的存储类型是指针变量本身的存储类型。</li>
-<li>指针说明时指定的数据类型不是指针变量本身的数据类型，而是指针目标的数据类型。简称为指针的数据类型。</li>
-</ul>
-<h3 id="3-引入指针"><a href="#3-引入指针" class="headerlink" title="3.引入指针"></a>3.引入指针</h3><p>引入指针要注意程序中的px、*px和&amp;px三种表示方法的不同意义。设px为一个指针，则：</p>
-<ul>
-<li>px-指针变量，它的内容是地址量</li>
-<li>*px一指针所指向的对象，它的内容是数据 int</li>
-<li>&amp;px-指针变量占用的存储区域的地址，是个常量</li>
-</ul>
-<h3 id="4-指针赋值运算"><a href="#4-指针赋值运算" class="headerlink" title="4.指针赋值运算"></a>4.指针赋值运算</h3><ul>
-<li><p>指针的赋值运算指的是通过赋值运算符向指针变量送一个地址值</p>
 </li>
-<li><p>向一个指针变量赋值时，送的值必须是地址常量或指针变量，不能是普通的整数（除了赋零以外）</p>
-<h4 id="指针赋值运算常见的有以下几种形式："><a href="#指针赋值运算常见的有以下几种形式：" class="headerlink" title="指针赋值运算常见的有以下几种形式："></a>指针赋值运算常见的有以下几种形式：</h4></li>
 </ul>
-<p>把一个普通变量的地址赋给一个具有相同数据类型的指针</p>
-<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">double</span> x<span class="token operator">=</span><span class="token number">15</span>，<span class="token operator">*</span>px；
+<h3 id="2-编译器的主要组件"><a href="#2-编译器的主要组件" class="headerlink" title="2.编译器的主要组件"></a>2.编译器的主要组件</h3><ul>
+<li>分析器：分析器将源语言程序代码转换为汇编语言。因为要从一种格式转换为另一种格式（C到汇编），所以分析器需要知道目标机器的汇编语言。</li>
+<li>汇编器：汇编器将汇编语言代码转换为CPU可以执行字节码。</li>
+<li>链接器：链接器将汇编器生成的单独的目标文件组合成可执行的应用程序。链接器需要知道这种目标格式以便工作。</li>
+<li>标准C库：核心的C函数都有一个主要的C库来提供。如果在应用程序中用到了C库中的函数，这个库就会通过链接器和源代码连接来生成最终的可执行程序。</li>
+</ul>
+<h3 id="3-GCC的基本用法和选项"><a href="#3-GCC的基本用法和选项" class="headerlink" title="3.GCC的基本用法和选项"></a>3.GCC的基本用法和选项</h3><ul>
+<li>Gcc最基本的用法是：gcc[options][filenamesl<ul>
+<li>·c，只编译，不连接成为可执行文件，编译器只是由输入的.c等源代码文件生成.o为后缀的目标文件，通常用于编译不包含主程序的子程序文件。</li>
+<li>·o output filename，确定输出文件的名称为output filename，同时这个名称不能和源文件同名。如果不给出这个选项，gcc就给出预设的可执行文件a.out。</li>
+<li>·-g，产生符号调试工具（GNU的gdb）所必要的符号资讯，要想对源代码进行调试，我们就必须加入这个选项。</li>
+<li>·-0，对程序进行优化编译、连接，采用这个选项，整个源代码会在编译、连接过程中进行优化处理，这样产生的可执行文件的执行效率可以提高，但是，编译、连接的速度就相应地要慢一些。</li>
+<li>·-02，比-0更好的优化编译、连接，当然整个编译、连接过程会更慢。</li>
+<li>·-I dirname，将dirname所指出的目录加入到程序头文件目录列表中，是在预编译过程中使用的参数。</li>
+<li>·-Ldirname，将dirname所指出的目录加入到程序函数档案库文件的目录列表中，是在链接过程中使用的参数。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-GCC的错误类型及对策"><a href="#4-GCC的错误类型及对策" class="headerlink" title="4.GCC的错误类型及对策"></a>4.GCC的错误类型及对策</h3><ul>
+<li>第一类：C语法错误<ul>
+<li>错误信息：文件source.c中第n行有语法错误（syntex errror）。有些情况下，一个很简单的语法错误，gcc会给出一大堆错误，我们最主要的是要保持清醒的头脑，不要被其吓倒，必要的时候再参考一下C语言的基本教材。</li>
+</ul>
+</li>
+<li>第二类：头文件错误<ul>
+<li>错误信息：找不到头文件head.h（Can not find include file head.h）。<br>这类错误是源代码文件中的包含头文件有问题，可能的原因有头文件名错误、指定的头文件所在目录名错误等，也可能是错误地使用了双引号和尖括号。</li>
+</ul>
+</li>
+<li>第三类：档案库错误<ul>
+<li>错误信息：链接程序找不到所需的函数库（1d:-1m:No such file or directory）。<br>这类错误是与目标文件相连接的函数库有错误，可能的原因是函数库名错误、指定的函数库所在目录名称错误等，检查的方法是使用find命令在可能的目录中寻找相应的函数库名，确定档案库及目录的名称并修改程序中及编译选项中的名称。</li>
+</ul>
+</li>
+<li>第四类：未定义符号<ul>
+<li>错误信息：有未定义的符号（Undefined symbo1）。这类错误是在连接过程中出现的，可能有两种原因：一是使用者自己定义的函数或者全局变量所在源代码文件，没有被编译、连接，或者干脆还没有定义，这需要使用者根据实际情况修改源程序，给出全局变量或者函数的定义体；二是未定义的符号是一个标准的库函数，在源程序中使用了该库函数，而连接过程中还没有给定相应的函数库的名称，或者是该档案库的目录名称有问题，这时需要使用档案库维护命令ar检查我们需要的库函数到底位于哪一个函数库中，确定之后，修改gcc连接选项中的-1和-L项。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-GCC编译过程"><a href="#5-GCC编译过程" class="headerlink" title="5.GCC编译过程"></a>5.GCC编译过程</h3><ul>
+<li><p>GCC的编译流程分为四个步骤：  </p>
+<p>1.预处理（Pre-Processing）   </p>
+<p>2.编译（Compiling）  </p>
+<p>3.汇编（Assembling）  </p>
+<p>4.链接（Linking）</p>
+</li>
+</ul>
+<h3 id="6-调试器——Gdb调试流程"><a href="#6-调试器——Gdb调试流程" class="headerlink" title="6.调试器——Gdb调试流程"></a>6.调试器——Gdb调试流程</h3><ul>
+<li><p>首先使用gcc对test.c进行编译，注意一定要加上选项‘-g’ </p>
+<p>#gcc-g test.c-o test  </p>
+<p>#gdb test GNU gdb Red Hat Linux（6.3.0.0-1.21rh）  </p>
+<p>Copyright 2004 Free Software Foundation，Inc.<br>GDB is free software，covered by the GNU General Public License，and you are welcome to change it and/or distribute copies of it under certain conditions.  </p>
+<p>Type”show copying”to see the conditions.  </p>
+<p>There is absolutely no warranty for GDB.Type”show warranty”for details.<br>This GDB was configured as”i386-redhat-linux-gnu’…Using host libthread_db library”/lib/libthread db.so.1”.<br>（gdb）</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P1594892943886.png" alt=""></p>
+<h3 id="7-Gdb的使用切记点"><a href="#7-Gdb的使用切记点" class="headerlink" title="7.Gdb的使用切记点"></a>7.Gdb的使用切记点</h3><ul>
+<li>在gcc编译选项中一定要加入‘-g’。</li>
+<li>只有在代码处于“运行”或“暂停”状态时才能查看变量值。</li>
+<li>设置断点后程序在指定行之前停止</li>
+</ul>
+<h2 id="条件编译"><a href="#条件编译" class="headerlink" title="条件编译"></a>条件编译</h2><ul>
+<li><p>编译器根据条件的真假决定是否编译相关的代码，</p>
+</li>
+<li><p>常见的条件编译有两种方法：</p>
+<ul>
+<li><p>一、根据宏是否定义，其语法如下：  </p>
+<p>#ifdef &lt; macro &gt;</p>
+<p>……..</p>
+<p>#else</p>
+<p>……..</p>
+<p>#endif</p>
+</li>
+<li><p>二、根据宏的值，其语法如下：  </p>
+<p>#if&lt; macro &gt;</p>
+<p>…………</p>
+<p>#else</p>
+<p>…………</p>
+<p>#endif</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><h3 id="1-简述"><a href="#1-简述" class="headerlink" title="1.简述"></a>1.简述</h3><ul>
+<li>在实际的处理对象中，有许多信息是由多个不同类型的数据组合在一起进行描述，而且这些不同类型的数据是互相联系组成了一个有机的整体。此时，就要用到一种新的构造类型数据——结构体（structure），简称结构。</li>
+<li>-结构体的使用为处理复杂的数据结构（如动态数据结构等）提供了有效的手段，而且，它们为函数间传递不同类型的数据提供了方便。</li>
+</ul>
+<h3 id="2-定义"><a href="#2-定义" class="headerlink" title="2.定义"></a>2.定义</h3><ul>
+<li><p>定义一个结构体类型的一般形式为：  </p>
+<p>struct      结构体名</p>
+<p>{</p>
+<p>​    数据类型    成员名1；</p>
+<p>​    数据类型    成员名2；</p>
+<p>​    ：</p>
+<p>​    数据类型    成员名n；<br>}；</p>
+</li>
+<li><p>在大括号中的内容也称为“成员列表”或“域表”。</p>
+</li>
+<li><p>其中，每个成员名的命名规则与变量名相同；</p>
+</li>
+<li><p>数据类型可以是基本变量类型和数组类型，或者是一个结构体类型；</p>
+</li>
+<li><p>用分号“；”作为结束符。整个结构的定义也用分号作为结束符</p>
+</li>
+</ul>
+<h3 id="3-说明"><a href="#3-说明" class="headerlink" title="3.说明"></a>3.说明</h3><ul>
+<li><p>结构体类型中的成员名可以与程序中的变量名相同，二者并不代表同一对象，编译程序可以自动对它们进行区分。  </p>
+<p>最后，总结一下结构体类型的特点：  </p>
+<p>（1）结构体类型是用户自行构造的。  </p>
+<p>（2）它由若干不同的基本数据类型的数据构成。  </p>
+<p>（3）它属于C语言的一种数据类型，与整型、实型相当。因此，定义它时不分配空间，只有用它定义变量时才分配空间。</p>
+</li>
+</ul>
+<h3 id="4-方法"><a href="#4-方法" class="headerlink" title="4.方法"></a>4.方法</h3><ul>
+<li><p>1.结构体类型变量的定义方法</p>
+<ul>
+<li><p>先定义结构体类型再定义变量名</p>
+</li>
+<li><p>这是C语言中定义结构体类型变量最常见的方式</p>
+<p>​    struct    结构体名</p>
+<p>​    {</p>
+<p>​                成员列表；<br>​    }；</p>
+<p>​    struct结构体名变量名；</p>
+</li>
+</ul>
+</li>
+<li><p>2.在定义类型的同时定义变量</p>
+<ul>
+<li><p>这种形式的定义的一般形式为：  </p>
+<p>struct    结构体名</p>
+<p>​    {</p>
+<p>​                成员列表；</p>
+<p>​    }变量名；</p>
+</li>
+</ul>
+</li>
+<li><p>3.直接定义结构类型变量</p>
+<ul>
+<li><p>其一般形式为：  </p>
+<p>struct     //没有结构体名</p>
+<p>​    {</p>
+<p>​            成员列表；</p>
+<p>​    }变量名；</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-大小"><a href="#5-大小" class="headerlink" title="5.大小"></a>5.大小</h3><ul>
+<li><p>一个结构体变量占用内存的实际大小，也可以利用sizeof求出。它的运算表达式为：  </p>
+<p>sizeof（运算量）  </p>
+<p>//求出给定的运算量占用内存空间的字节数</p>
+<p>其中运算量可以是变量、数组或结构体变量，可以是数据类型的名称。  </p>
+<p>例如：  </p>
+<p>sizeof（struct worker）  </p>
+<p>sizeof（worker1）</p>
+</li>
+</ul>
+<h3 id="6-结构体变量的使用形式"><a href="#6-结构体变量的使用形式" class="headerlink" title="6.结构体变量的使用形式"></a>6.结构体变量的使用形式</h3><ul>
+<li><p>结构体变量是不同数据类型的若干数据的集合体。在程序中使用结构体变量时，一般情况下不能把它作为一个整体参加数据处理，而参加各种运算和操作的是结构体变量的各个成员项数据。  </p>
+<p>结构体变量的成员用以下一般形式表示：  </p>
+<pre><code>      结构体变量名.成员名  
+  例如，上节给出的结构体变量worker1具有下列七个成员：    </code></pre><pre class="line-numbers language-bash"><code class="language-bash">          worker1.number；workerl.name；workerl.sex；
 
-px<span class="token operator">=</span><span class="token operator">&amp;</span>x<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>把一个已有地址值的指针变量赋给具有相同数据类型的另一个指针变量例如：</p>
-<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">float</span> a，<span class="token operator">*</span> px，<span class="token operator">*</span> py；
+​            workerl.age；workerl.salary；workerl.address；
 
-px<span class="token operator">=</span><span class="token operator">&amp;</span>a；
-
-py<span class="token operator">=</span>px；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>把一个数组的地址赋给具有相同数据类型的指针。例如：</p>
-<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span>，<span class="token operator">*</span>pa；pa<span class="token operator">=</span>a；<span class="token operator">/</span>等价pa<span class="token operator">=</span><span class="token operator">&amp;</span>a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="4-指针运算"><a href="#4-指针运算" class="headerlink" title="4.指针运算"></a>4.指针运算</h3><ul>
-<li>指针运算是以指针变量所存放的地址量作为运算量而进行的运算</li>
-<li>指针运算的实质就是地址的计算</li>
-<li>指针运算的种类是有限的，它只能进行赋值运算、算术运算和关系运算</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P0712.png" alt=""></p>
-<h3 id="5-指针与数组"><a href="#5-指针与数组" class="headerlink" title="5.指针与数组"></a>5.指针与数组</h3><ul>
-<li><p>在C语言中，数组的指针是指数组在内存中的起始地址，数组元素的地址是指数组元素在内存中的起始地址</p>
+​            worker1.phone<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>一维数组的数组名为一维数组的指针（起始地址）例如</p>
-<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">double</span> ×<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li><p>在定义了结构体变量后，就可以用不同的赋值方法对结构体变量的每个成员赋值。<br>例如：</p>
+<pre><code>strcpy（workerl.name，”zhang San”）；</code></pre><p>​     workerl.age=26；</p>
+<p>​     strcpy（workerl.phone，”1234567”）；</p>
+<p>​     workerl.sex=’m’；</p>
+<p>除此之外，还可以引用结构体变量成员的地址以及成员中的元素。例如：引用结构体变量成员的首地址&amp;workerl.name；引用结构体变量成员的第二个字符worker1.name[1]；引用结构体变量的首地址&amp;worker1。</p>
 </li>
 </ul>
-<p>  因此，x为x数组的起始地址</p>
+<h3 id="7-结构体变量的初始化"><a href="#7-结构体变量的初始化" class="headerlink" title="7.结构体变量的初始化"></a>7.结构体变量的初始化</h3><ul>
+<li><p>与其他类型变量一样，也可以给结构体的每个成员赋初值，这称为结构体的初始化。一种是在定义结构体变量时进行初始化，语法格式如下：<br>struct 结构体名变量名={初始数据表}；</p>
+</li>
+<li><p>另一种是在定义结构体类型时进行结构体变量的初始化。  </p>
+<pre><code>struct结构体名</code></pre><p>​    {<br>​                    成员列表；<br>​    }变量名={初始数据表}；</p>
+</li>
+</ul>
+<h2 id="结构体数组"><a href="#结构体数组" class="headerlink" title="结构体数组"></a>结构体数组</h2><h3 id="1-结构体数组的定义"><a href="#1-结构体数组的定义" class="headerlink" title="1.结构体数组的定义"></a>1.结构体数组的定义</h3><ul>
+<li><p>具有相同结构体类型的结构体变量也可以组成数组，称它们为结构体数组。结构体数组的每一个数组元素都是结构体类型的数据，它们都分别包括各个成员（分量）项。</p>
+</li>
+<li><p>定义结构体数组的方法和定义结构体变量的方法相仿，只需说明其为数组即可。<br>可以采用三种方法：</p>
 <ul>
-<li><p>设指针变量px的地址值等于数组指针x（即指针变量px指向数组的首元数），则：</p>
-<pre class="line-numbers language-c"><code class="language-c">x<span class="token punctuation">[</span>i<span class="token punctuation">]</span>、 <span class="token operator">*</span> （px<span class="token operator">+</span>i）、<span class="token operator">*</span>（x<span class="token operator">+</span>i）和 px<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>具有完全相同的功能：访问数组第i+1个数组元素。</p>
+<li><p>1.先定义结构体类型，再用它定义结构体数组。  </p>
+<p>结构体数组的定义形式如下：</p>
+<pre><code>struct     结构体名</code></pre><p>​    {    </p>
+<p>​                成员表列</p>
+<p>​    }；</p>
+<p>​            struct 结构体名</p>
+</li>
+<li><p>2.在定义结构体类型同时定义结构体数组</p>
+<p>结构体数组的定义形式如下：<br>\</p>
+<pre><code>struct 结构体名</code></pre><p>​    {</p>
+<p>​                    成员表列；</p>
+<p>​    }数组名[元素个数]；</p>
+</li>
+<li><p>3.直接定义结构体数组</p>
+<p>结构体数组的定义形式如下：<br>\</p>
+<pre><code>struct    //没有结构体名</code></pre><p>​    {</p>
+<p>​        成员表列；<br>​    }数组名[元素个数]；</p>
 </li>
 </ul>
-<h4 id="p-i-lt-gt-p-i"><a href="#p-i-lt-gt-p-i" class="headerlink" title="p[ i ] &lt;=&gt; *(p + i)"></a>p[ i ] &lt;=&gt; *(p + i)</h4><h3 id="6-指针与二维数组"><a href="#6-指针与二维数组" class="headerlink" title="6.指针与二维数组"></a>6.指针与二维数组</h3><ul>
-<li>多维数组就是具有两个或两个以上下标的数组</li>
-<li>在C语言中，二维数组的元素连续存储，按行优先存</li>
+</li>
 </ul>
-<h4 id="行指针（数组指针）"><a href="#行指针（数组指针）" class="headerlink" title="行指针（数组指针）"></a>行指针（数组指针）</h4><ul>
-<li>存储行地址的指针变量，叫做行指针变量。形式如下：·<ul>
-<li>&lt;存储类型&gt;&lt;数据类型&gt;（ * &lt;指针变量名&gt;）[表达式]；<br>·例如，int a [ 2 ] [ 3 ]；int（*p）[ 3 ]；</li>
+<h3 id="2-结构体数组的初始化"><a href="#2-结构体数组的初始化" class="headerlink" title="2.结构体数组的初始化"></a>2.结构体数组的初始化</h3><ul>
+<li><p>结构体数组在定义的同时也可以进行初始化，并且与结构体变量的初始化规定相同，只能对全局的或静态存储类别的结构体数组初始化。<br>结构体数组初始化的一般形式是：  </p>
+<pre><code>struct    结构体名</code></pre><p>​    {</p>
+<p>​            成员列表；<br>​    }；struct    结构体名    数组名[元素个数]={初始数据表}；</p>
+</li>
+</ul>
+<h2 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h2><ul>
+<li><p>可以设定一个指钍变量用来指向一个结构体变量。此时该指针变量的值是结构体变量的起始地址，该指针称为结构体指针。</p>
+</li>
+<li><p>结构体指针与前面介绍的各种指针变量在特性和方法上是相同的。与前述相同，在程序中结构体指针也是通过访问目标运算“ * ”访问它的对象。结构体指针在程序中的一般定义形式为：  </p>
+<pre><code>struct结构体名  *  结构指针名；</code></pre><p>其中的结构体名必须是已经定过的结构体类型。</p>
+</li>
+</ul>
+<h2 id="共用体"><a href="#共用体" class="headerlink" title="共用体"></a>共用体</h2><h3 id="1-共用体的概念"><a href="#1-共用体的概念" class="headerlink" title="1.共用体的概念"></a>1.共用体的概念</h3><ul>
+<li><p>在C语言中，不同数据类型的数据可以使用共同的存储区域，这种数据构造类型称为共用体，简称共用，又称联合体。共用体在定义、说明和使用形式上与结构体相似。两者本质上的不同仅在于使用内存的方式上。<br>定义一个共用体类型的一般形式为：  </p>
+<pre><code>union共用体名</code></pre><p>​    {</p>
+<p>​            成员表列；<br>​            }；</p>
+</li>
+</ul>
+<h2 id="typedef"><a href="#typedef" class="headerlink" title="typedef"></a>typedef</h2><ul>
+<li><p>在C语言中，允许使用关键字typedef定义新的数据类型</p>
+<p>其语法如下：  </p>
+<p>typedef    〈已有数据类型&gt;    〈新数据类型〉；</p>
+<p>如：</p>
+<p>​        typedef     int     INTEGER；</p>
+<p>这里新定义了数据类型INTEGER，其等价于int </p>
+<p>​        INTEGER i；    &lt;==&gt;    int i；</p>
+</li>
+</ul>
+<h2 id="动态内存"><a href="#动态内存" class="headerlink" title="动态内存"></a>动态内存</h2><ul>
+<li>malloc/free <ul>
+<li>void * malloc（size_t num）<br>void free（void * p）<ul>
+<li>malloc函数本身并不识别要申请的内存是什么类型，它只关心内存的总字节数。</li>
+<li>malloc申请到的是一块连续的内存，有时可能会比所申请的空间大。其有时会申请不到内存，返回NULL。</li>
+<li>malloc返回值的类型是void<em>，所以在调用malloc时要显式地进行类型转换，将void</em>转换成所需要的指针类型。</li>
+<li>如果free的参数是NULL的话，没有任何效果。</li>
+<li>释放一块内存中的一部分是不被允许的。</li>
 </ul>
 </li>
-<li>方括号中的常量表达式表示指针加1，移动几个数据。</li>
-<li>当用行指针操作二维数组时，表达式一般写成1行的元素个数，即列数。</li>
+<li>野指针：<br>不是NULL指针，是指向“垃圾”内存的指针。“野指针”是很危险的。<br>“野指针”的成因主要有两种：<ul>
+<li>指针变量没有被初始化。</li>
+<li>指针p被free之后，没有置为NULL，让人误以为p是个合法的指针。</li>
+<li>指针操作超越了变量的作用范围。这种情况让人防不胜防。</li>
 </ul>
-<h3 id="7-字符指针与字符串"><a href="#7-字符指针与字符串" class="headerlink" title="7.字符指针与字符串"></a>7.字符指针与字符串</h3><ul>
-<li>C语言通过使用字符数组来处理字符串</li>
-<li>通常，我们把char数据类型的指针变量称为字符指针变量。字符指针变量与字符数组有着密切关系，它也被用来处理拿符串。</li>
+</li>
 </ul>
-<h3 id="8-指针数组"><a href="#8-指针数组" class="headerlink" title="8.指针数组"></a>8.指针数组</h3><p>所谓指针数组是指由若干个具有相同存储类型和数据类型的指针变量构成的集合</p>
-<p>指针数组的一般说明形式：</p>
+</li>
+</ul>
+<h2 id="Make"><a href="#Make" class="headerlink" title="Make"></a>Make</h2><ul>
+<li>工程管理器，顾名思义，是指管理较多的文件</li>
+<li>Make工程管理器也就是个“自动编译管理器”，这里的“自动”是指它能够根据文件时间戳自动发现更新过的文件而减少编译的工作量，同时，它通过读入Makefile文件的内容来执行大量的编译工作</li>
+<li>Make将只编译改动的代码文件，而不用完全编译。</li>
+</ul>
+<h3 id="1-结构"><a href="#1-结构" class="headerlink" title="1.结构"></a>1.结构</h3><ul>
+<li><p>Makefile格式  </p>
+<p>target:dependency_files  </p>
+<p>&lt; TAB &gt;command  </p>
+<p>例子：  </p>
+<p>hello.o:hello.c hello.h  </p>
+<p>gcc-chello.c-o hello.o</p>
+<p>一个复杂一些的例子</p>
+<p>sunq:kang.o yul.o </p>
+<p>​        gcc kang.o yul.o-o sunq </p>
+<p>kang.o:kang.c kang.h </p>
+<p>​        gcc-Wall-O-g-c kang.c-o kang.o </p>
+<p>yul.o:yul.c </p>
+<p>​        gcc-Wall-O-g-cyul.c-o yul.o</p>
+<p>注释：-Wa11：表示允许发出gcc所有有用的报警信息.<br>\</p>
+<pre><code>        -c：只是编译不链接，生成目标文件”.o”  </code></pre><p>\</p>
+<pre><code>        -ofile：表示把输出文件输出到file里</code></pre><p>关于更多的用man工具</p>
+</li>
+</ul>
+<h3 id="2-创建和使用变量"><a href="#2-创建和使用变量" class="headerlink" title="2.创建和使用变量"></a>2.创建和使用变量</h3><ul>
+<li><p>创建变量的目的：</p>
+</li>
+<li><p>用来代替一个文本字符串：  </p>
+<p>1.系列文件的名字  </p>
+<p>2.传递给编译器的参数  </p>
+<p>3.需要运行的程序  </p>
+<p>4.需要查找源代码的目录5.你需要输出信息的目录  </p>
+<p>6.你想做的其它事情。  </p>
 <ul>
-<li>&lt;存储类型&gt;&lt;数据类型&gt;*&lt;指针数组名&gt;[&lt;大小&gt;]；</li>
-<li>指针数组名表示该指针数组的起始地址</li>
-</ul>
-<h3 id="9-多级指针"><a href="#9-多级指针" class="headerlink" title="9.多级指针"></a>9.多级指针</h3><ul>
-<li>多级指针和指针数组</li>
-<li>指针数组也可以用另外一个指针来处理。例如：有一个一维字符指针数组ps[5]，char*ps[5]={“Beijing city”，<br>“London city”}；</li>
-</ul>
-<h3 id="10-void指针"><a href="#10-void指针" class="headerlink" title="10.void指针"></a>10.void指针</h3><ul>
-<li><p>void指针是一种不确定数据类型的指针变量，它可以通过强制类型转换让该变量指向任何数据类型的变量一般形式为：</p>
-<p>void*&lt;指针变量名称&gt;；</p>
-</li>
-<li><p>对于void指针，在没有强制类型转换之前，不能进行任何指针的算术运算</p>
+<li><p>刚才的例子<br>OBJS=kang.o yul.o  </p>
+<p>CC=gcc  </p>
+<p>CFLAGS=-Wall-O-g  </p>
+<p>sunq：$（OBJS）  </p>
+<p>S（CC）S（OBJS）-o sunq  </p>
+<p>kang.o:kang.c kang.h’  </p>
+<p>S（CC）S（CFLAGS）-ckang.c-o kang.o  </p>
+<p>yul.o:yul.c yul.h  </p>
+<p>$（CC）S（CFLAGS）-c yul.c-o yul.o</p>
 </li>
 </ul>
-<h3 id="11-const修饰指针"><a href="#11-const修饰指针" class="headerlink" title="11.const修饰指针"></a>11.const修饰指针</h3><ul>
-<li><p>常量化指针目标表达式<br>一般说明形式如下：</p>
-<p>const&lt;数据类型&gt;*&lt;指针变量名称&gt;[=&lt;指针运算表达式&gt;]；</p>
-</li>
-<li><p>常量化指针目标是限制通过指针改变其目标的数值，但&lt;指针变量&gt;存储的地址值可以修改</p>
 </li>
 </ul>
-<ul>
-<li><p>常量化指针变量<br>一般说明形式如下：</p>
-<p>&lt;数据类型&gt;*const&lt;指针变量名称&gt;[=&lt;指针运算表达式&gt;];</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P1594901447956.png" alt=""></p>
+<h3 id="3-Make使用"><a href="#3-Make使用" class="headerlink" title="3.Make使用"></a>3.Make使用</h3><ul>
+<li>直接运行make</li>
+<li>选项<ul>
+<li>-C dir读入指定目录下的Makefile</li>
+<li>-f file读入当前目录下的file文件作为Makefile</li>
+<li>-i 忽略所有的命令执行错误</li>
+<li>-I dir指定被包含的Makefile所在目录</li>
+<li>-n 只打印要执行的命令，但不执行这些命令</li>
+<li>-p 显示make变量数据库和隐含规则</li>
+<li>-s 在执行命令时不显示命令</li>
+<li>-w 如果make在执行过程中改变目录，打印当前目录名    </li>
+</ul>
 </li>
 </ul>
-<ul>
-<li><p>常量化指针变量及其目标表达式<br>一般说明形式如下：</p>
-</li>
-<li><p>const&lt;数据类型&gt; * const&lt;指针变量名&gt;=&lt;指针运算表达式&gt;；</p>
-<p>常量化指针变量及其目标表达式，使得既不可以修改&lt;指针变量&gt;的地址，也不可以通过*&lt;指针变量名称&gt;修改指针所指向变量的值</p>
+<h3 id="4-Makefile的VPATH"><a href="#4-Makefile的VPATH" class="headerlink" title="4.Makefile的VPATH"></a>4.Makefile的VPATH</h3><ul>
+<li>VPATH：虚路径<ul>
+<li>在一些大的工程中，有大量的源文件，我们通常的做法是把这许多的源文件分类，并存放在不同的目录中。所以，当make需要去找寻文件的依赖关系时，你可以在文件前加上路径，但最好的方法是把一个路径告诉make，让make在自动去找。</li>
+<li>Makefile文件中的特殊变量“VPATH”就是完成这个功能的，如果没有指明这个变量，make只会在当前的目录中去找寻依赖文件和目标文件。如果定义了这个变量，那么，make就会在当当前目录找不到的情况下，到所指定的目录中去找寻文件了。</li>
+<li>VPATH=src:../headers</li>
+<li>上面的的定义指定两个目录，“src”和“../headers”，make会按照这个顺序进行搜索。目录由“冒号”分隔。（当然，当前目录永远是最高优先搜索的地方）</li>
+</ul>
 </li>
 </ul>
 
@@ -645,7 +875,7 @@ py<span class="token operator">=</span>px；<span aria-hidden="true" class="line
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/071234787.html">http://ww042q.coding-pages.com/2020/071234787.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/071616391.html">http://ww042q.coding-pages.com/2020/071616391.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -856,29 +1086,25 @@ py<span class="token operator">=</span>px；<span aria-hidden="true" class="line
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/071333839.html">
+                <a href="/2020/071822717.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Linux-c 函数">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="GCC、GDB与Make工程管理器">
                         
-                        <span class="card-title">Linux-c 函数</span>
+                        <span class="card-title">GCC、GDB与Make工程管理器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            指针函数指针函数是指一个函数的返回值为地址量的函数指针函数的定义的一般形式如下
-&lt;数据类型> * &lt;函数名称> （&lt;参数说明>）{
-
-    语句序列；}
-
-返回值：全局变量的地址/static变量的地址/字符串常量的地址
+                            一、GNU与GNU工具简介
+GNU的英文全称是”GNU is Not Unix”，又称革奴计划，是由Richard Stallman在1983年9月27日公开发起的。它的目标是创建一套完全自由的操作系统。由于GNU在英文中原意为非洲牛羚，因
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-18
                         </span>
                         <span class="publish-author">
                             
@@ -895,8 +1121,8 @@ py<span class="token operator">=</span>px；<span aria-hidden="true" class="line
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C</span>
+                    <a href="/tags/Makefile/">
+                        <span class="chip bg-color">Makefile</span>
                     </a>
                     
                 </div>
@@ -910,36 +1136,44 @@ py<span class="token operator">=</span>px；<span aria-hidden="true" class="line
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/070253724.html">
+                <a href="/2020/071647127.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Git-实战">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Linux-shell脚本">
                         
-                        <span class="card-title">Git-实战</span>
+                        <span class="card-title">Linux-shell脚本</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git实战安装使用普通用户登录到虚拟机
-sudo apt install git
-配置Git在使用之前需要配置用户名和电子邮箱地址，否则不能提交代码。
-# 配置用户名
-git config --global user.name "刘煜"
-#
+                            shell脚本1.shell脚本的本质
+编译型语言C
+解释型语言
+she11脚本语言是解释型语言
+she11脚本的本质
+she11命令的有序集合
+
+
+
+
+
+2.shell编程的基本过程
+基本过程分为三步：
+step1.建立she11文件包含
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E4%BB%93%E5%BA%93/" class="post-category">
-                                    仓库
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
@@ -949,8 +1183,8 @@ git config --global user.name "刘煜"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/shell/">
+                        <span class="chip bg-color">shell</span>
                     </a>
                     
                 </div>
