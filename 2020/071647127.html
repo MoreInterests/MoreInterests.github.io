@@ -233,7 +233,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/MoreInterests" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -290,7 +290,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/MoreInterests" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -322,7 +322,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -601,85 +601,123 @@
 </li>
 </ul>
 <p>  $num=9<br>  $sum=expr $num*6<br>  $echo $sum<br>  54</p>
-<p>  ```</p>
-<h3 id="7-test语句"><a href="#7-test语句" class="headerlink" title="7.test语句"></a>7.test语句</h3><ul>
-<li><p>test语句可测试三种对象：<br>字符串      整数     文件属性</p>
-</li>
-<li><p>每种测试对象都有若干测试操作符</p>
-</li>
-<li><p>例如：<br>test “$answer” = “yes”</p>
-<p>变量answer的值是否为字符串yes</p>
-</li>
-</ul>
-<p>  test  $num - eq 18<br>  变量num的值是否为整数18</p>
-<p>  test -d tmp<br>  测试tmp是否为一个目录名</p>
-<h4 id="1-字符串测试"><a href="#1-字符串测试" class="headerlink" title="1.字符串测试"></a>1.字符串测试</h4><ul>
-<li>s1=s2测试两个字符串的内容是否完全一样</li>
-<li>s1！=s2测试两个字符串的内容是否有差异</li>
-<li>-z s1测试s1字符串的长度是否为0</li>
-<li>-n s1测试s1字符串的长度是否不为0</li>
-</ul>
-<h4 id="2-整数测试"><a href="#2-整数测试" class="headerlink" title="2.整数测试"></a>2.整数测试</h4><ul>
-<li>a -eq b测试a与b是否相等</li>
-<li>a -ne b测试a与b是否不相等</li>
-<li>a -gt b测试a是否大于b</li>
-<li>a -ge b测试a是否大于等于b</li>
-<li>a -It b测试a是否小于b</li>
-<li>a -le b测试a是否小于等于b</li>
-</ul>
-<h4 id="3-文件测试"><a href="#3-文件测试" class="headerlink" title="3.文件测试"></a>3.文件测试</h4><ul>
-<li>-d name 测试name 是否为一个目录</li>
-<li>-e name测试一个文件是否存在</li>
-<li>-f name测试name是否为普通文件</li>
-<li>-Lname测试name是否为符号链接</li>
-<li>-r name 测试name文件是否存在且为可读</li>
-<li>-wname测试name文件是否存在且为可写</li>
-<li>-xname测试name文件是否存在且为可执行</li>
-<li>-s name 测试name文件是否存在且其长度不为0</li>
-<li>f1-nt f2测试文件fl是否比文件f2更新</li>
-<li>f1-ot f2测试文件f1是否比文件f2更旧</li>
-</ul>
-<h3 id="8-结构性语句"><a href="#8-结构性语句" class="headerlink" title="8.结构性语句"></a>8.结构性语句</h3><ul>
-<li>结构性语句主要根据程序的运行状态、输入数据、变量的取值、控制信号以及运行时间等因素来控制程序的运行流程。</li>
-<li>主要包括：条件测试语句（两路分支）、多路分支语句、循环语句、循环控制语句和后台执行语句等。</li>
-</ul>
-<h4 id="1-条件语句"><a href="#1-条件语句" class="headerlink" title="1.条件语句"></a>1.条件语句</h4><ul>
-<li><p>if…then…fi</p>
-</li>
-<li><p>语法结构：</p>
-<pre><code>  if   表达式
-                  then 命令表
-  fi</code></pre><ul>
-<li>如果表达式为真，则执行命令表中的命令；否则退出if语句，即执行fi后面的语句。</li>
-<li>if和fi是条件语句的语句括号，必须成对使用；</li>
-<li>命令表中的命令可以是一条，也可以是若干条。</li>
-</ul>
-</li>
-<li><p>if…then…else…fi</p>
-</li>
-<li><p>语法结构为：<br> if         表达式<br>then      命令表1</p>
-</li>
-<li><p>else      命令表2<br>fi</p>
-</li>
-<li><p>如果表达式为真，则执行命令表1中的命令，再退出if语句；否则执行命令表2中的语句，再退出if语句.<br>注意：无论表达式是否为真，都有语句要执行.</p>
-</li>
-</ul>
-<h4 id="2-多路分支语句"><a href="#2-多路分支语句" class="headerlink" title="2.多路分支语句"></a>2.多路分支语句</h4><ul>
-<li><p>case…esac多路分支语句case用于多重条件测试，语法结构清晰自然.其语法为：</p>
-<p>case             字符串变量     in</p>
-<p>​                    模式1）</p>
-<p>​                                        命令表1</p>
-<pre><code>                                     ；；</code></pre><p>​                    模式2|模式3）</p>
-<p>​                                        命令表2<br>​                                        ；；  </p>
-<p>​                        ……  </p>
-<pre><code>                 模式n）</code></pre><p>​                                        命令表n</p>
-<pre><code>                                     ；；</code></pre><p>esac</p>
-</li>
-</ul>
-<h3 id="9-循环语句"><a href="#9-循环语句" class="headerlink" title="9.循环语句"></a>9.循环语句</h3><h4 id="1-循环语句for"><a href="#1-循环语句for" class="headerlink" title="1.循环语句for"></a>1.循环语句for</h4><ul>
-<li><p>当循环次数已知或确定时，使用for循环语句来多次执行一条或一组命令。<br>循环体由语句括号do和done来限定。格式为：<br>for   变量名    in   单词表</p>
-<pre><code>                 do</code></pre><p>​                        命令表</p>
-<p>​                done</p>
+<pre><code>
+
+
+### 7.test语句
+
+- test语句可测试三种对象：
+  字符串      整数     文件属性
+
+- 每种测试对象都有若干测试操作符
+
+- 例如：
+  test &quot;$answer&quot; = &quot;yes&quot;
+
+  变量answer的值是否为字符串yes
+
+
+
+  test  $num - eq 18
+  变量num的值是否为整数18
+
+
+
+  test -d tmp
+  测试tmp是否为一个目录名
+
+#### 1.字符串测试
+
+- s1=s2测试两个字符串的内容是否完全一样
+- s1！=s2测试两个字符串的内容是否有差异
+- -z s1测试s1字符串的长度是否为0
+- -n s1测试s1字符串的长度是否不为0
+
+
+
+#### 2.整数测试
+
+- a -eq b测试a与b是否相等
+- a -ne b测试a与b是否不相等
+- a -gt b测试a是否大于b
+- a -ge b测试a是否大于等于b
+- a -It b测试a是否小于b
+- a -le b测试a是否小于等于b
+
+
+
+#### 3.文件测试
+
+- -d name 测试name 是否为一个目录
+- -e name测试一个文件是否存在
+- -f name测试name是否为普通文件
+- -Lname测试name是否为符号链接
+- -r name 测试name文件是否存在且为可读
+- -wname测试name文件是否存在且为可写
+- -xname测试name文件是否存在且为可执行
+- -s name 测试name文件是否存在且其长度不为0
+- f1-nt f2测试文件fl是否比文件f2更新
+- f1-ot f2测试文件f1是否比文件f2更旧
+
+
+
+### 8.结构性语句
+
+- 结构性语句主要根据程序的运行状态、输入数据、变量的取值、控制信号以及运行时间等因素来控制程序的运行流程。
+- 主要包括：条件测试语句（两路分支）、多路分支语句、循环语句、循环控制语句和后台执行语句等。
+
+
+
+#### 1.条件语句
+
+- if…then…fi
+- 语法结构：
+        if   表达式
+              then 命令表
+        fi
+  - 如果表达式为真，则执行命令表中的命令；否则退出if语句，即执行fi后面的语句。
+  - if和fi是条件语句的语句括号，必须成对使用；
+  - 命令表中的命令可以是一条，也可以是若干条。
+
+- if...then...else...fi
+- 语法结构为：
+   if         表达式
+  then      命令表1
+- else      命令表2
+  fi
+- 如果表达式为真，则执行命令表1中的命令，再退出if语句；否则执行命令表2中的语句，再退出if语句.
+  注意：无论表达式是否为真，都有语句要执行.
+
+#### 2.多路分支语句
+
+- case...esac多路分支语句case用于多重条件测试，语法结构清晰自然.其语法为：
+```bash
+  case             字符串变量     in
+
+  ​                    模式1）
+
+  ​                                        命令表1
+                                           ；；
+
+  ​                    模式2|模式3）
+
+  ​                                        命令表2
+  ​                                        ；；  
+
+  ​                        ……  
+                       模式n）
+
+  ​                                        命令表n
+                                           ；；
+
+  esac</code></pre><h3 id="9-循环语句"><a href="#9-循环语句" class="headerlink" title="9.循环语句"></a>9.循环语句</h3><h4 id="1-循环语句for"><a href="#1-循环语句for" class="headerlink" title="1.循环语句for"></a>1.循环语句for</h4><ul>
+<li><p>当循环次数已知或确定时，使用for循环语句来多次执行一条或一组命令。<br>循环体由语句括号do和done来限定。格式为：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">for</span>   变量名    in   单词表
+                     <span class="token keyword">do</span>
+
+​                        命令表
+
+​                done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>变量依次取单词表中的各个单词，每取一次单词，就执行一次循环体中的命令.循环次数由单词表中的单词数确定.命令表中的命令可以是一条，也可以是由分号或换行符分开的多条。</p>
 </li>
@@ -688,7 +726,10 @@
 </ul>
 <h4 id="2-循环语句while"><a href="#2-循环语句while" class="headerlink" title="2.循环语句while"></a>2.循环语句while</h4><ul>
 <li><p>语法结构为：<br>while    命令或表达式</p>
-<pre><code>do</code></pre><p>​            命令表<br>​    done</p>
+<pre class="line-numbers language-c"><code class="language-c">    <span class="token keyword">do</span>
+
+​            命令表
+​    done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>while语句首先测试其后的命令或表达式的值，如果为真，就执行一次循环体中的命令，然后再测试该命令或表达式的值，执行循环体，直到该命令或表达式为假时退出循环。</li>
 <li>while语句的退出状态为命令表中被执行的最后一条命令的退出状态</li>
@@ -959,7 +1000,7 @@ echo $？</code></pre></li>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Linux-高级c">
+                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="Linux-高级c">
                         
                         <span class="card-title">Linux-高级c</span>
                     </div>
@@ -1010,7 +1051,7 @@ GCC是可以在多种硬体平台上编译出可执行程序的超级编译器�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Linux-命令">
+                        <img src="/medias/featureimages/39.jpg" class="responsive-img" alt="Linux-命令">
                         
                         <span class="card-title">Linux-命令</span>
                     </div>
@@ -1202,7 +1243,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">53.4k</span>&nbsp;字
+                class="white-color">69.8k</span>&nbsp;字
             
             
             

@@ -1,0 +1,1349 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="树与二叉树, toily的博客">
+    <meta name="description" content="Love everything in the world without exception.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>树与二叉树 | toily的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">toily的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">toily的博客</div>
+        <div class="logo-desc">
+            
+            Love everything in the world without exception.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/MoreInterests" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/MoreInterests" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">树与二叉树</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                编程
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-20
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一、树的定义："><a href="#一、树的定义：" class="headerlink" title="一、树的定义："></a>一、树的定义：</h2><h3 id="1、定义："><a href="#1、定义：" class="headerlink" title="1、定义："></a>1、定义：</h3><ul>
+<li>树（Tree）是n（n&gt;=0）个节点的有限集，n=0时称为“空树”。在任意一棵非空树中：<ul>
+<li>⒈有且仅有一个特定的称为根（root）的节点。</li>
+<li>⒉当n&gt;1时，其余节点可分为m（m&gt;0）个互不相交的有限集T1、T2……Tm，其中每一个集合本身又是一棵树，并且称之为根的子树（SubTree）。</li>
+</ul>
+</li>
+<li>注意：<ul>
+<li>⒈n&gt;0时根节点是唯一的，不可能存在多个根节点。</li>
+<li>⒉m&gt;0时，子树个数没有限制，但一定互不相交。<h3 id="2、树的节点的分类："><a href="#2、树的节点的分类：" class="headerlink" title="2、树的节点的分类："></a>2、树的节点的分类：</h3></li>
+</ul>
+</li>
+<li>树的节点包含一个数据元素以及若干个指向其子树的分支。节点拥有的子树个数称为节点的度（Degree）。度为0的节点称为叶节点（Leaf）；度不为0且不为根节点的节点称为“内部节点”。<h3 id="3、节点间关系："><a href="#3、节点间关系：" class="headerlink" title="3、节点间关系："></a>3、节点间关系：</h3></li>
+<li>节点的子树的根称为该节点的孩子（Child），相应地，该节点称为孩子的父（Parent，或翻译成“双亲”）。同一个父节点的孩子之间互称兄弟（Sibling）。<h3 id="4、层次："><a href="#4、层次：" class="headerlink" title="4、层次："></a>4、层次：</h3></li>
+<li>节点的层次（Level）从根开始定义起，根为第一层，根的孩子为第二层，依次类推。树中节点的最大层次称为树的深度（Depth）或高度。</li>
+<li>如果该树中节点的子树看成是从左到右有次序的，不能互换的，则称该树为有序树，否则称为无序树。</li>
+</ul>
+<h2 id="二、二叉树"><a href="#二、二叉树" class="headerlink" title="二、二叉树"></a>二、二叉树</h2><h3 id="1、定义：-1"><a href="#1、定义：-1" class="headerlink" title="1、定义："></a>1、定义：</h3><ul>
+<li>二叉树（Binary Tree）是n（n&gt;=0）个节点的有限集合，该集合或者为空集（称为“空二叉树”），或者由一个根节点和两棵互不相交的、分别称为根节点的左子树和右子树的二叉树组成。</li>
+<li>定理：任意一棵树都可以完全等价于一棵二叉树。<h3 id="2、二叉树的特点："><a href="#2、二叉树的特点：" class="headerlink" title="2、二叉树的特点："></a>2、二叉树的特点：</h3></li>
+<li>⒈每个节点最多有两棵子树，所以二叉树中不存在度大于2的节点。注意不是“只有”，而是“最多有”，即可以没有子树或只有一棵子树。</li>
+<li>⒉左子树和右子树有序，不能随意颠倒。</li>
+<li>⒊即使树中某节点只有一棵子树，也要区分它是左子树还是右子树，不能混淆。<h3 id="3、二叉树的基本形态："><a href="#3、二叉树的基本形态：" class="headerlink" title="3、二叉树的基本形态："></a>3、二叉树的基本形态：</h3></li>
+<li>二叉树具有五种基本形态<ul>
+<li>⒈空二叉树</li>
+<li>⒉只有一个根节点</li>
+<li>⒊根节点只有左子树</li>
+<li>⒋根节点只有右子树</li>
+<li>⒌根节点既有左子树又有右子树<h3 id="4、满二叉树："><a href="#4、满二叉树：" class="headerlink" title="4、满二叉树："></a>4、满二叉树：</h3></li>
+</ul>
+</li>
+<li>在一棵二叉树中，如果所有分支节点都存在左子树和右子树，并且所有叶子节点都在同一层上，这样的二叉树称为满二叉树。</li>
+<li>满二叉树的特点有：<ul>
+<li>⒈叶子节点只能出现在最下面一层。出现在其他层就不可能达到平衡。</li>
+<li>⒉非叶子节点的度一定是2。</li>
+<li>⒊在同样深度的二叉树中，满二叉树的节点个数最多，叶子节点个数最多。<h3 id="5、完全二叉树："><a href="#5、完全二叉树：" class="headerlink" title="5、完全二叉树："></a>5、完全二叉树：</h3></li>
+</ul>
+</li>
+<li>对一棵具有n个节点的二叉树按层序编号，如果编号为i（1&lt;=i&lt;=n）的节点与同样深度的满二叉树中编号为i的节点在二叉树中的位置完全相同，则这棵二叉树称为完全二叉树。</li>
+<li>需要注意区分满二叉树与完全二叉树，满二叉树一定是一棵完全二叉树，而完全二叉树不一定是满的。</li>
+<li>判定一棵二叉树是否是完全二叉树需要对该二叉树进行层序编号。</li>
+<li>层序编号：以根节点作为起点，从左至右对每一层的节点进行编号。对该层的所有节点编号完毕后再对下一层的节点进行编号。</li>
+<li>从这里我们也可以得到一些完全二叉树的特点：<ul>
+<li>⒈叶子节点只能出现在最下两层</li>
+<li>⒉最下层的叶子节点一定集中在左部的连续位置</li>
+<li>⒊倒数二层，若有叶子节点，一定都在右部连续位置</li>
+<li>⒋如果节点度为1，则该节点只有左孩子，不存在只有右子树的情况</li>
+<li>⒌同样节点数的二叉树，完全二叉树的深度最小</li>
+</ul>
+</li>
+<li>注意：同样节点数的二叉树，深度最小的二叉树不一定是完全二叉树</li>
+</ul>
+<h2 id="三、二叉树的性质"><a href="#三、二叉树的性质" class="headerlink" title="三、二叉树的性质"></a>三、二叉树的性质</h2><ul>
+<li>关于二叉树，有一些需要理解并记忆的特性，以便我们更好使用它<h3 id="1、性质1："><a href="#1、性质1：" class="headerlink" title="1、性质1："></a>1、性质1：</h3></li>
+<li>在二叉树的第i层上至多有2^(i-1)个节点（i&gt;=1）。<h3 id="2、性质2："><a href="#2、性质2：" class="headerlink" title="2、性质2："></a>2、性质2：</h3></li>
+<li>深度为k的二叉树至多有2^k-1个节点（k&gt;=1）。注意不是2^(k-1)。<h3 id="3、性质3："><a href="#3、性质3：" class="headerlink" title="3、性质3："></a>3、性质3：</h3></li>
+<li>对于任何一棵二叉树T，如果其叶子节点数为n0，度为2的节点数为n2，则n0=n2+1。</li>
+<li>性质3的推导：<pre class="line-numbers language-c"><code class="language-c">二叉树的节点的度只有<span class="token number">3</span>种：<span class="token number">0</span>、<span class="token number">1</span>、<span class="token number">2</span>。我们设其对应的节点数分别为n0、n1、n2，则二叉树的节点总数为：
+Tn<span class="token operator">=</span>n0<span class="token operator">+</span>n1<span class="token operator">+</span>n2
+二叉树的连线数应等于节点个数减<span class="token number">1</span>，即
+Sn<span class="token operator">=</span>Tn<span class="token number">-1</span>
+另一方面，二叉树的连线数应等于<span class="token number">2</span><span class="token operator">*</span>n2<span class="token operator">+</span>n1，即
+Sn<span class="token operator">=</span><span class="token number">2</span><span class="token operator">*</span>n2<span class="token operator">+</span>n1
+我们可得到：
+n0<span class="token operator">+</span>n1<span class="token operator">+</span>n2<span class="token number">-1</span><span class="token operator">=</span><span class="token number">2</span><span class="token operator">*</span>n2<span class="token operator">+</span>n1
+整理可得
+n0<span class="token operator">=</span>n2<span class="token operator">+</span><span class="token number">1</span>
+若事先已知叶子节点个数，使用性质<span class="token number">3</span>可以快速计算出一个二叉树的度为<span class="token number">2</span>的节点个数，进而推出度为<span class="token number">1</span>的节点个数。
+例：假设一个完全二叉树的总节点个数为<span class="token number">699</span>个，则叶子节点有几个？
+答：<span class="token number">350</span>个。（没有n1）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="四、二叉树的存储"><a href="#四、二叉树的存储" class="headerlink" title="四、二叉树的存储"></a>四、二叉树的存储</h2></li>
+<li>二叉树在内存中是无法形象存储的，通常情况下我们可以使用顺序存储和链式存储两种结构来模拟双亲与孩子的逻辑关系从而存储二叉树。<h3 id="1、顺序存储结构"><a href="#1、顺序存储结构" class="headerlink" title="1、顺序存储结构"></a>1、顺序存储结构</h3></li>
+<li>顺序存储结构就是利用一维数组存储二叉树中的节点。将一个完全二叉树按层序编号的方式，可以得到节点编号与该节点的数据的一一对应关系，这样我们就可以使用数组来存储该完全二叉树了。</li>
+<li>对于非完全二叉树，我们需要先将其补全为完全二叉树，再进行存储。后补的节点存储时数据为空（NULL）。考虑到一种极端情况，若有一棵深度为k的右斜树，只有k个节点，但根据存储方式我们需要建立一个2^k-1个存储单元。因此顺序存储一般不常用，仅用于存储完全二叉树。<h3 id="2、链式存储结构"><a href="#2、链式存储结构" class="headerlink" title="2、链式存储结构"></a>2、链式存储结构</h3></li>
+<li>既然顺序存储适用性不强，我们就要考虑链式存储结构。二叉树每个节点最多有两个孩子，所以为它涉及一个数据域和两个指针域。<pre class="line-numbers language-c"><code class="language-c">lchild︱data︱rchild
+其中data是数据域，lchild和rchild都是指针域，分别存放指向左孩子和右孩子的指针。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<p>typedef struct BiTNode<br>{<br>    data_t data;<br>    struct BiTNode <em>lchild,</em>rchild;<br>}BiTNode,*BiTree;</p>
+<pre><code>- 如果需要，我们还可以再增加一个指向其父节点的指针域，这里不再赘述。
+
+## 五、二叉树的遍历
+- 二叉树的遍历（traversing）是指从根节点出发，按照某种次序依次访问二叉树中所有节点，使得每个节点被且仅被访问一次。
+- 二叉树的遍历方式有很多，常用的有前序遍历、中序遍历、后序遍历3种。
+### 1、前序遍历（PreOrderTraverse）
+- 规则：
+    - ⒈若二叉树为空，则不进行操作，返回
+    - ⒉访问根节点
+    - ⒊前序遍历左子树
+    - ⒋前序遍历右子树
+### 2、中序遍历（InOrderTraverse）
+- 规则：
+- ⒈若二叉树为空，则不进行操作，返回
+    - ⒉中序遍历左子树
+    - ⒊访问根节点
+    - ⒋中序遍历右子树
+### 3、后序遍历（PostOrderTraverse）
+- 规则：
+    - ⒈若二叉树为空，则不进行操作，返回
+    - ⒉后序遍历左子树
+    - ⒊后序遍历右子树
+    - ⒋访问根节点
+- 无论是前序遍历、中序遍历还是后序遍历，都使用到了递归的定义方法。
+
+
+- 思考：我们为什么要研究这么多种不同的遍历方法呢？
+    - 答：我们用图形来表现树的结构十分直观和容易理解，但是对于计算机来说，它只能处理循环、分支等问题，也就是说，它只能处理线性问题。以上3种遍历方法都是人为地将二叉树变成某个有意义的线性序列，方便计算机处理。
+```c
+练习1：有一棵二叉树，其前序遍历结果为ABDC，中序遍历结果为BDAC，画出该二叉树。
+练习2：有一棵二叉树，其中序遍历结果为ABCDEFG，后序遍历结果为BDCAFGE，画出该二叉树并求其前序遍历的结果。
+练习3：已知一棵二叉树的前序遍历结果为ABC，后序遍历的结果为CBA，画出该二叉树。
+
+- 由以上三个练习我们可以得出：
+    - ⒈已知前序遍历和中序遍历，可以唯一确定一棵二叉树。
+    - ⒉已知中序遍历和后序遍历，可以唯一确定一棵二叉树。
+    - ⒊但已知前序遍历和后序遍历，无法唯一确定一棵二叉树。</code></pre><h2 id="六、二叉树的建立"><a href="#六、二叉树的建立" class="headerlink" title="六、二叉树的建立"></a>六、二叉树的建立</h2><ul>
+<li>有了遍历方法，我们就可以在遍历过程中来创建一棵二叉树。</li>
+<li>若我们要创建一棵二叉树，首先我们要对这棵二叉树进行扩展，将每个节点都补上一个虚拟的孩子节点，数据为空。这样我们通过遍历这个扩展二叉树得到遍历序列就可以创建这棵二叉树了。<pre class="line-numbers language-c"><code class="language-c">示例：创建练习<span class="token number">1</span>中的二叉树
+⒈首先对这棵二叉树进行扩展，补全其所有节点的孩子节点，数据为空（以#代替）
+⒉得到该扩展二叉树的前序遍历为AB#D##C##
+⒊通过前序遍历的方法，边遍历边创建这棵二叉树
+其实创建二叉树，也是利用了递归的原理，只不过在原来应该打印节点的操作替换为生成节点的操作而已。
+当然我们也可以使用中序遍历和后序遍历来创建二叉树。若这棵二叉树使用中序遍历来创建，则需要的序列为#B#D#A#C#；若使用后序遍历来创建，则需要的序列为###DB##CA。
+<span class="token comment" spellcheck="true">//代码见附录</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="七、二叉树的应用——赫夫曼树与赫夫曼编码"><a href="#七、二叉树的应用——赫夫曼树与赫夫曼编码" class="headerlink" title="七、二叉树的应用——赫夫曼树与赫夫曼编码"></a>七、二叉树的应用——赫夫曼树与赫夫曼编码</h2><h3 id="1、赫夫曼树"><a href="#1、赫夫曼树" class="headerlink" title="1、赫夫曼树"></a>1、赫夫曼树</h3></li>
+<li>赫夫曼（David Huffman，也译为“哈夫曼”），美国数学家，他在1952年发明了赫夫曼树与赫夫曼编码。赫夫曼编码是当代压缩和解压缩技术的基础。</li>
+<li>我们通过一个具体的示例来体会一下什么叫赫夫曼树（Huffman Tree）。<pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//给定一个成绩（0~100），输出所对应的分数段。我们可以通过以下代码来实现：</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token operator">&lt;</span><span class="token number">60</span><span class="token punctuation">)</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"不及格\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token operator">&lt;</span><span class="token number">70</span><span class="token punctuation">)</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"及格\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token operator">&lt;</span><span class="token number">80</span><span class="token punctuation">)</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"中等\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token operator">&lt;</span><span class="token number">90</span><span class="token punctuation">)</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"良\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"优\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+粗略来看没什么问题，但在通常情况下，学生成绩大致都分布在“良”和“中等”的分数段，处于两端的“优”和“不及格”反而很少：
+不及格：<span class="token number">5</span><span class="token operator">%</span>
+及格：<span class="token number">15</span><span class="token operator">%</span>
+中等：<span class="token number">40</span><span class="token operator">%</span>
+良：<span class="token number">30</span><span class="token operator">%</span>
+优：<span class="token number">10</span><span class="token operator">%</span>
+在这种情况下，若采用上面的程序，则判断数量最大的“中等”和“良”分数段时，都需要至少<span class="token number">3</span>次的比较才能得出结果，大大影响了程序的执行效率。
+如果我们改进算法，将比利最高的“中等”或“良”作为首个判断条件，则可大大加快程序的执行效率。
+<span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token operator">&lt;</span><span class="token number">80</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token operator">&lt;</span><span class="token number">70</span><span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token operator">&lt;</span><span class="token number">60</span><span class="token punctuation">)</span>
+          <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"不及格\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">else</span>
+          <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"及格\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">else</span>
+      <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"中等\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">else</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token operator">&lt;</span><span class="token number">90</span><span class="token punctuation">)</span>
+      <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"良\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">else</span>
+      <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"优\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2、赫夫曼树的定义"><a href="#2、赫夫曼树的定义" class="headerlink" title="2、赫夫曼树的定义"></a>2、赫夫曼树的定义</h3></li>
+<li>我们可以将上文中的程序画成二叉树的形式，每个if分支都作为二叉树的两个子树，将概率标记到父节点到子节点的路径上。这样的树叫做带权（Weight）树。</li>
+<li>从树中一个节点到另一个节点之间的边构成了两点之间的路径，路径上的权值之和叫做路径长度。树的路径长度就是从根节点出发到每一个节点的路径长度之和。如果考虑带权的二叉树，节点的带权路径长度等于从该点到根节点的路径长度乘以该点的权值的乘积。带权二叉树的路径长度为所有叶子节点的带权路径长度之和。</li>
+<li>针对同一问题，不同的二叉树画法路径长度也不同，其中最小路径长度的树就叫做赫夫曼树。<br>###3、构造一棵赫夫曼树</li>
+<li>构造一棵赫夫曼树的流程如下：<pre class="line-numbers language-c"><code class="language-c">⒈将所有叶子节点按权值大小有序排列。例如上文的成绩占比，我们可以排列成：
+A5  E10  B15  D30  C40
+⒉取前面两个最小的叶子节点作为兄弟节点，权值小的做左孩子，权值大的做右孩子，它们两个共用一个父节点N1，其父节点的权值为两个叶子节点的权值的和。得到：
+N115  B15  D30  C40
+⒊重复步骤<span class="token number">2</span>，将N1与B作为新的两个子节点，其父节点为N2，权值为<span class="token number">30</span>
+N230  D30  C40
+⒋重复步骤<span class="token number">2</span>，将N2与D作为新的两个子节点，其父节点为N3，权值为<span class="token number">60</span>
+C40  N360
+⒌重复步骤<span class="token number">2</span>，将C与N3作为新的两个子节点，由于这时所有节点都已构造完毕，因此其父节点就是该二叉树的根节点。
+最后得到构造完成的赫夫曼树如图：
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<p>此时该二叉树的带权路径长度为WPL=40<em>1+30</em>2+15<em>3+10</em>4+5*4=205。</p>
+<pre><code>### 4、赫夫曼编码
+- 其实构造赫夫曼树可不是为了解决程序效率低的问题，赫夫曼树的主要作用是用来构造赫夫曼编码，而赫夫曼编码则是为了解决当年远距离通信（主要是电报）的数据传输最优化问题。
+```c
+//例如：若有一个编码规则：
+A 000
+B 001
+C 010
+D 011
+E 100
+F 101
+可以看出是简单的以二进制的方式进行编码。
+若有以下报文：BADCADFEED
+则按照以上编码规则编码后，获得编码为：001000011010000011101100100011
+对方接收到报文编码后，按编码规则3位一分来解码即可。
+事实上，英语中字母的使用频率是不同的，常用字母（如a e i o u等）使用频率特别高，而不常用字母（如j v z等）使用频率就低得多。如果我们能人为减少常见字母的编码长度，则整个报文长度都会缩短，这样既方便传输又节省了存储空间。
+假设上文的编码规则中，各字母出现的额频率如下：
+可以看到，如果我们能缩短字母A和E的编码长度，则我们就可以大大缩短报文长度。这种压缩效果在文本长度很长时效果会更加明显。
+但是我们看到，所有编码都是以二进制（0/1）进行编码的，贸然缩短字母A和E的编码长度很容易引起混淆，若要设计这种长短不等的编码，必须使得任意字符的编码不能是其他字符编码的前缀。
+我们可以使用上文构造赫夫曼树的方法来构造一个赫夫曼树：
+假设在一个报文中，6个字母的出现频率如下：
+A 27%
+B 8%
+C 15%
+D 15%
+E 30%
+F 5%
+则我们可以构造出如下的赫夫曼树：
+
+构造完毕后，若从根节点出发，规定走向左子树的边编码为0，走向右子树的边编码为1，则我们就可以得到每个字母新的编码：
+A 01
+B 1001
+C 101
+D 00
+E 11
+F 1000
+则使用新的编码规则后，对报文BADCADFEED获得新的报文编码如下：
+1001010010101001000111100（新）
+001000011010000011101100100011（旧）
+大概缩短了17%。
+而且我们发现，通过赫夫曼树构造出的赫夫曼编码，不会存在因编码长短不一而混淆的情况。
+现代计算机程序中大部分的压缩文件算法都是基于赫夫曼编码改进而来的。1977年，Lempel-Ziv在对赫夫曼编码进行深度研究后，发表了“顺序数据压缩的一个通用算法（A Universal Algorithm for Sequential Data Compression ）”的论文，论文中描述的算法被后人称为LZ77算法。LZ77算法以及后续的衍生算法是现在一些通行的压缩包模式（ARJ，PKZip，WinZip，LHArc，RAR，GZip，ACE，ZOO，TurboZip，Compress，JAR，7z等）的编码基础算法。</code></pre>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">xing xiao</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://ww042q.coding-pages.com/2020/072040544.html">http://ww042q.coding-pages.com/2020/072040544.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://ww042q.coding-pages.com" target="_blank">xing xiao</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/072040544.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="树与二叉树">
+                        
+                        <span class="card-title">树与二叉树</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、树的定义：1、定义：
+树（Tree）是n（n&gt;=0）个节点的有限集，n=0时称为“空树”。在任意一棵非空树中：
+⒈有且仅有一个特定的称为根（root）的节点。
+⒉当n&gt;1时，其余节点可分为m（m&gt;0）个互不相交的有限集
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/072011349.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Shell编程">
+                        
+                        <span class="card-title">Shell编程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、Shell编程简介
+之前课程中已经介绍过，在操作系统的内核kernel外部有一个Shell层，Shell的作用是保护内核kernel不受损害。同时，Shell接收用户对Linux系统的操作指令并传递给内核，之后由内核执行。
+之前学习过的
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/shell/">
+                        <span class="chip bg-color">shell</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://ww042q.coding-pages.com" target="_blank">Xiao Xing</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">69.8k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/MoreInterests" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1547678825@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1547678825" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1547678825" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

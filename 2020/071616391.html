@@ -233,7 +233,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/MoreInterests" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -290,7 +290,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/MoreInterests" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -322,7 +322,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/35.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -692,9 +692,13 @@
 ​            worker1.phone<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>在定义了结构体变量后，就可以用不同的赋值方法对结构体变量的每个成员赋值。<br>例如：</p>
-<pre><code>strcpy（workerl.name，”zhang San”）；</code></pre><p>​     workerl.age=26；</p>
-<p>​     strcpy（workerl.phone，”1234567”）；</p>
-<p>​     workerl.sex=’m’；</p>
+<pre class="line-numbers language-c"><code class="language-c">     strcpy（workerl<span class="token punctuation">.</span>name，”zhang San”）；
+
+​     workerl<span class="token punctuation">.</span>age<span class="token operator">=</span><span class="token number">26</span>；
+
+​     strcpy（workerl<span class="token punctuation">.</span>phone，"<span class="token number">1234567</span>”）；
+
+​     workerl<span class="token punctuation">.</span>sex<span class="token operator">=</span><span class="token string">'m'</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>除此之外，还可以引用结构体变量成员的地址以及成员中的元素。例如：引用结构体变量成员的首地址&amp;workerl.name；引用结构体变量成员的第二个字符worker1.name[1]；引用结构体变量的首地址&amp;worker1。</p>
 </li>
 </ul>
@@ -702,42 +706,60 @@
 <li><p>与其他类型变量一样，也可以给结构体的每个成员赋初值，这称为结构体的初始化。一种是在定义结构体变量时进行初始化，语法格式如下：<br>struct 结构体名变量名={初始数据表}；</p>
 </li>
 <li><p>另一种是在定义结构体类型时进行结构体变量的初始化。  </p>
-<pre><code>struct结构体名</code></pre><p>​    {<br>​                    成员列表；<br>​    }变量名={初始数据表}；</p>
-</li>
+<pre class="line-numbers language-c"><code class="language-c">  <span class="token keyword">struct</span>结构体名
+
+​    <span class="token punctuation">{</span>
+​            成员列表；
+​    <span class="token punctuation">}</span>变量名<span class="token operator">=</span><span class="token punctuation">{</span>初始数据表<span class="token punctuation">}</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="结构体数组"><a href="#结构体数组" class="headerlink" title="结构体数组"></a>结构体数组</h2></li>
 </ul>
-<h2 id="结构体数组"><a href="#结构体数组" class="headerlink" title="结构体数组"></a>结构体数组</h2><h3 id="1-结构体数组的定义"><a href="#1-结构体数组的定义" class="headerlink" title="1.结构体数组的定义"></a>1.结构体数组的定义</h3><ul>
+<h3 id="1-结构体数组的定义"><a href="#1-结构体数组的定义" class="headerlink" title="1.结构体数组的定义"></a>1.结构体数组的定义</h3><ul>
 <li><p>具有相同结构体类型的结构体变量也可以组成数组，称它们为结构体数组。结构体数组的每一个数组元素都是结构体类型的数据，它们都分别包括各个成员（分量）项。</p>
 </li>
 <li><p>定义结构体数组的方法和定义结构体变量的方法相仿，只需说明其为数组即可。<br>可以采用三种方法：</p>
 <ul>
 <li><p>1.先定义结构体类型，再用它定义结构体数组。  </p>
 <p>结构体数组的定义形式如下：</p>
-<pre><code>struct     结构体名</code></pre><p>​    {    </p>
-<p>​                成员表列</p>
-<p>​    }；</p>
-<p>​            struct 结构体名</p>
+<pre class="line-numbers language-c"><code class="language-c">    <span class="token keyword">struct</span>     结构体名
+
+​    <span class="token punctuation">{</span>    
+
+​                成员表列
+
+​    <span class="token punctuation">}</span>；
+​        <span class="token keyword">struct</span> 结构体名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>2.在定义结构体类型同时定义结构体数组</p>
-<p>结构体数组的定义形式如下：<br>\</p>
-<pre><code>struct 结构体名</code></pre><p>​    {</p>
-<p>​                    成员表列；</p>
-<p>​    }数组名[元素个数]；</p>
+<p>结构体数组的定义形式如下：</p>
+<pre class="line-numbers language-c"><code class="language-c">    <span class="token keyword">struct</span> 结构体名
+
+​    <span class="token punctuation">{</span>
+
+​                    成员表列；
+
+​    <span class="token punctuation">}</span>数组名<span class="token punctuation">[</span>元素个数<span class="token punctuation">]</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>3.直接定义结构体数组</p>
-<p>结构体数组的定义形式如下：<br>\</p>
-<pre><code>struct    //没有结构体名</code></pre><p>​    {</p>
-<p>​        成员表列；<br>​    }数组名[元素个数]；</p>
+<p>结构体数组的定义形式如下：  </p>
+<pre class="line-numbers language-c"><code class="language-c">    <span class="token keyword">struct</span>    <span class="token comment" spellcheck="true">//没有结构体名</span>
+
+​    <span class="token punctuation">{</span>
+
+​        成员表列；
+​    <span class="token punctuation">}</span>数组名<span class="token punctuation">[</span>元素个数<span class="token punctuation">]</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 </li>
 </ul>
 <h3 id="2-结构体数组的初始化"><a href="#2-结构体数组的初始化" class="headerlink" title="2.结构体数组的初始化"></a>2.结构体数组的初始化</h3><ul>
 <li><p>结构体数组在定义的同时也可以进行初始化，并且与结构体变量的初始化规定相同，只能对全局的或静态存储类别的结构体数组初始化。<br>结构体数组初始化的一般形式是：  </p>
-<pre><code>struct    结构体名</code></pre><p>​    {</p>
-<p>​            成员列表；<br>​    }；struct    结构体名    数组名[元素个数]={初始数据表}；</p>
-</li>
-</ul>
-<h2 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h2><ul>
+<pre class="line-numbers language-c"><code class="language-c">    <span class="token keyword">struct</span>    结构体名
+
+​    <span class="token punctuation">{</span>
+
+​            成员列表；
+​    <span class="token punctuation">}</span>；<span class="token keyword">struct</span>    结构体名    数组名<span class="token punctuation">[</span>元素个数<span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span>初始数据表<span class="token punctuation">}</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h2></li>
 <li><p>可以设定一个指钍变量用来指向一个结构体变量。此时该指针变量的值是结构体变量的起始地址，该指针称为结构体指针。</p>
 </li>
 <li><p>结构体指针与前面介绍的各种指针变量在特性和方法上是相同的。与前述相同，在程序中结构体指针也是通过访问目标运算“ * ”访问它的对象。结构体指针在程序中的一般定义形式为：  </p>
@@ -746,11 +768,12 @@
 </ul>
 <h2 id="共用体"><a href="#共用体" class="headerlink" title="共用体"></a>共用体</h2><h3 id="1-共用体的概念"><a href="#1-共用体的概念" class="headerlink" title="1.共用体的概念"></a>1.共用体的概念</h3><ul>
 <li><p>在C语言中，不同数据类型的数据可以使用共同的存储区域，这种数据构造类型称为共用体，简称共用，又称联合体。共用体在定义、说明和使用形式上与结构体相似。两者本质上的不同仅在于使用内存的方式上。<br>定义一个共用体类型的一般形式为：  </p>
-<pre><code>union共用体名</code></pre><p>​    {</p>
-<p>​            成员表列；<br>​            }；</p>
-</li>
-</ul>
-<h2 id="typedef"><a href="#typedef" class="headerlink" title="typedef"></a>typedef</h2><ul>
+<pre><code>    union共用体名
+
+​    {
+
+​            成员表列；
+​            }；</code></pre><h2 id="typedef"><a href="#typedef" class="headerlink" title="typedef"></a>typedef</h2></li>
 <li><p>在C语言中，允许使用关键字typedef定义新的数据类型</p>
 <p>其语法如下：  </p>
 <p>typedef    〈已有数据类型&gt;    〈新数据类型〉；</p>
@@ -789,18 +812,33 @@
 <p>target:dependency_files  </p>
 <p>&lt; TAB &gt;command  </p>
 <p>例子：  </p>
-<p>hello.o:hello.c hello.h  </p>
-<p>gcc-chello.c-o hello.o</p>
+<pre class="line-numbers language-c"><code class="language-c">hello<span class="token punctuation">.</span>o<span class="token punctuation">:</span>hello<span class="token punctuation">.</span>c hello<span class="token punctuation">.</span>h  
+
+gcc<span class="token operator">-</span>chello<span class="token punctuation">.</span>c<span class="token operator">-</span>o hello<span class="token punctuation">.</span>o<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>一个复杂一些的例子</p>
-<p>sunq:kang.o yul.o </p>
-<p>​        gcc kang.o yul.o-o sunq </p>
-<p>kang.o:kang.c kang.h </p>
-<p>​        gcc-Wall-O-g-c kang.c-o kang.o </p>
-<p>yul.o:yul.c </p>
-<p>​        gcc-Wall-O-g-cyul.c-o yul.o</p>
-<p>注释：-Wa11：表示允许发出gcc所有有用的报警信息.<br>\</p>
-<pre><code>        -c：只是编译不链接，生成目标文件”.o”  </code></pre><p>\</p>
-<pre><code>        -ofile：表示把输出文件输出到file里</code></pre><p>关于更多的用man工具</p>
+<pre class="line-numbers language-c"><code class="language-c">sunq<span class="token punctuation">:</span>kang<span class="token punctuation">.</span>o yul<span class="token punctuation">.</span>o 
+
+​        gcc kang<span class="token punctuation">.</span>o yul<span class="token punctuation">.</span>o<span class="token operator">-</span>o sunq 
+
+kang<span class="token punctuation">.</span>o<span class="token punctuation">:</span>kang<span class="token punctuation">.</span>c kang<span class="token punctuation">.</span>h 
+
+​        gcc<span class="token operator">-</span>Wall<span class="token operator">-</span>O<span class="token operator">-</span>g<span class="token operator">-</span>c kang<span class="token punctuation">.</span>c<span class="token operator">-</span>o kang<span class="token punctuation">.</span>o 
+
+yul<span class="token punctuation">.</span>o<span class="token punctuation">:</span>yul<span class="token punctuation">.</span>c 
+
+​        gcc<span class="token operator">-</span>Wall<span class="token operator">-</span>O<span class="token operator">-</span>g<span class="token operator">-</span>cyul<span class="token punctuation">.</span>c<span class="token operator">-</span>o yul<span class="token punctuation">.</span>o<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>注释：</p>
+<ul>
+<li><p>-Wa11：表示允许发出gcc所有有用的报警信息.  </p>
+</li>
+<li><p>-c：只是编译不链接，生成目标文件”.o”  </p>
+</li>
+<li><p>-ofile：表示把输出文件输出到file里</p>
+</li>
+<li><p>关于更多的用man工具</p>
+</li>
+</ul>
 </li>
 </ul>
 <h3 id="2-创建和使用变量"><a href="#2-创建和使用变量" class="headerlink" title="2.创建和使用变量"></a>2.创建和使用变量</h3><ul>
@@ -813,20 +851,29 @@
 <p>4.需要查找源代码的目录5.你需要输出信息的目录  </p>
 <p>6.你想做的其它事情。  </p>
 <ul>
-<li><p>刚才的例子<br>OBJS=kang.o yul.o  </p>
-<p>CC=gcc  </p>
-<p>CFLAGS=-Wall-O-g  </p>
-<p>sunq：$（OBJS）  </p>
-<p>S（CC）S（OBJS）-o sunq  </p>
-<p>kang.o:kang.c kang.h’  </p>
-<p>S（CC）S（CFLAGS）-ckang.c-o kang.o  </p>
-<p>yul.o:yul.c yul.h  </p>
-<p>$（CC）S（CFLAGS）-c yul.c-o yul.o</p>
-</li>
-</ul>
-</li>
-</ul>
+<li><p>刚才的例子</p>
+<pre class="line-numbers language-c"><code class="language-c">OBJS<span class="token operator">=</span>kang<span class="token punctuation">.</span>o yul<span class="token punctuation">.</span>o  
+
+CC<span class="token operator">=</span>gcc  
+
+CFLAGS<span class="token operator">=</span><span class="token operator">-</span>Wall<span class="token operator">-</span>O<span class="token operator">-</span>g  
+
+sunq：$（OBJS）  
+
+S（CC）S（OBJS）<span class="token operator">-</span>o sunq  
+
+kang<span class="token punctuation">.</span>o<span class="token punctuation">:</span>kang<span class="token punctuation">.</span>c kang<span class="token punctuation">.</span>h'  
+
+S（CC）S（CFLAGS）<span class="token operator">-</span>ckang<span class="token punctuation">.</span>c<span class="token operator">-</span>o kang<span class="token punctuation">.</span>o  
+
+yul<span class="token punctuation">.</span>o<span class="token punctuation">:</span>yul<span class="token punctuation">.</span>c yul<span class="token punctuation">.</span>h  
+
+$（CC）S（CFLAGS）<span class="token operator">-</span>c yul<span class="token punctuation">.</span>c<span class="token operator">-</span>o yul<span class="token punctuation">.</span>o<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P1594901447956.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="3-Make使用"><a href="#3-Make使用" class="headerlink" title="3.Make使用"></a>3.Make使用</h3><ul>
 <li>直接运行make</li>
 <li>选项<ul>
@@ -1090,7 +1137,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="GCC、GDB与Make工程管理器">
+                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="GCC、GDB与Make工程管理器">
                         
                         <span class="card-title">GCC、GDB与Make工程管理器</span>
                     </div>
@@ -1140,7 +1187,7 @@ GNU的英文全称是”GNU is Not Unix”，又称革奴计划，是由Richard 
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Linux-shell脚本">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Linux-shell脚本">
                         
                         <span class="card-title">Linux-shell脚本</span>
                     </div>
@@ -1337,7 +1384,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">53.4k</span>&nbsp;字
+                class="white-color">69.8k</span>&nbsp;字
             
             
             
