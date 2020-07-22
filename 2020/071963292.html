@@ -306,19 +306,6 @@
 </header>
 
     
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
-
 
 
 
@@ -410,16 +397,8 @@
         display: block;
     }
 
-    .toc-fixed .toc-link::before{
-        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
-    }
-
     #toc-content .is-active-link {
         color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
     }
 
     #floating-toc-btn {
@@ -491,18 +470,8 @@
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
-                </div>
-                
 
                 
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
@@ -919,7 +888,7 @@ Shell在运行时需要一定的配置文件才能正确有效的执行。Shell�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">xing xiao</a>
+                    <a href="/about" rel="external nofollow noreferrer">xing xiao</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -942,7 +911,7 @@ Shell在运行时需要一定的配置文件才能正确有效的执行。Shell�
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="http://ww042q.coding-pages.com" target="_blank">xing xiao</a>
+                    <a href="/about" target="_blank">xing xiao</a>
                     !
                 </span>
             </div>
@@ -1374,7 +1343,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="http://ww042q.coding-pages.com" target="_blank">Xiao Xing</a>
+            <a href="/about" target="_blank">Xiao Xing</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>

@@ -339,7 +339,8 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/2.jpg)');
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
 
@@ -360,20 +361,20 @@
                 
                 
                 
-                <a href="/categories/Linux/" title="Linux: 9">
+                <a href="/categories/%E7%BC%96%E7%A8%8B/" title="编程: 29">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">Linux
-                        <span class="tag-length">9</span>
+                            style="background-color: #F9EBEA;">编程
+                        <span class="tag-length">29</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E7%BC%96%E7%A8%8B/" title="编程: 29">
+                <a href="/categories/Linux/" title="Linux: 9">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">编程
-                        <span class="tag-length">29</span>
+                            style="background-color: #F5EEF8;">Linux
+                        <span class="tag-length">9</span>
                     </span>
                 </a>
                 
@@ -543,7 +544,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="http://ww042q.coding-pages.com" target="_blank">Xiao Xing</a>
+            <a href="/about" target="_blank">Xiao Xing</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>

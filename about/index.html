@@ -346,7 +346,8 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/2.jpg)');
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
 
@@ -592,7 +593,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Linux","value":9},{"name":"编程","value":29},{"name":"网站搭建","value":3},{"name":"仓库","value":1},{"name":"面试","value":2},{"name":"教程","value":1},{"name":"美文","value":1}],
+                data: [{"name":"编程","value":29},{"name":"Linux","value":9},{"name":"网站搭建","value":3},{"name":"仓库","value":1},{"name":"面试","value":2},{"name":"教程","value":1},{"name":"美文","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -616,7 +617,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["Java","C","hexo","shell","blog","Makefile","IO流","github","Git","命令"]
+                data: ["Java","C","hexo","shell","blog","IO流","github","Git","Makefile","命令"]
             }
         ],
         yAxis: [
@@ -799,17 +800,11 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/Makefile/">
-                <span class="chip center-align waves-effect waves-light chip-default">Makefile</span>
-            </a>
-            
             
             
             <a href="/tags/IO%E6%B5%81/">
                 <span class="chip center-align waves-effect waves-light chip-default">IO流</span>
             </a>
-            
-            
             
             
             
@@ -827,6 +822,12 @@
             
             <a href="/tags/Git/">
                 <span class="chip center-align waves-effect waves-light chip-default">Git</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Makefile/">
+                <span class="chip center-align waves-effect waves-light chip-default">Makefile</span>
             </a>
             
             
@@ -932,7 +933,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="http://ww042q.coding-pages.com" target="_blank">Xiao Xing</a>
+            <a href="/about" target="_blank">Xiao Xing</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>

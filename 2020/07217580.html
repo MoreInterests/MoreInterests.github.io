@@ -306,19 +306,6 @@
 </header>
 
     
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
-
 
 
 
@@ -410,16 +397,8 @@
         display: block;
     }
 
-    .toc-fixed .toc-link::before{
-        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
-    }
-
     #toc-content .is-active-link {
         color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
     }
 
     #floating-toc-btn {
@@ -491,18 +470,8 @@
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
-                </div>
-                
 
                 
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
@@ -553,32 +522,47 @@ fp<span class="token operator">-></span>_IO_buf_end – fp<span class="token ope
 fgets <span class="token operator">/</span> fputs
 fread <span class="token operator">/</span> fwrite<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="6-标准I-O-–-刷新流"><a href="#6-标准I-O-–-刷新流" class="headerlink" title="6.标准I/O – 刷新流"></a>6.标准I/O – 刷新流</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token keyword">int</span> <span class="token function">fflush</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p>成功时返回0； 出错时返回EOF</p>
-</li>
-<li><p>将流缓冲区中的数据写入实际的文件</p>
-</li>
-<li><p>Linux下只能刷新输出缓冲区</p>
-<pre><code>### 7.定位流 – ftell/fseek/rewind
-```c
-#include &lt;stdio.h&gt;
-long ftell(FILE *stream);
-long fseek(FILE *stream, long offset, int whence);
-void rewind(FILE *stream);
-</code></pre></li>
-</ul>
-<p>Ø ftell() 成功时返回流的当前读写位置， 出错时返回EOF<br>Ø fseek()定位一个流， 成功时返回0， 出错时返回EOF<br>Ø whence参数： SEEK_SET/SEEK_CUR/SEEK_END<br>Ø offset参数： 偏移量， 可正可负<br>Ø rewind()将流定位到文件开始位置<br>Ø 读写流时， 当前读写位置自动后移</p>
-<p>示例一(在文件末尾追加字符’t’)<br>FILE *fp = fopen(“test.txt”, “r+”);<br>fseek(fp, 0, SEEK_END);<br>fputc(‘t’, fp);</p>
-<p>示例二(获取文件长度)<br>FILE *fp;<br>if ((fp = fopen(“test.txt”, “r+”)) == NULL) {<br>perror(“fopen”);<br>return -1;<br>} fs<br>eek(fp, 0, SEEK_END);<br>printf(“length is %d\n”, ftell(fp));</p>
-<pre><code>### 8.标准I/O – 判断流是否出错和结束
-```c
-#include &lt;stdio.h&gt;
-int ferror(FILE *stream);
-int feof(FILE *stream);
+<span class="token keyword">int</span> <span class="token function">fflush</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-Øferror()返回1表示流出错； 否则返回0
-Øfeof()返回1表示文件已到末尾； 否则返回0</code></pre><h3 id="9-标准I-O-–-格式化输出"><a href="#9-标准I-O-–-格式化输出" class="headerlink" title="9.标准I/O – 格式化输出"></a>9.标准I/O – 格式化输出</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+成功时返回<span class="token number">0</span>； 出错时返回<span class="token constant">EOF</span>
+将流缓冲区中的数据写入实际的文件
+Linux下只能刷新输出缓冲区<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h3 id="7-定位流-–-ftell-fseek-rewind"><a href="#7-定位流-–-ftell-fseek-rewind" class="headerlink" title="7.定位流 – ftell/fseek/rewind"></a>7.定位流 – ftell/fseek/rewind</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">long</span> <span class="token function">ftell</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>stream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">long</span> <span class="token function">fseek</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>stream<span class="token punctuation">,</span> <span class="token keyword">long</span> offset<span class="token punctuation">,</span> <span class="token keyword">int</span> whence<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">rewind</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>stream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Ø <span class="token function">ftell</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 成功时返回流的当前读写位置， 出错时返回<span class="token constant">EOF</span>
+Ø <span class="token function">fseek</span><span class="token punctuation">(</span><span class="token punctuation">)</span>定位一个流， 成功时返回<span class="token number">0</span>， 出错时返回<span class="token constant">EOF</span>
+Ø whence参数： SEEK_SET<span class="token operator">/</span>SEEK_CUR<span class="token operator">/</span>SEEK_END
+Ø offset参数： 偏移量， 可正可负
+Ø <span class="token function">rewind</span><span class="token punctuation">(</span><span class="token punctuation">)</span>将流定位到文件开始位置
+Ø 读写流时， 当前读写位置自动后移
+
+
+示例一<span class="token punctuation">(</span>在文件末尾追加字符’t’<span class="token punctuation">)</span>
+FILE <span class="token operator">*</span>fp <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span>“test<span class="token punctuation">.</span>txt”<span class="token punctuation">,</span> “r<span class="token operator">+</span>”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fseek</span><span class="token punctuation">(</span>fp<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> SEEK_END<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fputc</span><span class="token punctuation">(</span>‘t’<span class="token punctuation">,</span> fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+示例二<span class="token punctuation">(</span>获取文件长度<span class="token punctuation">)</span>
+FILE <span class="token operator">*</span>fp<span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>fp <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span>“test<span class="token punctuation">.</span>txt”<span class="token punctuation">,</span> “r<span class="token operator">+</span>”<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token function">perror</span><span class="token punctuation">(</span>“fopen”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> fs
+<span class="token function">eek</span><span class="token punctuation">(</span>fp<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> SEEK_END<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">printf</span><span class="token punctuation">(</span>“length is <span class="token operator">%</span>d\n”<span class="token punctuation">,</span> <span class="token function">ftell</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="8-标准I-O-–-判断流是否出错和结束"><a href="#8-标准I-O-–-判断流是否出错和结束" class="headerlink" title="8.标准I/O – 判断流是否出错和结束"></a>8.标准I/O – 判断流是否出错和结束</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">ferror</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>stream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">feof</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>stream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Ø<span class="token function">ferror</span><span class="token punctuation">(</span><span class="token punctuation">)</span>返回<span class="token number">1</span>表示流出错； 否则返回<span class="token number">0</span>
+Ø<span class="token function">feof</span><span class="token punctuation">(</span><span class="token punctuation">)</span>返回<span class="token number">1</span>表示文件已到末尾； 否则返回<span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="9-标准I-O-–-格式化输出"><a href="#9-标准I-O-–-格式化输出" class="headerlink" title="9.标准I/O – 格式化输出"></a>9.标准I/O – 格式化输出</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">printf</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>fmt<span class="token punctuation">,</span> …<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">fprintf</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>stream<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>fmt<span class="token punctuation">,</span> …<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">sprintf</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>fmt<span class="token punctuation">,</span> …<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -926,7 +910,7 @@ bye<span class="token operator">!</span><span aria-hidden="true" class="line-num
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com" rel="external nofollow noreferrer">xing xiao</a>
+                    <a href="/about" rel="external nofollow noreferrer">xing xiao</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -949,7 +933,7 @@ bye<span class="token operator">!</span><span aria-hidden="true" class="line-num
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="http://ww042q.coding-pages.com" target="_blank">xing xiao</a>
+                    <a href="/about" target="_blank">xing xiao</a>
                     !
                 </span>
             </div>
@@ -1390,7 +1374,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="http://ww042q.coding-pages.com" target="_blank">Xiao Xing</a>
+            <a href="/about" target="_blank">Xiao Xing</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>

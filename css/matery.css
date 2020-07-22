@@ -112,18 +112,12 @@ blockquote {
 }
 
 pre {
-    /*padding: 2.5rem 1.5rem 1.5rem 1.5rem !important;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem !important;
     margin: 1rem 0 !important;
     background: #272822;
     overflow: auto;
     border-radius: 0.35rem;
-    tab-size: 4;*/
-	padding: 1.5rem 1.5rem 1.5rem 3.3rem !important;
-	margin: 1rem 0 !important;
-	background: #272822;
-	overflow: auto;
-	border-radius: 0.35rem;
-	tab-size: 4;
+    tab-size: 4;
 }
 
 .code-area::after {
@@ -144,7 +138,7 @@ code {
     padding: 1px 5px;
     top: 13px !important;
     font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
-    /*font-size: 0.91rem;*/
+    font-size: 0.91rem;
     color: #e96900;
     background-color: #f8f8f8;
     border-radius: 2px;
@@ -218,6 +212,22 @@ pre[class*="language-"] {
     white-space: pre-wrap !important;
 }
 
+/* 键盘 kbd 标签样式 */
+kbd {
+    margin: 0 3px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 2px 1px 0 rgba(255, 255, 255, 0.6) inset;
+    font-family: 'Menlo';
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: #f8f8f8;
+    color: #34495e;
+    line-height: 1.8rem;
+    white-space: nowrap;
+}
+
 b,
 strong {
     font-weight: bold;
@@ -255,9 +265,9 @@ mark {
     margin-bottom: 0;
 }
 
-/*.bg-color {
+.bg-color {
     background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
-}*/
+}
 
 .text-color {
     color: #0f9d58 !important;
@@ -1157,12 +1167,15 @@ article .article-tags .chip {
 }
 
 #artDetail .reprint {
-    margin: 15px 0 5px 0;
-    margin-bottom: 0.4rem;
+    margin: 15px 0 0.4rem;
     padding: 0.5rem 0.8rem;
     border: 1px solid #eee;
     line-height: 2;
     transition: box-shadow 0.3s ease-in-out
+}
+
+#artDetail .reprint-info {
+    word-break: break-word;
 }
 
 #artDetail .reprint:hover {

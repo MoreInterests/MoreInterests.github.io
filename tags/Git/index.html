@@ -339,7 +339,8 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/2.jpg)');
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
 
@@ -359,11 +360,11 @@
             <div class="tag-chips">
                 
                 
-                <a href="/tags/Makefile/" title="Makefile: 1">
+                <a href="/tags/C/" title="C: 5">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Makefile" style="background-color: #F9EBEA;">Makefile
-                        <span class="tag-length">1</span>
+                            data-tagname="C" style="background-color: #F9EBEA;">C
+                        <span class="tag-length">5</span>
                     </span>
                 </a>
                 
@@ -377,19 +378,10 @@
                 </a>
                 
                 
-                <a href="/tags/Java/" title="Java: 30">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Java" style="background-color: #D5F5E3;">Java
-                        <span class="tag-length">30</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/hexo/" title="hexo: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="hexo" style="background-color: #E8F8F5;">hexo
+                            data-tagname="hexo" style="background-color: #D5F5E3;">hexo
                         <span class="tag-length">3</span>
                     </span>
                 </a>
@@ -398,7 +390,7 @@
                 <a href="/tags/github/" title="github: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="github" style="background-color: #FEF9E7;">github
+                            data-tagname="github" style="background-color: #E8F8F5;">github
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -407,17 +399,26 @@
                 <a href="/tags/Git/" title="Git: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="Git" style="background-color: #F8F9F9;">Git
+                            data-tagname="Git" style="background-color: #FEF9E7;">Git
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/C/" title="C: 5">
+                <a href="/tags/Makefile/" title="Makefile: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="C" style="background-color: #82E0AA;">C
-                        <span class="tag-length">5</span>
+                            data-tagname="Makefile" style="background-color: #F8F9F9;">Makefile
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Java/" title="Java: 30">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Java" style="background-color: #82E0AA;">Java
+                        <span class="tag-length">30</span>
                     </span>
                 </a>
                 
@@ -521,7 +522,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="http://ww042q.coding-pages.com" target="_blank">Xiao Xing</a>
+            <a href="/about" target="_blank">Xiao Xing</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
