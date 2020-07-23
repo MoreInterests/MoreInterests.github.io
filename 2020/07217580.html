@@ -478,12 +478,13 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="一、标准I-O"><a href="#一、标准I-O" class="headerlink" title="一、标准I/O"></a>一、标准I/O</h2><h3 id="1-标准I-O-介绍"><a href="#1-标准I-O-介绍" class="headerlink" title="1.标准I/O - 介绍"></a>1.标准I/O - 介绍</h3><ul>
-<li><p>标准IO提供了两方面的封装：</p>
-<ul>
+<li>标准IO提供了两方面的封装：<ul>
 <li>1）操作对象 – FILE*: 封装了不同OS对文件的实现，</li>
-<li>2）封装了缓存支持和优化。<h3 id="2-标准I-O-流和FILE对象"><a href="#2-标准I-O-流和FILE对象" class="headerlink" title="2.标准I/O - 流和FILE对象"></a>2.标准I/O - 流和FILE对象</h3><h4 id="1-流的概念"><a href="#1-流的概念" class="headerlink" title="1.流的概念"></a>1.流的概念</h4></li>
+<li>2）封装了缓存支持和优化。<h3 id="2-标准I-O-流和FILE对象"><a href="#2-标准I-O-流和FILE对象" class="headerlink" title="2.标准I/O - 流和FILE对象"></a>2.标准I/O - 流和FILE对象</h3></li>
 </ul>
 </li>
+</ul>
+<h4 id="1-流的概念"><a href="#1-流的概念" class="headerlink" title="1.流的概念"></a>1.流的概念</h4><ul>
 <li><p>在C中引入了流(stream)的概念。它将数据的输入输出看作是数据的流入和流出，这样不管是磁盘文件或者是物理设备(打印机、显示器、键盘等),都可看作一种流的源和目的，视他们为同一种东西，而不管其具体的物理结构，即对他们的操作，就是数据的流入和流出。这种把数据的输入输出操作对象，抽象化为一种流，而不管它的具体结构的方法很有利于编程，而涉及流的输出操作函数可用于各种对象，与其具体的实体无关，即具有通用性。</p>
 </li>
 <li><p>在C中流可分为两大类，即文本流(text stream)和二进制流(binary stream)。</p>
@@ -518,28 +519,28 @@ fp<span class="token operator">-></span>_IO_buf_end – fp<span class="token ope
 <li><p>在这种情况下，当在输入和输出中遇到换行符时，标准I/O 库执行I/O系统调用操作。当流涉及一个终端时（例如标准输入和标准输出），使用行缓冲区。因为标准I/O 库收集的每行的缓冲区长度是固定的，只要填满了缓冲区，即使还没有遇到换行符也将执行I/O 系统调用操作。默认行缓冲区大小为1024 字节。</p>
 <h4 id="3）无缓冲区："><a href="#3）无缓冲区：" class="headerlink" title="3）无缓冲区："></a>3）无缓冲区：</h4></li>
 <li><p>标准I/O 库不对字符进行缓存。如果用标准I/O 函数写若干字符到不带缓冲区的流中，则相当于用write 系统调用函数将这些字符写至相关联的打开文件。标准出错流stderr 通常是不带缓冲区的，这使得出错信息能够尽快地显示出来<br><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P0721-1.jpg" alt=""><br><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P0721-2.jpg" alt=""></p>
-<h3 id="5-标准I-O-–-读写"><a href="#5-标准I-O-–-读写" class="headerlink" title="5.标准I/O – 读写"></a>5.标准I/O – 读写</h3><pre class="line-numbers language-c"><code class="language-c">fgetc <span class="token operator">/</span> fputc
+<h3 id="5-标准I-O-–-读写"><a href="#5-标准I-O-–-读写" class="headerlink" title="5.标准I/O – 读写"></a>5.标准I/O – 读写</h3></li>
+</ul>
+<pre class="line-numbers language-c"><code class="language-c">fgetc <span class="token operator">/</span> fputc
 fgets <span class="token operator">/</span> fputs
 fread <span class="token operator">/</span> fwrite<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="6-标准I-O-–-刷新流"><a href="#6-标准I-O-–-刷新流" class="headerlink" title="6.标准I/O – 刷新流"></a>6.标准I/O – 刷新流</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">fflush</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-成功时返回<span class="token number">0</span>； 出错时返回<span class="token constant">EOF</span>
-将流缓冲区中的数据写入实际的文件
-Linux下只能刷新输出缓冲区<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
+ 成功时返回<span class="token number">0</span>； 出错时返回<span class="token constant">EOF</span>
+ 将流缓冲区中的数据写入实际的文件
+ Linux下只能刷新输出缓冲区<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="7-定位流-–-ftell-fseek-rewind"><a href="#7-定位流-–-ftell-fseek-rewind" class="headerlink" title="7.定位流 – ftell/fseek/rewind"></a>7.定位流 – ftell/fseek/rewind</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">long</span> <span class="token function">ftell</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>stream<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">long</span> <span class="token function">fseek</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>stream<span class="token punctuation">,</span> <span class="token keyword">long</span> offset<span class="token punctuation">,</span> <span class="token keyword">int</span> whence<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">void</span> <span class="token function">rewind</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>stream<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-Ø <span class="token function">ftell</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 成功时返回流的当前读写位置， 出错时返回<span class="token constant">EOF</span>
-Ø <span class="token function">fseek</span><span class="token punctuation">(</span><span class="token punctuation">)</span>定位一个流， 成功时返回<span class="token number">0</span>， 出错时返回<span class="token constant">EOF</span>
-Ø whence参数： SEEK_SET<span class="token operator">/</span>SEEK_CUR<span class="token operator">/</span>SEEK_END
-Ø offset参数： 偏移量， 可正可负
-Ø <span class="token function">rewind</span><span class="token punctuation">(</span><span class="token punctuation">)</span>将流定位到文件开始位置
-Ø 读写流时， 当前读写位置自动后移
+ <span class="token function">ftell</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 成功时返回流的当前读写位置， 出错时返回<span class="token constant">EOF</span>
+ <span class="token function">fseek</span><span class="token punctuation">(</span><span class="token punctuation">)</span>定位一个流， 成功时返回<span class="token number">0</span>， 出错时返回<span class="token constant">EOF</span>
+ whence参数： SEEK_SET<span class="token operator">/</span>SEEK_CUR<span class="token operator">/</span>SEEK_END
+ offset参数： 偏移量， 可正可负
+ <span class="token function">rewind</span><span class="token punctuation">(</span><span class="token punctuation">)</span>将流定位到文件开始位置
+ 读写流时， 当前读写位置自动后移
 
 
 示例一<span class="token punctuation">(</span>在文件末尾追加字符’t’<span class="token punctuation">)</span>
@@ -560,15 +561,15 @@ FILE <span class="token operator">*</span>fp<span class="token punctuation">;</s
 <span class="token keyword">int</span> <span class="token function">ferror</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>stream<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">feof</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>stream<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-Ø<span class="token function">ferror</span><span class="token punctuation">(</span><span class="token punctuation">)</span>返回<span class="token number">1</span>表示流出错； 否则返回<span class="token number">0</span>
-Ø<span class="token function">feof</span><span class="token punctuation">(</span><span class="token punctuation">)</span>返回<span class="token number">1</span>表示文件已到末尾； 否则返回<span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">ferror</span><span class="token punctuation">(</span><span class="token punctuation">)</span>返回<span class="token number">1</span>表示流出错； 否则返回<span class="token number">0</span>
+<span class="token function">feof</span><span class="token punctuation">(</span><span class="token punctuation">)</span>返回<span class="token number">1</span>表示文件已到末尾； 否则返回<span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="9-标准I-O-–-格式化输出"><a href="#9-标准I-O-–-格式化输出" class="headerlink" title="9.标准I/O – 格式化输出"></a>9.标准I/O – 格式化输出</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">printf</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>fmt<span class="token punctuation">,</span> …<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">fprintf</span><span class="token punctuation">(</span>FILE <span class="token operator">*</span>stream<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>fmt<span class="token punctuation">,</span> …<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">sprintf</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>fmt<span class="token punctuation">,</span> …<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-Ø成功时返回输出的字符个数； 出错时返回<span class="token constant">EOF</span>
-Ø使用起来很方便， 强烈推荐！
+成功时返回输出的字符个数； 出错时返回<span class="token constant">EOF</span>
+使用起来很方便， 强烈推荐！
 
 以指定格式 “年<span class="token operator">-</span>月<span class="token operator">-</span>日” 分别写入文件和缓冲区
 <span class="token keyword">int</span> year<span class="token punctuation">,</span> month<span class="token punctuation">,</span> date<span class="token punctuation">;</span>
@@ -597,10 +598,10 @@ fp <span class="token operator">=</span> <span class="token function">fopen</spa
 <span class="token keyword">int</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>path<span class="token punctuation">,</span> <span class="token keyword">int</span> oflag<span class="token punctuation">,</span> …<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 
-Ø 成功时返回文件描述符； 出错时返回<span class="token constant">EOF</span>
-Ø 打开文件时使用两个参数
-Ø 创建文件时第三个参数指定新文件的权限
-Ø 只能打开设备文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ 成功时返回文件描述符； 出错时返回<span class="token constant">EOF</span>
+ 打开文件时使用两个参数
+ 创建文件时第三个参数指定新文件的权限
+ 只能打开设备文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P0721-3.jpg" alt=""></p>
 <ul>
 <li>文件I/O – open – 示例1<pre class="line-numbers language-c"><code class="language-c">以只写方式打开文件<span class="token number">1</span><span class="token punctuation">.</span>txt。 如果文件不存在则创建， 如果
@@ -622,88 +623,90 @@ fp <span class="token operator">=</span> <span class="token function">fopen</spa
 <span class="token function">perror</span><span class="token punctuation">(</span>“other error”<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-文件I-O-–-close"><a href="#4-文件I-O-–-close" class="headerlink" title="4.文件I/O – close"></a>4.文件I/O – close</h3><pre class="line-numbers language-c"><code class="language-c">close函数用来关闭一个打开的文件<span class="token punctuation">:</span>
+<h3 id="4-文件I-O-–-close"><a href="#4-文件I-O-–-close" class="headerlink" title="4.文件I/O – close"></a>4.文件I/O – close</h3></li>
+</ul>
+<pre class="line-numbers language-c"><code class="language-c">close函数用来关闭一个打开的文件<span class="token punctuation">:</span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 <span class="token keyword">int</span> <span class="token function">close</span><span class="token punctuation">(</span><span class="token keyword">int</span> fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+ 成功时返回<span class="token number">0</span>； 出错时返回<span class="token constant">EOF</span>
+ 程序结束时自动关闭所有打开的文件
+ 文件关闭后， 文件描述符不再代表文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-文件I-O-–-read"><a href="#5-文件I-O-–-read" class="headerlink" title="5.文件I/O – read"></a>5.文件I/O – read</h3><ul>
+<li>read函数用来从文件中读取数据:<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+ssize_t <span class="token function">read</span><span class="token punctuation">(</span><span class="token keyword">int</span> fd<span class="token punctuation">,</span> <span class="token keyword">void</span> <span class="token operator">*</span>buf<span class="token punctuation">,</span> size_t count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
-<p>Ø 成功时返回0； 出错时返回EOF<br>Ø 程序结束时自动关闭所有打开的文件<br>Ø 文件关闭后， 文件描述符不再代表文件</p>
-<pre><code>### 5.文件I/O – read
-- read函数用来从文件中读取数据:
+<p> 成功时返回实际读取的字节数； 出错时返回EOF<br> 读到文件末尾时返回0<br> buf是接收数据的缓冲区<br> count不应超过buf大小</p>
+<pre><code>- 文件I/O – read – 示例
 ```c
-#include &lt;unistd.h&gt;
-ssize_t read(int fd, void *buf, size_t count);
-
-
-Ø 成功时返回实际读取的字节数； 出错时返回EOF
-Ø 读到文件末尾时返回0
-Ø buf是接收数据的缓冲区
-Ø count不应超过buf大小</code></pre><ul>
-<li>文件I/O – read – 示例<pre class="line-numbers language-c"><code class="language-c">从指定的文件<span class="token punctuation">(</span>文本文件<span class="token punctuation">)</span>中读取内容并统计大小
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">int</span> fd<span class="token punctuation">,</span> n<span class="token punctuation">,</span> total <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token function">printf</span><span class="token punctuation">(</span>“Usage <span class="token punctuation">:</span> <span class="token operator">%</span>s <span class="token operator">&lt;</span>file<span class="token operator">></span>\n”<span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token keyword">if</span>
-<span class="token punctuation">(</span><span class="token punctuation">(</span>fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> O_RDONLY<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token function">perror</span><span class="token punctuation">(</span>“open”<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>w
-<span class="token function">hile</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">=</span> <span class="token function">read</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-total <span class="token operator">+</span><span class="token operator">=</span> n<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>…
-…<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="6-文件I-O-–-write"><a href="#6-文件I-O-–-write" class="headerlink" title="6.文件I/O – write"></a>6.文件I/O – write</h3><pre class="line-numbers language-c"><code class="language-c">write函数用来向文件写入数据<span class="token punctuation">:</span>
+从指定的文件(文本文件)中读取内容并统计大小
+int main(int argc, char *argv[]) {
+{
+int fd, n, total = 0;
+char buf[64];
+if (argc &lt; 2) {
+printf(“Usage : %s &lt;file&gt;\n”, argv[0]); return -1;
+}if
+((fd = open(argv[1], O_RDONLY)) &lt; 0) {
+perror(“open”); return -1;
+}w
+hile ((n = read(fd, buf, 64)) &gt; 0) {
+total += n;
+}…
+…</code></pre><h3 id="6-文件I-O-–-write"><a href="#6-文件I-O-–-write" class="headerlink" title="6.文件I/O – write"></a>6.文件I/O – write</h3><pre class="line-numbers language-c"><code class="language-c">write函数用来向文件写入数据<span class="token punctuation">:</span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 ssize_t <span class="token function">write</span><span class="token punctuation">(</span><span class="token keyword">int</span> fd<span class="token punctuation">,</span> <span class="token keyword">void</span> <span class="token operator">*</span>buf<span class="token punctuation">,</span> size_t count<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
+
+ 成功时返回实际写入的字节数； 出错时返回<span class="token constant">EOF</span>
+ buf是发送数据的缓冲区
+ count不应超过buf大小<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>文件I/O – write – 示例<pre class="line-numbers language-c"><code class="language-c">将键盘输入的内容写入文件， 直到输入quit
+<span class="token keyword">int</span> fd<span class="token punctuation">;</span>
+<span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> O_WRONLY<span class="token operator">|</span>O_CREAT<span class="token operator">|</span>O_TRUNC<span class="token punctuation">,</span> <span class="token number">0666</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token function">perror</span><span class="token punctuation">(</span>“open”<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>w
+<span class="token function">hile</span> <span class="token punctuation">(</span><span class="token function">fgets</span><span class="token punctuation">(</span>buf<span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token constant">stdin</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>buf<span class="token punctuation">,</span> “quit\n”<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+<span class="token function">write</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token function">strlen</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>…
+…<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-文件IO-–-lseek"><a href="#7-文件IO-–-lseek" class="headerlink" title="7.文件IO – lseek"></a>7.文件IO – lseek</h3></li>
 </ul>
-<p>Ø 成功时返回实际写入的字节数； 出错时返回EOF<br>Ø buf是发送数据的缓冲区<br>Ø count不应超过buf大小</p>
-<pre><code>- 文件I/O – write – 示例
-```c
-将键盘输入的内容写入文件， 直到输入quit
-int fd;
-char buf[20];
-if ((fd = open(argv[1], O_WRONLY|O_CREAT|O_TRUNC, 0666)) &lt; 0) {
-perror(“open”); return -1;
-}w
-hile (fgets(buf, 20, stdin) != NULL) {
-if (strcmp(buf, “quit\n”) == 0) break;
-write(fd, buf, strlen(buf));
-}…
-…</code></pre><h3 id="7-文件IO-–-lseek"><a href="#7-文件IO-–-lseek" class="headerlink" title="7.文件IO – lseek"></a>7.文件IO – lseek</h3><pre class="line-numbers language-c"><code class="language-c">lseek函数用来定位文件<span class="token punctuation">:</span>
+<pre class="line-numbers language-c"><code class="language-c">lseek函数用来定位文件<span class="token punctuation">:</span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 off_t <span class="token function">lseek</span><span class="token punctuation">(</span><span class="token keyword">int</span> fd<span class="token punctuation">,</span> off_t offset<span class="token punctuation">,</span> intt whence<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 
-Ø 成功时返回当前的文件读写位置； 出错时返回<span class="token constant">EOF</span>
-Ø 参数offset和参数whence同fseek完全一样<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ 成功时返回当前的文件读写位置； 出错时返回<span class="token constant">EOF</span>
+ 参数offset和参数whence同fseek完全一样<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="三、文件目录"><a href="#三、文件目录" class="headerlink" title="三、文件目录"></a>三、文件目录</h2><h3 id="1-访问目录-–-opendir"><a href="#1-访问目录-–-opendir" class="headerlink" title="1.访问目录 – opendir"></a>1.访问目录 – opendir</h3><pre><code>opendir函数用来打开一个目录文件:
 #include &lt;dirent.h&gt;
 DIR *opendir(const char *name);
 
 
-Ø DIR是用来描述一个打开的目录文件的结构体类型
-Ø 成功时返回目录流指针； 出错时返回NULL</code></pre><h3 id="2-访问目录-–-readdir"><a href="#2-访问目录-–-readdir" class="headerlink" title="2.访问目录 – readdir"></a>2.访问目录 – readdir</h3><pre class="line-numbers language-c"><code class="language-c">readdir函数用来读取目录流中的内容<span class="token punctuation">:</span>
+ DIR是用来描述一个打开的目录文件的结构体类型
+ 成功时返回目录流指针； 出错时返回NULL</code></pre><h3 id="2-访问目录-–-readdir"><a href="#2-访问目录-–-readdir" class="headerlink" title="2.访问目录 – readdir"></a>2.访问目录 – readdir</h3><pre class="line-numbers language-c"><code class="language-c">readdir函数用来读取目录流中的内容<span class="token punctuation">:</span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;dirent.h></span></span>
 <span class="token keyword">struct</span> dirent <span class="token operator">*</span><span class="token function">readdir</span><span class="token punctuation">(</span>DIR <span class="token operator">*</span>dirp<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 
-Ø <span class="token keyword">struct</span> dirent是用来描述目录流中一个目录项的结构体类型
-Ø 包含成员<span class="token keyword">char</span> d_name<span class="token punctuation">[</span><span class="token number">256</span><span class="token punctuation">]</span> 参考帮助文档
-Ø 成功时返回目录流dirp中下一个目录项；
-Ø 出错或到末尾时时返回<span class="token constant">NULL</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ <span class="token keyword">struct</span> dirent是用来描述目录流中一个目录项的结构体类型
+ 包含成员<span class="token keyword">char</span> d_name<span class="token punctuation">[</span><span class="token number">256</span><span class="token punctuation">]</span> 参考帮助文档
+ 成功时返回目录流dirp中下一个目录项；
+ 出错或到末尾时时返回<span class="token constant">NULL</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="3-访问目录-–-closedir"><a href="#3-访问目录-–-closedir" class="headerlink" title="3.访问目录 – closedir"></a>3.访问目录 – closedir</h3><pre class="line-numbers language-c"><code class="language-c">closedir函数用来关闭一个目录文件<span class="token punctuation">:</span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;dirent.h></span></span>
 <span class="token keyword">int</span> <span class="token function">closedir</span><span class="token punctuation">(</span>DIR <span class="token operator">*</span>dirp<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 
-Ø 成功时返回<span class="token number">0</span>； 出错时返回<span class="token constant">EOF</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ 成功时返回<span class="token number">0</span>； 出错时返回<span class="token constant">EOF</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>访问目录 – 示例代码<pre class="line-numbers language-c"><code class="language-c">打印指定的目录下所有文件名称
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -720,57 +723,59 @@ DIR <span class="token operator">*</span>dirp<span class="token punctuation">;</
 <span class="token function">printf</span><span class="token punctuation">(</span>“<span class="token operator">%</span>s\n”<span class="token punctuation">,</span> dp<span class="token operator">-></span>d_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>c
 <span class="token function">losedir</span><span class="token punctuation">(</span>dirp<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-修改文件访问权限-–-chmod-fchmod"><a href="#4-修改文件访问权限-–-chmod-fchmod" class="headerlink" title="4.修改文件访问权限 – chmod/fchmod"></a>4.修改文件访问权限 – chmod/fchmod</h3><pre><code>chmod/fchmod函数用来修改文件的访问权限:
+<h3 id="4-修改文件访问权限-–-chmod-fchmod"><a href="#4-修改文件访问权限-–-chmod-fchmod" class="headerlink" title="4.修改文件访问权限 – chmod/fchmod"></a>4.修改文件访问权限 – chmod/fchmod</h3></li>
+</ul>
+<pre><code>chmod/fchmod函数用来修改文件的访问权限:
 #include &lt;sys/stat.h&gt;
 int chmod(const char *path, mode_t mode);
 int fchmod(int fd, mode_t mode);
 
-</code></pre></li>
-</ul>
-<p>Ø 成功时返回0； 出错时返回EOF<br>Ø root和文件所有者能修改文件的访问权限</p>
-<p>示例： chmod(“test.txt”, 0666);</p>
-<pre><code>### 5.获取文件属性 – stat/lstat/fstat
-```c
-stat/lstat/fstat函数用来获取文件属性:
 
-#include &lt;sys/stat.h&gt;
-int stat(const char *path, struct stat *buf);
-int lstat(const char *path, struct stat *buf);
-int fstat(int fd, struct stat *buf);
+ 成功时返回0； 出错时返回EOF
+ root和文件所有者能修改文件的访问权限
 
 
-Ø 成功时返回0； 出错时返回EOF
-Ø 如果path是符号链接stat获取的是目标文件的属性； 而
-lstat获取的是链接文件的属性</code></pre><h3 id="6-文件属性-–-struct-stat"><a href="#6-文件属性-–-struct-stat" class="headerlink" title="6.文件属性 – struct stat"></a>6.文件属性 – struct stat</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">struct</span> stat是存放文件属性的结构体类型<span class="token punctuation">:</span>
+示例： chmod(“test.txt”, 0666);</code></pre><h3 id="5-获取文件属性-–-stat-lstat-fstat"><a href="#5-获取文件属性-–-stat-lstat-fstat" class="headerlink" title="5.获取文件属性 – stat/lstat/fstat"></a>5.获取文件属性 – stat/lstat/fstat</h3><pre class="line-numbers language-c"><code class="language-c">stat<span class="token operator">/</span>lstat<span class="token operator">/</span>fstat函数用来获取文件属性<span class="token punctuation">:</span>
 
-Ø mode_t st_mode<span class="token punctuation">;</span>       类型和访问权限
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token keyword">int</span> <span class="token function">stat</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>path<span class="token punctuation">,</span> <span class="token keyword">struct</span> stat <span class="token operator">*</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">lstat</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>path<span class="token punctuation">,</span> <span class="token keyword">struct</span> stat <span class="token operator">*</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">fstat</span><span class="token punctuation">(</span><span class="token keyword">int</span> fd<span class="token punctuation">,</span> <span class="token keyword">struct</span> stat <span class="token operator">*</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-Ø uid_t st_uid<span class="token punctuation">;</span>         所有者id
 
-Ø uid_t st_gid<span class="token punctuation">;</span>         用户组id
+ 成功时返回<span class="token number">0</span>； 出错时返回<span class="token constant">EOF</span>
+ 如果path是符号链接stat获取的是目标文件的属性； 而
+lstat获取的是链接文件的属性<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-文件属性-–-struct-stat"><a href="#6-文件属性-–-struct-stat" class="headerlink" title="6.文件属性 – struct stat"></a>6.文件属性 – struct stat</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">struct</span> stat是存放文件属性的结构体类型<span class="token punctuation">:</span>
 
-Ø off_t st_size<span class="token punctuation">;</span>        文件大小
+ mode_t st_mode<span class="token punctuation">;</span>       类型和访问权限
 
-Ø time_t st_mtime<span class="token punctuation">;</span>      最后修改时间<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ uid_t st_uid<span class="token punctuation">;</span>         所有者id
+
+ uid_t st_gid<span class="token punctuation">;</span>         用户组id
+
+ off_t st_size<span class="token punctuation">;</span>        文件大小
+
+ time_t st_mtime<span class="token punctuation">;</span>      最后修改时间<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="7-文件类型-–-st-mode"><a href="#7-文件类型-–-st-mode" class="headerlink" title="7.文件类型 – st_mode"></a>7.文件类型 – st_mode</h3><pre class="line-numbers language-c"><code class="language-c">通过系统提供的宏来判断文件类型<span class="token punctuation">:</span>
 st_mode <span class="token operator">&amp;</span> <span class="token number">0170000</span>
-Ø <span class="token function">S_ISREG</span><span class="token punctuation">(</span>st_mode<span class="token punctuation">)</span> <span class="token number">0100000</span>
-Ø <span class="token function">S_ISDIR</span><span class="token punctuation">(</span>st_mode<span class="token punctuation">)</span> <span class="token number">0040000</span>
-Ø <span class="token function">S_ISCHR</span><span class="token punctuation">(</span>st_mode<span class="token punctuation">)</span> <span class="token number">0020000</span>
-Ø <span class="token function">S_ISBLK</span><span class="token punctuation">(</span>st_mode<span class="token punctuation">)</span> <span class="token number">0060000</span>
-Ø <span class="token function">S_ISFIFO</span><span class="token punctuation">(</span>st_mode<span class="token punctuation">)</span> <span class="token number">0010000</span>
-Ø <span class="token function">S_ISLNK</span><span class="token punctuation">(</span>st_mode<span class="token punctuation">)</span> <span class="token number">0120000</span>
-Ø <span class="token function">S_ISSOCK</span><span class="token punctuation">(</span>st_mode<span class="token punctuation">)</span> <span class="token number">0140000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ <span class="token function">S_ISREG</span><span class="token punctuation">(</span>st_mode<span class="token punctuation">)</span> <span class="token number">0100000</span>
+ <span class="token function">S_ISDIR</span><span class="token punctuation">(</span>st_mode<span class="token punctuation">)</span> <span class="token number">0040000</span>
+ <span class="token function">S_ISCHR</span><span class="token punctuation">(</span>st_mode<span class="token punctuation">)</span> <span class="token number">0020000</span>
+ <span class="token function">S_ISBLK</span><span class="token punctuation">(</span>st_mode<span class="token punctuation">)</span> <span class="token number">0060000</span>
+ <span class="token function">S_ISFIFO</span><span class="token punctuation">(</span>st_mode<span class="token punctuation">)</span> <span class="token number">0010000</span>
+ <span class="token function">S_ISLNK</span><span class="token punctuation">(</span>st_mode<span class="token punctuation">)</span> <span class="token number">0120000</span>
+ <span class="token function">S_ISSOCK</span><span class="token punctuation">(</span>st_mode<span class="token punctuation">)</span> <span class="token number">0140000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="8-文件访问权限-–-st-mode"><a href="#8-文件访问权限-–-st-mode" class="headerlink" title="8.文件访问权限 – st_mode"></a>8.文件访问权限 – st_mode</h3><pre class="line-numbers language-c"><code class="language-c">通过系统提供的宏来获取文件访问权限<span class="token punctuation">:</span>
-Ø S_IRUSR <span class="token number">00400</span> bit<span class="token punctuation">:</span><span class="token number">8</span>
-Ø S_IWUSR <span class="token number">00200</span> <span class="token number">7</span>
-Ø S_IXUSR <span class="token number">00100</span> <span class="token number">6</span>
-Ø S_IRGRP <span class="token number">00040</span> <span class="token number">5</span>
-Ø S_IWGRP <span class="token number">00020</span> <span class="token number">4</span>
-Ø S_IXGRP <span class="token number">00010</span> <span class="token number">3</span>
-Ø S_IROTH <span class="token number">00004</span> <span class="token number">2</span>
-Ø S_IWOTH <span class="token number">00002</span> <span class="token number">1</span>
-Ø S_IXOTH <span class="token number">00001</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ S_IRUSR <span class="token number">00400</span> bit<span class="token punctuation">:</span><span class="token number">8</span>
+ S_IWUSR <span class="token number">00200</span> <span class="token number">7</span>
+ S_IXUSR <span class="token number">00100</span> <span class="token number">6</span>
+ S_IRGRP <span class="token number">00040</span> <span class="token number">5</span>
+ S_IWGRP <span class="token number">00020</span> <span class="token number">4</span>
+ S_IXGRP <span class="token number">00010</span> <span class="token number">3</span>
+ S_IROTH <span class="token number">00004</span> <span class="token number">2</span>
+ S_IWOTH <span class="token number">00002</span> <span class="token number">1</span>
+ S_IXOTH <span class="token number">00001</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="四、库"><a href="#四、库" class="headerlink" title="四、库"></a>四、库</h2><h3 id="1-库的概念"><a href="#1-库的概念" class="headerlink" title="1.库的概念"></a>1.库的概念</h3><ul>
 <li>库是一个二进制文件， 包含的代码可被程序调用</li>
 <li>标准C库、 数学库、 线程库……</li>
@@ -792,8 +797,8 @@ st_mode <span class="token operator">&amp;</span> <span class="token number">017
 </ul>
 </li>
 </ul>
-<h3 id="4-静态库创建-1"><a href="#4-静态库创建-1" class="headerlink" title="4.静态库创建(1)"></a>4.静态库创建(1)</h3><pre class="line-numbers language-c"><code class="language-c">Ø 确定库中函数的功能、 接口
-Ø 编写库源码hello<span class="token punctuation">.</span>c
+<h3 id="4-静态库创建-1"><a href="#4-静态库创建-1" class="headerlink" title="4.静态库创建(1)"></a>4.静态库创建(1)</h3><pre class="line-numbers language-c"><code class="language-c"> 确定库中函数的功能、 接口
+ 编写库源码hello<span class="token punctuation">.</span>c
 
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">void</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -802,27 +807,27 @@ st_mode <span class="token operator">&amp;</span> <span class="token number">017
 <span class="token punctuation">}</span>
 
 
-Ø 编译生成目标文件
+ 编译生成目标文件
 
 $ gcc <span class="token operator">-</span>c hello<span class="token punctuation">.</span>c <span class="token operator">-</span>Wall<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="5-静态库创建-2"><a href="#5-静态库创建-2" class="headerlink" title="5.静态库创建(2)"></a>5.静态库创建(2)</h3><pre class="line-numbers language-c"><code class="language-c">Ø 创建静态库 hello
+<h3 id="5-静态库创建-2"><a href="#5-静态库创建-2" class="headerlink" title="5.静态库创建(2)"></a>5.静态库创建(2)</h3><pre class="line-numbers language-c"><code class="language-c"> 创建静态库 hello
 
 $ ar crs libhello<span class="token punctuation">.</span>a hello<span class="token punctuation">.</span>o
 
-Ø 查看库中符号信息
+ 查看库中符号信息
 
 $nm libhello<span class="token punctuation">.</span>a
 hello<span class="token punctuation">.</span>o<span class="token punctuation">:</span>
 <span class="token number">0000000</span> T hello
 U puts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="6-链接静态库"><a href="#6-链接静态库" class="headerlink" title="6.链接静态库"></a>6.链接静态库</h3><pre class="line-numbers language-c"><code class="language-c">Ø 编写应用程序test<span class="token punctuation">.</span>c
+<h3 id="6-链接静态库"><a href="#6-链接静态库" class="headerlink" title="6.链接静态库"></a>6.链接静态库</h3><pre class="line-numbers language-c"><code class="language-c"> 编写应用程序test<span class="token punctuation">.</span>c
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">void</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-Ø 编译test<span class="token punctuation">.</span>c 并链接静态库libhello<span class="token punctuation">.</span>a
+ 编译test<span class="token punctuation">.</span>c 并链接静态库libhello<span class="token punctuation">.</span>a
 
 $ gcc <span class="token operator">-</span>o test test<span class="token punctuation">.</span>c <span class="token operator">-</span>L<span class="token punctuation">.</span> <span class="token operator">-</span>lhello
 $ <span class="token punctuation">.</span><span class="token operator">/</span>test
@@ -837,8 +842,8 @@ hello world<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 </ul>
 </li>
 </ul>
-<h3 id="8-共享库创建-1"><a href="#8-共享库创建-1" class="headerlink" title="8.共享库创建(1)"></a>8.共享库创建(1)</h3><pre class="line-numbers language-c"><code class="language-c">Ø 确定库中函数的功能、 接口
-Ø 编写库源码hello<span class="token punctuation">.</span>c bye<span class="token punctuation">.</span>c
+<h3 id="8-共享库创建-1"><a href="#8-共享库创建-1" class="headerlink" title="8.共享库创建(1)"></a>8.共享库创建(1)</h3><pre class="line-numbers language-c"><code class="language-c"> 确定库中函数的功能、 接口
+ 编写库源码hello<span class="token punctuation">.</span>c bye<span class="token punctuation">.</span>c
 
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">void</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -846,21 +851,21 @@ hello world<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 <span class="token keyword">return</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-Ø 编译生成目标文件
+ 编译生成目标文件
 
 $ gcc <span class="token operator">-</span>c <span class="token operator">-</span>fPIC hello<span class="token punctuation">.</span>c bye<span class="token punctuation">.</span>c <span class="token operator">-</span>Wall<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="9-共享库创建-2"><a href="#9-共享库创建-2" class="headerlink" title="9.共享库创建(2)"></a>9.共享库创建(2)</h3><pre class="line-numbers language-c"><code class="language-c">Ø 创建共享库 common
+<h3 id="9-共享库创建-2"><a href="#9-共享库创建-2" class="headerlink" title="9.共享库创建(2)"></a>9.共享库创建(2)</h3><pre class="line-numbers language-c"><code class="language-c"> 创建共享库 common
 
 $ gcc <span class="token operator">-</span>shared <span class="token operator">-</span>o libcommon<span class="token punctuation">.</span>so<span class="token number">.1</span> hello<span class="token punctuation">.</span>o bye<span class="token punctuation">.</span>o
 
-Ø 为共享库文件创建链接文件
+ 为共享库文件创建链接文件
 
 $ ln <span class="token operator">-</span>s libcommon<span class="token punctuation">.</span>so<span class="token number">.1</span> libcommon<span class="token punctuation">.</span>so
 
-Ø 符号链接文件命名规则
+ 符号链接文件命名规则
 
 lib<span class="token operator">&lt;</span>库名<span class="token operator">></span><span class="token punctuation">.</span>so<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="10-链接共享库"><a href="#10-链接共享库" class="headerlink" title="10.链接共享库"></a>10.链接共享库</h3><pre class="line-numbers language-c"><code class="language-c">Ø 编写应用程序test<span class="token punctuation">.</span>c
+<h3 id="10-链接共享库"><a href="#10-链接共享库" class="headerlink" title="10.链接共享库"></a>10.链接共享库</h3><pre class="line-numbers language-c"><code class="language-c"> 编写应用程序test<span class="token punctuation">.</span>c
 
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> “common.h”</span>
@@ -869,17 +874,17 @@ lib<span class="token operator">&lt;</span>库名<span class="token operator">><
     <span class="token function">bye</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-Ø 编译test<span class="token punctuation">.</span>c 并链接共享库libcommon<span class="token punctuation">.</span>so
+ 编译test<span class="token punctuation">.</span>c 并链接共享库libcommon<span class="token punctuation">.</span>so
 
 $ gcc <span class="token operator">-</span>o test test<span class="token punctuation">.</span>c <span class="token operator">-</span>L<span class="token punctuation">.</span> <span class="token operator">-</span>lcommon<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="11-加载共享库"><a href="#11-加载共享库" class="headerlink" title="11.加载共享库"></a>11.加载共享库</h3><pre class="line-numbers language-c"><code class="language-c">Ø 执行程序
+<h3 id="11-加载共享库"><a href="#11-加载共享库" class="headerlink" title="11.加载共享库"></a>11.加载共享库</h3><pre class="line-numbers language-c"><code class="language-c"> 执行程序
 
 $ <span class="token punctuation">.</span><span class="token operator">/</span>test
 
 <span class="token punctuation">.</span><span class="token operator">/</span>test<span class="token punctuation">:</span> error <span class="token keyword">while</span> loading shared libraries<span class="token punctuation">:</span> libcommon<span class="token punctuation">.</span>so
 cannot open shared object file <span class="token punctuation">:</span> No such file or directory
 
-Ø 添加共享库的加载路径
+ 添加共享库的加载路径
 
 $ export LD_LIBRARY_PATH<span class="token operator">=</span>$LD_LIBRARY_PATH<span class="token punctuation">:</span><span class="token punctuation">.</span>
 $ <span class="token punctuation">.</span><span class="token operator">/</span>test
@@ -1143,12 +1148,15 @@ bye<span class="token operator">!</span><span aria-hidden="true" class="line-num
                     <div class="summary block-with-text">
                         
                             一、进程1.概念
+
 程序  
+
 存放在磁盘上的指令和数据的有序集合（文件）  
 静态的
 
 
 进程
+
 执行一个程序所分配的资源的总称
 进程是程序的一次执行过程
 动态的，包括创建、调度、执行和消亡
@@ -1156,9 +1164,8 @@ bye<span class="token operator">!</span><span aria-hidden="true" class="line-num
 
 
 2.进程控制块（pcb)
-进程标识PID 
 
-
+进程标识PI
                         
                     </div>
                     <div class="publish-info">
@@ -1298,8 +1305,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3, h4, h5'
         });
 
         // modify the toc link href to support Chinese.
@@ -1311,7 +1318,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1386,7 +1393,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">75.5k</span>&nbsp;字
+                class="white-color">78.4k</span>&nbsp;字
             
             
             

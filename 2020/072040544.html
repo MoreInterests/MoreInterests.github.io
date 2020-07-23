@@ -949,12 +949,13 @@ F 1000
                         
                             一、标准I/O1.标准I/O - 介绍
 标准IO提供了两方面的封装：
-
 1）操作对象 – FILE*: 封装了不同OS对文件的实现，
-2）封装了缓存支持和优化。2.标准I/O - 流和FILE对象1.流的概念
+2）封装了缓存支持和优化。2.标准I/O - 流和FILE对象
 
 
-在C中引入了流(strea
+
+1.流的概念
+在C中引入了流(stre
                         
                     </div>
                     <div class="publish-info">
@@ -1093,8 +1094,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3, h4, h5'
         });
 
         // modify the toc link href to support Chinese.
@@ -1106,7 +1107,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1181,7 +1182,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">75.5k</span>&nbsp;字
+                class="white-color">78.4k</span>&nbsp;字
             
             
             

@@ -477,20 +477,24 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、进程"><a href="#一、进程" class="headerlink" title="一、进程"></a>一、进程</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><ul>
-<li>程序  <ul>
+                <h2 id="一、进程"><a href="#一、进程" class="headerlink" title="一、进程"></a>一、进程</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><hr>
+<ul>
+<li><p>程序  </p>
+<ul>
 <li>存放在磁盘上的指令和数据的有序集合（文件）  </li>
 <li>静态的</li>
 </ul>
 </li>
-<li>进程<ul>
+<li><p>进程</p>
+<ul>
 <li>执行一个程序所分配的资源的总称</li>
 <li>进程是程序的一次执行过程</li>
 <li>动态的，包括创建、调度、执行和消亡</li>
 </ul>
 </li>
 </ul>
-<h3 id="2-进程控制块（pcb"><a href="#2-进程控制块（pcb" class="headerlink" title="2.进程控制块（pcb)"></a>2.进程控制块（pcb)</h3><ul>
+<h3 id="2-进程控制块（pcb"><a href="#2-进程控制块（pcb" class="headerlink" title="2.进程控制块（pcb)"></a>2.进程控制块（pcb)</h3><hr>
+<ul>
 <li><p>进程标识PID </p>
 </li>
 <li><p>进程用户</p>
@@ -498,41 +502,38 @@
 <li><p>进程状态、优先级</p>
 </li>
 <li><p>文件描述符表</p>
-<h3 id="3-进程类型"><a href="#3-进程类型" class="headerlink" title="3.进程类型"></a>3.进程类型</h3></li>
-<li><p>交互进程：在shell下启动。以在前台运行，也可以在后台运行</p>
 </li>
-<li><p>批处理进程：和在终端无关，被提交到一个作业队列中以便顺序执行</p>
-</li>
-<li><p>守护进程：和终端无关，一直在后台运行</p>
-<h3 id="4-进程状态"><a href="#4-进程状态" class="headerlink" title="4.进程状态"></a>4.进程状态</h3></li>
-<li><p>运行态：进程正在运行，或者准备运行</p>
-</li>
-<li><p>等待态：进程在等待一个事件的发生或某种系统资源</p>
+</ul>
+<h3 id="3-进程类型"><a href="#3-进程类型" class="headerlink" title="3.进程类型"></a>3.进程类型</h3><hr>
 <ul>
+<li>交互进程：在shell下启动。以在前台运行，也可以在后台运行</li>
+<li>批处理进程：和在终端无关，被提交到一个作业队列中以便顺序执行</li>
+<li>守护进程：和终端无关，一直在后台运行</li>
+</ul>
+<h3 id="4-进程状态"><a href="#4-进程状态" class="headerlink" title="4.进程状态"></a>4.进程状态</h3><hr>
+<ul>
+<li>运行态：进程正在运行，或者准备运行</li>
+<li>等待态：进程在等待一个事件的发生或某种系统资源<ul>
 <li>可中断</li>
 <li>不可中断</li>
 </ul>
 </li>
-<li><p>停止态：进程被中止，收到信号后可继续运行</p>
-</li>
-<li><p>死亡态：已终止的进程，但pcb没有被释放</p>
-<h3 id="5-查看进程信息"><a href="#5-查看进程信息" class="headerlink" title="5.查看进程信息"></a>5.查看进程信息</h3></li>
-<li><p>ps     查看系统进程快照</p>
-</li>
-<li><p>top    查看进程动态信息</p>
-</li>
-<li><p>/proc  查看进程详细信息</p>
-<h3 id="6-进程相关命令"><a href="#6-进程相关命令" class="headerlink" title="6.进程相关命令"></a>6.进程相关命令</h3></li>
-<li><p>nice   按用户指定的优先级运行进程</p>
-</li>
-<li><p>renice   改变正在运行进程的优先级</p>
-</li>
-<li><p>jobs   查看后台进程</p>
-</li>
-<li><p>bg     将挂起的进程在后台运行</p>
-</li>
-<li><p>fg      把后台运行的进程放到前台运行</p>
-</li>
+<li>停止态：进程被中止，收到信号后可继续运行</li>
+<li>死亡态：已终止的进程，但pcb没有被释放</li>
+</ul>
+<h3 id="5-查看进程信息"><a href="#5-查看进程信息" class="headerlink" title="5.查看进程信息"></a>5.查看进程信息</h3><hr>
+<ul>
+<li>ps     查看系统进程快照</li>
+<li>top    查看进程动态信息</li>
+<li>/proc  查看进程详细信息</li>
+</ul>
+<h3 id="6-进程相关命令"><a href="#6-进程相关命令" class="headerlink" title="6.进程相关命令"></a>6.进程相关命令</h3><hr>
+<ul>
+<li>nice   按用户指定的优先级运行进程</li>
+<li>renice   改变正在运行进程的优先级</li>
+<li>jobs   查看后台进程</li>
+<li>bg     将挂起的进程在后台运行</li>
+<li>fg      把后台运行的进程放到前台运行</li>
 </ul>
 <h3 id="7-进程创建-fork"><a href="#7-进程创建-fork" class="headerlink" title="7.进程创建 - fork"></a>7.进程创建 - fork</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span>  <span class="token string">&lt;unistd.h></span></span>
  pid_t  <span class="token function">fork</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -558,7 +559,8 @@ pid_t  pid<span class="token punctuation">;</span>
      <span class="token function">printf</span><span class="token punctuation">(</span>“parent  process <span class="token punctuation">:</span>  my pid  is  <span class="token operator">%</span>d\n”<span class="token punctuation">,</span> <span class="token function">getpid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
      <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="8-父子进程"><a href="#8-父子进程" class="headerlink" title="8.父子进程"></a>8.父子进程</h3><ul>
+<h3 id="8-父子进程"><a href="#8-父子进程" class="headerlink" title="8.父子进程"></a>8.父子进程</h3><hr>
+<ul>
 <li><p>子进程继承了父进程的内容</p>
 </li>
 <li><p>父子进程有独立的地址空间，互不影响</p>
@@ -608,7 +610,8 @@ pid_t  pid<span class="token punctuation">;</span>
   <span class="token punctuation">.</span><span class="token operator">/</span>a<span class="token punctuation">.</span>out  
   using  exit…
   This  is  the  end<span class="token operator">!</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="10-进程-–-exec函数族"><a href="#10-进程-–-exec函数族" class="headerlink" title="10.进程 – exec函数族"></a>10.进程 – exec函数族</h3><ul>
+<h3 id="10-进程-–-exec函数族"><a href="#10-进程-–-exec函数族" class="headerlink" title="10.进程 – exec函数族"></a>10.进程 – exec函数族</h3><hr>
+<ul>
 <li><p>进程调用exec函数族执行某个程序</p>
 </li>
 <li><p>进程当前内容被指定的程序替换</p>
@@ -667,13 +670,11 @@ pid_t  pid<span class="token punctuation">;</span>
 
  <span class="token operator">-</span> 成功时返回命令command的返回值；失败时返回<span class="token constant">EOF</span>
  <span class="token operator">-</span> 当前进程等待command执行结束后才继续执行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="14-进程回收"><a href="#14-进程回收" class="headerlink" title="14.进程回收"></a>14.进程回收</h3><ul>
-<li><p>子进程结束时由父进程回收</p>
-</li>
-<li><p>孤儿进程由init进程回收</p>
-</li>
-<li><p>若没有及时回收会出现僵尸进程</p>
-</li>
+<h3 id="14-进程回收"><a href="#14-进程回收" class="headerlink" title="14.进程回收"></a>14.进程回收</h3><hr>
+<ul>
+<li>子进程结束时由父进程回收</li>
+<li>孤儿进程由init进程回收</li>
+<li>若没有及时回收会出现僵尸进程</li>
 </ul>
 <h3 id="15-进程回收-–-wait"><a href="#15-进程回收-–-wait" class="headerlink" title="15.进程回收 – wait"></a>15.进程回收 – wait</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/wait.h></span></span>
@@ -700,20 +701,21 @@ pid_t <span class="token function">wait</span><span class="token punctuation">(<
   <span class="token keyword">else</span> <span class="token punctuation">{</span>
      <span class="token function">wait</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token function">printf</span><span class="token punctuation">(</span>“<span class="token operator">%</span>x\n”<span class="token punctuation">,</span> status<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="16-进程返回值和结束方式"><a href="#16-进程返回值和结束方式" class="headerlink" title="16.进程返回值和结束方式"></a>16.进程返回值和结束方式</h3><ul>
+<h3 id="16-进程返回值和结束方式"><a href="#16-进程返回值和结束方式" class="headerlink" title="16.进程返回值和结束方式"></a>16.进程返回值和结束方式</h3><hr>
+<ul>
 <li><p>子进程通过exit / _exit / return 返回某个值(0-255)</p>
 </li>
 <li><p>父进程调用wait(&amp;status) 回收</p>
 <ul>
-<li><p>WIFEXITED(status)         判断子进程是否正常结束</p>
+<li>WIFEXITED(status)         判断子进程是否正常结束</li>
+</ul>
 </li>
 <li><p>WEXITSTATUS(status)       获取子进程返回值</p>
-</li>
-<li><p>WIFSIGNALED(status)       判断子进程是否被信号结束</p>
+<ul>
+<li>WIFSIGNALED(status)       判断子进程是否被信号结束</li>
+</ul>
 </li>
 <li><p>WTERMSIG(status)          获取结束子进程的信号类型</p>
-</li>
-</ul>
 </li>
 </ul>
 <h3 id="17-进程回收"><a href="#17-进程回收" class="headerlink" title="17.进程回收"></a>17.进程回收</h3><pre class="line-numbers language-c"><code class="language-c">  <span class="token macro property">#<span class="token directive keyword">include</span>  <span class="token string">&lt;unistd.h></span></span>
@@ -734,23 +736,20 @@ pid_t <span class="token function">wait</span><span class="token punctuation">(<
     <span class="token function">waitpid</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>status<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token function">waitpid</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>status<span class="token punctuation">,</span> WNOHANG<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="20-守护进程"><a href="#20-守护进程" class="headerlink" title="20.守护进程"></a>20.守护进程</h3><ul>
-<li><p>守护进程(Daemon)是Linux三种进程类型之一</p>
-</li>
-<li><p>通常在系统启动时运行，系统关闭时结束</p>
-</li>
-<li><p>Linux系统中大量使用，很多服务程序以守护进程形式运行</p>
-</li>
+<h3 id="20-守护进程"><a href="#20-守护进程" class="headerlink" title="20.守护进程"></a>20.守护进程</h3><hr>
+<ul>
+<li>守护进程(Daemon)是Linux三种进程类型之一</li>
+<li>通常在系统启动时运行，系统关闭时结束</li>
+<li>Linux系统中大量使用，很多服务程序以守护进程形式运行</li>
 </ul>
-<h3 id="21-守护进程特点"><a href="#21-守护进程特点" class="headerlink" title="21.守护进程特点"></a>21.守护进程特点</h3><ul>
-<li><p>始终在后台运行</p>
-</li>
-<li><p>独立于任何终端</p>
-</li>
-<li><p>周期性的执行某种任务或等待处理特定事件</p>
-</li>
+<h3 id="21-守护进程特点"><a href="#21-守护进程特点" class="headerlink" title="21.守护进程特点"></a>21.守护进程特点</h3><hr>
+<ul>
+<li>始终在后台运行</li>
+<li>独立于任何终端</li>
+<li>周期性的执行某种任务或等待处理特定事件</li>
 </ul>
-<h3 id="22-守护进程-–-会话、控制终端"><a href="#22-守护进程-–-会话、控制终端" class="headerlink" title="22.守护进程 – 会话、控制终端"></a>22.守护进程 – 会话、控制终端</h3><ul>
+<h3 id="22-守护进程-–-会话、控制终端"><a href="#22-守护进程-–-会话、控制终端" class="headerlink" title="22.守护进程 – 会话、控制终端"></a>22.守护进程 – 会话、控制终端</h3><hr>
+<ul>
 <li><p>Linux以会话(session)、进程组的方式管理进程</p>
 </li>
 <li><p>每个进程属于一个进程组</p>
@@ -1073,46 +1072,43 @@ pid_t <span class="token function">wait</span><span class="token punctuation">(<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/072244192.html">
+                <a href="/2020/072341830.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Linux-进程">
+                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="Linux-线程">
                         
-                        <span class="card-title">Linux-进程</span>
+                        <span class="card-title">Linux-线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、进程1.概念
-程序  
-存放在磁盘上的指令和数据的有序集合（文件）  
-静态的
+                            1.进程
+进程有独立的地址空间
 
 
-进程
-执行一个程序所分配的资源的总称
-进程是程序的一次执行过程
-动态的，包括创建、调度、执行和消亡
+Linux为每个进程创建task_struct
 
 
+每个进程都参与内核调度，互不影响
 
-2.进程控制块（pcb)
-进程标识PID 
+2.线程1.线程概念
+进程在切换时系统开销大
 
+很多操作系统引入了轻量级进程LWP
 
+同一进程中的线程共享相同地址空
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-23
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1125,12 +1121,11 @@ pid_t <span class="token function">wait</span><span class="token punctuation">(<
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BF%9B%E7%A8%8B/">
-                        <span class="chip bg-color">进程</span>
+                    <a href="/tags/%E7%BA%BF%E7%A8%8B/">
+                        <span class="chip bg-color">线程</span>
                     </a>
                     
                 </div>
@@ -1158,12 +1153,13 @@ pid_t <span class="token function">wait</span><span class="token punctuation">(<
                         
                             一、标准I/O1.标准I/O - 介绍
 标准IO提供了两方面的封装：
-
 1）操作对象 – FILE*: 封装了不同OS对文件的实现，
-2）封装了缓存支持和优化。2.标准I/O - 流和FILE对象1.流的概念
+2）封装了缓存支持和优化。2.标准I/O - 流和FILE对象
 
 
-在C中引入了流(strea
+
+1.流的概念
+在C中引入了流(stre
                         
                     </div>
                     <div class="publish-info">
@@ -1251,8 +1247,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3, h4, h5'
         });
 
         // modify the toc link href to support Chinese.
@@ -1264,7 +1260,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1339,7 +1335,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">75.5k</span>&nbsp;字
+                class="white-color">78.4k</span>&nbsp;字
             
             
             
