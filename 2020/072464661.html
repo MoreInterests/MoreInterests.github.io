@@ -1,0 +1,1468 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="System V IPC对象, toily的博客">
+    <meta name="description" content="Love everything in the world without exception.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>System V IPC对象 | toily的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">toily的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">toily的博客</div>
+        <div class="logo-desc">
+            
+            Love everything in the world without exception.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/MoreInterests" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/MoreInterests" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">System V IPC对象</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/">
+                                <span class="chip bg-color">进程间通信</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-24
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.1k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="System-V-IPC"><a href="#System-V-IPC" class="headerlink" title="System V IPC"></a>System V IPC</h1><ul>
+<li>IPC 对象包含： 共享内存、消息队列和信号灯集</li>
+<li>每个IPC对象有唯一的ID</li>
+<li>IPC对象创建后一直存在，直到被显式地删除</li>
+<li>每个IPC对象有一个关联的KEY</li>
+<li>ipcs / ipcrm</li>
+</ul>
+<h2 id="1-System-V-IPC-key"><a href="#1-System-V-IPC-key" class="headerlink" title="1.System V IPC - key"></a>1.System V IPC - key</h2><p>![](<a href="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/PSystem" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/MoreInterests/CDN/PSystem</a> V IPC - key.png)</p>
+<h2 id="2-System-V-IPC-–-ftok"><a href="#2-System-V-IPC-–-ftok" class="headerlink" title="2.System V IPC – ftok"></a>2.System V IPC – ftok</h2><pre class="line-numbers language-c"><code class="language-c"> <span class="token macro property">#<span class="token directive keyword">include</span>  <span class="token string">&lt;sys/types.h></span></span>
+ <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/ipc.h></span></span>
+ key_t  <span class="token function">ftok</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>path<span class="token punctuation">,</span>  <span class="token keyword">int</span> proj_id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">-</span> 成功时返回合法的key值，失败时返回<span class="token constant">EOF</span>
+<span class="token operator">-</span> path  存在且可访问的文件的路径
+<span class="token operator">-</span> proj_id  用于生成key的数字，不能为<span class="token number">0</span>
+
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+System V IPC <span class="token operator">-</span> ftok – 示例
+
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span>  </span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/ipc.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   key_t key<span class="token punctuation">;</span>
+
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>key <span class="token operator">=</span> <span class="token function">ftok</span><span class="token punctuation">(</span>“<span class="token punctuation">.</span>”<span class="token punctuation">,</span> ‘a’<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">perror</span><span class="token punctuation">(</span>“key”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>   
+   ……
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-共享内存"><a href="#3-共享内存" class="headerlink" title="3.共享内存"></a>3.共享内存</h2><ul>
+<li>共享内存是一种最为高效的进程间通信方式，进程可以直接读写内存，而不需要任何数据的拷贝</li>
+<li>共享内存在内核空间创建，可被进程映射到用户空间访问，使用灵活</li>
+<li>由于多个进程可同时访问共享内存，因此需要同步和互斥机制配合使用</li>
+</ul>
+<h2 id="4-共享内存使用步骤"><a href="#4-共享内存使用步骤" class="headerlink" title="4.共享内存使用步骤"></a>4.共享内存使用步骤</h2><ul>
+<li>创建/打开共享内存</li>
+<li>映射共享内存，即把指定的共享内存映射到进程的地址空间用于访问</li>
+<li>读写共享内存</li>
+<li>撤销共享内存映射</li>
+<li>删除共享内存对象</li>
+</ul>
+<h3 id="1-共享内存创建-–-shmget"><a href="#1-共享内存创建-–-shmget" class="headerlink" title="1.共享内存创建 – shmget"></a>1.共享内存创建 – shmget</h3><pre class="line-numbers language-c"><code class="language-c"> <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/ipc.h></span></span>
+ <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/shm.h></span></span>
+ <span class="token keyword">int</span> <span class="token function">shmget</span><span class="token punctuation">(</span>key_t key<span class="token punctuation">,</span> <span class="token keyword">int</span> size<span class="token punctuation">,</span> <span class="token keyword">int</span> shmflg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">-</span> 成功时返回共享内存的id，失败时返回<span class="token constant">EOF</span>
+<span class="token operator">-</span> key  和共享内存关联的key，IPC_PRIVATE 或 ftok生成
+<span class="token operator">-</span> shmflg 共享内存标志位  IPC_CREAT<span class="token operator">|</span><span class="token number">0666</span>
+
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+共享内存创建 <span class="token operator">-</span> shmget – 示例<span class="token number">1</span>
+
+要求：创建一个私有的共享内存，大小为<span class="token number">512</span>字节，权限
+为<span class="token number">0666</span>
+
+  <span class="token keyword">int</span> shmid<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>shmid <span class="token operator">=</span> <span class="token function">shmget</span><span class="token punctuation">(</span>IPC_PRIVATE<span class="token punctuation">,</span> <span class="token number">512</span><span class="token punctuation">,</span> <span class="token number">0666</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token function">perror</span><span class="token punctuation">(</span>“shmget”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+共享内存创建 <span class="token operator">-</span> shmget – 示例<span class="token number">2</span>
+
+要求：创建<span class="token operator">/</span>打开一个和key关联的共享内存，大小为<span class="token number">1024</span>
+字节，权限为<span class="token number">0666</span>
+  key_t key<span class="token punctuation">;</span>
+  <span class="token keyword">int</span> shmid<span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>key <span class="token operator">=</span> <span class="token function">ftok</span><span class="token punctuation">(</span>“<span class="token punctuation">.</span>”<span class="token punctuation">,</span> ‘m’<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token function">perror</span><span class="token punctuation">(</span>“ftok”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>shmid <span class="token operator">=</span> <span class="token function">shmget</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token number">1024</span><span class="token punctuation">,</span> IPC_CREAT<span class="token operator">|</span><span class="token number">0666</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token function">perror</span><span class="token punctuation">(</span>“shmget”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-共享内存映射-–-shmat"><a href="#2-共享内存映射-–-shmat" class="headerlink" title="2.共享内存映射 – shmat"></a>2.共享内存映射 – shmat</h3><pre class="line-numbers language-c"><code class="language-c"> <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+ <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/shm.h></span></span>
+ <span class="token keyword">void</span>  <span class="token operator">*</span><span class="token function">shmat</span><span class="token punctuation">(</span><span class="token keyword">int</span> shmid<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">void</span> <span class="token operator">*</span>shmaddr<span class="token punctuation">,</span> <span class="token keyword">int</span> shmflg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">-</span>  成功时返回映射后的地址，失败时返回<span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
+<span class="token operator">-</span>  shmid   要映射的共享内存id
+<span class="token operator">-</span>  shmaddr   映射后的地址， <span class="token constant">NULL</span>表示由系统自动映射
+<span class="token operator">-</span>  shmflg   标志位  <span class="token number">0</span>表示可读写；SHM_RDONLY表示只读
+
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+共享内存读写  <span class="token operator">-</span>  示例
+
+通过指针访问共享内存，指针类型取决于共享内存中存放的数据类型
+
+    例如：在共享内存中存放键盘输入的字符串 
+
+      <span class="token keyword">char</span> <span class="token operator">*</span>addr<span class="token punctuation">;</span>
+      <span class="token keyword">int</span>  shmid<span class="token punctuation">;</span>
+      ……
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>addr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">shmat</span><span class="token punctuation">(</span>shmid<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token function">perror</span><span class="token punctuation">(</span>“shmat”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token function">fgets</span><span class="token punctuation">(</span>addr<span class="token punctuation">,</span> N<span class="token punctuation">,</span> <span class="token constant">stdin</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      ……
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-共享内存撤销映射-–-shmdt"><a href="#3-共享内存撤销映射-–-shmdt" class="headerlink" title="3.共享内存撤销映射 – shmdt"></a>3.共享内存撤销映射 – shmdt</h3><pre class="line-numbers language-c"><code class="language-c"> <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+ <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/shm.h></span></span>
+ <span class="token keyword">int</span>  <span class="token function">shmdt</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>shmaddr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">-</span>  成功时返回<span class="token number">0</span>，失败时返回<span class="token constant">EOF</span>
+<span class="token operator">-</span>  不使用共享内存时应撤销映射
+<span class="token operator">-</span>  进程结束时自动撤销
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-共享内存控制-–-shmctl"><a href="#4-共享内存控制-–-shmctl" class="headerlink" title="4.共享内存控制 – shmctl"></a>4.共享内存控制 – shmctl</h3><pre class="line-numbers language-c"><code class="language-c"> <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/ipc.h></span></span>
+ <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/shm.h></span></span>
+ <span class="token keyword">int</span>  <span class="token function">shmctl</span><span class="token punctuation">(</span><span class="token keyword">int</span> shmid<span class="token punctuation">,</span> <span class="token keyword">int</span> cmd<span class="token punctuation">,</span> <span class="token keyword">struct</span> shmid_ds <span class="token operator">*</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">-</span>  成功时返回<span class="token number">0</span>，失败时返回<span class="token constant">EOF</span>
+<span class="token operator">-</span>  shmid   要操作的共享内存的id
+<span class="token operator">-</span>  cmd   要执行的操作  IPC_STAT  IPC_SET  IPC_RMID
+<span class="token operator">-</span>  buf   保存或设置共享内存属性的地址
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-共享内存-注意事项"><a href="#5-共享内存-注意事项" class="headerlink" title="5.共享内存  -  注意事项"></a>5.共享内存  -  注意事项</h3><ul>
+<li><p>每块共享内存大小有限制</p>
+<ul>
+<li>ipcs  -l</li>
+<li>cat  /proc/sys/kernel/shmmax</li>
+</ul>
+</li>
+<li><p>共享内存删除的时间点</p>
+<ul>
+<li>shmctl(shmid, IPC_RMID, NULL) 添加删除标记</li>
+<li>nattach 变成0时真正删除</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-消息队列"><a href="#5-消息队列" class="headerlink" title="5.消息队列"></a>5.消息队列</h2><ul>
+<li>消息队列是System V IPC对象的一种</li>
+<li>消息队列由消息队列ID来唯一标识</li>
+<li>消息队列就是一个消息的列表。用户可以在消息队列中添加消息、读取消息等</li>
+<li>消息队列可以按照类型来发送/接收消息</li>
+</ul>
+<h3 id="1-消息队列结构"><a href="#1-消息队列结构" class="headerlink" title="1.消息队列结构"></a>1.消息队列结构</h3><p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%BB%93%E6%9E%84.png" alt=""></p>
+<h3 id="2-消息队列使用步骤"><a href="#2-消息队列使用步骤" class="headerlink" title="2.消息队列使用步骤"></a>2.消息队列使用步骤</h3><ul>
+<li>打开/创建消息队列   msgget</li>
+<li>向消息队列发送消息   msgsnd</li>
+<li>从消息队列接收消息   msgrcv</li>
+<li>控制消息队列   msgctl</li>
+</ul>
+<h3 id="3-消息队列创建-打开-–-msgget"><a href="#3-消息队列创建-打开-–-msgget" class="headerlink" title="3.消息队列创建/打开 – msgget"></a>3.消息队列创建/打开 – msgget</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span> </span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/ipc.h></span></span>
+ <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/msg.h></span></span>
+ <span class="token keyword">int</span> <span class="token function">msgget</span><span class="token punctuation">(</span>key_t key<span class="token punctuation">,</span> <span class="token keyword">int</span> msgflg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">-</span>  成功时返回消息队列的id，失败时返回<span class="token constant">EOF</span>
+<span class="token operator">-</span>  key 和消息队列关联的key  IPC_PRIVATE 或 ftok
+<span class="token operator">-</span>  msgflg  标志位  IPC_CREAT<span class="token operator">|</span><span class="token number">0666</span>
+
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+消息队列创建<span class="token operator">/</span>打开  <span class="token operator">-</span>  示例
+
+……
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span> msgid<span class="token punctuation">;</span>
+   key_t key<span class="token punctuation">;</span>
+
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>key <span class="token operator">=</span> <span class="token function">ftok</span><span class="token punctuation">(</span>“<span class="token punctuation">.</span>”<span class="token punctuation">,</span> ‘q’<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">perror</span><span class="token punctuation">(</span>“ftok”<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>msgid <span class="token operator">=</span> <span class="token function">msgget</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> IPC_CREAT<span class="token operator">|</span><span class="token number">0666</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">perror</span><span class="token punctuation">(</span>“msgget”<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   …… 
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-消息发送-–-msgsnd"><a href="#4-消息发送-–-msgsnd" class="headerlink" title="4.消息发送 – msgsnd"></a>4.消息发送 – msgsnd</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span> </span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/ipc.h></span></span>
+ <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/msg.h></span></span>
+ <span class="token keyword">int</span> <span class="token function">msgsnd</span><span class="token punctuation">(</span><span class="token keyword">int</span> msgid<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">void</span> <span class="token operator">*</span>msgp<span class="token punctuation">,</span> size_t size<span class="token punctuation">,</span>
+            <span class="token keyword">int</span> msgflg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">-</span>  成功时返回<span class="token number">0</span>，失败时返回<span class="token operator">-</span><span class="token number">1</span>
+<span class="token operator">-</span>  msgid   消息队列id
+<span class="token operator">-</span>  msgp    消息缓冲区地址
+<span class="token operator">-</span>  size    消息正文长度
+<span class="token operator">-</span>  msgflg   标志位 <span class="token number">0</span> 或 IPC_NOWAIT
+
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+消息格式
+<span class="token operator">-</span> 通信双方首先定义好统一的消息格式
+
+<span class="token operator">-</span> 用户根据应用需求定义结构体类型
+
+<span class="token operator">-</span> 首成员类型为<span class="token keyword">long</span><span class="token punctuation">,</span>代表消息类型<span class="token punctuation">(</span>正整数<span class="token punctuation">)</span>
+
+<span class="token operator">-</span> 其他成员都属于消息正文
+
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+消息发送  <span class="token operator">-</span>  示例
+
+<span class="token keyword">typedef</span>  <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+   <span class="token keyword">long</span> mtype<span class="token punctuation">;</span>
+   <span class="token keyword">char</span> mtext<span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> MSG<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>  LEN  (sizeof(MSG) - sizeof(long))</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   MSG buf<span class="token punctuation">;</span>
+   ……
+   buf<span class="token punctuation">.</span>mtype <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span> 
+   <span class="token function">fgets</span><span class="token punctuation">(</span>buf<span class="token punctuation">.</span>mtext<span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token constant">stdin</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">msgsnd</span><span class="token punctuation">(</span>msgid<span class="token punctuation">,</span> <span class="token operator">&amp;</span>buf<span class="token punctuation">,</span>LEN<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   …… 
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-消息接收-–-msgrcv"><a href="#5-消息接收-–-msgrcv" class="headerlink" title="5.消息接收 – msgrcv"></a>5.消息接收 – msgrcv</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span> </span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/ipc.h></span></span>
+ <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/msg.h></span></span>
+ <span class="token keyword">int</span> <span class="token function">msgrcv</span><span class="token punctuation">(</span><span class="token keyword">int</span> msgid<span class="token punctuation">,</span> <span class="token keyword">void</span> <span class="token operator">*</span>msgp<span class="token punctuation">,</span> size_t size<span class="token punctuation">,</span> <span class="token keyword">long</span> msgtype<span class="token punctuation">,</span>
+                   <span class="token keyword">int</span> msgflg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">-</span>  成功时返回收到的消息长度，失败时返回<span class="token operator">-</span><span class="token number">1</span>
+<span class="token operator">-</span>  msgid   消息队列id
+<span class="token operator">-</span>  msgp   消息缓冲区地址
+<span class="token operator">-</span>  size   指定接收的消息长度 
+<span class="token operator">-</span>  msgtype   指定接收的消息类型   
+<span class="token operator">-</span>  msgflg   标志位   <span class="token number">0</span> 或 IPC_NOWAIT
+
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+消息接收  <span class="token operator">-</span>  示例
+
+<span class="token keyword">typedef</span>  <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+   <span class="token keyword">long</span> mtype<span class="token punctuation">;</span>
+   <span class="token keyword">char</span> mtext<span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> MSG<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>  LEN  (sizeof(MSG) - sizeof(long))</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   MSG buf<span class="token punctuation">;</span>
+   ……
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">msgrcv</span><span class="token punctuation">(</span>msgid<span class="token punctuation">,</span> <span class="token operator">&amp;</span>buf<span class="token punctuation">,</span>LEN<span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">perror</span><span class="token punctuation">(</span>“msgrcv”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   ……
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-控制消息队列-–-msgctl"><a href="#6-控制消息队列-–-msgctl" class="headerlink" title="6.控制消息队列 – msgctl"></a>6.控制消息队列 – msgctl</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span> </span>
+ <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/ipc.h></span></span>
+ <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/msg.h></span></span>
+ <span class="token keyword">int</span> <span class="token function">msgctl</span><span class="token punctuation">(</span><span class="token keyword">int</span> msgid<span class="token punctuation">,</span> <span class="token keyword">int</span> cmd<span class="token punctuation">,</span> <span class="token keyword">struct</span> msqid_ds <span class="token operator">*</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">-</span>  成功时返回<span class="token number">0</span>，失败时返回<span class="token operator">-</span><span class="token number">1</span>
+<span class="token operator">-</span>  msgid    消息队列id
+<span class="token operator">-</span>  cmd    要执行的操作  IPC_STAT <span class="token operator">/</span> IPC_SET <span class="token operator">/</span> IPC_RMID
+<span class="token operator">-</span>  buf   存放消息队列属性的地址
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6-System-V-IPC-信号灯"><a href="#6-System-V-IPC-信号灯" class="headerlink" title="6.System V IPC - 信号灯"></a>6.<strong>System V IPC -</strong> 信号灯</h2><ul>
+<li><p>信号灯也叫信号量，用于进程/线程同步或互斥的机制</p>
+</li>
+<li><p>信号灯的类型</p>
+<ul>
+<li>Posix 无名信号灯</li>
+<li>Posix有名信号灯</li>
+<li>System V  信号灯</li>
+</ul>
+</li>
+<li><p>信号灯的含义</p>
+<ul>
+<li>计数信号灯</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-System-V-IPC-信号灯特点"><a href="#1-System-V-IPC-信号灯特点" class="headerlink" title="1.System V IPC - 信号灯特点"></a>1.System V IPC - 信号灯特点</h3><ul>
+<li><p>System V 信号灯是一个或多个计数信号灯的集合</p>
+</li>
+<li><p>可同时操作集合中的多个信号灯</p>
+</li>
+<li><p>申请多个资源时避免死锁</p>
+</li>
+</ul>
+<h3 id="2-System-V信号灯使用步骤"><a href="#2-System-V信号灯使用步骤" class="headerlink" title="2.System V信号灯使用步骤"></a>2.System V信号灯使用步骤</h3><ul>
+<li>打开/创建信号灯   semget</li>
+<li>信号灯初始化   semctl</li>
+<li>P/V操作   semop</li>
+<li>删除信号灯  semctl</li>
+</ul>
+<h3 id="3-信号灯创建-打开-–-semget"><a href="#3-信号灯创建-打开-–-semget" class="headerlink" title="3.信号灯创建/打开 – semget"></a>3.信号灯创建/打开 – semget</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span> </span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/ipc.h></span></span>
+ <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/sem.h></span></span>
+ <span class="token keyword">int</span> <span class="token function">semget</span><span class="token punctuation">(</span>key_t key<span class="token punctuation">,</span> <span class="token keyword">int</span> nsems<span class="token punctuation">,</span> <span class="token keyword">int</span> semflg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">-</span>  成功时返回信号灯的id，失败时返回<span class="token operator">-</span><span class="token number">1</span>
+<span class="token operator">-</span>  key   和消息队列关联的key  IPC_PRIVATE 或 ftok
+<span class="token operator">-</span>  nsems   集合中包含的计数信号灯个数
+<span class="token operator">-</span>  semflg   标志位  IPC_CREAT<span class="token operator">|</span><span class="token number">0666</span>   IPC_EXCL
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-信号灯初始化-–-semctl"><a href="#4-信号灯初始化-–-semctl" class="headerlink" title="4.信号灯初始化 – semctl"></a>4.信号灯初始化 – semctl</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span> </span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/ipc.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/sem.h></span></span>
+<span class="token keyword">int</span> <span class="token function">semctl</span><span class="token punctuation">(</span><span class="token keyword">int</span> semid<span class="token punctuation">,</span> <span class="token keyword">int</span> semnum<span class="token punctuation">,</span> <span class="token keyword">int</span> cmd<span class="token punctuation">,</span> …<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">-</span>  成功时返回<span class="token number">0</span>，失败时返回<span class="token constant">EOF</span>
+<span class="token operator">-</span>  semid    要操作的信号灯集id
+<span class="token operator">-</span>  semnum   要操作的集合中的信号灯编号
+<span class="token operator">-</span>  cmd   执行的操作  SETVAL  IPC_RMID
+<span class="token operator">-</span>  <span class="token keyword">union</span>  semun      取决于cmd
+
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+信号灯集初始化 <span class="token operator">-</span>  示例
+要求：假设信号灯集合中包含两个信号灯；第一个初始化
+为<span class="token number">2</span>，第二个初始化为<span class="token number">0</span>
+
+  <span class="token keyword">union</span>  semun  myun<span class="token punctuation">;</span>
+
+  myun<span class="token punctuation">.</span>val <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">semctl</span><span class="token punctuation">(</span>semid<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> SETVAL<span class="token punctuation">,</span> myun<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token function">perror</span><span class="token punctuation">(</span>“semctl”<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  myun<span class="token punctuation">.</span>val <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">semctl</span><span class="token punctuation">(</span>semid<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> SETVAL<span class="token punctuation">,</span> myun<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token function">perror</span><span class="token punctuation">(</span>“semctl”<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-信号灯P-V操作-–-semop"><a href="#5-信号灯P-V操作-–-semop" class="headerlink" title="5.信号灯P/V操作 – semop"></a>5.信号灯P/V操作 – semop</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span> </span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/ipc.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/sem.h></span></span>
+<span class="token keyword">int</span> <span class="token function">semop</span><span class="token punctuation">(</span><span class="token keyword">int</span> semid<span class="token punctuation">,</span> <span class="token keyword">struct</span> sembuf <span class="token operator">*</span>sops<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> nsops<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">-</span>  成功时返回<span class="token number">0</span>，失败时返回<span class="token operator">-</span><span class="token number">1</span>
+<span class="token operator">-</span>  semid    要操作的信号灯集id
+<span class="token operator">-</span>  sops    描述对信号灯操作的结构体<span class="token punctuation">(</span>数组<span class="token punctuation">)</span>
+<span class="token operator">-</span>  nsops   要操作的信号灯的个数
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-信号灯操作-–-sembuf"><a href="#6-信号灯操作-–-sembuf" class="headerlink" title="6.信号灯操作 – sembuf"></a>6.信号灯操作 – sembuf</h3><pre class="line-numbers language-c"><code class="language-c"> <span class="token keyword">struct</span>  sembuf 
+ <span class="token punctuation">{</span>
+     <span class="token keyword">short</span>  semnum<span class="token punctuation">;</span>
+     <span class="token keyword">short</span>  sem_op<span class="token punctuation">;</span>
+     <span class="token keyword">short</span>  sem_flg<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token operator">-</span> semnum             信号灯编号
+<span class="token operator">-</span> sem_op           <span class="token operator">-</span><span class="token number">1</span>：P操作   <span class="token number">1</span>：V操作
+<span class="token operator">-</span> sem_flg           <span class="token number">0</span> <span class="token operator">/</span> IPC_NOWAIT
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-信号灯集-共享内存-示例"><a href="#7-信号灯集-共享内存-示例" class="headerlink" title="7.信号灯集/共享内存 -  示例"></a>7.信号灯集/共享内存 -  示例</h3><ul>
+<li>要求：父子进程通过System V信号灯同步对共享内存的读写</li>
+<li>父进程从键盘输入字符串到共享内存</li>
+<li>子进程删除字符串中的空格并打印</li>
+<li>父进程输入quit后删除共享内存和信号灯集，程序结束</li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">xing xiao</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://ww042q.coding-pages.com/2020/072464661.html">http://ww042q.coding-pages.com/2020/072464661.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">xing xiao</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/">
+                                    <span class="chip bg-color">进程间通信</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/072464661.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="System V IPC对象">
+                        
+                        <span class="card-title">System V IPC对象</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            System V IPC
+IPC 对象包含： 共享内存、消息队列和信号灯集
+每个IPC对象有唯一的ID
+IPC对象创建后一直存在，直到被显式地删除
+每个IPC对象有一个关联的KEY
+ipcs / ipcrm
+
+1.System V IPC 
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/">
+                        <span class="chip bg-color">进程间通信</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/072332549.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/37.jpg" class="responsive-img" alt="Linux-进程间通信">
+                        
+                        <span class="card-title">Linux-进程间通信</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            进程间通信1.进程间通信介绍
+早期UNIX进程间通信方式
+无名管道（pipe）
+有名管道 （fifo）
+信号（signal）
+
+
+System V IPC
+共享内存（share memory）
+消息队列（message queue）
+信号灯
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%BF%9B%E7%A8%8B/">
+                        <span class="chip bg-color">进程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Xiao Xing</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">80.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/MoreInterests" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1547678825@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1547678825" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1547678825" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
