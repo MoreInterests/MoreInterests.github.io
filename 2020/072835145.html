@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java-异常处理, toily的博客">
+    <meta name="keywords" content="SQLite3, toily的博客">
     <meta name="description" content="Love everything in the world without exception.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java-异常处理 | toily的博客</title>
+    <title>SQLite3 | toily的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/34.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java-异常处理</h1>
+                    <h1 class="description center-align post-title">SQLite3</h1>
                 </div>
             </div>
         </div>
@@ -431,14 +431,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">数据库</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -447,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-28
+                    2020-07-28
                 </div>
                 
 
@@ -456,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    430
+                    682
                 </div>
                 
 
@@ -468,21 +477,111 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><p>很多事件并非总是按照人们自己设计意愿顺利发展<br>的， 而是有能够出现这样那样的异常情况。 例如：<br>你计划周末郊游， 你的计划会安排满满的， 你计划<br>可能是这样的： 从家里出发→到达目的→游泳→烧<br>烤→回家。 但天有不测风云， 当前你准备烧烤时候<br>天降大雨， 你只能终止郊游提前回家。 “天降大<br>雨”是一种异常情况， 你的计划应该考虑到这样情<br>况， 并且应该有处理这种异常的预案。<br>为增强程序的健壮性， 计算机程序的编写也需要考<br>虑处理这些异常情况， Java语言提供了异常处理功<br>能， 本章介绍Java异常处理机制。   </p>
-<h2 id="从一个问题开始"><a href="#从一个问题开始" class="headerlink" title="从一个问题开始"></a>从一个问题开始</h2><p>为了学习Java异常处理机制， 首先看看下面程序。</p>
-<pre><code>//HelloWorld.java文件
-package com.a51work6;
-public class HelloWorld {
-    public static void main(String[] args) {
-    int a = 0;
-    System.out.println(5 / a);
-    }
-} </code></pre><p>这个程序没有编译错误， 但会发生如下的运行时错误：</p>
-<pre><code>Exception in thread &quot;main&quot; java.lang.ArithmeticException: / by ze
-at com.a51work6.HelloWorld.main(HelloWorld.java:9)</code></pre><p>在数学上除数不能为0， 所以程序运行时表达式（5 / a） 会抛出ArithmeticException异常，ArithmeticException是数学计算异常， 凡是发生数<br>学计算错误都会抛出该异常。程序运行过程中难免会发生异常， 发生异常并不可<br>怕， 程序员应该考虑到有可能发生这些异常， 编程<br>时应该捕获并进行处理异常， 不能让程序发生终<br>止， 这就是健壮的程序。    </p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P%E5%BC%82%E5%B8%B8%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%B1%82%E6%AC%A1.jpg" alt="异常类继承层次">    </p>
-<p>（Java从小白到大牛 509）</p>
+                <h1 id="SQLite"><a href="#SQLite" class="headerlink" title="SQLite"></a>SQLite</h1><h2 id="1-sqlite3-数据库的安装"><a href="#1-sqlite3-数据库的安装" class="headerlink" title="1.sqlite3 数据库的安装"></a>1.sqlite3 数据库的安装</h2><h3 id="1-本地安装"><a href="#1-本地安装" class="headerlink" title="1.本地安装"></a>1.本地安装</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> dpkg -i *.deb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="2-在线安装"><a href="#2-在线安装" class="headerlink" title="2.在线安装"></a>2.在线安装</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> sqlite3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="2-SQLITE3-基本命令"><a href="#2-SQLITE3-基本命令" class="headerlink" title="2.SQLITE3 基本命令"></a>2.SQLITE3 基本命令</h2><h3 id="1-系统命令"><a href="#1-系统命令" class="headerlink" title="1.系统命令"></a>1.系统命令</h3><pre class="line-numbers language-sqlite"><code class="language-sqlite">以‘.’开头的命令
+
+.help    帮助
+.quit    退出
+.exit    退出
+.schema    查看表的结构图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-sql命令"><a href="#2-sql命令" class="headerlink" title="2.sql命令"></a>2.sql命令</h3><ul>
+<li>基本的sql命令，不以 ‘.’ 开头，但是都要以  ‘;’ 结尾</li>
+<li>创建一张数据库表    stu</li>
+</ul>
+<pre class="line-numbers language-sqlite"><code class="language-sqlite">create table stu(id Integer, name char, score Integer);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>插入一条记录</li>
+</ul>
+<pre class="line-numbers language-sqlite"><code class="language-sqlite">insert into stu values(1001, 'zhangsan',80);
+insert into stu values(1002, 'lisi',90);
+
+insert into stu (name, score)values(1003, 'wangwu');    //部分字段的插入操作<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>查询记录</li>
+</ul>
+<pre class="line-numbers language-sqlite"><code class="language-sqlite">select * from stu;    //查询所有字段的结果
+
+select name, score from stu;    //查询数据库中的部分字段的内容
+
+select * from stu where score=80;
+select * from stu where score=80 and name = 'zhangsan';
+select * from stu where score=80 or name = 'lisi'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>删除一条记录</li>
+</ul>
+<pre class="line-numbers language-sqlite"><code class="language-sqlite">delete from stu where score='90';<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>更新一条记录</li>
+</ul>
+<pre class="line-numbers language-sqlite"><code class="language-sqlite">update stu set name='wangwu' where id=1001;
+update stu set name='wangwu', score = 88  where id=1001;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>插入一列</li>
+</ul>
+<pre class="line-numbers language-sqlite"><code class="language-sqlite">alter table stu add column address char;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>删除一列</li>
+</ul>
+<pre class="line-numbers language-sqlite"><code class="language-sqlite">sqlite3不支持，直接删除一列
+
+1.创建一张新的表
+create table stu1 as select id, name, score from stu;
+2.删除原有的表
+drop table stu;
+3.将新的表名字改成原有的旧表的名字
+alter table stu1 rename to stu;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-sqlite3-函数接口"><a href="#3-sqlite3-函数接口" class="headerlink" title="3.sqlite3 函数接口"></a>3.sqlite3 函数接口</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">sqlite3_open</span><span class="token punctuation">(</span>
+  <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>filename<span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">/* Database filename (UTF-8) */</span>
+  sqlite3 <span class="token operator">*</span><span class="token operator">*</span>ppDb          <span class="token comment" spellcheck="true">/* OUT: SQLite db handle */</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+功能：打开一个数据库
+参数：filename    数据库路径
+     ppDb      代表的是数据库的操作句柄（指针）
+返回值：成功 SQLITE_OK<span class="token punctuation">,</span>出错错误码
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+
+<span class="token keyword">int</span> <span class="token function">sqlite3_close</span><span class="token punctuation">(</span>sqlite3<span class="token operator">*</span> db<span class="token punctuation">)</span><span class="token punctuation">;</span>
+功能：关闭数据库
+参数：db    操作数据库的指针
+返回值：成功 SQLITE_OK<span class="token punctuation">,</span>出错错误码
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+
+<span class="token keyword">int</span> <span class="token function">sqlite3_errcode</span><span class="token punctuation">(</span>sqlite3 <span class="token operator">*</span>db<span class="token punctuation">)</span><span class="token punctuation">;</span>
+功能：通过db 句柄， 得到数据库操作的错误信息
+返回值：错误信息的首地址
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+
+<span class="token keyword">int</span> <span class="token function">sqlite3_exec</span><span class="token punctuation">(</span>
+  sqlite3<span class="token operator">*</span><span class="token punctuation">,</span>                                  <span class="token comment" spellcheck="true">/* An open database */</span>
+  <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>sql<span class="token punctuation">,</span>                           <span class="token comment" spellcheck="true">/* SQL to be evaluated */</span>
+  <span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>callback<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span> arg<span class="token punctuation">,</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span><span class="token punctuation">,</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">/* Callback function */</span>
+  <span class="token keyword">void</span> <span class="token operator">*</span> arg<span class="token punctuation">,</span>                                    <span class="token comment" spellcheck="true">/* 1st argument to callback */</span>
+  <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>errmsg                              <span class="token comment" spellcheck="true">/* Error msg written here */</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+功能：执行一条sql语句
+参数：db          数据库操作句柄
+     sql          一条sql语句
+     callback    回调函数，只有sql为查询语句的时候，才会执行此语句
+     arg        标识的是给回调函数传递参数
+返回值：成功 SQLITE_OK     
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+
+<span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>callback<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span> arg<span class="token punctuation">,</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span><span class="token punctuation">,</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">/* Callback function */</span>
+功能：查询的结果，是一个函数指针类型，传递一个函数名即可。
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+
+不使用回调函数执行SQL语句
+<span class="token keyword">int</span> sqlite3 get_table（sqlite3<span class="token operator">*</span>db，sonst <span class="token keyword">char</span><span class="token operator">*</span>sgl，<span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span>resultp，<span class="token keyword">int</span><span class="token operator">*</span>nrow，<span class="token keyword">int</span><span class="token operator">*</span>ncolumn，<span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span>errmsg）<span class="token punctuation">;</span>
+功能：执行SQL操作
+db：数据库句柄
+sql；SQL语句
+xesu1tp；用来指向sql执行结果的指针
+nrow：满足条件的记录的费数目
+ncolumn；每条记录包含的字段数目
+errmsg：错误信息指针的地址
+返回值：成功返回<span class="token number">0</span>，失败返回错误码
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -508,7 +607,7 @@ at com.a51work6.HelloWorld.main(HelloWorld.java:9)</code></pre><p>在数学上�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ww042q.coding-pages.com/2020/062858003.html">http://ww042q.coding-pages.com/2020/062858003.html</a>
+                    <a href="http://ww042q.coding-pages.com/2020/072835145.html">http://ww042q.coding-pages.com/2020/072835145.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -546,8 +645,8 @@ at com.a51work6.HelloWorld.main(HelloWorld.java:9)</code></pre><p>在数学上�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
                                 </a>
                             
                         </div>
@@ -715,47 +814,52 @@ at com.a51work6.HelloWorld.main(HelloWorld.java:9)</code></pre><p>在数学上�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/062834973.html">
+                <a href="/2020/072835145.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day27">
                         
-                        <span class="card-title">Java-day27</span>
+                        <img src="/medias/featureimages/34.jpg" class="responsive-img" alt="SQLite3">
+                        
+                        <span class="card-title">SQLite3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:反射(理解)(1)类的加载及类加载器(2)反射：    通过字节码文件对象，去使用成员变量，构造方法，成员方法(3)反射的使用    A:通过反射获取构造方法并使用
-    B:通过反射获取成员变量并使用
-    C:通过反射获取成员方
+                            SQLite1.sqlite3 数据库的安装1.本地安装sudo dpkg -i *.deb
+2.在线安装sudo apt-get install sqlite3
+2.SQLITE3 基本命令1.系统命令以‘.’开头的命令
+
+.help  
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
                     </a>
                     
                 </div>
@@ -769,32 +873,38 @@ at com.a51work6.HelloWorld.main(HelloWorld.java:9)</code></pre><p>在数学上�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/062718524.html">
+                <a href="/2020/072464661.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MoreInterests/CDN/P05231.jpg" class="responsive-img" alt="Java-day26">
                         
-                        <span class="card-title">Java-day26</span>
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="System V IPC对象">
+                        
+                        <span class="card-title">System V IPC对象</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1:网络编程(理解)(1)网络编程：用Java语言实现计算机间数据的信息传递和资源共享(2)网络编程模型(3)网络编程的三要素A:IP地址        a:点分十进制
-        b:IP地址的组成
-        c:IP地址的分类
+                            System V IPC
+IPC 对象包含： 共享内存、消息队列和信号灯集
+每个IPC对象有唯一的ID
+IPC对象创建后一直存在，直到被显式地删除
+每个IPC对象有一个关联的KEY
+ipcs / ipcrm
+
+1.System V IPC 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
@@ -804,8 +914,8 @@ at com.a51work6.HelloWorld.main(HelloWorld.java:9)</code></pre><p>在数学上�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/">
+                        <span class="chip bg-color">进程间通信</span>
                     </a>
                     
                 </div>
